@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm App - Legal Documents</title>
+    <meta name="description" content="Privacy Policy and Terms of Service for Alarm App by SmartHorizon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .app-description {
+            margin-top: 20px;
+            font-size: 1em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .card-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #666;
+            border: 2px solid #ddd;
+            font-size: 0.95em;
+        }
+
+        .btn-outline:hover {
+            background: #f8f9fa;
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .language-selector {
+            background: #e8f0fe;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .language-selector h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            padding: 10px 25px;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lang-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .additional-links {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .additional-links h3 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .last-updated {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .last-updated strong {
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⏰ Alarm App</h1>
+            <p class="subtitle">Legal Documents & Policies</p>
+            <p class="app-description">
+                Smart alarm clock with advanced wake-up challenges, weather integration, 
+                and sleep sounds to help you wake up refreshed every morning.
+            </p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="intro">
+                <h2>Welcome to Our Legal Center</h2>
+                <p>
+                    We believe in transparency and protecting your privacy. 
+                    Below you'll find all our legal documents and policies in clear, accessible language.
+                </p>
+            </div>
+
+            <div class="last-updated">
+                <strong>Last Updated:</strong> January 23, 2025
+            </div>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <h3>🌍 Choose Your Language</h3>
+                <div class="language-buttons">
+                    <a href="#english" class="lang-btn">
+                        <span>🇬🇧</span>
+                        <span>English</span>
+                    </a>
+                    <a href="#arabic" class="lang-btn">
+                        <span>🇸🇦</span>
+                        <span>العربية (Arabic)</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- English Documents -->
+            <div id="english">
+                <div class="cards-container">
+                    <!-- Privacy Policy Card -->
+                    <div class="card">
+                        <div class="card-icon">🔒</div>
+                        <h3>Privacy Policy</h3>
+                        <p>
+                            Learn how we protect your privacy and handle your data. 
+                            We don't collect personal information, and all your alarm data 
+                            stays on your device.
+                        </p>
+                        <div class="card-links">
+                            <a href="privacy-policy.html" class="btn btn-primary">
+                                Read Privacy Policy
+                            </a>
+                            <a href="changelog.html#privacy" class="btn btn-outline">
+                                View Version History
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Terms of Service Card -->
+                    <div class="card">
+                        <div class="card-icon">📋</div>
+                        <h3>Terms of Service</h3>
+                        <p>
+                            Understand the terms for using Alarm App, including subscription 
+                            details, refund policy, and your rights as a user.
+                        </p>
+                        <div class="card-links">
+                            <a href="terms-of-service.html" class="btn btn-primary">
+                                Read Terms of Service
+                            </a>
+                            <a href="changelog.html#terms" class="btn btn-outline">
+                                View Version History
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arabic Documents -->
+            <div id="arabic">
+                <div class="cards-container">
+                    <!-- Privacy Policy Card (Arabic) -->
+                    <div class="card">
+                        <div class="card-icon">🔒</div>
+                        <h3>سياسة الخصوصية (Privacy Policy)</h3>
+                        <p>
+                            تعرف على كيفية حمايتنا لخصوصيتك ومعالجة بياناتك.
+                            نحن لا نجمع معلومات شخصية، وتبقى جميع بيانات المنبه على جهازك.
+                        </p>
+                        <div class="card-links">
+                            <a href="privacy-policy-ar.html" class="btn btn-primary">
+                                اقرأ سياسة الخصوصية
+                            </a>
+                            <a href="changelog.html#privacy" class="btn btn-outline">
+                                عرض سجل الإصدارات
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Terms of Service Card (Arabic) -->
+                    <div class="card">
+                        <div class="card-icon">📋</div>
+                        <h3>شروط الخدمة (Terms of Service)</h3>
+                        <p>
+                            فهم شروط استخدام تطبيق المنبه، بما في ذلك تفاصيل الاشتراك
+                            وسياسة الاسترداد وحقوقك كمستخدم.
+                        </p>
+                        <div class="card-links">
+                            <a href="terms-of-service-ar.html" class="btn btn-primary">
+                                اقرأ شروط الخدمة
+                            </a>
+                            <a href="changelog.html#terms" class="btn btn-outline">
+                                عرض سجل الإصدارات
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="additional-links">
+                <h3>📚 Additional Resources</h3>
+                <div class="links-grid">
+                    <a href="changelog.html" class="btn btn-outline">
+                        Complete Version History
+                    </a>
+                    <a href="https://smarthorizon.co" class="btn btn-outline" target="_blank">
+                        SmartHorizon Website
+                    </a>
+                    <a href="mailto:info@smarthorizon.co" class="btn btn-outline">
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Summary -->
+            <div style="margin-top: 50px; padding: 30px; background: #e8f5e9; border-radius: 12px; border-left: 4px solid #4caf50;">
+                <h3 style="color: #2e7d32; margin-bottom: 15px;">✅ Your Privacy Matters</h3>
+                <ul style="color: #1b5e20; list-style-position: inside; line-height: 2;">
+                    <li>No user accounts required - all data stays on your device</li>
+                    <li>Location used only for optional weather features</li>
+                    <li>Photos never leave your device</li>
+                    <li>Optional cloud backup to your personal iCloud/Google Drive</li>
+                    <li>No ads, no data selling</li>
+                    <li>Free trial to test functionality before subscribing</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <h4>SmartHorizon</h4>
+                <p>Muscat, Sultanate of Oman</p>
+                <p>
+                    Email: <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a>
+                </p>
+                <p>
+                    Website: <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a>
+                </p>
+                
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="changelog.html">Version History</a>
+                </div>
+
+                <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.7;">
+                    &copy; 2025 SmartHorizon. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

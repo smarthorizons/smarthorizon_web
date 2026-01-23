@@ -1,0 +1,30 @@
+{
+  "privacy_policy": {
+    "current_version": "2025-01-23",
+    "current_url": "https://smarthorizons.github.io/mobile-apps-legal/alarm-app/privacy-policy.html",
+    "versions": [
+      {
+        "version": "2025-01-23",
+        "date": "2025-01-23T10:00:00Z",
+        "url": "https://smarthorizons.github.io/mobile-apps-legal/alarm-app/versions/privacy/2025-01-23.html",
+        "changes_summary": "Initial Privacy Policy - Covers data collection, location usage for weather features, photo processing for wake-up challenges, Firebase Analytics integration, RevenueCat subscription management, optional cloud backup to iCloud/Google Drive, and GDPR/CCPA compliance",
+        "is_material_change": true,
+        "requires_reacceptance": true
+      }
+    ]
+  },
+  "terms_of_service": {
+    "current_version": "2025-01-23",
+    "current_url": "https://smarthorizons.github.io/mobile-apps-legal/alarm-app/terms-of-service.html",
+    "versions": [
+      {
+        "version": "2025-01-23",
+        "date": "2025-01-23T10:00:00Z",
+        "url": "https://smarthorizons.github.io/mobile-apps-legal/alarm-app/versions/terms/2025-01-23.html",
+        "changes_summary": "Initial Terms of Service - Covers subscription terms (monthly/yearly plans with free trial), auto-renewal policy, refund policy via Apple/Google, alarm reliability disclaimers, limitation of liability, acceptable use restrictions, and governing law (Oman)",
+        "is_material_change": true,
+        "requires_reacceptance": true
+      }
+    ]
+  }
+}
