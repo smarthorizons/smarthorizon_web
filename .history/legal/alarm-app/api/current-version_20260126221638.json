@@ -3,12 +3,12 @@
     "version": "2025-01-23",
     "date": "2025-01-23T10:00:00Z",
     "hash": "sha256:initial",
-    "requires_reacceptance": false
+    "requires_reacceptance": true
   },
   "terms_of_service": {
     "version": "2025-01-23",
     "date": "2025-01-23T10:00:00Z",
     "hash": "sha256:initial",
-    "requires_reacceptance": false
+    "requires_reacceptance": true
   }
 }
