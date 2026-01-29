@@ -4,199 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Alarm App</title>
-<style>
-    @font-face {
-        font-family: 'Alexandria';
-        src: url('fonts/Alexandria-VariableFont.ttf') format('truetype');
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    body {
-        font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background: #fff;
-    }
-
-    .version-banner {
-        background: #f0f0f0;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        border-left: 4px solid #007AFF;
-    }
-
-    .version-info {
-        font-size: 14px;
-        color: #666;
-    }
-
-    .section {
-        margin: 30px 0;
-    }
-
-    h1 {
-        font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        color: #1a1a1a;
-        border-bottom: 2px solid #007AFF;
-        padding-bottom: 10px;
-        font-weight: 700;
-    }
-
-    h2 {
-        font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        color: #333;
-        margin-top: 30px;
-        font-weight: 600;
-    }
-
-    h3 {
-        font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        color: #555;
-        margin-top: 20px;
-        font-size: 1.1em;
-        font-weight: 600;
-    }
-
-    .important {
-        background: #e8f5e9;
-        border-left: 4px solid #4caf50;
-        padding: 15px;
-        margin: 20px 0;
-    }
-
-    .warning {
-        background: #fff3cd;
-        border-left: 4px solid #ffc107;
-        padding: 15px;
-        margin: 20px 0;
-    }
-
-    .effective-date {
-        font-style: italic;
-        color: #666;
-        margin-bottom: 20px;
-    }
-
-    ul {
-        margin: 10px 0;
-        padding-left: 25px;
-    }
-
-    li {
-        margin: 8px 0;
-    }
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-    }
-
-    table th {
-        font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: #f5f5f5;
-        padding: 12px;
-        text-align: left;
-        border: 1px solid #ddd;
-        font-weight: 600;
-    }
-
-    table td {
-        padding: 12px;
-        border: 1px solid #ddd;
-    }
-
-    a {
-        color: #007AFF;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .summary-box {
-        background: #e3f2fd;
-        border-left: 4px solid #2196f3;
-        padding: 15px;
-        margin: 20px 0;
-    }
-
-    /* Dark Mode Support */
-    @media (prefers-color-scheme: dark) {
+    <style>
         body {
-            background-color: #121212;
-            color: #E0E0E0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
         }
-
-        h1, h2, h3 {
-            color: #FFFFFF;
-            border-color: #444444;
-        }
-
-        a {
-            color: #BB86FC;
-        }
-
-        a:hover {
-            color: #D7BAFF;
-        }
-
         .version-banner {
-            background-color: #1E1E1E;
-            border-left-color: #BB86FC;
-            color: #E0E0E0;
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007AFF;
         }
-
         .version-info {
-            color: #999999;
+            font-size: 14px;
+            color: #666;
         }
-
+        .section {
+            margin: 30px 0;
+        }
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 2px solid #007AFF;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
         .important {
-            background-color: #1B4D1F;
-            border-left-color: #4caf50;
-            color: #E0E0E0;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
         }
-
-        .warning {
-            background-color: #4A2500;
-            border-left-color: #ffc107;
-            color: #E0E0E0;
+        .critical {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
         }
-
-        .summary-box {
-            background-color: #1A237E;
-            border-left-color: #2196f3;
-            color: #E0E0E0;
+        .info {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
         }
-
-        table {
-            background-color: #1E1E1E;
-            border-color: #333333;
-        }
-
-        table th {
-            background-color: #2D2D2D;
-            color: #FFFFFF;
-            border-color: #444444;
-        }
-
-        table td {
-            background-color: #1E1E1E;
-            color: #E0E0E0;
-            border-color: #333333;
-        }
-
         .effective-date {
-            color: #999999;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
         }
-    }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th {
+            background: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-weight: 600;
+        }
+        table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .summary-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
@@ -249,11 +153,56 @@
             <li>Optional cloud backup to your personal iCloud or Google Drive</li>
         </ul>
 
-        <h3>2.2 Free vs. Premium</h3>
-        <p><strong>Free Version:</strong> Includes basic alarm functionality with limited features.</p>
-        <p><strong>Premium Version:</strong> Unlocks all features including advanced wake-up challenges (math problems, photo detection, typing challenges, memory games, shake tasks), unlimited alarms, sleep sounds, weather integration, cloud backup, statistics export, and more.</p>
+        <h3>2.2 Free vs Premium Features</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Free Version</th>
+                    <th>Premium Subscription</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Basic Alarms</td>
+                    <td>✅ Limited features</td>
+                    <td>✅ Unlimited with all features</td>
+                </tr>
+                <tr>
+                    <td>Wake-up Challenges</td>
+                    <td>⚠️ Basic challenges only</td>
+                    <td>✅ All advanced challenges</td>
+                </tr>
+                <tr>
+                    <td>Weather Integration</td>
+                    <td>❌</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
+                    <td>Sleep Sounds Library</td>
+                    <td>❌</td>
+                    <td>✅ Full library</td>
+                </tr>
+                <tr>
+                    <td>Cloud Backup</td>
+                    <td>❌</td>
+                    <td>✅ iCloud & Google Drive</td>
+                </tr>
+                <tr>
+                    <td>Alarm Statistics Export</td>
+                    <td>❌</td>
+                    <td>✅ Export as images</td>
+                </tr>
+                <tr>
+                    <td>Bedtime Reminders</td>
+                    <td>⚠️ Limited</td>
+                    <td>✅ Unlimited</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <p><strong>Note:</strong> Pricing and trial duration are subject to change. Current pricing is displayed in the app before purchase.</p>
+        <p><strong>Note:</strong> We reserve the right to modify feature availability and introduce new premium features at any time.</p>
     </div>
 
     <div class="section">
@@ -541,7 +490,6 @@
     <div class="section">
         <h2>8. Privacy and Data</h2>
         <p>Your use of the App is also governed by our <a href="privacy-policy.html">Privacy Policy</a>, which explains how we collect, use, and protect your information.</p>
-        <p>Where personal data is processed based on legitimate interests, users have the rightto object to such processing at any time, as described in the Privacy Policy.</p>
         <p>Key privacy points:</p>
         <ul>
             <li>No user accounts required - data stored locally on your device</li>
@@ -583,8 +531,7 @@
 
         <h3>10.1 Governing Law</h3>
         <p>These Terms shall be governed by and construed in accordance with the laws of the Sultanate of Oman, without regard to its conflict of law principles.</p>
-        <p>Nothing in these Terms limits or excludes any rights granted to users under applicable data protection laws, including the General Data Protection Regulation (GDPR), where such laws apply.</p>
-        
+
         <h3>10.2 Dispute Resolution</h3>
         <p>If you have any dispute, claim, or controversy with us:</p>
         
@@ -649,7 +596,6 @@
 
     <div class="section">
         <h2>12. Age Restrictions</h2>
-        <p>We do not knowingly collect personal data from children. Any analytics or diagnostic data collected by the App is limited, aggregated, and not used for profiling, behavioral analysis, or targeted advertising.</p>
         <p>The App is rated 4+ and suitable for all ages. However:</p>
         <ul>
             <li>If you are under 18 years old, you should review these Terms with a parent or guardian</li>
@@ -687,11 +633,11 @@
     </div>
 
     <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
-        <p style="text-align: center;">&copy; 2026 SmartHorizon. All rights reserved.</p>
-        <p style="text-align: center;">
+        <p>&copy; 2025 SmartHorizon. All rights reserved.</p>
+        <p>
             <a href="privacy-policy.html">Privacy Policy</a> |
-            <a href="changelog.html">Version History</a> 
-            <!-- <a href="index.html">Legal Home</a> -->
+            <a href="changelog.html">Version History</a> |
+            <a href="index.html">Legal Home</a>
         </p>
     </footer>
 </body>
