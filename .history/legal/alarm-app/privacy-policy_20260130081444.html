@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Smart Alarm</title>
+    <title>Privacy Policy - Smart Alarm</title>
     <style>
         body {
             margin: 0;
@@ -51,7 +51,87 @@
             .loading { color: #999; }
             .spinner { border-color: #333; border-top-color: #BB86FC; }
         }
-        
+            /* Dark Mode Support - Prevents white flash */
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212 !important;
+            color: #E0E0E0 !important;
+        }
+
+        h1, h2, h3 {
+            color: #FFFFFF !important;
+            border-color: #444444 !important;
+        }
+
+        a {
+            color: #BB86FC !important;
+        }
+
+        a:hover {
+            color: #D7BAFF !important;
+        }
+
+        .version-banner {
+            background-color: #1E1E1E !important;
+            border-left-color: #BB86FC !important;
+            color: #E0E0E0 !important;
+        }
+
+        .version-info {
+            color: #999999 !important;
+        }
+
+        .important {
+            background-color: #1B4D1F !important;
+            border-left-color: #4caf50 !important;
+            color: #E0E0E0 !important;
+        }
+
+        .warning {
+            background-color: #4A2500 !important;
+            border-left-color: #ffc107 !important;
+            color: #E0E0E0 !important;
+        }
+
+        .summary-box {
+            background-color: #1A237E !important;
+            border-left-color: #2196f3 !important;
+            color: #E0E0E0 !important;
+        }
+
+        .effective-date {
+            color: #999999 !important;
+        }
+
+        table {
+            background-color: #1E1E1E !important;
+            border-color: #333333 !important;
+        }
+
+        table th {
+            background-color: #2D2D2D !important;
+            color: #FFFFFF !important;
+            border-color: #444444 !important;
+        }
+
+        table td {
+            background-color: #1E1E1E !important;
+            color: #E0E0E0 !important;
+            border-color: #333333 !important;
+        }
+
+        ul, ol, li {
+            color: #E0E0E0 !important;
+        }
+
+        p {
+            color: #E0E0E0 !important;
+        }
+
+        strong, b {
+            color: #FFFFFF !important;
+        }
+    }
     </style>
 </head>
 <body>
@@ -61,17 +141,17 @@
     </div>
     <div id="error" class="error" style="display:none;">
         <p>Failed to load</p>
-        <button onclick="loadTerms()">Retry</button>
+        <button onclick="loadPolicy()">Retry</button>
     </div>
     <script>
-        async function loadTerms() {
+        async function loadPolicy() {
             try {
                 document.getElementById('loading').style.display = 'block';
                 document.getElementById('error').style.display = 'none';
 
                 const changelog = await fetch('changelog.json').then(r => r.json());
-                const version = changelog.terms_of_service.current_version;
-                const html = await fetch(`versions/terms/${version}.html`).then(r => r.text());
+                const version = changelog.privacy_policy.current_version;
+                const html = await fetch(`versions/privacy/${version}.html`).then(r => r.text());
 
                 document.open();
                 document.write(html);
@@ -81,7 +161,7 @@
                 document.getElementById('error').style.display = 'block';
             }
         }
-        window.addEventListener('DOMContentLoaded', loadTerms);
+        window.addEventListener('DOMContentLoaded', loadPolicy);
     </script>
 </body>
 </html>
