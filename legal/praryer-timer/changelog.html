@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version History - Smart Alarm</title>
+    <meta name="description" content="Version history for Smart Alarm privacy policy and terms of service">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .error {
+            background: #fee;
+            border-left: 4px solid #f44336;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #c62828;
+        }
+
+        .version-entry {
+            background: #f8f9fa;
+            border-left: 4px solid #28a745;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .version-entry.material {
+            border-left-color: #ff9800;
+        }
+
+        .version-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .version-number {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .badge-current {
+            background-color: #28a745;
+        }
+
+        .badge-material {
+            background-color: #ff9800;
+        }
+
+        .version-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .version-changes {
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .back-links {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .back-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .back-links a:hover {
+            background: #5568d3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #E0E0E0;
+            }
+
+            .container {
+                background: #1E1E1E;
+            }
+
+            h1, h2 {
+                color: #BB86FC;
+                border-color: #BB86FC;
+            }
+
+            .version-entry {
+                background: #2D2D2D;
+                color: #E0E0E0;
+            }
+
+            .version-number {
+                color: #FFFFFF;
+            }
+
+            .version-date, .version-changes {
+                color: #CCCCCC;
+            }
+
+            .back-links a {
+                background: #BB86FC;
+            }
+
+            .back-links a:hover {
+                background: #9965D4;
+            }
+
+            footer {
+                border-top-color: #333;
+                color: #999;
+            }
+
+            .loading {
+                color: #999;
+            }
+
+            .error {
+                background: #4A0000;
+                border-left-color: #F44336;
+                color: #FFCCCC;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📜 Version History</h1>
+        <p style="margin-bottom: 30px; color: #666;">
+            Complete history of changes to our Privacy Policy and Terms of Service.
+        </p>
+
+        <!-- Loading State -->
+        <div id="loading" class="loading">
+            <p>Loading version history...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error" style="display: none;">
+            <strong>Error:</strong> <span id="error-message"></span>
+        </div>
+
+        <!-- Content will be injected here -->
+        <div id="content" style="display: none;">
+            <!-- Privacy Policy Versions -->
+            <h2 id="privacy">🔒 Privacy Policy</h2>
+            <div id="privacy-versions"></div>
+
+            <!-- Terms of Service Versions -->
+            <h2 id="terms" style="margin-top: 50px;">📋 Terms of Service</h2>
+            <div id="terms-versions"></div>
+
+            <!-- Navigation Links -->
+            <div class="back-links">
+                <!-- <a href="index.html">← Back to Legal Center</a> -->
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 SmartHorizon. All rights reserved.</p>
+            <p style="margin-top: 10px;">
+                Contact: <a href="mailto:smarthorizonoman@gmail.com" style="color: #667eea;">smarthorizonoman@gmail.com</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Load and parse changelog.json
+        async function loadChangelog() {
+            try {
+                const response = await fetch('changelog.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load changelog.json');
+                }
+                const data = await response.json();
+                renderChangelog(data);
+            } catch (error) {
+                showError(error.message);
+            }
+        }
+
+        // Render the changelog from JSON data
+        function renderChangelog(data) {
+            const privacyContainer = document.getElementById('privacy-versions');
+            const termsContainer = document.getElementById('terms-versions');
+
+            // Render Privacy Policy versions
+            if (data.privacy_policy && data.privacy_policy.versions) {
+                const currentVersion = data.privacy_policy.current_version;
+                data.privacy_policy.versions.forEach(version => {
+                    const versionElement = createVersionElement(
+                        version,
+                        currentVersion,
+                        'privacy-policy.html'
+                    );
+                    privacyContainer.appendChild(versionElement);
+                });
+            }
+
+            // Render Terms of Service versions
+            if (data.terms_of_service && data.terms_of_service.versions) {
+                const currentVersion = data.terms_of_service.current_version;
+                data.terms_of_service.versions.forEach(version => {
+                    const versionElement = createVersionElement(
+                        version,
+                        currentVersion,
+                        'terms-of-service.html'
+                    );
+                    termsContainer.appendChild(versionElement);
+                });
+            }
+
+            // Show content, hide loading
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+
+            // Smooth scroll to hash if present
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const element = document.querySelector(window.location.hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+        }
+
+        // Create a version entry element
+        function createVersionElement(version, currentVersion, documentUrl) {
+            const isCurrent = version.version === currentVersion;
+            const isMaterial = version.is_material_change;
+
+            const div = document.createElement('div');
+            div.className = 'version-entry' + (isMaterial ? ' material' : '');
+
+            // Format date
+            const date = new Date(version.date);
+            const formattedDate = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            div.innerHTML = `
+                <div class="version-header">
+                    <span class="version-number">Version ${escapeHtml(version.version)}</span>
+                    ${isCurrent ? '<span class="badge badge-current">Current</span>' : ''}
+                    ${isMaterial ? '<span class="badge badge-material">Material Change</span>' : ''}
+                </div>
+                <div class="version-date">
+                    Published: ${formattedDate}
+                </div>
+                <div class="version-changes">
+                    <strong>Changes:</strong> ${escapeHtml(version.changes_summary)}
+                </div>
+                <div style="margin-top: 15px;">
+                    <a href="${escapeHtml(version.url)}" style="color: #667eea; text-decoration: none;">View Archived Version →</a>
+                    ${isCurrent ? ` | <a href="${documentUrl}" style="color: #667eea; text-decoration: none;">View Current Document →</a>` : ''}
+                </div>
+            `;
+
+            return div;
+        }
+
+        // Show error message
+        function showError(message) {
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('error-message').textContent = message;
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Load changelog on page load
+        window.addEventListener('DOMContentLoaded', loadChangelog);
+    </script>
+</body>
+</html>
