@@ -1,0 +1,109 @@
+# Legitimate Interest Assessment (LIA)
+
+**Controller:** Smart Horizon
+**Application Type:** Alarm Mobile Application (No user accounts)  
+**Date:** 2026-01-24  
+**Review Cycle:** Upon material change to data processing
+
+---
+
+## 1. Purpose Test
+
+### What is the legitimate interest?
+
+The legitimate interest pursued is to ensure the reliability, stability, security, and continuous improvement of the mobile application.
+
+Analytics and diagnostic data are processed to:
+- Detect and fix crashes and technical errors
+- Monitor application performance and stability
+- Identify feature malfunctions
+- Improve user experience based on aggregated usage patterns
+
+These purposes are necessary for operating and maintaining a functional mobile application and align with reasonable user expectations.
+
+**GDPR Reference:**  
+Article 6(1)(f) — Lawfulness of processing  
+https://gdpr-info.eu/art-6-gdpr/
+
+---
+
+## 2. Necessity Test
+
+### Is the processing necessary?
+
+Yes.
+
+The stated purposes cannot be reasonably achieved without collecting limited analytics and diagnostic data, such as:
+- Application version and device type
+- Operating system version
+- Anonymous event counts
+- Approximate location at country or regional level only
+
+No alternative method would provide equivalent insight into application stability and performance without processing such data.
+
+The processing is proportionate and limited to what is strictly necessary.
+
+**GDPR Reference:**  
+Recital 39 — Data minimisation  
+https://gdpr-info.eu/recitals/no-39/
+
+---
+
+## 3. Balancing Test
+
+### Does the processing override user rights?
+
+The impact on user privacy is assessed as low, based on the following factors:
+
+#### Nature of the data
+- No names, email addresses, or account identifiers
+- No precise location data
+- No profiling or behavioral advertising
+- No combination with third-party identity data
+
+#### Reasonable expectations
+Users reasonably expect a mobile application to:
+- Monitor crashes
+- Improve performance
+- Fix bugs
+
+This processing is common industry practice and does not result in unexpected or intrusive outcomes.
+
+**GDPR Reference:**  
+Recital 47 — Reasonable expectations  
+https://gdpr-info.eu/recitals/no-47/
+
+---
+
+## 4. Safeguards and Mitigations
+
+The following safeguards are implemented:
+- Data minimization (only essential analytics collected)
+- Pseudonymization and aggregation
+- Limited data retention
+- Transparency via the Privacy Policy
+- User right to object through in-app settings
+- No sale or sharing of data for advertising purposes
+
+**GDPR References:**  
+Article 5(1)(c) — Data minimisation  
+https://gdpr-info.eu/art-5-gdpr/  
+Article 21 — Right to object  
+https://gdpr-info.eu/art-21-gdpr/
+
+---
+
+## 5. Conclusion
+
+After assessing the purpose, necessity, balancing of interests, and safeguards in place, it is concluded that the processing of limited analytics and diagnostic data under Legitimate Interest (Article 6(1)(f)) does not override the rights and freedoms of users.
+
+The processing is lawful, proportionate, and defensible.
+
+---
+
+## 6. Review
+
+This assessment will be reviewed if:
+- New categories of data are introduced
+- Analytics providers or purposes change
+- Applicable regulatory guidance materially changes

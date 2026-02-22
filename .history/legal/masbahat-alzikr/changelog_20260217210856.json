@@ -1,0 +1,24 @@
+{
+  "privacy_policy": {
+    "current_version": "2026-02-17",
+    "current_url": "https://smarthorizon.co/legal/prayer-timer/privacy-policy.html",
+    "versions": [
+      {
+        "version": "2026-02-17",
+        "date": "2026-02-17T10:00:00Z",
+        "url": "https://smarthorizon.co/legal/prayer-timer/versions/privacy/2026-02-17.html",
+        "changes_summary": "Updated privacy policy",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      },
+     {
+        "version": "2021-10-15",
+        "date": "2021-10-15T10:00:00Z",
+        "url": "https://smarthorizon.co/legal/prayer-timer/versions/privacy/2021-10-15.html",
+        "changes_summary": "Initial Privacy Policy",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      }
+    ]
+  }
+}
