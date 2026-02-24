@@ -1,0 +1,24 @@
+{
+  "privacy_policy": {
+    "current_version": "2026-02-19",
+    "current_url": "https://smarthorizon.co/legal/masbahat-alzikr/privacy-policy.html",
+    "versions": [
+      {
+        "version": "2026-02-19",
+        "date": "2026-02-19T10:00:00Z",
+        "url": "https://smarthorizon.co/legal/masbahat-alzikr/versions/privacy/2026-02-19.html",
+        "changes_summary": "Updated privacy policy",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      },
+     {
+        "version": "2025-02-22",
+        "date": "2025-02-22T10:00:00Z",
+        "url": "https://smarthorizon.co/legal/masbahat-alzikr/versions/privacy/2025-02-22.html",
+        "changes_summary": "Initial Privacy Policy",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      }
+    ]
+  }
+}
