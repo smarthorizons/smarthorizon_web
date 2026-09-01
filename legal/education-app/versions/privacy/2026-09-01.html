@@ -170,7 +170,7 @@
             <li>✅ <strong>No user accounts required</strong> - all study data stored locally on your device</li>
             <li>✅ <strong>No personal information collected</strong> - we don't know who you are</li>
             <li>✅ <strong>No camera, photos, or location access</strong> - the app doesn't use any of these</li>
-            <li>✅ <strong>No analytics or crash-reporting service is active</strong> in the app today</li>
+            <li>✅ <strong>No analytics, performance-monitoring, or crash-reporting service is active</strong> in the app today</li>
             <li>✅ <strong>Optional Google Drive backup</strong> - limited to a private app folder, you control it</li>
             <li>✅ <strong>No ads or data selling</strong> - app revenue comes only from subscriptions</li>
         </ul>
@@ -206,6 +206,8 @@
             <li>❌ Social media profiles</li>
         </ul>
 
+        <p><strong>Exception - Contact Us form:</strong> If you choose to reach out to us through the in-app "Contact Us" form or by emailing us directly, we receive whatever you include there - typically your name, email address, and message - solely to respond to your inquiry. This only happens if you initiate contact.</p>
+
         <p><strong>Data stored locally on your device:</strong></p>
         <ul>
             <li>Your lesson progress (reading time, video watch time, questions attempted)</li>
@@ -217,15 +219,16 @@
             <li>Downloaded lesson files (PDFs, videos) you've chosen to save for offline use</li>
         </ul>
 
-        <h3>2.2 AI-Assisted Grading (Optional Feature)</h3>
-        <p>Al-Taif includes a feature that can use an artificial intelligence (AI) service to help evaluate written and justification-style answers, as an alternative to comparing your answer against the official model answer yourself.</p>
-        <p><strong>When this feature is active:</strong></p>
+        <h3>2.2 AI-Assisted Grading (Planned Feature)</h3>
+        <p>Al-Taif has a built-in option to use an artificial intelligence (AI) service to help evaluate written and justification-style exam answers, as an alternative to comparing your answer against the official model answer yourself. <strong>This feature is not yet enabled in the app</strong> - selecting it currently falls back to comparing against the model answer, and no answer data is sent anywhere.</p>
+        <p><strong>Before we enable this feature:</strong></p>
         <ul>
-            <li>The question content, the official model answer, and the text of your written answer are sent to a third-party AI service to generate feedback</li>
-            <li>No name, email, or other information that identifies you is included in this data</li>
-            <li>The AI service processes this content only to generate grading feedback and does not use it to identify you personally</li>
+            <li>We will update this Privacy Policy first to confirm it is active</li>
+            <li>Once active, the question text, the official model answer, and the text of your written answer will be sent to a third-party AI service to generate feedback</li>
+            <li>No name, email, or other information that identifies you will be included in this data</li>
+            <li>The AI service will process this content only to generate grading feedback and will not use it to identify you personally</li>
         </ul>
-        <p><strong>Your control:</strong> This is a supplementary study aid, not your only way to check your answers - you can always compare your answer against the official model answer PDF instead.</p>
+        <p><strong>Your control:</strong> This will always be a supplementary study aid, not your only way to check your answers - you can always compare your answer against the official model answer PDF instead.</p>
 
         <h3>2.3 Subscription Information</h3>
         <p>We use RevenueCat to manage subscriptions. When you subscribe to a semester's content, RevenueCat collects:</p>
@@ -239,8 +242,19 @@
         <p><strong>Payment Information:</strong> We never see or store your payment details. All payments are processed by Apple (via App Store) or Google (via Play Store). Your credit card and billing information is handled entirely by them according to their privacy policies.</p>
         <p><strong>Purpose:</strong> To verify subscription status and provide access to the content you've purchased.</p>
 
-        <h3>2.4 Analytics</h3>
-        <p>We do not currently use any analytics or crash-reporting service in Al-Taif. If we add one in the future, we will update this Privacy Policy first to describe exactly what it collects.</p>
+        <h3>2.4 Analytics and Performance Monitoring (Planned)</h3>
+        <p>We do not currently use any analytics, performance-monitoring, or crash-reporting service in Al-Taif - the app's analytics code exists in the app but is fully disabled in this version. We plan to enable <strong>Firebase Analytics</strong> and <strong>Firebase Performance Monitoring</strong> (both provided by Google) in a future update. Before either is switched on, we will update this Privacy Policy first and note the version in which it started.</p>
+        <p><strong>When Firebase Analytics is enabled, it will collect:</strong></p>
+        <ul>
+            <li>App usage events - for example, which lessons, videos, or PDFs you open, questions you answer (and whether correctly), exams you complete and your score, bookmarks you add, downloads, and searches you perform</li>
+            <li>Your selected grade level, as a general usage property (not tied to your identity)</li>
+            <li>Standard device and app diagnostic data collected automatically by Firebase (device model, OS version, app version, country/region, and an anonymous installation identifier)</li>
+        </ul>
+        <p><strong>When Firebase Performance Monitoring is enabled, it will collect:</strong></p>
+        <ul>
+            <li>Technical performance data such as app start time, screen rendering time, and network request duration - to help us find and fix slow or broken parts of the app</li>
+        </ul>
+        <p><strong>Neither service will collect your name, email, or any other information that identifies you personally.</strong> Both are provided by Google - see the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase's data processing and security terms</a>.</p>
     </div>
 
     <div class="section">
@@ -259,8 +273,8 @@
                     <td>Stored locally on your device to track your learning and let you resume where you left off</td>
                 </tr>
                 <tr>
-                    <td><strong>Written Answer Text</strong> (only if AI grading is enabled)</td>
-                    <td>Sent to a third-party AI service to generate grading feedback</td>
+                    <td><strong>Written Answer Text</strong> (AI grading - planned, not yet enabled)</td>
+                    <td>Once enabled, sent to a third-party AI service to generate grading feedback</td>
                 </tr>
                 <tr>
                     <td><strong>Subscription Data</strong></td>
@@ -335,8 +349,8 @@
                     <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
                 </tr>
                 <tr>
-                    <td><strong>AI Grading Service</strong> (optional feature)</td>
-                    <td>Generating feedback on written answers</td>
+                    <td><strong>AI Grading Service</strong> (planned - not yet enabled)</td>
+                    <td>Generating feedback on written answers, once enabled</td>
                     <td>Question content, model answer, and your written answer text</td>
                     <td>Provided by our AI service partner; no personal identifiers are sent</td>
                 </tr>
@@ -406,11 +420,11 @@
 
     <div class="section">
         <h2>8. Content Protection</h2>
-        <p>To help protect the educational content in the app from unauthorized copying and redistribution, Al-Taif detects and blocks screenshots, and restricts screen recording or screen sharing of lesson content, using standard operating system features (on iOS and Android).</p>
+        <p>To help protect the educational content in the app from unauthorized copying and redistribution, Al-Taif detects and blocks screenshots, and restricts screen recording or screen sharing, throughout the app (not only on lesson-content screens), using standard operating system features (on iOS and Android).</p>
         <ul>
             <li>This detection happens entirely on your device</li>
             <li>No additional personal data is collected, stored, or sent anywhere as part of this feature - it only controls what your device is allowed to capture on screen</li>
-            <li>On some Android versions, this may also affect legitimate screen sharing (for example, during a video call) while the app is open; see our <a href="terms-of-service.html">Terms of Service</a> for details</li>
+            <li>On Android versions before 15, this also blocks legitimate screen sharing (for example, during a video call) while the app is open, since older Android has no way to distinguish a screen share from a screenshot. On Android 15+ and on iOS, the block is automatically lifted for the duration of a genuine screen share or recording session, and restored once it ends; see our <a href="terms-of-service.html">Terms of Service</a> for details</li>
         </ul>
     </div>
 
@@ -440,7 +454,7 @@
 
         <h3>10.3 Opt-Out Options</h3>
         <ul>
-            <li><strong>AI-assisted grading:</strong> Simply don't use this feature - compare your answers against the official model answer instead</li>
+            <li><strong>AI-assisted grading:</strong> Not yet enabled in the app - when it is, you'll be able to simply not use it and compare your answers against the official model answer instead</li>
             <li><strong>Google Drive backup:</strong> Simply don't enable this feature</li>
             <li><strong>Notifications:</strong> Disable the daily study reminder in Settings, or in your device's notification settings</li>
         </ul>
@@ -509,7 +523,7 @@
             <li>✅ No camera, photos, or location access</li>
             <li>✅ No ads, no data selling</li>
             <li>✅ You control Google Drive backup</li>
-            <li>✅ No analytics or crash reporting active today</li>
+            <li>✅ No analytics, performance monitoring, or crash reporting active today</li>
         </ul>
     </div>
 
