@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Taif - Legal Documents</title>
+    <meta name="description" content="Privacy Policy and Terms of Service for Al-Taif by SmartHorizon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .header .app-description {
+            margin-top: 20px;
+            font-size: 1em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .intro p {
+            color: #666;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .card-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #666;
+            border: 2px solid #ddd;
+            font-size: 0.95em;
+        }
+
+        .btn-outline:hover {
+            background: #f8f9fa;
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .additional-links {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .additional-links h3 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            opacity: 0.8;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .last-updated {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .last-updated strong {
+            color: #856404;
+        }
+
+        .language-notice {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .language-notice p {
+            margin: 0;
+            color: #1565c0;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Dark Mode Support — follows the OS/browser's prefers-color-scheme.
+           !important overrides the light-mode rules above. */
+        @media (prefers-color-scheme: dark) {
+            body { background: linear-gradient(135deg, #4a5a9e 0%, #5a3a72 100%) !important; color: #E0E0E0 !important; }
+            .container { background: #1E1E1E !important; }
+            .card { background: #2D2D2D !important; }
+            .card h3 { color: #FFFFFF !important; }
+            .card p { color: #BBBBBB !important; }
+            .card:hover { box-shadow: 0 10px 30px rgba(187, 134, 252, 0.25) !important; border-color: #BB86FC !important; }
+            .intro h2 { color: #BB86FC !important; }
+            .intro p { color: #BBBBBB !important; }
+            .btn-outline { color: #BBBBBB !important; border-color: #444 !important; }
+            .btn-outline:hover { background: #2D2D2D !important; border-color: #BB86FC !important; color: #BB86FC !important; }
+            .additional-links { background: #2D2D2D !important; }
+            .additional-links h3 { color: #FFFFFF !important; }
+            .last-updated { background: #4A2500 !important; border-left-color: #ffc107 !important; color: #E0E0E0 !important; }
+            .last-updated strong { color: #ffd54f !important; }
+            .language-notice { background: #1A237E !important; border-left-color: #2196f3 !important; }
+            .language-notice p { color: #90caf9 !important; }
+            #version-history { background: #2D2D2D !important; }
+            #version-history h3, #version-history h4 { color: #BB86FC !important; }
+            #version-history li { background: #1E1E1E !important; color: #E0E0E0 !important; }
+            #version-history li strong { color: #FFFFFF !important; }
+            #version-history span[style*="color: #666"] { color: #999 !important; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>⚛️ Al-Taif</h1>
+            <p class="subtitle">Legal Documents &amp; Policies</p>
+            <p class="app-description">
+                A physics learning app for Grade 11 and Grade 12 students in Oman, with lesson videos,
+                explanations, practice questions, and exam simulations to help you study effectively.
+            </p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <div class="intro">
+                <h2>Welcome to Our Legal Center</h2>
+                <p>
+                    We believe in transparency and protecting your privacy.
+                    Below you'll find all our legal documents and policies in clear, accessible language.
+                </p>
+            </div>
+
+            <div class="last-updated">
+                <strong>Last Updated:</strong> September 1, 2026
+            </div>
+
+            <!-- Language Notice -->
+            <div class="language-notice">
+                <p><strong>📄 Language:</strong> All legal documents are available in English only. If you need assistance understanding this document, please use a translation tool.</p>
+            </div>
+
+            <!-- Legal Documents Cards -->
+            <div class="cards-container">
+                <!-- Privacy Policy Card -->
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Privacy Policy</h3>
+                    <p>
+                        Learn how we protect your privacy and handle your data.
+                        We don't collect personal information, and all your study data
+                        stays on your device.
+                    </p>
+                    <div class="card-links">
+                        <a href="privacy-policy.html" class="btn btn-primary">
+                            Read Privacy Policy
+                        </a>
+                        <a href="#version-history" class="btn btn-outline">
+                            View Version History
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Terms of Service Card -->
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>Terms of Service</h3>
+                    <p>
+                        Understand the terms for using Al-Taif, including subscription
+                        details, refund policy, and your rights as a user.
+                    </p>
+                    <div class="card-links">
+                        <a href="terms-of-service.html" class="btn btn-primary">
+                            Read Terms of Service
+                        </a>
+                        <a href="#version-history" class="btn btn-outline">
+                            View Version History
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources -->
+            <div class="additional-links">
+                <h3>📚 Additional Resources</h3>
+                <div class="links-grid">
+                    <a href="https://smarthorizon.co" class="btn btn-outline" target="_blank">
+                        SmartHorizon Website
+                    </a>
+                    <a href="mailto:info@smarthorizon.co" class="btn btn-outline">
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Summary -->
+            <div style="margin-top: 50px; padding: 30px; background: #e8f5e9; border-radius: 12px; border-left: 4px solid #4caf50;">
+                <h3 style="color: #2e7d32; margin-bottom: 15px;">✅ Your Privacy Matters</h3>
+                <ul style="color: #1b5e20; list-style-position: inside; line-height: 2;">
+                    <li>No user accounts required - all study data stays on your device</li>
+                    <li>No camera, photo, or location access</li>
+                    <li>Optional backup to your personal Google Drive, limited to a private app folder</li>
+                    <li>No ads, no data selling</li>
+                    <li>Free lessons in every unit to try before you subscribe</li>
+                </ul>
+            </div>
+
+            <!-- Version History Section -->
+            <div id="version-history" style="margin-top: 50px; padding: 30px; background: #f8f9fa; border-radius: 12px;">
+                <h3 style="color: #333; margin-bottom: 20px; text-align: center;">📜 Version History</h3>
+
+                <div style="margin-bottom: 25px;">
+                    <h4 style="color: #667eea; margin-bottom: 10px;">Privacy Policy</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px; background: white; margin-bottom: 8px; border-radius: 5px; border-left: 3px solid #4caf50;">
+                            <strong>Version 2026-09-01</strong> <span style="color: #4caf50; font-size: 0.85em; font-weight: bold; margin-left: 10px;">CURRENT</span>
+                            <br>
+                            <span style="color: #666; font-size: 0.9em;">Initial Privacy Policy - September 1, 2026</span>
+                            <br>
+                            <a href="versions/privacy/2026-09-01.html" style="color: #667eea; font-size: 0.9em; text-decoration: none;">View Document →</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 style="color: #667eea; margin-bottom: 10px;">Terms of Service</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 10px; background: white; margin-bottom: 8px; border-radius: 5px; border-left: 3px solid #4caf50;">
+                            <strong>Version 2026-09-01</strong> <span style="color: #4caf50; font-size: 0.85em; font-weight: bold; margin-left: 10px;">CURRENT</span>
+                            <br>
+                            <span style="color: #666; font-size: 0.9em;">Initial Terms of Service - September 1, 2026</span>
+                            <br>
+                            <a href="versions/terms/2026-09-01.html" style="color: #667eea; font-size: 0.9em; text-decoration: none;">View Document →</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-content">
+                <h4>SmartHorizon</h4>
+                <p>Muscat, Sultanate of Oman</p>
+                <p>
+                    Email: <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a>
+                </p>
+                <p>
+                    Website: <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a>
+                </p>
+
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                    <a href="#version-history">Version History</a>
+                </div>
+
+                <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.7;">
+                    &copy; 2026 SmartHorizon. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
