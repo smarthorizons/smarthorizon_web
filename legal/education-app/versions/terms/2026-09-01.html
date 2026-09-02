@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Al-Taif</title>
+    <title>شروط الاستخدام - الطيف</title>
 <style>
     @font-face {
         font-family: 'Alexandria';
@@ -147,6 +147,53 @@
         margin: 20px 0;
     }
 
+    /* Language switcher — Arabic is shown by default; the choice is
+       remembered per-browser via localStorage so it persists across visits
+       and across the privacy/terms pages (shared key). */
+    .lang-switcher {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    .lang-switcher button {
+        background: #f0f0f0;
+        border: 1px solid #ddd;
+        color: #333;
+        padding: 6px 18px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 14px;
+    }
+    .lang-switcher button.active {
+        background: #007AFF;
+        color: #fff;
+        border-color: #007AFF;
+    }
+
+    /* RTL layout for the Arabic content block — mirrors list indentation,
+       table header alignment, and the left-accent-border boxes (which
+       become right-accent in RTL) without duplicating every color value;
+       each box keeps its own accent color, just moved to the other side. */
+    #doc-ar {
+        direction: rtl;
+        text-align: right;
+    }
+    #doc-ar ul, #doc-ar ol {
+        padding-left: 0;
+        padding-right: 25px;
+    }
+    #doc-ar table th {
+        text-align: right;
+    }
+    #doc-ar .version-banner { border-left: none; border-right: 4px solid #007AFF; }
+    #doc-ar .important { border-left: none; border-right: 4px solid #4caf50; }
+    #doc-ar .warning { border-left: none; border-right: 4px solid #ffc107; }
+    #doc-ar .critical { border-left: none; border-right: 4px solid #e53935; }
+    #doc-ar .info { border-left: none; border-right: 4px solid #2196f3; }
+    #doc-ar .summary-box { border-left: none; border-right: 4px solid #2196f3; }
+
     /* Dark Mode Support — follows the OS/browser's prefers-color-scheme.
        This page is opened in the device's external browser (not an in-app
        WebView), so the system browser reports the real OS dark-mode setting
@@ -172,380 +219,793 @@
         p { color: #E0E0E0 !important; }
         strong, b { color: #FFFFFF !important; }
         footer { border-top-color: #333333 !important; color: #666 !important; }
+        .lang-switcher button { background: #2D2D2D !important; border-color: #444 !important; color: #E0E0E0 !important; }
+        .lang-switcher button.active { background: #BB86FC !important; border-color: #BB86FC !important; color: #121212 !important; }
+        #doc-ar .version-banner { border-right-color: #BB86FC !important; }
     }
     </style>
 </head>
 <body>
-    <div class="version-banner">
-        <strong>Current Version:</strong> <span class="version-info">2026-09-01</span><br>
-        <strong>Last Updated:</strong> <span class="version-info">September 1, 2026</span><br>
-        <a href="/legal/education-app/changelog.html#terms" class="history-link">View Version History →</a>
+    <div class="lang-switcher">
+        <button id="btn-ar">العربية</button>
+        <button id="btn-en">English</button>
     </div>
 
-    <h1>Terms of Service</h1>
-    <p class="effective-date">Effective Date: September 1, 2026</p>
-
-    <div class="important">
-        <strong>Important:</strong> Please read these Terms of Service carefully before using Al-Taif. By downloading, installing, or using the app, you agree to be bound by these terms. If you do not agree, please do not use the app.
-    </div>
-
-    <div class="summary-box">
-        <strong>Quick Summary:</strong>
-        <ul style="margin: 10px 0;">
-            <li>✅ Some lessons in every unit are free to try before you subscribe</li>
-            <li>✅ Subscriptions are fixed 6-month passes for one grade &amp; semester - they do <strong>not</strong> auto-renew</li>
-            <li>✅ Refunds managed by Apple or Google according to their policies</li>
-            <li>✅ App and content provided "as is" - not a guarantee of exam results or grades</li>
-            <li>✅ Personal use only - not for commercial purposes</li>
-            <li>✅ We reserve the right to modify features and pricing</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>1. Acceptance of Terms</h2>
-        <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and SmartHorizon ("we," "us," or "our") regarding your use of Al-Taif ("the App").</p>
-        <p>By accessing or using the App, you acknowledge that you have read, understood, and agree to be bound by these Terms and our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a>.</p>
-        <p>If you do not agree to these Terms, you must not download, install, or use the App.</p>
-    </div>
-
-    <div class="section">
-        <h2>2. Description of Service</h2>
-
-        <h3>2.1 What the App Does</h3>
-        <p>Al-Taif is a mobile application that helps Grade 11 and Grade 12 students in Oman study physics, including:</p>
-        <ul>
-            <li>Lesson explanations (PDF) and instructional videos</li>
-            <li>Practice questions and formula references</li>
-            <li>Interactive whiteboard and annotation tools for working through problems</li>
-            <li>Practice exam simulations</li>
-            <li>Optional AI-assisted feedback on written answers</li>
-            <li>Bookmarking questions and tracking your study progress</li>
-            <li>Offline downloads of lesson content for studying without an internet connection</li>
-            <li>Optional backup of your progress and bookmarks to your personal Google Drive</li>
-        </ul>
-
-        <h3>2.2 Free vs. Subscribed Content</h3>
-        <p><strong>Free Content:</strong> Selected introductory lessons in each unit are available to everyone at no cost, so you can try the app before subscribing.</p>
-        <p><strong>Subscribed Content:</strong> Full access to a specific grade and semester's lessons, videos, formulas, and practice questions requires purchasing that semester's pass (see Section 3).</p>
-
-        <p><strong>Note:</strong> Pricing is subject to change. Current pricing is displayed in the app before purchase.</p>
-    </div>
-
-    <div class="section">
-        <h2>3. Subscriptions</h2>
-
-        <h3>3.1 Subscription Plans</h3>
-        <p>Content is sold as a fixed-term pass covering one grade and one semester (for example, "Grade 11, Semester 1"). Each pass:</p>
-        <ul>
-            <li>Grants access to that grade and semester's full content for <strong>6 months</strong> from the date of purchase</li>
-            <li>Is priced separately per grade and semester - the price is displayed in the app before purchase</li>
-            <li>May vary by region based on local currency and applicable taxes</li>
-        </ul>
-
-        <h3>3.2 Free Content to Try First</h3>
-        <p>Instead of a time-limited free trial, selected lessons in every unit are permanently free to use. We recommend exploring the free lessons for a grade and semester before purchasing that semester's pass, so you can see how the app works on your device first.</p>
-
-        <h3>3.3 No Automatic Renewal</h3>
-        <div class="important">
-            <strong>Important:</strong> Unlike many subscription apps, passes on Al-Taif do <strong>not</strong> automatically renew and you will <strong>not</strong> be charged again after your 6-month period ends.
+    <!-- ═══════════════════════ ARABIC (default) ═══════════════════════ -->
+    <div id="doc-ar" lang="ar" dir="rtl">
+        <div class="version-banner">
+            <strong>الإصدار الحالي:</strong> <span class="version-info">2026-09-01</span><br>
+            <strong>آخر تحديث:</strong> <span class="version-info">1 سبتمبر 2026</span><br>
+            <a href="/legal/education-app/changelog.html#terms" class="history-link">عرض سجل الإصدارات ←</a>
         </div>
-        <ul>
-            <li>You are charged once, at the time of purchase</li>
-            <li>Access to that semester's paid content ends automatically after 6 months</li>
-            <li>To continue access after that, you must purchase a new pass for the same grade and semester</li>
-            <li>The free lessons in each unit always remain available, even after a pass expires</li>
-        </ul>
 
-        <h3>3.4 Payment</h3>
-        <ul>
-            <li>Payment is charged to your Apple App Store or Google Play Store account</li>
-            <li>Payment is processed by Apple or Google - we do not handle payment information directly</li>
-            <li>All purchases are managed through RevenueCat, our subscription management service</li>
-        </ul>
+        <h1>شروط الاستخدام</h1>
+        <p class="effective-date">تاريخ السريان: 1 سبتمبر 2026</p>
 
-        <h3>3.5 Managing Your Purchase</h3>
-        <p>Since passes are a one-time, non-renewing purchase, there is no ongoing subscription to cancel. To view your purchase history or manage payment methods, use your Apple ID or Google Play account settings.</p>
+        <div class="important">
+            <strong>هام:</strong> يُرجى قراءة شروط الاستخدام هذه بعناية قبل استخدام تطبيق الطيف. بتنزيلك التطبيق أو تثبيته أو استخدامه، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق عليها، يُرجى عدم استخدام التطبيق.
+        </div>
 
-        <h3>3.6 Refund Policy</h3>
-        <p>All purchases are final and handled according to Apple's and Google's refund policies:</p>
-        <ul>
-            <li><strong>Apple (iOS):</strong> Refund requests must be submitted directly to Apple. Visit <a href="https://support.apple.com/en-us/HT204084" target="_blank">reportaproblem.apple.com</a> or contact Apple Support.</li>
-            <li><strong>Google (Android):</strong> Refund requests must be submitted through Google Play, according to <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">Google's refund policy</a>.</li>
-        </ul>
-        <p><strong>We do not process refunds directly.</strong> All refund decisions are made by Apple or Google at their sole discretion according to their respective policies.</p>
+        <div class="summary-box">
+            <strong>ملخص سريع:</strong>
+            <ul style="margin: 10px 0;">
+                <li>✅ بعض الدروس في كل وحدة مجانية لتجربتها قبل الاشتراك</li>
+                <li>✅ الاشتراكات باقات ثابتة لمدة 6 أشهر لصف دراسي وفصل دراسي واحد - و<strong>لا</strong> تتجدد تلقائيًا</li>
+                <li>✅ تُدار المبالغ المستردة من قِبل Apple أو Google وفق سياساتهما</li>
+                <li>✅ يُقدَّم التطبيق ومحتواه "كما هو" - دون ضمان لنتائج الامتحانات أو الدرجات</li>
+                <li>✅ للاستخدام الشخصي فقط - وليس لأغراض تجارية</li>
+                <li>✅ نحتفظ بالحق في تعديل الميزات والأسعار</li>
+            </ul>
+        </div>
 
-        <h3>3.7 Price Changes</h3>
-        <ul>
-            <li>We may change pass prices at any time</li>
-            <li>Price changes apply only to new purchases made after the change</li>
-            <li>A pass you have already purchased is unaffected - you keep the access you paid for, for its full 6-month term, at no extra charge</li>
-        </ul>
+        <div class="section">
+            <h2>1. قبول الشروط</h2>
+            <p>تشكّل شروط الاستخدام هذه ("الشروط") اتفاقية ملزمة قانونًا بينك وبين SmartHorizon ("نحن" أو "لنا") بشأن استخدامك لتطبيق الطيف ("التطبيق").</p>
+            <p>باستخدامك أو وصولك إلى التطبيق، فإنك تُقرّ بأنك قرأت هذه الشروط و<a href="/legal/education-app/privacy-policy/">سياسة الخصوصية</a> الخاصة بنا وفهمتهما وتوافق على الالتزام بهما.</p>
+            <p>إذا كنت لا توافق على هذه الشروط، يجب ألا تُنزِّل التطبيق أو تُثبِّته أو تستخدمه.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. وصف الخدمة</h2>
+
+            <h3>2.1 ما الذي يقدّمه التطبيق</h3>
+            <p>تطبيق الطيف تطبيق للهواتف المحمولة يساعد طلاب الصف الحادي عشر والثاني عشر في عُمان على دراسة الفيزياء، ويشمل:</p>
+            <ul>
+                <li>شروحات الدروس (PDF) ومقاطع فيديو تعليمية</li>
+                <li>أسئلة تدريبية ومرجعًا للقوانين الفيزيائية</li>
+                <li>أدوات سبورة تفاعلية وتعليقات لحل المسائل</li>
+                <li>محاكاة امتحانات تدريبية</li>
+                <li>تغذية راجعة اختيارية بمساعدة الذكاء الاصطناعي على الإجابات الكتابية</li>
+                <li>حفظ الأسئلة وتتبّع تقدّمك الدراسي</li>
+                <li>تنزيلات دون اتصال بالإنترنت لمحتوى الدروس للمذاكرة دون إنترنت</li>
+                <li>نسخًا احتياطيًا اختياريًا لتقدّمك وأسئلتك المحفوظة إلى حساب Google Drive الخاص بك</li>
+            </ul>
+
+            <h3>2.2 المحتوى المجاني مقابل المحتوى المشترَك</h3>
+            <p><strong>المحتوى المجاني:</strong> تتوفر دروس تمهيدية مختارة في كل وحدة للجميع مجانًا، لتتمكن من تجربة التطبيق قبل الاشتراك.</p>
+            <p><strong>المحتوى المشترَك:</strong> يتطلب الوصول الكامل إلى دروس وفيديوهات وقوانين وأسئلة تدريبية صف دراسي وفصل دراسي محدَّدين شراء باقة ذلك الفصل الدراسي (راجع القسم 3).</p>
+            <p><strong>ملاحظة:</strong> الأسعار قابلة للتغيير. يُعرَض السعر الحالي داخل التطبيق قبل الشراء.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. الاشتراكات</h2>
+
+            <h3>3.1 خطط الاشتراك</h3>
+            <p>يُباع المحتوى كباقة ذات مدة ثابتة تغطي صفًا دراسيًا وفصلًا دراسيًا واحدًا (مثل "الصف الحادي عشر، الفصل الأول"). كل باقة:</p>
+            <ul>
+                <li>تمنح الوصول إلى كامل محتوى ذلك الصف والفصل الدراسي لمدة <strong>6 أشهر</strong> من تاريخ الشراء</li>
+                <li>تُسعَّر بشكل منفصل لكل صف وفصل دراسي - ويُعرَض السعر داخل التطبيق قبل الشراء</li>
+                <li>قد تختلف حسب المنطقة بناءً على العملة المحلية والضرائب المطبَّقة</li>
+            </ul>
+
+            <h3>3.2 محتوى مجاني للتجربة أولًا</h3>
+            <p>بدلًا من فترة تجريبية محدودة المدة، تبقى دروس مختارة في كل وحدة مجانية للاستخدام بشكل دائم. نوصي باستكشاف الدروس المجانية لصف وفصل دراسي معيّن قبل شراء باقة ذلك الفصل، حتى تتعرّف على كيفية عمل التطبيق على جهازك أولًا.</p>
+
+            <h3>3.3 عدم التجديد التلقائي</h3>
+            <div class="important">
+                <strong>هام:</strong> على عكس العديد من تطبيقات الاشتراك، <strong>لا</strong> تتجدد باقات تطبيق الطيف تلقائيًا، ولن يُخصَم منك أي مبلغ إضافي بعد انتهاء فترة الستة أشهر.
+            </div>
+            <ul>
+                <li>يُخصَم منك المبلغ مرة واحدة، عند الشراء</li>
+                <li>ينتهي الوصول إلى محتوى ذلك الفصل الدراسي المدفوع تلقائيًا بعد 6 أشهر</li>
+                <li>لمواصلة الوصول بعد ذلك، يجب عليك شراء باقة جديدة لنفس الصف والفصل الدراسي</li>
+                <li>تبقى الدروس المجانية في كل وحدة متاحة دائمًا، حتى بعد انتهاء الباقة</li>
+            </ul>
+
+            <h3>3.4 الدفع</h3>
+            <ul>
+                <li>يُخصَم المبلغ من حساب App Store من Apple أو Google Play الخاص بك</li>
+                <li>تُعالِج Apple أو Google عملية الدفع - نحن لا نتعامل مع معلومات الدفع مباشرةً</li>
+                <li>تُدار جميع عمليات الشراء عبر RevenueCat، خدمة إدارة الاشتراكات التي نستخدمها</li>
+            </ul>
+
+            <h3>3.5 إدارة عملية الشراء</h3>
+            <p>بما أن الباقات عملية شراء لمرة واحدة ولا تتجدد، فلا يوجد اشتراك جارٍ لإلغائه. لعرض سجل مشترياتك أو إدارة طرق الدفع، استخدم إعدادات حساب Apple ID أو Google Play الخاص بك.</p>
+
+            <h3>3.6 سياسة الاسترداد</h3>
+            <p>جميع عمليات الشراء نهائية وتُدار وفق سياسات Apple وGoogle للاسترداد:</p>
+            <ul>
+                <li><strong>Apple (iOS):</strong> يجب تقديم طلبات الاسترداد مباشرةً إلى Apple. زُر <a href="https://support.apple.com/en-us/HT204084" target="_blank">reportaproblem.apple.com</a> أو تواصل مع دعم Apple.</li>
+                <li><strong>Google (Android):</strong> يجب تقديم طلبات الاسترداد عبر Google Play، وفق <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">سياسة استرداد Google</a>.</li>
+            </ul>
+            <p><strong>لا نُعالج طلبات الاسترداد مباشرةً.</strong> تُتّخذ جميع قرارات الاسترداد من قِبل Apple أو Google وفق تقديرهما الخاص ووفق سياساتهما.</p>
+
+            <h3>3.7 تغييرات الأسعار</h3>
+            <ul>
+                <li>يجوز لنا تغيير أسعار الباقات في أي وقت</li>
+                <li>تنطبق تغييرات الأسعار فقط على عمليات الشراء الجديدة بعد التغيير</li>
+                <li>لا تتأثر الباقة التي اشتريتها مسبقًا - وتحتفظ بالوصول الذي دفعت مقابله طوال مدة الستة أشهر الكاملة دون أي رسوم إضافية</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. الترخيص والقيود</h2>
+
+            <h3>4.1 ترخيص محدود</h3>
+            <p>مع التزامك بهذه الشروط، نمنحك ترخيصًا محدودًا وغير حصري وغير قابل للتحويل وقابلًا للإلغاء لـ:</p>
+            <ul>
+                <li>تنزيل التطبيق وتثبيته على جهازك (أو أجهزتك) الشخصية</li>
+                <li>استخدام التطبيق ومحتواه لأغراض الدراسة الشخصية غير التجارية فقط</li>
+            </ul>
+
+            <h3>4.2 قيود الترخيص</h3>
+            <p>توافق على عدم:</p>
+            <ul>
+                <li>❌ استخدام التطبيق أو محتواه لأي غرض تجاري</li>
+                <li>❌ مشاركة وصولك إلى المحتوى الذي اشتريته مع الآخرين</li>
+                <li>❌ التقاط لقطات شاشة أو تسجيل الشاشة أو نسخ محتوى الدروس بأي طريقة أخرى لإعادة توزيعه خارج التطبيق</li>
+                <li>❌ الهندسة العكسية أو فك التشفير أو التفكيك أو محاولة استخراج الشيفرة المصدرية للتطبيق</li>
+                <li>❌ تعديل التطبيق أو محتواه أو تكييفه أو ترجمته أو إنشاء أعمال مشتقة منه</li>
+                <li>❌ إزالة أو تغيير أو إخفاء أي إشعارات حقوق نشر أو علامات تجارية أو ملكية</li>
+                <li>❌ استخدام أنظمة آلية أو روبوتات أو نصوص برمجية للوصول إلى التطبيق أو التفاعل معه</li>
+                <li>❌ محاولة الوصول غير المصرَّح به إلى أي جزء من التطبيق أو أنظمته</li>
+                <li>❌ استخدام التطبيق بأي طريقة تخالف القوانين أو الأنظمة المعمول بها</li>
+                <li>❌ رفع أو إدخال فيروسات أو برمجيات خبيثة أو أكواد ضارة</li>
+                <li>❌ التدخل في التطبيق أو الخوادم أو الشبكات المتصلة به أو تعطيلها</li>
+            </ul>
+            <p>للمساعدة في تطبيق ذلك، يمنع التطبيق لقطات الشاشة ويقيّد تسجيل الشاشة في أنحاء التطبيق كافة (وليس فقط في شاشات محتوى الدروس) - راجع <a href="/legal/education-app/privacy-policy/">سياسة الخصوصية</a> للتفاصيل.</p>
+
+            <h3>4.3 نقل الجهاز</h3>
+            <p>ترتبط مشترياتك بحساب Apple ID أو حساب Google الخاص بك، وليس بجهاز محدَّد:</p>
+            <ul>
+                <li>✅ يمكنك الوصول إلى المحتوى الذي اشتريته على جهاز جديد بتسجيل الدخول بنفس حساب Apple ID أو Google</li>
+                <li>✅ تُعيد Apple وGoogle استعادة المشتريات تلقائيًا عبر أجهزتك</li>
+                <li>❌ إذا فُقد جهازك أو سُرق، تواصل مع دعم Apple أو Google - فنحن لا يمكننا نقل المشتريات أو إلغاء تفعيلها بأنفسنا</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. حقوق الملكية الفكرية</h2>
+
+            <h3>5.1 الملكية</h3>
+            <p>يملك SmartHorizon وشركاؤه في المحتوى التطبيقَ وجميع المحتوى والميزات والوظائف (بما في ذلك على سبيل المثال لا الحصر البرمجيات وشروحات الدروس والفيديوهات والقوانين والأسئلة والرسومات والشعارات والأيقونات وتصميم واجهة المستخدم)، وهي محمية بموجب قوانين حقوق النشر والعلامات التجارية والملكية الفكرية الدولية.</p>
+
+            <h3>5.2 ترخيص المحتوى التعليمي</h3>
+            <p>مواد الدروس (ملفات PDF والفيديوهات والقوانين والأسئلة) المُضمَّنة في التطبيق:</p>
+            <ul>
+                <li>مُقدَّمة للاستخدام حصريًا داخل التطبيق، لدراستك الشخصية - لا يجوز لك استخراجها أو تنزيلها خارج التطبيق أو إعادة توزيعها أو استخدامها في أي مكان آخر</li>
+                <li>مرخَّصة لنا أو أُنشئت للاستخدام داخل التطبيق، وتخضع للتراخيص التي نلتزم بها</li>
+            </ul>
+
+            <h3>5.3 العلامات التجارية</h3>
+            <p>"الطيف" (Al-Taif) وشعار SmartHorizon هما علامتان تجاريتان مملوكتان لشركة SmartHorizon. لا يجوز لك استخدام هاتين العلامتين دون إذن كتابي مسبق منّا.</p>
+
+            <h3>5.4 ملاحظاتك وتعليقاتك</h3>
+            <p>تبقى أي ملاحظات أو أسئلة محفوظة أو تعليقات يدوية تُنشئها أثناء استخدام التطبيق ملكًا لك. أما إذا قدَّمت شهادات أو مراجعات أو تعليقات حول التطبيق:</p>
+            <ul>
+                <li>فإنك تمنحنا ترخيصًا غير حصري وعالميًا وخاليًا من الرسوم لاستخدام محتواك ونسخه وعرضه لأغراض التسويق والترويج</li>
+                <li>وتُقرّ بأن لديك الحق في منح هذا الترخيص</li>
+                <li>وتتنازل عن أي حقوق أدبية في شهاداتك</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. إخلاء المسؤولية وتحديد المسؤولية</h2>
+
+            <h3>6.1 غرض تعليمي فقط</h3>
+            <p>تطبيق الطيف أداة مساعدة دراسية تهدف إلى دعم تعلّمك لمنهج الفيزياء. <strong>لا نضمن أي نتيجة امتحان أو درجة أو أداء أكاديمي معيّن</strong> من استخدام التطبيق. التطبيق مكمّل للتعليم الصفي وجهدك الدراسي الخاص، وليس بديلًا عنهما.</p>
+
+            <h3>6.2 إخلاء مسؤولية التصحيح بمساعدة الذكاء الاصطناعي</h3>
+            <p>عندما يقدّم التطبيق تغذية راجعة بمساعدة الذكاء الاصطناعي على الإجابات الكتابية:</p>
+            <ul>
+                <li>تُولَّد هذه التغذية الراجعة تلقائيًا و<strong>ليست تصحيحًا رسميًا</strong>، ولا تمثّل كيفية تقييم إجابتك في امتحان فعلي</li>
+                <li>قد تكون التغذية الراجعة المولَّدة بالذكاء الاصطناعي غير مكتملة أو غير دقيقة</li>
+                <li>قارن دائمًا إجابتك بالإجابة النموذجية الرسمية المتوفرة في التطبيق، واستشر معلمك للحصول على تغذية راجعة معتمَدة</li>
+            </ul>
+
+            <h3>6.3 خدمة "كما هي"</h3>
+            <p>يُقدَّم التطبيق "كما هو" و"كما هو متاح" دون أي ضمانات من أي نوع، صريحة كانت أو ضمنية، بما في ذلك على سبيل المثال لا الحصر:</p>
+            <ul>
+                <li>ضمانات القابلية للتسويق</li>
+                <li>الملاءمة لغرض معيّن</li>
+                <li>عدم التعدي على حقوق الغير</li>
+                <li>دقة أو موثوقية أو اكتمال محتوى الدروس</li>
+                <li>التشغيل دون انقطاع أو دون أخطاء</li>
+            </ul>
+
+            <h3>6.4 الخدمات الخارجية</h3>
+            <p>يتكامل التطبيق مع خدمات خارجية:</p>
+            <ul>
+                <li><strong>التخزين السحابي:</strong> يعتمد تنزيل محتوى الدروس والنسخ الاحتياطي الاختياري عبر Google Drive على خدمات خارجية. لسنا مسؤولين عن توفرها أو أدائها.</li>
+                <li><strong>معالجة المدفوعات:</strong> تتولاها Apple وGoogle. لسنا مسؤولين عن أخطاء معالجة المدفوعات أو النزاعات المتعلقة بها.</li>
+                <li><strong>خدمة التصحيح بالذكاء الاصطناعي:</strong> تُقدَّم من قِبل خدمة ذكاء اصطناعي خارجية. لسنا مسؤولين عن دقة تغذيتها الراجعة.</li>
+            </ul>
+            <p>تخضع هذه الخدمات الخارجية لشروطها وأحكامها الخاصة. لسنا مسؤولين عن أي مشكلات تنشأ عن الخدمات الخارجية.</p>
+
+            <h3>6.5 تحديد المسؤولية</h3>
+            <p>إلى أقصى حد يسمح به القانون، لا تتحمّل SmartHorizon المسؤولية عن أي:</p>
+            <ul>
+                <li><strong>أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية</strong></li>
+                <li><strong>فرص أكاديمية ضائعة أو أداء ضائع في الامتحانات</strong></li>
+                <li><strong>ضيق نفسي أو معاناة عاطفية</strong></li>
+                <li><strong>فقدان البيانات أو تلفها</strong></li>
+                <li><strong>تكلفة سلع أو خدمات بديلة</strong></li>
+            </ul>
+
+            <p>ينطبق هذا التحديد بغض النظر عن الأساس القانوني (عقد، ضرر تقصيري، إهمال، مسؤولية مطلقة، أو غير ذلك)، وحتى لو أُخطِرنا باحتمال وقوع مثل هذه الأضرار.</p>
+
+            <p><strong>الحد الأقصى للمسؤولية:</strong> لن تتجاوز مسؤوليتنا الإجمالية تجاهك عن جميع الأضرار، بأي حال من الأحوال، المبلغ الذي دفعته لنا مقابل الباقة (أو الباقات) التي اشتريتها خلال الاثني عشر (12) شهرًا السابقة للمطالبة. إذا لم تدفع لنا أي رسوم، تكون مسؤوليتنا محدودة بصفر.</p>
+
+            <h3>6.6 اختلافات حسب الولاية القضائية</h3>
+            <p>لا تسمح بعض الولايات القضائية باستبعاد أو تحديد بعض الضمانات أو المسؤوليات. في هذه الحالات، تُحدَّد مسؤوليتنا إلى أقصى حد يسمح به القانون المعمول به.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. التغييرات على الخدمة</h2>
+
+            <h3>7.1 تعديلات الميزات</h3>
+            <p>نحتفظ بالحق في:</p>
+            <ul>
+                <li>تعديل الميزات أو إضافتها أو إزالتها في أي وقت</li>
+                <li>تحديث محتوى الدروس أو الأسئلة أو القوانين مع تغيّر المنهج أو محتوانا</li>
+                <li>إيقاف بعض الميزات تمامًا</li>
+                <li>تحديث واجهة المستخدم أو تصميم التطبيق</li>
+            </ul>
+            <p>سنبذل جهودًا معقولة لإخطارك بالتغييرات المهمة، لكننا غير ملزَمين بذلك.</p>
+
+            <h3>7.2 انقطاعات الخدمة</h3>
+            <p>قد نُعلّق أو نُقيّد الوصول إلى التطبيق مؤقتًا للصيانة أو لمشكلات تقنية أو مخاوف أمنية. سنحاول تقليل الانقطاعات، لكننا لا نضمن خدمة دون انقطاع.</p>
+
+            <h3>7.3 تحديثات نظام التشغيل</h3>
+            <p>عندما تُصدر Apple أو Google إصدارات جديدة من iOS أو Android، قد لا يعمل التطبيق بشكل صحيح مؤقتًا إلى أن نُصدر تحديثًا. لسنا مسؤولين عن انقطاعات الخدمة المؤقتة الناتجة عن تحديثات نظام التشغيل، وقد نتوقف في النهاية عن دعم إصدارات قديمة جدًا من نظام التشغيل.</p>
+
+            <h3>7.4 إيقاف الخدمة</h3>
+            <p>رغم عدم وجود خطط حالية لإيقاف التطبيق، فإننا نحتفظ بالحق في إيقاف الخدمة بالكامل. وإذا فعلنا ذلك، سنقدّم إشعارًا مسبقًا معقولًا (30 يومًا على الأقل) حيثما أمكن، وسيبقى المحتوى الذي سبق تنزيله على جهازك للاستخدام دون اتصال بالإنترنت متاحًا على ذلك الجهاز.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. الخصوصية والبيانات</h2>
+            <p>يخضع استخدامك للتطبيق أيضًا لـ<a href="/legal/education-app/privacy-policy/">سياسة الخصوصية</a> الخاصة بنا، والتي توضّح كيفية جمعنا لمعلوماتك واستخدامها وحمايتها.</p>
+            <p>أبرز نقاط الخصوصية:</p>
+            <ul>
+                <li>لا حاجة لإنشاء حساب - تُخزَّن بيانات الدراسة محليًا على جهازك</li>
+                <li>لا وصول إلى الكاميرا أو الصور أو الموقع</li>
+                <li>تُرسَل الإجابات الكتابية إلى خدمة ذكاء اصطناعي خارجية فقط إذا استخدمت ميزة التصحيح الاختيارية بالذكاء الاصطناعي</li>
+                <li>نسخ احتياطي اختياري لتقدّمك وأسئلتك المحفوظة إلى حساب Google Drive الخاص بك</li>
+            </ul>
+            <p>يُرجى مراجعة سياسة الخصوصية للاطلاع على التفاصيل الكاملة.</p>
+        </div>
+
+        <div class="section">
+            <h2>9. تحديثات هذه الشروط</h2>
+            <p>قد نُحدِّث هذه الشروط من وقت لآخر لتعكس تغييرات في التطبيق أو ميزاته، أو ممارساتنا التجارية، أو المتطلبات القانونية أو التنظيمية، أو لتوضيح الصياغة الحالية.</p>
+
+            <h3>9.1 الإخطار بالتغييرات</h3>
+            <p>عند إجراء تغييرات على هذه الشروط، سنُحدِّث تاريخ "آخر تحديث" أعلى هذه الصفحة، وسنُخطرك عبر إشعار داخل التطبيق بالنسبة للتغييرات الجوهرية. قد يُطلب منك قبول الشروط المحدَّثة قبل مواصلة استخدام التطبيق.</p>
+
+            <h3>9.2 موافقتك</h3>
+            <p>يُعدّ استمرارك في استخدام التطبيق بعد سريان التغييرات موافقةً منك على الشروط المحدَّثة. إذا كنت لا توافق على الشروط المحدَّثة، يجب عليك التوقف عن استخدام التطبيق.</p>
+
+            <h3>9.3 سجل الإصدارات</h3>
+            <p>يمكنك الاطّلاع على <a href="/legal/education-app/changelog.html#terms">سجل الإصدارات</a> الكامل لهذه الشروط، بما يشمل الإصدارات السابقة وما تغيّر فيها.</p>
+        </div>
+
+        <div class="section">
+            <h2>10. القانون المعمول به وتسوية النزاعات</h2>
+
+            <h3>10.1 القانون المعمول به</h3>
+            <p>تخضع هذه الشروط وتُفسَّر وفقًا لقوانين سلطنة عُمان، دون اعتبار لمبادئ تنازع القوانين فيها.</p>
+
+            <h3>10.2 تسوية النزاعات</h3>
+            <p>إذا كان لديك أي نزاع أو مطالبة أو خلاف معنا:</p>
+
+            <p><strong>الخطوة 1 - التفاوض الودّي:</strong></p>
+            <ul>
+                <li>تواصل معنا عبر <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a> مع تفاصيل استفسارك</li>
+                <li>سنحاول تسوية المسألة عبر مفاوضات بحسن نية</li>
+                <li>امنح مهلة 30 يومًا على الأقل لمحاولات التسوية الودّية</li>
+            </ul>
+
+            <p><strong>الخطوة 2 - الإجراء القانوني الرسمي:</strong></p>
+            <ul>
+                <li>إذا لم يُسوَّ النزاع عبر التفاوض الودّي، يجوز لأي من الطرفين اللجوء إلى الإجراءات القانونية</li>
+                <li>يجب رفع أي دعوى قضائية أمام محاكم مسقط، سلطنة عُمان</li>
+                <li>يوافق الطرفان على الاختصاص القضائي الحصري لهذه المحاكم</li>
+            </ul>
+
+            <h3>10.3 استثناءات</h3>
+            <p>لا تنطبق عملية تسوية النزاعات هذه على المطالبات المتعلقة بالإنصاف أو الأوامر القضائية، أو نزاعات الملكية الفكرية، أو المطالبات التي يمكن رفعها أمام محكمة المطالبات الصغيرة في ولايتك القضائية.</p>
+
+            <h3>10.4 المستخدمون الدوليون</h3>
+            <p>إذا كنت تصل إلى التطبيق من خارج سلطنة عُمان، فأنت مسؤول عن الامتثال للقوانين المحلية، وتبقى هذه الشروط خاضعة للقانون العُماني.</p>
+        </div>
+
+        <div class="section">
+            <h2>11. أحكام عامة</h2>
+
+            <h3>11.1 الاتفاقية الكاملة</h3>
+            <p>تشكّل هذه الشروط، إلى جانب سياسة الخصوصية الخاصة بنا، الاتفاقية الكاملة بينك وبين SmartHorizon بشأن التطبيق، وتحل محل جميع الاتفاقيات أو التفاهمات السابقة.</p>
+
+            <h3>11.2 قابلية الفصل</h3>
+            <p>إذا تبيّن أن أحد أحكام هذه الشروط باطل أو غير قانوني أو غير قابل للتنفيذ، تبقى الأحكام المتبقية سارية المفعول بالكامل. ويُستبدَل الحكم الباطل بحكم صحيح يتوافق قدر الإمكان مع مقصد الحكم الأصلي.</p>
+
+            <h3>11.3 عدم التنازل</h3>
+            <p>لا يشكّل عدم قيامنا بتطبيق أي حق أو حكم من هذه الشروط تنازلًا عن ذلك الحق أو الحكم. يجب أن يكون أي تنازل مكتوبًا وموقَّعًا من قِبلنا.</p>
+
+            <h3>11.4 التنازل عن الحقوق</h3>
+            <p>لا يجوز لك التنازل عن هذه الشروط أو حقوقك بموجبها أو نقلها دون موافقتنا الكتابية المسبقة. يجوز لنا التنازل عن هذه الشروط دون قيود.</p>
+
+            <h3>11.5 القوة القاهرة</h3>
+            <p>لا نتحمّل المسؤولية عن أي إخفاق أو تأخير في الأداء بسبب ظروف خارجة عن إرادتنا المعقولة، بما في ذلك على سبيل المثال لا الحصر الكوارث الطبيعية، أو الحروب، أو الاضطرابات، أو الأوبئة، أو الإجراءات الحكومية، أو أعطال الخدمات الخارجية.</p>
+
+            <h3>11.6 الاستمرارية</h3>
+            <p>تستمر الأحكام التي تقتضي طبيعتها استمرارها بعد إنهاء هذه الشروط (بما في ذلك إخلاءات المسؤولية وتحديد المسؤولية والقانون المعمول به) سارية بعد إنهاء هذه الشروط.</p>
+
+            <h3>11.7 العناوين</h3>
+            <p>عناوين الأقسام لغرض التسهيل فقط، ولا تؤثر على تفسير هذه الشروط.</p>
+
+            <h3>11.8 اللغة</h3>
+            <p>تُعدّ النسخة العربية من هذه الشروط هي النسخة المعتمَدة والملزِمة قانونًا. وتُقدَّم أي ترجمة إلى لغات أخرى، بما في ذلك الإنجليزية، للتيسير فقط، وفي حال وجود أي تعارض بين النسختين، تسود النسخة العربية.</p>
+        </div>
+
+        <div class="section">
+            <h2>12. الطلاب وأولياء الأمور</h2>
+            <p>صُمِّم تطبيق الطيف للاستخدام من قِبل طلاب الصف الحادي عشر والثاني عشر، ومعظمهم من القُصّر. إذا كان عمرك أقل من 18 عامًا:</p>
+            <ul>
+                <li>يجب عليك مراجعة هذه الشروط مع أحد الوالدين أو ولي الأمر قبل استخدام التطبيق</li>
+                <li>يجب أن تتم عمليات الشراء من قِبل أحد الوالدين أو ولي الأمر، أو بموافقته، باستخدام حساب Apple ID أو Google الخاص به</li>
+                <li>يتحمّل الوالدان أو ولي الأمر مسؤولية مراقبة استخدام طفلهما للتطبيق وأي مشتريات تُجرى</li>
+            </ul>
+            <p>لا نجمع عمدًا بيانات شخصية تُعرِّف بهوية طلاب بعينهم - راجع <a href="/legal/education-app/privacy-policy/">سياسة الخصوصية</a> للتفاصيل.</p>
+        </div>
+
+        <div class="section">
+            <h2>13. التوفر الجغرافي</h2>
+            <p>صُمِّم التطبيق بشكل أساسي لطلاب المنهج العُماني للفيزياء، وهو متاح عبر متجر App Store من Apple ومتجر Google Play، وفق توفرهما وقيودهما.</p>
+            <ul>
+                <li>لم نُطبِّق أي قيود جغرافية</li>
+                <li>قد يكون التوفر محدودًا من قِبل Apple أو Google في بعض الدول</li>
+                <li>أنت مسؤول عن الامتثال للقوانين المحلية في ولايتك القضائية</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>14. معلومات التواصل</h2>
+            <p>إذا كانت لديك أسئلة أو استفسارات أو ملاحظات حول هذه الشروط أو التطبيق، يُرجى التواصل معنا:</p>
+            <ul>
+                <li><strong>المطوِّر:</strong> SmartHorizon</li>
+                <li><strong>البريد الإلكتروني:</strong> <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a></li>
+                <li><strong>الموقع الإلكتروني:</strong> <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a></li>
+                <li><strong>الموقع الجغرافي:</strong> مسقط، سلطنة عُمان</li>
+            </ul>
+            <p>سنرد على استفساراتك خلال فترة زمنية معقولة، عادةً خلال 5-7 أيام عمل.</p>
+        </div>
+
+        <div class="info">
+            <strong>شكرًا لاستخدامك تطبيق الطيف!</strong>
+            <p>نحن ملتزمون بمساعدتك على دراسة الفيزياء بفعالية. إذا كانت لديك اقتراحات للتحسين أو واجهت أي مشكلات، فلا تتردد في التواصل معنا.</p>
+        </div>
+
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
+            <p style="text-align: center;">&copy; 2026 SmartHorizon. جميع الحقوق محفوظة.</p>
+            <p style="text-align: center;">
+                <a href="/legal/education-app/privacy-policy/">سياسة الخصوصية</a> |
+                <a href="/legal/education-app/changelog.html">سجل الإصدارات</a>
+            </p>
+        </footer>
     </div>
 
-    <div class="section">
-        <h2>4. License and Restrictions</h2>
+    <!-- ═══════════════════════ ENGLISH ═══════════════════════ -->
+    <div id="doc-en" lang="en" dir="ltr" style="display:none;">
+        <div class="version-banner">
+            <strong>Current Version:</strong> <span class="version-info">2026-09-01</span><br>
+            <strong>Last Updated:</strong> <span class="version-info">September 1, 2026</span><br>
+            <a href="/legal/education-app/changelog.html#terms" class="history-link">View Version History →</a>
+        </div>
 
-        <h3>4.1 Limited License</h3>
-        <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to:</p>
-        <ul>
-            <li>Download and install the App on your personal device(s)</li>
-            <li>Use the App and its content for personal, non-commercial study purposes only</li>
-        </ul>
+        <h1>Terms of Service</h1>
+        <p class="effective-date">Effective Date: September 1, 2026</p>
 
-        <h3>4.2 License Restrictions</h3>
-        <p>You agree NOT to:</p>
-        <ul>
-            <li>❌ Use the App or its content for any commercial purpose </li>
-            <li>❌ Share your purchased content access with others</li>
-            <li>❌ Screenshot, screen-record, or otherwise copy lesson content for redistribution outside the App</li>
-            <li>❌ Reverse engineer, decompile, disassemble, or attempt to derive the source code of the App</li>
-            <li>❌ Modify, adapt, translate, or create derivative works based on the App or its content</li>
-            <li>❌ Remove, alter, or obscure any copyright, trademark, or proprietary notices</li>
-            <li>❌ Use automated systems, bots, or scripts to access or interact with the App</li>
-            <li>❌ Attempt to gain unauthorized access to any portion of the App or its systems</li>
-            <li>❌ Use the App in any way that violates applicable laws or regulations</li>
-            <li>❌ Upload or introduce viruses, malware, or malicious code</li>
-            <li>❌ Interfere with or disrupt the App or servers/networks connected to the App</li>
-        </ul>
-        <p>To help enforce this, the App blocks screenshots and restricts screen recording throughout the app (not only on lesson-content screens) - see our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a> for details.</p>
+        <div class="important">
+            <strong>Important:</strong> Please read these Terms of Service carefully before using Al-Taif. By downloading, installing, or using the app, you agree to be bound by these terms. If you do not agree, please do not use the app.
+        </div>
 
-        <h3>4.3 Device Transfer</h3>
-        <p>Your purchases are tied to your Apple ID or Google account, not to a specific device:</p>
-        <ul>
-            <li>✅ You can access your purchased content on a new device by signing in with the same Apple ID or Google account</li>
-            <li>✅ Apple and Google automatically handle purchase restoration across your devices</li>
-            <li>❌ If your device is lost or stolen, contact Apple or Google support - we cannot transfer or deactivate purchases ourselves</li>
-        </ul>
+        <div class="summary-box">
+            <strong>Quick Summary:</strong>
+            <ul style="margin: 10px 0;">
+                <li>✅ Some lessons in every unit are free to try before you subscribe</li>
+                <li>✅ Subscriptions are fixed 6-month passes for one grade &amp; semester - they do <strong>not</strong> auto-renew</li>
+                <li>✅ Refunds managed by Apple or Google according to their policies</li>
+                <li>✅ App and content provided "as is" - not a guarantee of exam results or grades</li>
+                <li>✅ Personal use only - not for commercial purposes</li>
+                <li>✅ We reserve the right to modify features and pricing</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and SmartHorizon ("we," "us," or "our") regarding your use of Al-Taif ("the App").</p>
+            <p>By accessing or using the App, you acknowledge that you have read, understood, and agree to be bound by these Terms and our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a>.</p>
+            <p>If you do not agree to these Terms, you must not download, install, or use the App.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Description of Service</h2>
+
+            <h3>2.1 What the App Does</h3>
+            <p>Al-Taif is a mobile application that helps Grade 11 and Grade 12 students in Oman study physics, including:</p>
+            <ul>
+                <li>Lesson explanations (PDF) and instructional videos</li>
+                <li>Practice questions and formula references</li>
+                <li>Interactive whiteboard and annotation tools for working through problems</li>
+                <li>Practice exam simulations</li>
+                <li>Optional AI-assisted feedback on written answers</li>
+                <li>Bookmarking questions and tracking your study progress</li>
+                <li>Offline downloads of lesson content for studying without an internet connection</li>
+                <li>Optional backup of your progress and bookmarks to your personal Google Drive</li>
+            </ul>
+
+            <h3>2.2 Free vs. Subscribed Content</h3>
+            <p><strong>Free Content:</strong> Selected introductory lessons in each unit are available to everyone at no cost, so you can try the app before subscribing.</p>
+            <p><strong>Subscribed Content:</strong> Full access to a specific grade and semester's lessons, videos, formulas, and practice questions requires purchasing that semester's pass (see Section 3).</p>
+
+            <p><strong>Note:</strong> Pricing is subject to change. Current pricing is displayed in the app before purchase.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. Subscriptions</h2>
+
+            <h3>3.1 Subscription Plans</h3>
+            <p>Content is sold as a fixed-term pass covering one grade and one semester (for example, "Grade 11, Semester 1"). Each pass:</p>
+            <ul>
+                <li>Grants access to that grade and semester's full content for <strong>6 months</strong> from the date of purchase</li>
+                <li>Is priced separately per grade and semester - the price is displayed in the app before purchase</li>
+                <li>May vary by region based on local currency and applicable taxes</li>
+            </ul>
+
+            <h3>3.2 Free Content to Try First</h3>
+            <p>Instead of a time-limited free trial, selected lessons in every unit are permanently free to use. We recommend exploring the free lessons for a grade and semester before purchasing that semester's pass, so you can see how the app works on your device first.</p>
+
+            <h3>3.3 No Automatic Renewal</h3>
+            <div class="important">
+                <strong>Important:</strong> Unlike many subscription apps, passes on Al-Taif do <strong>not</strong> automatically renew and you will <strong>not</strong> be charged again after your 6-month period ends.
+            </div>
+            <ul>
+                <li>You are charged once, at the time of purchase</li>
+                <li>Access to that semester's paid content ends automatically after 6 months</li>
+                <li>To continue access after that, you must purchase a new pass for the same grade and semester</li>
+                <li>The free lessons in each unit always remain available, even after a pass expires</li>
+            </ul>
+
+            <h3>3.4 Payment</h3>
+            <ul>
+                <li>Payment is charged to your Apple App Store or Google Play Store account</li>
+                <li>Payment is processed by Apple or Google - we do not handle payment information directly</li>
+                <li>All purchases are managed through RevenueCat, our subscription management service</li>
+            </ul>
+
+            <h3>3.5 Managing Your Purchase</h3>
+            <p>Since passes are a one-time, non-renewing purchase, there is no ongoing subscription to cancel. To view your purchase history or manage payment methods, use your Apple ID or Google Play account settings.</p>
+
+            <h3>3.6 Refund Policy</h3>
+            <p>All purchases are final and handled according to Apple's and Google's refund policies:</p>
+            <ul>
+                <li><strong>Apple (iOS):</strong> Refund requests must be submitted directly to Apple. Visit <a href="https://support.apple.com/en-us/HT204084" target="_blank">reportaproblem.apple.com</a> or contact Apple Support.</li>
+                <li><strong>Google (Android):</strong> Refund requests must be submitted through Google Play, according to <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">Google's refund policy</a>.</li>
+            </ul>
+            <p><strong>We do not process refunds directly.</strong> All refund decisions are made by Apple or Google at their sole discretion according to their respective policies.</p>
+
+            <h3>3.7 Price Changes</h3>
+            <ul>
+                <li>We may change pass prices at any time</li>
+                <li>Price changes apply only to new purchases made after the change</li>
+                <li>A pass you have already purchased is unaffected - you keep the access you paid for, for its full 6-month term, at no extra charge</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. License and Restrictions</h2>
+
+            <h3>4.1 Limited License</h3>
+            <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to:</p>
+            <ul>
+                <li>Download and install the App on your personal device(s)</li>
+                <li>Use the App and its content for personal, non-commercial study purposes only</li>
+            </ul>
+
+            <h3>4.2 License Restrictions</h3>
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>❌ Use the App or its content for any commercial purpose</li>
+                <li>❌ Share your purchased content access with others</li>
+                <li>❌ Screenshot, screen-record, or otherwise copy lesson content for redistribution outside the App</li>
+                <li>❌ Reverse engineer, decompile, disassemble, or attempt to derive the source code of the App</li>
+                <li>❌ Modify, adapt, translate, or create derivative works based on the App or its content</li>
+                <li>❌ Remove, alter, or obscure any copyright, trademark, or proprietary notices</li>
+                <li>❌ Use automated systems, bots, or scripts to access or interact with the App</li>
+                <li>❌ Attempt to gain unauthorized access to any portion of the App or its systems</li>
+                <li>❌ Use the App in any way that violates applicable laws or regulations</li>
+                <li>❌ Upload or introduce viruses, malware, or malicious code</li>
+                <li>❌ Interfere with or disrupt the App or servers/networks connected to the App</li>
+            </ul>
+            <p>To help enforce this, the App blocks screenshots and restricts screen recording throughout the app (not only on lesson-content screens) - see our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a> for details.</p>
+
+            <h3>4.3 Device Transfer</h3>
+            <p>Your purchases are tied to your Apple ID or Google account, not to a specific device:</p>
+            <ul>
+                <li>✅ You can access your purchased content on a new device by signing in with the same Apple ID or Google account</li>
+                <li>✅ Apple and Google automatically handle purchase restoration across your devices</li>
+                <li>❌ If your device is lost or stolen, contact Apple or Google support - we cannot transfer or deactivate purchases ourselves</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Intellectual Property Rights</h2>
+
+            <h3>5.1 Ownership</h3>
+            <p>The App and all content, features, and functionality (including but not limited to software, lesson explanations, videos, formulas, questions, graphics, logos, icons, and user interface design) are owned by SmartHorizon and its content partners, and are protected by international copyright, trademark, and other intellectual property laws.</p>
+
+            <h3>5.2 Educational Content License</h3>
+            <p>Lesson materials (PDFs, videos, formulas, and questions) included in the App are:</p>
+            <ul>
+                <li>Provided for use exclusively within the App, for your personal study - you may not extract, download outside the App, redistribute, or use this content elsewhere</li>
+                <li>Licensed to us or created for use within the App, and subject to the licenses we comply with</li>
+            </ul>
+
+            <h3>5.3 Trademarks</h3>
+            <p>"Al-Taif" and the SmartHorizon logo are trademarks of SmartHorizon. You may not use these marks without our prior written permission.</p>
+
+            <h3>5.4 Your Notes and Annotations</h3>
+            <p>Any notes, bookmarks, or handwritten annotations you create while using the App remain yours. If you provide testimonials, reviews, or feedback about the App:</p>
+            <ul>
+                <li>You grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, and display your content for marketing and promotional purposes</li>
+                <li>You represent that you have the right to grant this license</li>
+                <li>You waive any moral rights in your testimonials</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Disclaimers and Limitation of Liability</h2>
+
+            <h3>6.1 Educational Purpose Only</h3>
+            <p>Al-Taif is a study aid intended to support your learning of the physics curriculum. <strong>We do not guarantee any particular exam result, grade, or academic outcome</strong> from using the App. The App is a supplement to, not a replacement for, classroom instruction and your own study effort.</p>
+
+            <h3>6.2 AI-Assisted Grading Disclaimer</h3>
+            <p>Where the App offers AI-assisted feedback on written answers:</p>
+            <ul>
+                <li>This feedback is generated automatically and <strong>is not official grading</strong> and does not represent how your answer would be scored in an actual exam</li>
+                <li>AI-generated feedback may be incomplete or inaccurate</li>
+                <li>Always compare your answer against the official model answer provided in the App, and consult your teacher for authoritative feedback</li>
+            </ul>
+
+            <h3>6.3 "As Is" Service</h3>
+            <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
+            <ul>
+                <li>Warranties of merchantability</li>
+                <li>Fitness for a particular purpose</li>
+                <li>Non-infringement</li>
+                <li>Accuracy, reliability, or completeness of lesson content</li>
+                <li>Uninterrupted or error-free operation</li>
+            </ul>
+
+            <h3>6.4 Third-Party Services</h3>
+            <p>The App integrates with third-party services:</p>
+            <ul>
+                <li><strong>Cloud Storage:</strong> Downloading lesson content and optional Google Drive backup rely on external services. We are not responsible for their availability or functionality.</li>
+                <li><strong>Payment Processing:</strong> Handled by Apple and Google. We are not responsible for payment processing errors or disputes.</li>
+                <li><strong>AI Grading Service:</strong> Provided by a third-party AI service. We are not responsible for the accuracy of its feedback.</li>
+            </ul>
+            <p>These third-party services are subject to their own terms and conditions. We are not liable for any issues arising from third-party services.</p>
+
+            <h3>6.5 Limitation of Liability</h3>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SMARTHORIZON SHALL NOT BE LIABLE FOR ANY:</p>
+            <ul>
+                <li><strong>Indirect, incidental, special, consequential, or punitive damages</strong></li>
+                <li><strong>Lost academic opportunities or exam performance</strong></li>
+                <li><strong>Emotional distress or mental anguish</strong></li>
+                <li><strong>Data loss or corruption</strong></li>
+                <li><strong>Cost of substitute goods or services</strong></li>
+            </ul>
+
+            <p>This limitation applies regardless of the legal theory (contract, tort, negligence, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.</p>
+
+            <p><strong>Maximum Liability:</strong> In no event shall our total liability to you for all damages exceed the amount you paid us for the pass(es) purchased in the twelve (12) months preceding the claim. If you have not paid us any fees, our liability is limited to zero.</p>
+
+            <h3>6.6 Jurisdictional Variations</h3>
+            <p>Some jurisdictions do not allow the exclusion or limitation of certain warranties or liabilities. In such jurisdictions, our liability will be limited to the maximum extent permitted by applicable law.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. Changes to the Service</h2>
+
+            <h3>7.1 Feature Modifications</h3>
+            <p>We reserve the right to:</p>
+            <ul>
+                <li>Modify, add, or remove features at any time</li>
+                <li>Update lesson content, questions, or formulas as the curriculum or our content changes</li>
+                <li>Discontinue certain features entirely</li>
+                <li>Update the App's user interface or design</li>
+            </ul>
+            <p>We will make reasonable efforts to notify you of significant changes, but we are not obligated to do so.</p>
+
+            <h3>7.2 Service Interruptions</h3>
+            <p>We may temporarily suspend or limit access to the App for maintenance, technical issues, or security concerns. We will attempt to minimize disruptions but cannot guarantee uninterrupted service.</p>
+
+            <h3>7.3 Operating System Updates</h3>
+            <p>When Apple or Google releases new versions of iOS or Android, the App may temporarily not function properly until we release an update. We are not liable for temporary service disruptions due to OS updates, and we may eventually stop supporting very old OS versions.</p>
+
+            <h3>7.4 Discontinuation of Service</h3>
+            <p>While we have no current plans to discontinue the App, we reserve the right to shut down the service entirely. If we do, we will provide reasonable advance notice (at least 30 days) where practical, and content already downloaded to your device for offline use will remain accessible on that device.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. Privacy and Data</h2>
+            <p>Your use of the App is also governed by our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a>, which explains how we collect, use, and protect your information.</p>
+            <p>Key privacy points:</p>
+            <ul>
+                <li>No user accounts required - study data stored locally on your device</li>
+                <li>No camera, photo, or location access</li>
+                <li>Written answers are sent to a third-party AI service only if you use the optional AI-assisted grading feature</li>
+                <li>Optional backup of progress and bookmarks to your personal Google Drive</li>
+            </ul>
+            <p>Please review the Privacy Policy for complete details.</p>
+        </div>
+
+        <div class="section">
+            <h2>9. Updates to These Terms</h2>
+            <p>We may update these Terms from time to time to reflect changes to the App or features, our business practices, legal or regulatory requirements, or to clarify existing language.</p>
+
+            <h3>9.1 Notification of Changes</h3>
+            <p>When we make changes to these Terms, we will update the "Last Updated" date at the top of this page, and for material changes, notify you through an in-app notification. You may be required to accept updated Terms before continuing to use the App.</p>
+
+            <h3>9.2 Your Acceptance</h3>
+            <p>Continued use of the App after changes become effective constitutes your acceptance of the updated Terms. If you do not agree to the updated Terms, you must stop using the App.</p>
+
+            <h3>9.3 Version History</h3>
+            <p>You can view the complete <a href="/legal/education-app/changelog.html#terms">version history</a> of these Terms, including previous versions and what changed.</p>
+        </div>
+
+        <div class="section">
+            <h2>10. Governing Law and Dispute Resolution</h2>
+
+            <h3>10.1 Governing Law</h3>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the Sultanate of Oman, without regard to its conflict of law principles.</p>
+
+            <h3>10.2 Dispute Resolution</h3>
+            <p>If you have any dispute, claim, or controversy with us:</p>
+
+            <p><strong>Step 1 - Informal Negotiation:</strong></p>
+            <ul>
+                <li>Contact us at <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a> with details of your concern</li>
+                <li>We will attempt to resolve the issue through good faith negotiations</li>
+                <li>Allow at least 30 days for informal resolution attempts</li>
+            </ul>
+
+            <p><strong>Step 2 - Formal Legal Action:</strong></p>
+            <ul>
+                <li>If informal negotiation does not resolve the dispute, either party may pursue legal action</li>
+                <li>Any legal proceedings must be brought in the courts of Muscat, Oman</li>
+                <li>Both parties consent to the exclusive jurisdiction of these courts</li>
+            </ul>
+
+            <h3>10.3 Exceptions</h3>
+            <p>This dispute resolution process does not apply to claims for injunctive or equitable relief, intellectual property disputes, or claims that can be brought in small claims court in your jurisdiction.</p>
+
+            <h3>10.4 International Users</h3>
+            <p>If you are accessing the App from outside Oman, you are responsible for compliance with local laws, and these Terms are still governed by Omani law.</p>
+        </div>
+
+        <div class="section">
+            <h2>11. General Provisions</h2>
+
+            <h3>11.1 Entire Agreement</h3>
+            <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and SmartHorizon regarding the App and supersede all prior agreements or understandings.</p>
+
+            <h3>11.2 Severability</h3>
+            <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be replaced with a valid provision that most closely matches the intent of the original.</p>
+
+            <h3>11.3 No Waiver</h3>
+            <p>Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. Any waiver must be in writing and signed by us.</p>
+
+            <h3>11.4 Assignment</h3>
+            <p>You may not assign or transfer these Terms or your rights under them without our prior written consent. We may assign these Terms without restriction.</p>
+
+            <h3>11.5 Force Majeure</h3>
+            <p>We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including but not limited to acts of God, war, riots, natural disasters, pandemics, government actions, or failures of third-party services.</p>
+
+            <h3>11.6 Survival</h3>
+            <p>Provisions that by their nature should survive termination (including disclaimers, limitations of liability, and governing law) shall survive termination of these Terms.</p>
+
+            <h3>11.7 Headings</h3>
+            <p>Section headings are for convenience only and do not affect the interpretation of these Terms.</p>
+
+            <h3>11.8 Language</h3>
+            <p>The Arabic version of these Terms is the authoritative, legally binding version. Any translation into other languages, including English, is provided for convenience only, and in the event of any conflict between versions, the Arabic version shall prevail.</p>
+        </div>
+
+        <div class="section">
+            <h2>12. Students and Parents/Guardians</h2>
+            <p>Al-Taif is designed for use by Grade 11 and Grade 12 students, most of whom are minors. If you are under 18:</p>
+            <ul>
+                <li>You should review these Terms with a parent or guardian before using the App</li>
+                <li>Purchases should be made by a parent or guardian, or with their consent, using their Apple ID or Google account</li>
+                <li>Parents and guardians are responsible for monitoring their child's use of the App and any purchases made</li>
+            </ul>
+            <p>We do not knowingly collect personal data that identifies individual students - see our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a> for details.</p>
+        </div>
+
+        <div class="section">
+            <h2>13. Geographic Availability</h2>
+            <p>The App is built primarily for students studying the Omani physics curriculum and is available through the Apple App Store and Google Play Store, subject to their availability and restrictions.</p>
+            <ul>
+                <li>We have not implemented any geographic restrictions</li>
+                <li>Availability may be limited by Apple or Google in certain countries</li>
+                <li>You are responsible for compliance with local laws in your jurisdiction</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>14. Contact Information</h2>
+            <p>If you have questions, concerns, or feedback about these Terms or the App, please contact us:</p>
+            <ul>
+                <li><strong>Developer:</strong> SmartHorizon</li>
+                <li><strong>Email:</strong> <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a></li>
+                <li><strong>Website:</strong> <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a></li>
+                <li><strong>Location:</strong> Muscat, Sultanate of Oman</li>
+            </ul>
+            <p>We will respond to inquiries within a reasonable time frame, typically within 5-7 business days.</p>
+        </div>
+
+        <div class="info">
+            <strong>Thank you for using Al-Taif!</strong>
+            <p>We're committed to helping you study physics effectively. If you have suggestions for improvements or encounter any issues, please don't hesitate to contact us.</p>
+        </div>
+
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
+            <p style="text-align: center;">&copy; 2026 SmartHorizon. All rights reserved.</p>
+            <p style="text-align: center;">
+                <a href="/legal/education-app/privacy-policy/">Privacy Policy</a> |
+                <a href="/legal/education-app/changelog.html">Version History</a>
+            </p>
+        </footer>
     </div>
 
-    <div class="section">
-        <h2>5. Intellectual Property Rights</h2>
+    <script>
+        (function() {
+            var STORAGE_KEY = 'altaif-legal-lang';
+            var docAr = document.getElementById('doc-ar');
+            var docEn = document.getElementById('doc-en');
+            var btnAr = document.getElementById('btn-ar');
+            var btnEn = document.getElementById('btn-en');
 
-        <h3>5.1 Ownership</h3>
-        <p>The App and all content, features, and functionality (including but not limited to software, lesson explanations, videos, formulas, questions, graphics, logos, icons, and user interface design) are owned by SmartHorizon and its content partners, and are protected by international copyright, trademark, and other intellectual property laws.</p>
+            function setLang(lang) {
+                var isAr = lang !== 'en';
+                docAr.style.display = isAr ? '' : 'none';
+                docEn.style.display = isAr ? 'none' : '';
+                btnAr.classList.toggle('active', isAr);
+                btnEn.classList.toggle('active', !isAr);
+                document.documentElement.lang = isAr ? 'ar' : 'en';
+                document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+                try { localStorage.setItem(STORAGE_KEY, isAr ? 'ar' : 'en'); } catch (e) {}
+            }
 
-        <h3>5.2 Educational Content License</h3>
-        <p>Lesson materials (PDFs, videos, formulas, and questions) included in the App are:</p>
-        <ul>
-            <li>Provided for use exclusively within the App, for your personal study - you may not extract, download outside the App, redistribute, or use this content elsewhere</li>
-            <li>Licensed to us or created for use within the App, and subject to the licenses we comply with</li>
-        </ul>
+            btnAr.addEventListener('click', function() { setLang('ar'); });
+            btnEn.addEventListener('click', function() { setLang('en'); });
 
-        <h3>5.3 Trademarks</h3>
-        <p>"Al-Taif" and the SmartHorizon logo are trademarks of SmartHorizon. You may not use these marks without our prior written permission.</p>
-
-        <h3>5.4 Your Notes and Annotations</h3>
-        <p>Any notes, bookmarks, or handwritten annotations you create while using the App remain yours. If you provide testimonials, reviews, or feedback about the App:</p>
-        <ul>
-            <li>You grant us a non-exclusive, worldwide, royalty-free license to use, reproduce, and display your content for marketing and promotional purposes</li>
-            <li>You represent that you have the right to grant this license</li>
-            <li>You waive any moral rights in your testimonials</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>6. Disclaimers and Limitation of Liability</h2>
-
-        <h3>6.1 Educational Purpose Only</h3>
-        <p>Al-Taif is a study aid intended to support your learning of the physics curriculum. <strong>We do not guarantee any particular exam result, grade, or academic outcome</strong> from using the App. The App is a supplement to, not a replacement for, classroom instruction and your own study effort.</p>
-
-        <h3>6.2 AI-Assisted Grading Disclaimer</h3>
-        <p>Where the App offers AI-assisted feedback on written answers:</p>
-        <ul>
-            <li>This feedback is generated automatically and <strong>is not official grading</strong> and does not represent how your answer would be scored in an actual exam</li>
-            <li>AI-generated feedback may be incomplete or inaccurate</li>
-            <li>Always compare your answer against the official model answer provided in the App, and consult your teacher for authoritative feedback</li>
-        </ul>
-
-        <h3>6.3 "As Is" Service</h3>
-        <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
-        <ul>
-            <li>Warranties of merchantability</li>
-            <li>Fitness for a particular purpose</li>
-            <li>Non-infringement</li>
-            <li>Accuracy, reliability, or completeness of lesson content</li>
-            <li>Uninterrupted or error-free operation</li>
-        </ul>
-
-        <h3>6.4 Third-Party Services</h3>
-        <p>The App integrates with third-party services:</p>
-        <ul>
-            <li><strong>Cloud Storage:</strong> Downloading lesson content and optional Google Drive backup rely on external services. We are not responsible for their availability or functionality.</li>
-            <li><strong>Payment Processing:</strong> Handled by Apple and Google. We are not responsible for payment processing errors or disputes.</li>
-            <li><strong>AI Grading Service:</strong> Provided by a third-party AI service. We are not responsible for the accuracy of its feedback.</li>
-        </ul>
-        <p>These third-party services are subject to their own terms and conditions. We are not liable for any issues arising from third-party services.</p>
-
-        <h3>6.5 Limitation of Liability</h3>
-        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SMARTHORIZON SHALL NOT BE LIABLE FOR ANY:</p>
-        <ul>
-            <li><strong>Indirect, incidental, special, consequential, or punitive damages</strong></li>
-            <li><strong>Lost academic opportunities or exam performance</strong></li>
-            <li><strong>Emotional distress or mental anguish</strong></li>
-            <li><strong>Data loss or corruption</strong></li>
-            <li><strong>Cost of substitute goods or services</strong></li>
-        </ul>
-
-        <p>This limitation applies regardless of the legal theory (contract, tort, negligence, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.</p>
-
-        <p><strong>Maximum Liability:</strong> In no event shall our total liability to you for all damages exceed the amount you paid us for the pass(es) purchased in the twelve (12) months preceding the claim. If you have not paid us any fees, our liability is limited to zero.</p>
-
-        <h3>6.6 Jurisdictional Variations</h3>
-        <p>Some jurisdictions do not allow the exclusion or limitation of certain warranties or liabilities. In such jurisdictions, our liability will be limited to the maximum extent permitted by applicable law.</p>
-    </div>
-
-    <div class="section">
-        <h2>7. Changes to the Service</h2>
-
-        <h3>7.1 Feature Modifications</h3>
-        <p>We reserve the right to:</p>
-        <ul>
-            <li>Modify, add, or remove features at any time</li>
-            <li>Update lesson content, questions, or formulas as the curriculum or our content changes</li>
-            <li>Discontinue certain features entirely</li>
-            <li>Update the App's user interface or design</li>
-        </ul>
-        <p>We will make reasonable efforts to notify you of significant changes, but we are not obligated to do so.</p>
-
-        <h3>7.2 Service Interruptions</h3>
-        <p>We may temporarily suspend or limit access to the App for maintenance, technical issues, or security concerns. We will attempt to minimize disruptions but cannot guarantee uninterrupted service.</p>
-
-        <h3>7.3 Operating System Updates</h3>
-        <p>When Apple or Google releases new versions of iOS or Android, the App may temporarily not function properly until we release an update. We are not liable for temporary service disruptions due to OS updates, and we may eventually stop supporting very old OS versions.</p>
-
-        <h3>7.4 Discontinuation of Service</h3>
-        <p>While we have no current plans to discontinue the App, we reserve the right to shut down the service entirely. If we do, we will provide reasonable advance notice (at least 30 days) where practical, and content already downloaded to your device for offline use will remain accessible on that device.</p>
-    </div>
-
-    <div class="section">
-        <h2>8. Privacy and Data</h2>
-        <p>Your use of the App is also governed by our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a>, which explains how we collect, use, and protect your information.</p>
-        <p>Key privacy points:</p>
-        <ul>
-            <li>No user accounts required - study data stored locally on your device</li>
-            <li>No camera, photo, or location access</li>
-            <li>Written answers are sent to a third-party AI service only if you use the optional AI-assisted grading feature</li>
-            <li>Optional backup of progress and bookmarks to your personal Google Drive</li>
-        </ul>
-        <p>Please review the Privacy Policy for complete details.</p>
-    </div>
-
-    <div class="section">
-        <h2>9. Updates to These Terms</h2>
-        <p>We may update these Terms from time to time to reflect changes to the App or features, our business practices, legal or regulatory requirements, or to clarify existing language.</p>
-
-        <h3>9.1 Notification of Changes</h3>
-        <p>When we make changes to these Terms, we will update the "Last Updated" date at the top of this page, and for material changes, notify you through an in-app notification. You may be required to accept updated Terms before continuing to use the App.</p>
-
-        <h3>9.2 Your Acceptance</h3>
-        <p>Continued use of the App after changes become effective constitutes your acceptance of the updated Terms. If you do not agree to the updated Terms, you must stop using the App.</p>
-
-        <h3>9.3 Version History</h3>
-        <p>You can view the complete <a href="/legal/education-app/changelog.html#terms">version history</a> of these Terms, including previous versions and what changed.</p>
-    </div>
-
-    <div class="section">
-        <h2>10. Governing Law and Dispute Resolution</h2>
-
-        <h3>10.1 Governing Law</h3>
-        <p>These Terms shall be governed by and construed in accordance with the laws of the Sultanate of Oman, without regard to its conflict of law principles.</p>
-
-        <h3>10.2 Dispute Resolution</h3>
-        <p>If you have any dispute, claim, or controversy with us:</p>
-
-        <p><strong>Step 1 - Informal Negotiation:</strong></p>
-        <ul>
-            <li>Contact us at <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a> with details of your concern</li>
-            <li>We will attempt to resolve the issue through good faith negotiations</li>
-            <li>Allow at least 30 days for informal resolution attempts</li>
-        </ul>
-
-        <p><strong>Step 2 - Formal Legal Action:</strong></p>
-        <ul>
-            <li>If informal negotiation does not resolve the dispute, either party may pursue legal action</li>
-            <li>Any legal proceedings must be brought in the courts of Muscat, Oman</li>
-            <li>Both parties consent to the exclusive jurisdiction of these courts</li>
-        </ul>
-
-        <h3>10.3 Exceptions</h3>
-        <p>This dispute resolution process does not apply to claims for injunctive or equitable relief, intellectual property disputes, or claims that can be brought in small claims court in your jurisdiction.</p>
-
-        <h3>10.4 International Users</h3>
-        <p>If you are accessing the App from outside Oman, you are responsible for compliance with local laws, and these Terms are still governed by Omani law.</p>
-    </div>
-
-    <div class="section">
-        <h2>11. General Provisions</h2>
-
-        <h3>11.1 Entire Agreement</h3>
-        <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and SmartHorizon regarding the App and supersede all prior agreements or understandings.</p>
-
-        <h3>11.2 Severability</h3>
-        <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be replaced with a valid provision that most closely matches the intent of the original.</p>
-
-        <h3>11.3 No Waiver</h3>
-        <p>Our failure to enforce any right or provision of these Terms shall not constitute a waiver of such right or provision. Any waiver must be in writing and signed by us.</p>
-
-        <h3>11.4 Assignment</h3>
-        <p>You may not assign or transfer these Terms or your rights under them without our prior written consent. We may assign these Terms without restriction.</p>
-
-        <h3>11.5 Force Majeure</h3>
-        <p>We shall not be liable for any failure or delay in performance due to circumstances beyond our reasonable control, including but not limited to acts of God, war, riots, natural disasters, pandemics, government actions, or failures of third-party services.</p>
-
-        <h3>11.6 Survival</h3>
-        <p>Provisions that by their nature should survive termination (including disclaimers, limitations of liability, and governing law) shall survive termination of these Terms.</p>
-
-        <h3>11.7 Headings</h3>
-        <p>Section headings are for convenience only and do not affect the interpretation of these Terms.</p>
-
-        <h3>11.8 Language</h3>
-        <p>These Terms are written in English. If translated into other languages, the English version shall prevail in case of any conflict.</p>
-    </div>
-
-    <div class="section">
-        <h2>12. Students and Parents/Guardians</h2>
-        <p>Al-Taif is designed for use by Grade 11 and Grade 12 students, most of whom are minors. If you are under 18:</p>
-        <ul>
-            <li>You should review these Terms with a parent or guardian before using the App</li>
-            <li>Purchases should be made by a parent or guardian, or with their consent, using their Apple ID or Google account</li>
-            <li>Parents and guardians are responsible for monitoring their child's use of the App and any purchases made</li>
-        </ul>
-        <p>We do not knowingly collect personal data that identifies individual students - see our <a href="/legal/education-app/privacy-policy/">Privacy Policy</a> for details.</p>
-    </div>
-
-    <div class="section">
-        <h2>13. Geographic Availability</h2>
-        <p>The App is built primarily for students studying the Omani physics curriculum and is available through the Apple App Store and Google Play Store, subject to their availability and restrictions.</p>
-        <ul>
-            <li>We have not implemented any geographic restrictions</li>
-            <li>Availability may be limited by Apple or Google in certain countries</li>
-            <li>You are responsible for compliance with local laws in your jurisdiction</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>14. Contact Information</h2>
-        <p>If you have questions, concerns, or feedback about these Terms or the App, please contact us:</p>
-        <ul>
-            <li><strong>Developer:</strong> SmartHorizon</li>
-            <li><strong>Email:</strong> <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a></li>
-            <li><strong>Website:</strong> <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a></li>
-            <li><strong>Location:</strong> Muscat, Sultanate of Oman</li>
-        </ul>
-        <p>We will respond to inquiries within a reasonable time frame, typically within 5-7 business days.</p>
-    </div>
-
-    <div class="info">
-        <strong>Thank you for using Al-Taif!</strong>
-        <p>We're committed to helping you study physics effectively. If you have suggestions for improvements or encounter any issues, please don't hesitate to contact us.</p>
-    </div>
-
-    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
-        <p style="text-align: center;">&copy; 2026 SmartHorizon. All rights reserved.</p>
-        <p style="text-align: center;">
-            <a href="/legal/education-app/privacy-policy/">Privacy Policy</a> |
-            <a href="/legal/education-app/changelog.html">Version History</a>
-        </p>
-    </footer>
+            var stored = null;
+            try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+            setLang(stored === 'en' ? 'en' : 'ar');
+        })();
+    </script>
 </body>
 </html>

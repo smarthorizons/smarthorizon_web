@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Al-Taif</title>
+    <title>سياسة الخصوصية - الطيف</title>
 <style>
     @font-face {
         font-family: 'Alexandria';
@@ -128,6 +128,51 @@
         margin: 20px 0;
     }
 
+    /* Language switcher — Arabic is shown by default; the choice is
+       remembered per-browser via localStorage so it persists across visits
+       and across the privacy/terms pages (shared key). */
+    .lang-switcher {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    .lang-switcher button {
+        background: #f0f0f0;
+        border: 1px solid #ddd;
+        color: #333;
+        padding: 6px 18px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: 'Alexandria', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 14px;
+    }
+    .lang-switcher button.active {
+        background: #007AFF;
+        color: #fff;
+        border-color: #007AFF;
+    }
+
+    /* RTL layout for the Arabic content block — mirrors list indentation,
+       table header alignment, and the left-accent-border boxes (which
+       become right-accent in RTL) without duplicating every color value;
+       each box keeps its own accent color, just moved to the other side. */
+    #doc-ar {
+        direction: rtl;
+        text-align: right;
+    }
+    #doc-ar ul, #doc-ar ol {
+        padding-left: 0;
+        padding-right: 25px;
+    }
+    #doc-ar table th {
+        text-align: right;
+    }
+    #doc-ar .version-banner { border-left: none; border-right: 4px solid #007AFF; }
+    #doc-ar .important { border-left: none; border-right: 4px solid #4caf50; }
+    #doc-ar .warning { border-left: none; border-right: 4px solid #ffc107; }
+    #doc-ar .summary-box { border-left: none; border-right: 4px solid #2196f3; }
+
     /* Dark Mode Support — follows the OS/browser's prefers-color-scheme.
        This page is opened in the device's external browser (not an in-app
        WebView), so the system browser reports the real OS dark-mode setting
@@ -151,394 +196,822 @@
         p { color: #E0E0E0 !important; }
         strong, b { color: #FFFFFF !important; }
         footer { border-top-color: #333333 !important; color: #666 !important; }
+        .lang-switcher button { background: #2D2D2D !important; border-color: #444 !important; color: #E0E0E0 !important; }
+        .lang-switcher button.active { background: #BB86FC !important; border-color: #BB86FC !important; color: #121212 !important; }
+        #doc-ar .version-banner { border-right-color: #BB86FC !important; }
     }
 </style>
 </head>
 <body>
-    <div class="version-banner">
-        <strong>Current Version:</strong> <span class="version-info">2026-09-01</span><br>
-        <strong>Last Updated:</strong> <span class="version-info">September 1, 2026</span><br>
-        <a href="/legal/education-app/changelog.html#privacy" class="history-link">View Version History →</a>
+    <div class="lang-switcher">
+        <button id="btn-ar">العربية</button>
+        <button id="btn-en">English</button>
     </div>
 
-    <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective Date: September 1, 2026</p>
-
-    <div class="summary-box">
-        <strong>Privacy at a Glance:</strong>
-        <ul style="margin: 10px 0;">
-            <li>✅ <strong>No user accounts required</strong> - all study data stored locally on your device</li>
-            <li>✅ <strong>No personal information collected</strong> - we don't know who you are</li>
-            <li>✅ <strong>No camera, photos, or location access</strong> - the app doesn't use any of these</li>
-            <li>✅ <strong>Analytics data is always anonymous</strong> - never your name, email, or identity</li>
-            <li>✅ <strong>Optional Google Drive backup</strong> - limited to a private app folder, you control it</li>
-            <li>✅ <strong>No ads or data selling</strong> - app revenue comes only from subscriptions</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>1. Introduction</h2>
-        <p>Welcome to Al-Taif (الطيف), a physics learning app for Grade 11 and Grade 12 students in Oman, developed by SmartHorizon ("we," "us," or "our"). We are committed to protecting your privacy and being transparent about how our app works.</p>
-        <p>This Privacy Policy explains:</p>
-        <ul>
-            <li>What information we collect (very minimal)</li>
-            <li>How we use that information</li>
-            <li>Your rights and choices</li>
-            <li>How third-party services we use handle data</li>
-        </ul>
-        <p>By using Al-Taif, you agree to this Privacy Policy. If you do not agree, please do not use the app.</p>
-    </div>
-
-    <div class="section">
-        <h2>2. Information We Collect</h2>
-
-        <div class="important">
-            <strong>Key Point:</strong> Al-Taif does not require user accounts and does not collect personal information that identifies you. Your study data is stored locally on your device.
+    <!-- ═══════════════════════ ARABIC (default) ═══════════════════════ -->
+    <div id="doc-ar" lang="ar" dir="rtl">
+        <div class="version-banner">
+            <strong>الإصدار الحالي:</strong> <span class="version-info">2026-09-01</span><br>
+            <strong>آخر تحديث:</strong> <span class="version-info">1 سبتمبر 2026</span><br>
+            <a href="/legal/education-app/changelog.html#privacy" class="history-link">عرض سجل الإصدارات ←</a>
         </div>
 
-        <h3>2.1 Information You Provide</h3>
-        <p><strong>We do NOT collect:</strong></p>
-        <ul>
-            <li>❌ Name</li>
-            <li>❌ Email address</li>
-            <li>❌ Phone number</li>
-            <li>❌ User accounts or passwords</li>
-            <li>❌ Social media profiles</li>
-        </ul>
+        <h1>سياسة الخصوصية</h1>
+        <p class="effective-date">تاريخ السريان: 1 سبتمبر 2026</p>
 
-        <p><strong>Exception - Contact Us form:</strong> If you choose to reach out to us through the in-app "Contact Us" form or by emailing us directly, we receive whatever you include there - typically your name, email address, and message - solely to respond to your inquiry. This only happens if you initiate contact.</p>
-
-        <p><strong>Data stored locally on your device:</strong></p>
-        <ul>
-            <li>Your lesson progress (reading time, video watch time, questions attempted)</li>
-            <li>Bookmarked questions and any notes you write on them</li>
-            <li>Handwritten annotations and whiteboard drawings you make on lesson materials</li>
-            <li>Practice exam sessions and results you've completed</li>
-            <li>Study streak and daily activity history</li>
-            <li>App settings and preferences (theme, font size, notification time, and similar)</li>
-            <li>Downloaded lesson files (PDFs, videos) you've chosen to save for offline use</li>
-        </ul>
-
-        <h3>2.2 AI-Assisted Grading (Optional Feature)</h3>
-        <p>Al-Taif includes an option to use an artificial intelligence (AI) service to help evaluate written and justification-style exam answers, as an alternative to comparing your answer against the official model answer yourself.</p>
-        <p><strong>If you use this feature:</strong></p>
-        <ul>
-            <li>The question text, the official model answer, and the text of your written answer are sent to a third-party AI service to generate feedback</li>
-            <li>No name, email, or other information that identifies you is included in this data</li>
-            <li>The AI service processes this content only to generate grading feedback and does not use it to identify you personally</li>
-        </ul>
-        <p><strong>Your control:</strong> This is a supplementary study aid, not your only way to check your answers - you can always compare your answer against the official model answer PDF instead.</p>
-
-        <h3>2.3 Subscription Information</h3>
-        <p>We use RevenueCat to manage subscriptions. When you subscribe to a semester's content, RevenueCat collects:</p>
-        <ul>
-            <li>Anonymous user ID (generated by RevenueCat)</li>
-            <li>Subscription status and purchase events</li>
-            <li>Device type and OS version</li>
-            <li>App version</li>
-            <li>Country/region (from App Store or Google Play Store)</li>
-        </ul>
-        <p><strong>Payment Information:</strong> We never see or store your payment details. All payments are processed by Apple (via App Store) or Google (via Play Store). Your credit card and billing information is handled entirely by them according to their privacy policies.</p>
-        <p><strong>Purpose:</strong> To verify subscription status and provide access to the content you've purchased.</p>
-
-        <h3>2.4 Analytics and Performance Monitoring</h3>
-        <p>Al-Taif uses <strong>Firebase Analytics</strong> and <strong>Firebase Performance Monitoring</strong> (both provided by Google) to understand how the app is used and to find and fix performance issues.</p>
-        <p><strong>Firebase Analytics collects:</strong></p>
-        <ul>
-            <li>App usage events - for example, which lessons, videos, or PDFs you open, questions you answer (and whether correctly), exams you complete and your score, bookmarks you add, downloads, and searches you perform</li>
-            <li>Your selected grade level, as a general usage property (not tied to your identity)</li>
-            <li>Standard device and app diagnostic data collected automatically by Firebase (device model, OS version, app version, country/region, and an anonymous installation identifier)</li>
-        </ul>
-        <p><strong>Firebase Performance Monitoring collects:</strong></p>
-        <ul>
-            <li>Technical performance data such as app start time, screen rendering time, and network request duration - to help us find and fix slow or broken parts of the app</li>
-        </ul>
-        <p><strong>Neither service collects your name, email, or any other information that identifies you personally.</strong> Both are provided by Google - see the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase's data processing and security terms</a>.</p>
-    </div>
-
-    <div class="section">
-        <h2>3. How We Use Your Information</h2>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Type of Data</th>
-                    <th>How We Use It</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Study Progress &amp; Bookmarks</strong></td>
-                    <td>Stored locally on your device to track your learning and let you resume where you left off</td>
-                </tr>
-                <tr>
-                    <td><strong>Written Answer Text</strong> (only if you use AI-assisted grading)</td>
-                    <td>Sent to a third-party AI service to generate grading feedback</td>
-                </tr>
-                <tr>
-                    <td><strong>Subscription Data</strong></td>
-                    <td>To verify which semester's content you've purchased and enable access to it</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>We do NOT use your data to:</strong></p>
-        <ul>
-            <li>❌ Show you advertisements</li>
-            <li>❌ Sell to third parties</li>
-            <li>❌ Build marketing profiles</li>
-            <li>❌ Track you across other apps or websites</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>4. Data Storage and Backup</h2>
-
-        <h3>4.1 Local Storage</h3>
-        <p>By default, all your study data is stored <strong>only on your device</strong>. We do not have access to this data.</p>
-
-        <h3>4.2 Optional Google Drive Backup</h3>
-        <p>You can optionally back up part of your study data to your own Google Drive:</p>
-        <ul>
-            <li>This feature is <strong>off by default</strong> - you must turn it on and sign in with a Google account to use it</li>
-            <li>We request access only to a private, hidden storage area of your Google Drive reserved for this app (Google's "app data" folder) - <strong>we cannot see, browse, or access any of your other Drive files</strong></li>
-            <li>We store only your Google account's email address on your device, to show you which account is signed in</li>
-        </ul>
-
-        <p><strong>What gets backed up:</strong></p>
-        <ul>
-            <li>Lesson progress and bookmarks</li>
-            <li>Your study streak and activity history</li>
-        </ul>
-        <p>Handwritten annotations and whiteboard drawings are <strong>not</strong> included in this backup - they remain local to your device only.</p>
-
-        <div class="warning">
-            <strong>Important:</strong> Google Drive backup is entirely optional and controlled by you. Your Google account is subject to Google's own privacy policy, not ours. We recommend reviewing it:
-            <ul>
-                <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        <div class="summary-box">
+            <strong>لمحة سريعة عن خصوصيتك:</strong>
+            <ul style="margin: 10px 0;">
+                <li>✅ <strong>لا حاجة لإنشاء حساب</strong> - تُخزَّن جميع بيانات دراستك محليًا على جهازك</li>
+                <li>✅ <strong>لا نجمع معلومات شخصية</strong> - نحن لا نعرف من أنت</li>
+                <li>✅ <strong>لا وصول إلى الكاميرا أو الصور أو الموقع</strong> - لا يستخدم التطبيق أيًا منها</li>
+                <li>✅ <strong>بيانات التحليلات مجهولة الهوية دائمًا</strong> - لا تتضمن اسمك أو بريدك الإلكتروني أو هويتك أبدًا</li>
+                <li>✅ <strong>نسخ احتياطي اختياري عبر Google Drive</strong> - يقتصر على مجلد خاص بالتطبيق، وأنت من يتحكم به</li>
+                <li>✅ <strong>لا إعلانات ولا بيع للبيانات</strong> - تأتي إيرادات التطبيق من الاشتراكات فقط</li>
             </ul>
         </div>
-    </div>
 
-    <div class="section">
-        <h2>5. Data Sharing and Third-Party Services</h2>
-
-        <h3>5.1 Third-Party Services We Use</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Service</th>
-                    <th>Purpose</th>
-                    <th>Data Shared</th>
-                    <th>Privacy Policy</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>RevenueCat</strong></td>
-                    <td>Subscription management</td>
-                    <td>Anonymous ID, subscription status, device info</td>
-                    <td><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Google Drive</strong> (optional)</td>
-                    <td>Backing up progress and bookmarks, if you enable it</td>
-                    <td>Backup file in a private app-only folder; your account email</td>
-                    <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
-                </tr>
-                <tr>
-                    <td><strong>AI Grading Service</strong> (optional feature)</td>
-                    <td>Generating feedback on written answers</td>
-                    <td>Question content, model answer, and your written answer text</td>
-                    <td>Provided by our AI service partner; no personal identifiers are sent</td>
-                </tr>
-                <tr>
-                    <td><strong>Firebase Analytics &amp; Performance</strong></td>
-                    <td>Understanding app usage and finding performance issues</td>
-                    <td>Anonymous usage events, device/app diagnostics - see Section 2.4</td>
-                    <td><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Apple App Store</strong></td>
-                    <td>Payment processing</td>
-                    <td>Purchase transactions (we don't see payment info)</td>
-                    <td><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Google Play Store</strong></td>
-                    <td>Payment processing</td>
-                    <td>Purchase transactions (we don't see payment info)</td>
-                    <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Processor Role:</strong> RevenueCat acts as a data processor on our behalf and processes subscription-related data only according to our instructions and for the purpose of providing subscription management services.</p>
-
-        <h3>5.2 No Data Selling</h3>
-        <p><strong>We do not sell, rent, or trade your data with anyone.</strong></p>
-
-        <h3>5.3 Legal Requirements</h3>
-        <p>We may disclose information if required by law, such as:</p>
-        <ul>
-            <li>To comply with legal processes or government requests</li>
-            <li>To protect our rights or property</li>
-            <li>To prevent illegal activity or protect user safety</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>6. Data Security</h2>
-        <p>We take data security seriously:</p>
-        <ul>
-            <li><strong>Local Storage:</strong> All study data is stored locally on your device, protected by your device's security features (passcode, biometrics)</li>
-            <li><strong>Encryption:</strong> Communication with third-party services (RevenueCat, Google Drive, Firebase, the AI grading service) uses HTTPS encryption</li>
-            <li><strong>No Central Database:</strong> We do not maintain a database of user information</li>
-            <li><strong>Minimal Data Collection:</strong> We only collect what's necessary for the app to function</li>
-        </ul>
-
-        <div class="warning">
-            <strong>Your Responsibility:</strong> Since data is stored on your device, please protect your device with a passcode or biometric lock. If you enable Google Drive backup, secure your Google account with a strong password and two-factor authentication.
+        <div class="section">
+            <h2>1. مقدمة</h2>
+            <p>مرحبًا بك في تطبيق الطيف (Al-Taif)، تطبيق تعليمي لمادة الفيزياء لطلاب الصف الحادي عشر والثاني عشر في سلطنة عُمان، من تطوير SmartHorizon ("نحن" أو "لنا"). نحن ملتزمون بحماية خصوصيتك وبالشفافية حول كيفية عمل التطبيق.</p>
+            <p>توضّح سياسة الخصوصية هذه:</p>
+            <ul>
+                <li>المعلومات التي نجمعها (وهي قليلة جدًا)</li>
+                <li>كيفية استخدامنا لهذه المعلومات</li>
+                <li>حقوقك وخياراتك</li>
+                <li>كيفية تعامل الخدمات الخارجية التي نستخدمها مع البيانات</li>
+            </ul>
+            <p>باستخدامك تطبيق الطيف، فإنك توافق على سياسة الخصوصية هذه. إذا كنت لا توافق عليها، يُرجى عدم استخدام التطبيق.</p>
         </div>
+
+        <div class="section">
+            <h2>2. المعلومات التي نجمعها</h2>
+
+            <div class="important">
+                <strong>نقطة أساسية:</strong> لا يتطلب تطبيق الطيف إنشاء حساب مستخدم، ولا يجمع معلومات شخصية تُعرِّف بهويتك. تُخزَّن بيانات دراستك محليًا على جهازك.
+            </div>
+
+            <h3>2.1 المعلومات التي تقدّمها</h3>
+            <p><strong>لا نجمع:</strong></p>
+            <ul>
+                <li>❌ الاسم</li>
+                <li>❌ البريد الإلكتروني</li>
+                <li>❌ رقم الهاتف</li>
+                <li>❌ حسابات المستخدمين أو كلمات المرور</li>
+                <li>❌ حسابات التواصل الاجتماعي</li>
+            </ul>
+
+            <p><strong>استثناء - نموذج "تواصل معنا":</strong> إذا اخترت التواصل معنا عبر نموذج "تواصل معنا" داخل التطبيق أو عبر البريد الإلكتروني مباشرةً، فسنستلم ما تُدرجه هناك - عادةً اسمك وبريدك الإلكتروني ورسالتك - وذلك فقط للرد على استفسارك. لا يحدث هذا إلا إذا بادرت أنت بالتواصل.</p>
+
+            <p><strong>البيانات المخزَّنة محليًا على جهازك:</strong></p>
+            <ul>
+                <li>تقدّمك الدراسي (مدة القراءة، مدة مشاهدة الفيديو، الأسئلة التي أجبت عنها)</li>
+                <li>الأسئلة المحفوظة وأي ملاحظات تكتبها عليها</li>
+                <li>الرسومات والتعليقات اليدوية التي تضيفها على مواد الدرس</li>
+                <li>جلسات الامتحانات التجريبية ونتائجها التي أكملتها</li>
+                <li>سلسلة أيام المذاكرة وسجل النشاط اليومي</li>
+                <li>إعدادات التطبيق وتفضيلاتك (المظهر، حجم الخط، وقت التذكير، وما شابه)</li>
+                <li>ملفات الدروس التي حمّلتها (PDF، فيديوهات) لاستخدامها دون اتصال بالإنترنت</li>
+            </ul>
+
+            <h3>2.2 التصحيح بمساعدة الذكاء الاصطناعي (ميزة اختيارية)</h3>
+            <p>يتضمن تطبيق الطيف خيارًا لاستخدام خدمة ذكاء اصطناعي (AI) للمساعدة في تقييم الإجابات الكتابية وإجابات التبرير، كبديل عن مقارنة إجابتك بالإجابة النموذجية بنفسك.</p>
+            <p><strong>إذا استخدمت هذه الميزة:</strong></p>
+            <ul>
+                <li>يُرسَل نص السؤال والإجابة النموذجية الرسمية ونص إجابتك الكتابية إلى خدمة ذكاء اصطناعي خارجية لتوليد تغذية راجعة</li>
+                <li>لا يُرسَل اسمك أو بريدك الإلكتروني أو أي معلومة تُعرِّف بهويتك ضمن هذه البيانات</li>
+                <li>تعالج خدمة الذكاء الاصطناعي هذا المحتوى فقط لتوليد تغذية راجعة تصحيحية، ولا تستخدمه للتعرّف على هويتك</li>
+            </ul>
+            <p><strong>تحكّمك:</strong> هذه أداة مساعدة تكميلية، وليست وسيلتك الوحيدة للتحقق من إجاباتك - يمكنك دائمًا مقارنة إجابتك بملف الإجابة النموذجية بدلًا من ذلك.</p>
+
+            <h3>2.3 معلومات الاشتراك</h3>
+            <p>نستخدم RevenueCat لإدارة الاشتراكات. عند اشتراكك في محتوى فصل دراسي، يجمع RevenueCat:</p>
+            <ul>
+                <li>معرّف مستخدم مجهول الهوية (يُنشئه RevenueCat)</li>
+                <li>حالة الاشتراك وأحداث الشراء</li>
+                <li>نوع الجهاز وإصدار نظام التشغيل</li>
+                <li>إصدار التطبيق</li>
+                <li>الدولة/المنطقة (من متجر App Store أو Google Play)</li>
+            </ul>
+            <p><strong>معلومات الدفع:</strong> لا نرى ولا نُخزِّن بيانات دفعك أبدًا. تُعالَج جميع المدفوعات من قِبل Apple (عبر App Store) أو Google (عبر Play Store). تُدار بيانات بطاقتك الائتمانية والفوترة بالكامل من قِبلهم وفق سياسات الخصوصية الخاصة بهم.</p>
+            <p><strong>الغرض:</strong> للتحقق من حالة الاشتراك وتفعيل الوصول إلى المحتوى الذي اشتريته.</p>
+
+            <h3>2.4 التحليلات ومراقبة الأداء</h3>
+            <p>يستخدم تطبيق الطيف كلًا من <strong>Firebase Analytics</strong> و<strong>Firebase Performance Monitoring</strong> (وكلاهما من Google) لفهم كيفية استخدام التطبيق واكتشاف مشكلات الأداء وإصلاحها.</p>
+            <p><strong>تجمع خدمة Firebase Analytics:</strong></p>
+            <ul>
+                <li>أحداث استخدام التطبيق - على سبيل المثال، الدروس أو الفيديوهات أو ملفات PDF التي تفتحها، والأسئلة التي تُجيب عنها (وما إذا كانت إجابتك صحيحة)، والامتحانات التي تُكملها ونتيجتك، والأسئلة التي تحفظها، والتنزيلات، وعمليات البحث التي تُجريها</li>
+                <li>الصف الدراسي الذي اخترته، كخاصية استخدام عامة (غير مرتبطة بهويتك)</li>
+                <li>بيانات تشخيصية قياسية للجهاز والتطبيق يجمعها Firebase تلقائيًا (طراز الجهاز، إصدار نظام التشغيل، إصدار التطبيق، الدولة/المنطقة، ومعرّف تثبيت مجهول الهوية)</li>
+            </ul>
+            <p><strong>تجمع خدمة Firebase Performance Monitoring:</strong></p>
+            <ul>
+                <li>بيانات أداء تقنية مثل زمن بدء تشغيل التطبيق، وزمن عرض الشاشات، ومدة طلبات الشبكة - لمساعدتنا في اكتشاف الأجزاء البطيئة أو المعطوبة من التطبيق وإصلاحها</li>
+            </ul>
+            <p><strong>لا تجمع أيٌّ من الخدمتين اسمك أو بريدك الإلكتروني أو أي معلومة أخرى تُعرِّف بهويتك الشخصية.</strong> كلتا الخدمتين من تقديم Google - راجع <a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google</a> و<a href="https://firebase.google.com/support/privacy" target="_blank">شروط معالجة البيانات والأمان الخاصة بـ Firebase</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. كيفية استخدامنا لمعلوماتك</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>نوع البيانات</th>
+                        <th>كيفية استخدامنا لها</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>التقدّم الدراسي والأسئلة المحفوظة</strong></td>
+                        <td>تُخزَّن محليًا على جهازك لتتبع تعلّمك والسماح لك بالمتابعة من حيث توقفت</td>
+                    </tr>
+                    <tr>
+                        <td><strong>نص الإجابة الكتابية</strong> (فقط إذا استخدمت التصحيح بالذكاء الاصطناعي)</td>
+                        <td>تُرسَل إلى خدمة ذكاء اصطناعي خارجية لتوليد تغذية راجعة تصحيحية</td>
+                    </tr>
+                    <tr>
+                        <td><strong>بيانات الاشتراك</strong></td>
+                        <td>للتحقق من محتوى الفصل الدراسي الذي اشتريته وتفعيل الوصول إليه</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>لا نستخدم بياناتك في:</strong></p>
+            <ul>
+                <li>❌ عرض الإعلانات عليك</li>
+                <li>❌ بيعها لأطراف ثالثة</li>
+                <li>❌ بناء ملفات تسويقية عنك</li>
+                <li>❌ تتبعك عبر تطبيقات أو مواقع أخرى</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. تخزين البيانات والنسخ الاحتياطي</h2>
+
+            <h3>4.1 التخزين المحلي</h3>
+            <p>بشكل افتراضي، تُخزَّن جميع بيانات دراستك <strong>على جهازك فقط</strong>. ولا نملك نحن إمكانية الوصول إلى هذه البيانات.</p>
+
+            <h3>4.2 النسخ الاحتياطي الاختياري عبر Google Drive</h3>
+            <p>يمكنك اختياريًا نسخ جزء من بيانات دراستك احتياطيًا إلى حساب Google Drive الخاص بك:</p>
+            <ul>
+                <li>هذه الميزة <strong>مُعطَّلة افتراضيًا</strong> - يجب عليك تفعيلها وتسجيل الدخول بحساب Google لاستخدامها</li>
+                <li>نطلب الوصول فقط إلى منطقة تخزين خاصة ومخفية في Google Drive مخصصة لهذا التطبيق (مجلد "بيانات التطبيق" الخاص بـ Google) - <strong>لا يمكننا رؤية أو تصفح أو الوصول إلى أي من ملفاتك الأخرى في Drive</strong></li>
+                <li>نُخزِّن فقط عنوان البريد الإلكتروني لحساب Google الخاص بك على جهازك، لنعرض لك الحساب المسجَّل دخوله</li>
+            </ul>
+
+            <p><strong>ما الذي يُنسَخ احتياطيًا:</strong></p>
+            <ul>
+                <li>التقدّم الدراسي والأسئلة المحفوظة</li>
+                <li>سلسلة أيام مذاكرتك وسجل نشاطك</li>
+            </ul>
+            <p>لا تُدرَج الرسومات والتعليقات اليدوية والسبورة التفاعلية ضمن هذا النسخ الاحتياطي - إذ تبقى محليةً على جهازك فقط.</p>
+
+            <div class="warning">
+                <strong>هام:</strong> النسخ الاحتياطي عبر Google Drive اختياري بالكامل وتحت تحكمك. يخضع حساب Google الخاص بك لسياسة خصوصية Google، وليس لسياستنا. نوصي بمراجعتها:
+                <ul>
+                    <li><a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. مشاركة البيانات والخدمات الخارجية</h2>
+
+            <h3>5.1 الخدمات الخارجية التي نستخدمها</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>الخدمة</th>
+                        <th>الغرض</th>
+                        <th>البيانات المُشارَكة</th>
+                        <th>سياسة الخصوصية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>RevenueCat</strong></td>
+                        <td>إدارة الاشتراكات</td>
+                        <td>معرّف مجهول، حالة الاشتراك، معلومات الجهاز</td>
+                        <td><a href="https://www.revenuecat.com/privacy" target="_blank">سياسة خصوصية RevenueCat</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Drive</strong> (اختياري)</td>
+                        <td>نسخ التقدّم والأسئلة المحفوظة احتياطيًا، إذا فعّلت ذلك</td>
+                        <td>ملف نسخ احتياطي في مجلد خاص بالتطبيق؛ بريدك الإلكتروني</td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>خدمة التصحيح بالذكاء الاصطناعي</strong> (ميزة اختيارية)</td>
+                        <td>توليد تغذية راجعة على الإجابات الكتابية</td>
+                        <td>محتوى السؤال، والإجابة النموذجية، ونص إجابتك الكتابية</td>
+                        <td>من مزوّد خدمة الذكاء الاصطناعي الشريك؛ دون إرسال أي معرّفات شخصية</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Firebase Analytics وPerformance</strong></td>
+                        <td>فهم استخدام التطبيق واكتشاف مشكلات الأداء</td>
+                        <td>أحداث استخدام مجهولة الهوية، بيانات تشخيصية للجهاز/التطبيق - راجع القسم 2.4</td>
+                        <td><a href="https://firebase.google.com/support/privacy" target="_blank">سياسة خصوصية Firebase</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>App Store من Apple</strong></td>
+                        <td>معالجة المدفوعات</td>
+                        <td>معاملات الشراء (لا نرى معلومات الدفع)</td>
+                        <td><a href="https://www.apple.com/legal/privacy/" target="_blank">سياسة خصوصية Apple</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>متجر Google Play</strong></td>
+                        <td>معالجة المدفوعات</td>
+                        <td>معاملات الشراء (لا نرى معلومات الدفع)</td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">سياسة خصوصية Google</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>دور المعالج:</strong> يعمل RevenueCat كمعالج بيانات نيابةً عنّا، ويُعالج البيانات المتعلقة بالاشتراك وفق تعليماتنا فقط ولغرض تقديم خدمات إدارة الاشتراكات.</p>
+
+            <h3>5.2 عدم بيع البيانات</h3>
+            <p><strong>لا نبيع بياناتك ولا نؤجرها ولا نُبادلها مع أي جهة.</strong></p>
+
+            <h3>5.3 المتطلبات القانونية</h3>
+            <p>قد نفصح عن المعلومات إذا تطلّب القانون ذلك، مثل:</p>
+            <ul>
+                <li>الامتثال للإجراءات القانونية أو طلبات الجهات الحكومية</li>
+                <li>حماية حقوقنا أو ممتلكاتنا</li>
+                <li>منع نشاط غير قانوني أو حماية سلامة المستخدمين</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. أمان البيانات</h2>
+            <p>نأخذ أمان البيانات على محمل الجد:</p>
+            <ul>
+                <li><strong>التخزين المحلي:</strong> تُخزَّن جميع بيانات دراستك محليًا على جهازك، محميةً بميزات الأمان الخاصة بجهازك (رمز المرور، البصمة/الوجه)</li>
+                <li><strong>التشفير:</strong> يستخدم التواصل مع الخدمات الخارجية (RevenueCat وGoogle Drive وFirebase وخدمة التصحيح بالذكاء الاصطناعي) تشفير HTTPS</li>
+                <li><strong>عدم وجود قاعدة بيانات مركزية:</strong> لا نحتفظ بقاعدة بيانات لمعلومات المستخدمين</li>
+                <li><strong>الحد الأدنى من جمع البيانات:</strong> نجمع فقط ما هو ضروري لعمل التطبيق</li>
+            </ul>
+
+            <div class="warning">
+                <strong>مسؤوليتك:</strong> بما أن البيانات مُخزَّنة على جهازك، يُرجى حماية جهازك برمز مرور أو قفل بصمة/وجه. وإذا فعّلت النسخ الاحتياطي عبر Google Drive، فأمِّن حساب Google الخاص بك بكلمة مرور قوية والتحقق بخطوتين.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. الاحتفاظ بالبيانات وحذفها</h2>
+
+            <h3>7.1 البيانات المحلية</h3>
+            <ul>
+                <li><strong>المدة:</strong> تبقى البيانات على جهازك طالما أن التطبيق مثبَّت لديك</li>
+                <li><strong>الحذف:</strong> عند إلغاء تثبيت التطبيق، تُحذف جميع البيانات المحلية تلقائيًا بواسطة نظام تشغيل جهازك</li>
+                <li><strong>الحذف داخل التطبيق:</strong> تتيح لك شاشة الإعدادات أيضًا حذف الملفات المحمَّلة أو إعادة ضبط تقدّمك دون الحاجة لإلغاء التثبيت</li>
+            </ul>
+
+            <h3>7.2 بيانات النسخ الاحتياطي عبر Google Drive</h3>
+            <ul>
+                <li><strong>التحكم:</strong> لديك التحكم الكامل في ملف النسخ الاحتياطي في Google Drive الخاص بك</li>
+                <li><strong>الحذف:</strong> يؤدي إيقاف النسخ الاحتياطي عبر Google Drive من الإعدادات، أو إلغاء وصول التطبيق من حساب Google الخاص بك، إلى إزالة وصولنا إلى تلك البيانات</li>
+            </ul>
+
+            <h3>7.3 بيانات الاشتراك</h3>
+            <p>تُحتفَظ ببيانات الاشتراك والشراء من قِبل RevenueCat وفق <a href="https://www.revenuecat.com/privacy" target="_blank">سياسة الاحتفاظ بالبيانات</a> الخاصة بهم.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. حماية المحتوى</h2>
+            <p>للمساعدة في حماية المحتوى التعليمي في التطبيق من النسخ وإعادة التوزيع غير المصرّح بهما، يكتشف تطبيق الطيف لقطات الشاشة ويمنعها، ويقيّد تسجيل الشاشة أو مشاركتها في أنحاء التطبيق كافة (وليس فقط في شاشات محتوى الدروس)، باستخدام ميزات نظام التشغيل القياسية (على iOS وAndroid).</p>
+            <ul>
+                <li>يحدث هذا الاكتشاف بالكامل على جهازك</li>
+                <li>لا تُجمَع أو تُخزَّن أو تُرسَل أي بيانات شخصية إضافية كجزء من هذه الميزة - فهي تتحكم فقط فيما يُسمح لجهازك بالتقاطه على الشاشة</li>
+                <li>في إصدارات Android الأقدم من 15، يمنع هذا أيضًا المشاركة المشروعة للشاشة (مثل مكالمة فيديو) أثناء فتح التطبيق، لأن إصدارات Android الأقدم لا تملك طريقة للتمييز بين مشاركة الشاشة ولقطة الشاشة. أما في Android 15 وما بعده وفي iOS، فيُرفَع هذا المنع تلقائيًا طوال مدة مشاركة أو تسجيل شاشة حقيقية، ويُعاد فرضه بمجرد انتهائها؛ راجع <a href="/legal/education-app/terms-of-service/">شروط الاستخدام</a> للتفاصيل</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>9. الطلاب والقُصّر</h2>
+            <p>صُمِّم تطبيق الطيف لطلاب الصف الحادي عشر والثاني عشر، ومعظمهم من المراهقين. وقد أخذنا ذلك بعين الاعتبار عند تصميم البيانات التي يجمعها التطبيق:</p>
+            <ul>
+                <li>لا يُجمَع الاسم أو الصورة أو أي معرّف شخصي آخر أبدًا</li>
+                <li>تبقى جميع بيانات الدراسة (التقدّم، الأسئلة المحفوظة، الإجابات) على جهاز الطالب نفسه ما لم يختر تفعيل النسخ الاحتياطي عبر Google Drive</li>
+                <li>لا يعرض التطبيق أي إعلانات، ولا يبني ملفات سلوكية أو تسويقية عن أي مستخدم، بما في ذلك الطلاب</li>
+                <li>تُشترى الاشتراكات عبر متجر App Store من Apple أو متجر Google Play، وكلاهما لديه ضوابط حساب ورقابة أبوية خاصة به - نوصي بمشاركة أحد الوالدين أو ولي الأمر في أي عملية شراء</li>
+            </ul>
+            <p>إذا كنت أحد الوالدين أو ولي أمر ولديك أسئلة حول ما يجمعه التطبيق عن استخدام طفلك له، يُرجى التواصل معنا عبر <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>10. حقوقك وخياراتك</h2>
+
+            <h3>10.1 الوصول إلى البيانات</h3>
+            <p>بما أن جميع البيانات مُخزَّنة محليًا على جهازك، فلديك وصول مباشر إلى بيانات دراستك عبر واجهة التطبيق في أي وقت.</p>
+
+            <h3>10.2 حذف البيانات</h3>
+            <ul>
+                <li><strong>البيانات المحلية:</strong> استخدم شاشة الإعدادات لحذف الملفات المحمَّلة أو إعادة ضبط تقدّمك، أو ألغِ تثبيت التطبيق لحذف كل شيء</li>
+                <li><strong>النسخ الاحتياطي عبر Google Drive:</strong> أوقف النسخ الاحتياطي من الإعدادات، أو احذف ملف النسخ الاحتياطي من Google Drive مباشرةً</li>
+            </ul>
+
+            <h3>10.3 خيارات إلغاء الاشتراك في الميزات</h3>
+            <ul>
+                <li><strong>التصحيح بمساعدة الذكاء الاصطناعي:</strong> ببساطة لا تستخدم هذه الميزة - قارن إجاباتك بالإجابة النموذجية الرسمية بدلًا من ذلك</li>
+                <li><strong>النسخ الاحتياطي عبر Google Drive:</strong> ببساطة لا تُفعِّل هذه الميزة</li>
+                <li><strong>الإشعارات:</strong> عطِّل تذكير المذاكرة اليومي من الإعدادات، أو من إعدادات الإشعارات في جهازك</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>11. أين تُخزَّن بياناتك</h2>
+            <p>نحن مقرّنا في سلطنة عُمان، وتطبيق الطيف مصمَّم بشكل أساسي لطلاب المنهج العُماني. تبقى بيانات دراستك على جهازك الخاص. أما إذا استخدمت الخدمات الخارجية الاختيارية الموضّحة أعلاه:</p>
+            <ul>
+                <li><strong>RevenueCat:</strong> قد تُعالَج بيانات الاشتراك في الولايات المتحدة الأمريكية</li>
+                <li><strong>Google Drive:</strong> تُعالَج البيانات وفق البنية التحتية الخاصة بـ Google، إذا فعّلت النسخ الاحتياطي</li>
+                <li><strong>Firebase Analytics وPerformance:</strong> تُعالَج البيانات وفق البنية التحتية الخاصة بـ Google</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>12. التغييرات على سياسة الخصوصية هذه</h2>
+            <p>قد نُحدِّث سياسة الخصوصية هذه من وقت لآخر لتعكس:</p>
+            <ul>
+                <li>تغييرات في ميزات التطبيق</li>
+                <li>تغييرات في المتطلبات القانونية</li>
+                <li>تغييرات في ممارساتنا المتعلقة بالبيانات</li>
+            </ul>
+
+            <p><strong>كيف نُخطرك:</strong></p>
+            <ul>
+                <li>تحديث تاريخ "آخر تحديث" أعلى هذه السياسة</li>
+                <li>عرض إشعار داخل التطبيق عند إجراء تغييرات جوهرية</li>
+                <li>طلب الموافقة على السياسة المحدَّثة عند إجراء تغييرات مهمة</li>
+            </ul>
+
+            <p>يمكنك الاطّلاع على <a href="/legal/education-app/changelog.html#privacy">سجل الإصدارات</a> الكامل لهذه السياسة.</p>
+
+            <p><strong>استمرارك في استخدام التطبيق بعد إجراء التغييرات يعني موافقتك على السياسة المحدَّثة.</strong></p>
+        </div>
+
+        <div class="section">
+            <h2>13. تواصل معنا</h2>
+            <p>إذا كانت لديك أسئلة أو استفسارات أو طلبات بخصوص سياسة الخصوصية هذه أو بياناتك، يُرجى التواصل معنا:</p>
+            <ul>
+                <li><strong>المطوِّر:</strong> SmartHorizon</li>
+                <li><strong>البريد الإلكتروني:</strong> <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a></li>
+                <li><strong>الموقع الإلكتروني:</strong> <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a></li>
+                <li><strong>الموقع الجغرافي:</strong> مسقط، سلطنة عُمان</li>
+            </ul>
+            <p>سنرد على استفسارك خلال 30 يومًا.</p>
+        </div>
+
+        <div class="section">
+            <h2>14. معلومات إضافية</h2>
+
+            <h3>14.1 عدم وجود ضمان</h3>
+            <p>رغم سعينا لحماية خصوصيتك، لا توجد طريقة تخزين أو نقل إلكتروني آمنة بنسبة 100%. لا يمكننا ضمان الأمان المطلق.</p>
+
+            <h3>14.2 روابط أطراف ثالثة</h3>
+            <p>تنطبق سياسة الخصوصية هذه على تطبيق الطيف فقط. في حال نقرك على روابط لمواقع أو خدمات خارجية، فإن لتلك المواقع سياسات خصوصية خاصة بها.</p>
+
+            <h3>14.3 تحديثات الخدمات الخارجية</h3>
+            <p>قد تُحدِّث RevenueCat وGoogle (بما في ذلك Firebase) ومزوّد خدمة التصحيح بالذكاء الاصطناعي الشريك ممارساتهم. نوصي بمراجعة سياسات الخصوصية الخاصة بهم بشكل دوري.</p>
+        </div>
+
+        <div class="important">
+            <strong>ملخص - خصوصيتك تهمنا:</strong>
+            <ul style="margin: 10px 0;">
+                <li>✅ تبقى بيانات دراستك على جهازك</li>
+                <li>✅ لا نعرف من أنت</li>
+                <li>✅ لا وصول إلى الكاميرا أو الصور أو الموقع</li>
+                <li>✅ لا إعلانات ولا بيع للبيانات</li>
+                <li>✅ أنت من يتحكم بالنسخ الاحتياطي عبر Google Drive</li>
+                <li>✅ بيانات التحليلات مجهولة الهوية دائمًا</li>
+            </ul>
+        </div>
+
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
+            <p style="text-align: center;">&copy; 2026 SmartHorizon. جميع الحقوق محفوظة.</p>
+            <p style="text-align: center;">
+                <a href="/legal/education-app/terms-of-service/">شروط الاستخدام</a> |
+                <a href="/legal/education-app/changelog.html">سجل الإصدارات</a>
+            </p>
+        </footer>
     </div>
 
-    <div class="section">
-        <h2>7. Data Retention and Deletion</h2>
+    <!-- ═══════════════════════ ENGLISH ═══════════════════════ -->
+    <div id="doc-en" lang="en" dir="ltr" style="display:none;">
+        <div class="version-banner">
+            <strong>Current Version:</strong> <span class="version-info">2026-09-01</span><br>
+            <strong>Last Updated:</strong> <span class="version-info">September 1, 2026</span><br>
+            <a href="/legal/education-app/changelog.html#privacy" class="history-link">View Version History →</a>
+        </div>
 
-        <h3>7.1 Local Data</h3>
-        <ul>
-            <li><strong>Retention:</strong> Data remains on your device for as long as you have the app installed</li>
-            <li><strong>Deletion:</strong> When you uninstall the app, all local data is automatically deleted by your device's operating system</li>
-            <li><strong>In-App Deletion:</strong> The app's Settings screen also lets you delete downloaded files or reset your progress without uninstalling</li>
-        </ul>
+        <h1>Privacy Policy</h1>
+        <p class="effective-date">Effective Date: September 1, 2026</p>
 
-        <h3>7.2 Google Drive Backup Data</h3>
-        <ul>
-            <li><strong>Control:</strong> You have full control over the backup file in your Google Drive</li>
-            <li><strong>Deletion:</strong> Turning off Google Drive backup in Settings, or revoking the app's access from your Google account, removes our access to that data</li>
-        </ul>
+        <div class="summary-box">
+            <strong>Privacy at a Glance:</strong>
+            <ul style="margin: 10px 0;">
+                <li>✅ <strong>No user accounts required</strong> - all study data stored locally on your device</li>
+                <li>✅ <strong>No personal information collected</strong> - we don't know who you are</li>
+                <li>✅ <strong>No camera, photos, or location access</strong> - the app doesn't use any of these</li>
+                <li>✅ <strong>Analytics data is always anonymous</strong> - never your name, email, or identity</li>
+                <li>✅ <strong>Optional Google Drive backup</strong> - limited to a private app folder, you control it</li>
+                <li>✅ <strong>No ads or data selling</strong> - app revenue comes only from subscriptions</li>
+            </ul>
+        </div>
 
-        <h3>7.3 Subscription Data</h3>
-        <p>Subscription and purchase data is retained by RevenueCat according to their own <a href="https://www.revenuecat.com/privacy" target="_blank">data retention policy</a>.</p>
+        <div class="section">
+            <h2>1. Introduction</h2>
+            <p>Welcome to Al-Taif (الطيف), a physics learning app for Grade 11 and Grade 12 students in Oman, developed by SmartHorizon ("we," "us," or "our"). We are committed to protecting your privacy and being transparent about how our app works.</p>
+            <p>This Privacy Policy explains:</p>
+            <ul>
+                <li>What information we collect (very minimal)</li>
+                <li>How we use that information</li>
+                <li>Your rights and choices</li>
+                <li>How third-party services we use handle data</li>
+            </ul>
+            <p>By using Al-Taif, you agree to this Privacy Policy. If you do not agree, please do not use the app.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. Information We Collect</h2>
+
+            <div class="important">
+                <strong>Key Point:</strong> Al-Taif does not require user accounts and does not collect personal information that identifies you. Your study data is stored locally on your device.
+            </div>
+
+            <h3>2.1 Information You Provide</h3>
+            <p><strong>We do NOT collect:</strong></p>
+            <ul>
+                <li>❌ Name</li>
+                <li>❌ Email address</li>
+                <li>❌ Phone number</li>
+                <li>❌ User accounts or passwords</li>
+                <li>❌ Social media profiles</li>
+            </ul>
+
+            <p><strong>Exception - Contact Us form:</strong> If you choose to reach out to us through the in-app "Contact Us" form or by emailing us directly, we receive whatever you include there - typically your name, email address, and message - solely to respond to your inquiry. This only happens if you initiate contact.</p>
+
+            <p><strong>Data stored locally on your device:</strong></p>
+            <ul>
+                <li>Your lesson progress (reading time, video watch time, questions attempted)</li>
+                <li>Bookmarked questions and any notes you write on them</li>
+                <li>Handwritten annotations and whiteboard drawings you make on lesson materials</li>
+                <li>Practice exam sessions and results you've completed</li>
+                <li>Study streak and daily activity history</li>
+                <li>App settings and preferences (theme, font size, notification time, and similar)</li>
+                <li>Downloaded lesson files (PDFs, videos) you've chosen to save for offline use</li>
+            </ul>
+
+            <h3>2.2 AI-Assisted Grading (Optional Feature)</h3>
+            <p>Al-Taif includes an option to use an artificial intelligence (AI) service to help evaluate written and justification-style exam answers, as an alternative to comparing your answer against the official model answer yourself.</p>
+            <p><strong>If you use this feature:</strong></p>
+            <ul>
+                <li>The question text, the official model answer, and the text of your written answer are sent to a third-party AI service to generate feedback</li>
+                <li>No name, email, or other information that identifies you is included in this data</li>
+                <li>The AI service processes this content only to generate grading feedback and does not use it to identify you personally</li>
+            </ul>
+            <p><strong>Your control:</strong> This is a supplementary study aid, not your only way to check your answers - you can always compare your answer against the official model answer PDF instead.</p>
+
+            <h3>2.3 Subscription Information</h3>
+            <p>We use RevenueCat to manage subscriptions. When you subscribe to a semester's content, RevenueCat collects:</p>
+            <ul>
+                <li>Anonymous user ID (generated by RevenueCat)</li>
+                <li>Subscription status and purchase events</li>
+                <li>Device type and OS version</li>
+                <li>App version</li>
+                <li>Country/region (from App Store or Google Play Store)</li>
+            </ul>
+            <p><strong>Payment Information:</strong> We never see or store your payment details. All payments are processed by Apple (via App Store) or Google (via Play Store). Your credit card and billing information is handled entirely by them according to their privacy policies.</p>
+            <p><strong>Purpose:</strong> To verify subscription status and provide access to the content you've purchased.</p>
+
+            <h3>2.4 Analytics and Performance Monitoring</h3>
+            <p>Al-Taif uses <strong>Firebase Analytics</strong> and <strong>Firebase Performance Monitoring</strong> (both provided by Google) to understand how the app is used and to find and fix performance issues.</p>
+            <p><strong>Firebase Analytics collects:</strong></p>
+            <ul>
+                <li>App usage events - for example, which lessons, videos, or PDFs you open, questions you answer (and whether correctly), exams you complete and your score, bookmarks you add, downloads, and searches you perform</li>
+                <li>Your selected grade level, as a general usage property (not tied to your identity)</li>
+                <li>Standard device and app diagnostic data collected automatically by Firebase (device model, OS version, app version, country/region, and an anonymous installation identifier)</li>
+            </ul>
+            <p><strong>Firebase Performance Monitoring collects:</strong></p>
+            <ul>
+                <li>Technical performance data such as app start time, screen rendering time, and network request duration - to help us find and fix slow or broken parts of the app</li>
+            </ul>
+            <p><strong>Neither service collects your name, email, or any other information that identifies you personally.</strong> Both are provided by Google - see the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase's data processing and security terms</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>3. How We Use Your Information</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type of Data</th>
+                        <th>How We Use It</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Study Progress &amp; Bookmarks</strong></td>
+                        <td>Stored locally on your device to track your learning and let you resume where you left off</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Written Answer Text</strong> (only if you use AI-assisted grading)</td>
+                        <td>Sent to a third-party AI service to generate grading feedback</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Subscription Data</strong></td>
+                        <td>To verify which semester's content you've purchased and enable access to it</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>We do NOT use your data to:</strong></p>
+            <ul>
+                <li>❌ Show you advertisements</li>
+                <li>❌ Sell to third parties</li>
+                <li>❌ Build marketing profiles</li>
+                <li>❌ Track you across other apps or websites</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. Data Storage and Backup</h2>
+
+            <h3>4.1 Local Storage</h3>
+            <p>By default, all your study data is stored <strong>only on your device</strong>. We do not have access to this data.</p>
+
+            <h3>4.2 Optional Google Drive Backup</h3>
+            <p>You can optionally back up part of your study data to your own Google Drive:</p>
+            <ul>
+                <li>This feature is <strong>off by default</strong> - you must turn it on and sign in with a Google account to use it</li>
+                <li>We request access only to a private, hidden storage area of your Google Drive reserved for this app (Google's "app data" folder) - <strong>we cannot see, browse, or access any of your other Drive files</strong></li>
+                <li>We store only your Google account's email address on your device, to show you which account is signed in</li>
+            </ul>
+
+            <p><strong>What gets backed up:</strong></p>
+            <ul>
+                <li>Lesson progress and bookmarks</li>
+                <li>Your study streak and activity history</li>
+            </ul>
+            <p>Handwritten annotations and whiteboard drawings are <strong>not</strong> included in this backup - they remain local to your device only.</p>
+
+            <div class="warning">
+                <strong>Important:</strong> Google Drive backup is entirely optional and controlled by you. Your Google account is subject to Google's own privacy policy, not ours. We recommend reviewing it:
+                <ul>
+                    <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. Data Sharing and Third-Party Services</h2>
+
+            <h3>5.1 Third-Party Services We Use</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Purpose</th>
+                        <th>Data Shared</th>
+                        <th>Privacy Policy</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>RevenueCat</strong></td>
+                        <td>Subscription management</td>
+                        <td>Anonymous ID, subscription status, device info</td>
+                        <td><a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Drive</strong> (optional)</td>
+                        <td>Backing up progress and bookmarks, if you enable it</td>
+                        <td>Backup file in a private app-only folder; your account email</td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI Grading Service</strong> (optional feature)</td>
+                        <td>Generating feedback on written answers</td>
+                        <td>Question content, model answer, and your written answer text</td>
+                        <td>Provided by our AI service partner; no personal identifiers are sent</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Firebase Analytics &amp; Performance</strong></td>
+                        <td>Understanding app usage and finding performance issues</td>
+                        <td>Anonymous usage events, device/app diagnostics - see Section 2.4</td>
+                        <td><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apple App Store</strong></td>
+                        <td>Payment processing</td>
+                        <td>Purchase transactions (we don't see payment info)</td>
+                        <td><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy</a></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Play Store</strong></td>
+                        <td>Payment processing</td>
+                        <td>Purchase transactions (we don't see payment info)</td>
+                        <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>Processor Role:</strong> RevenueCat acts as a data processor on our behalf and processes subscription-related data only according to our instructions and for the purpose of providing subscription management services.</p>
+
+            <h3>5.2 No Data Selling</h3>
+            <p><strong>We do not sell, rent, or trade your data with anyone.</strong></p>
+
+            <h3>5.3 Legal Requirements</h3>
+            <p>We may disclose information if required by law, such as:</p>
+            <ul>
+                <li>To comply with legal processes or government requests</li>
+                <li>To protect our rights or property</li>
+                <li>To prevent illegal activity or protect user safety</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Data Security</h2>
+            <p>We take data security seriously:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> All study data is stored locally on your device, protected by your device's security features (passcode, biometrics)</li>
+                <li><strong>Encryption:</strong> Communication with third-party services (RevenueCat, Google Drive, Firebase, the AI grading service) uses HTTPS encryption</li>
+                <li><strong>No Central Database:</strong> We do not maintain a database of user information</li>
+                <li><strong>Minimal Data Collection:</strong> We only collect what's necessary for the app to function</li>
+            </ul>
+
+            <div class="warning">
+                <strong>Your Responsibility:</strong> Since data is stored on your device, please protect your device with a passcode or biometric lock. If you enable Google Drive backup, secure your Google account with a strong password and two-factor authentication.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. Data Retention and Deletion</h2>
+
+            <h3>7.1 Local Data</h3>
+            <ul>
+                <li><strong>Retention:</strong> Data remains on your device for as long as you have the app installed</li>
+                <li><strong>Deletion:</strong> When you uninstall the app, all local data is automatically deleted by your device's operating system</li>
+                <li><strong>In-App Deletion:</strong> The app's Settings screen also lets you delete downloaded files or reset your progress without uninstalling</li>
+            </ul>
+
+            <h3>7.2 Google Drive Backup Data</h3>
+            <ul>
+                <li><strong>Control:</strong> You have full control over the backup file in your Google Drive</li>
+                <li><strong>Deletion:</strong> Turning off Google Drive backup in Settings, or revoking the app's access from your Google account, removes our access to that data</li>
+            </ul>
+
+            <h3>7.3 Subscription Data</h3>
+            <p>Subscription and purchase data is retained by RevenueCat according to their own <a href="https://www.revenuecat.com/privacy" target="_blank">data retention policy</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. Content Protection</h2>
+            <p>To help protect the educational content in the app from unauthorized copying and redistribution, Al-Taif detects and blocks screenshots, and restricts screen recording or screen sharing, throughout the app (not only on lesson-content screens), using standard operating system features (on iOS and Android).</p>
+            <ul>
+                <li>This detection happens entirely on your device</li>
+                <li>No additional personal data is collected, stored, or sent anywhere as part of this feature - it only controls what your device is allowed to capture on screen</li>
+                <li>On Android versions before 15, this also blocks legitimate screen sharing (for example, during a video call) while the app is open, since older Android has no way to distinguish a screen share from a screenshot. On Android 15+ and on iOS, the block is automatically lifted for the duration of a genuine screen share or recording session, and restored once it ends; see our <a href="/legal/education-app/terms-of-service/">Terms of Service</a> for details</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>9. Students and Minors</h2>
+            <p>Al-Taif is designed for Grade 11 and Grade 12 students, most of whom are teenagers. We've kept this in mind when designing what data the app collects:</p>
+            <ul>
+                <li>No name, photo, or other personal identifier is ever collected</li>
+                <li>All study data (progress, bookmarks, answers) stays on the student's own device unless they choose to enable Google Drive backup</li>
+                <li>The app shows no advertising and does not build behavioral or marketing profiles of any user, including students</li>
+                <li>Subscriptions are purchased through the Apple App Store or Google Play Store, which have their own account and parental-control safeguards - we recommend a parent or guardian be involved in any purchase</li>
+            </ul>
+            <p>If you are a parent or guardian and have questions about what the app collects about your child's use of it, please contact us at <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a>.</p>
+        </div>
+
+        <div class="section">
+            <h2>10. Your Rights and Choices</h2>
+
+            <h3>10.1 Data Access</h3>
+            <p>Since all data is stored locally on your device, you have direct access to your study data through the app interface at any time.</p>
+
+            <h3>10.2 Data Deletion</h3>
+            <ul>
+                <li><strong>Local data:</strong> Use the Settings screen to delete downloaded files or reset your progress, or uninstall the app to delete everything</li>
+                <li><strong>Google Drive backup:</strong> Turn off backup in Settings, or delete the backup file from your Google Drive directly</li>
+            </ul>
+
+            <h3>10.3 Opt-Out Options</h3>
+            <ul>
+                <li><strong>AI-assisted grading:</strong> Simply don't use this feature - compare your answers against the official model answer instead</li>
+                <li><strong>Google Drive backup:</strong> Simply don't enable this feature</li>
+                <li><strong>Notifications:</strong> Disable the daily study reminder in Settings, or in your device's notification settings</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>11. Where Your Data Is Stored</h2>
+            <p>We are based in Oman, and Al-Taif is built primarily for students studying the Omani curriculum. Your study data stays on your own device. If you use the optional third-party services described above:</p>
+            <ul>
+                <li><strong>RevenueCat:</strong> Subscription data may be processed in the United States</li>
+                <li><strong>Google Drive:</strong> Data is processed according to Google's own infrastructure, if you enable backup</li>
+                <li><strong>Firebase Analytics &amp; Performance:</strong> Data is processed according to Google's own infrastructure</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>12. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect:</p>
+            <ul>
+                <li>Changes to our app features</li>
+                <li>Changes to legal requirements</li>
+                <li>Changes to our data practices</li>
+            </ul>
+
+            <p><strong>How we notify you:</strong></p>
+            <ul>
+                <li>Update the "Last Updated" date at the top of this policy</li>
+                <li>Show an in-app notification for material changes</li>
+                <li>Require acceptance of the updated policy for significant changes</li>
+            </ul>
+
+            <p>You can view the complete <a href="/legal/education-app/changelog.html#privacy">version history</a> of this policy.</p>
+
+            <p><strong>Continued use of the app after changes constitutes acceptance of the updated policy.</strong></p>
+        </div>
+
+        <div class="section">
+            <h2>13. Contact Us</h2>
+            <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
+            <ul>
+                <li><strong>Developer:</strong> SmartHorizon</li>
+                <li><strong>Email:</strong> <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a></li>
+                <li><strong>Website:</strong> <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a></li>
+                <li><strong>Location:</strong> Muscat, Sultanate of Oman</li>
+            </ul>
+            <p>We will respond to your inquiry within 30 days.</p>
+        </div>
+
+        <div class="section">
+            <h2>14. Additional Information</h2>
+
+            <h3>14.1 No Warranty</h3>
+            <p>While we strive to protect your privacy, no method of electronic storage or transmission is 100% secure. We cannot guarantee absolute security.</p>
+
+            <h3>14.2 Third-Party Links</h3>
+            <p>This Privacy Policy applies only to Al-Taif. If you click on links to third-party websites or services, those sites have their own privacy policies.</p>
+
+            <h3>14.3 Updates to Third-Party Services</h3>
+            <p>RevenueCat, Google (including Firebase), and our AI grading service partner may update their practices. We recommend reviewing their privacy policies periodically.</p>
+        </div>
+
+        <div class="important">
+            <strong>Summary - Your Privacy Matters:</strong>
+            <ul style="margin: 10px 0;">
+                <li>✅ Your study data stays on your device</li>
+                <li>✅ We don't know who you are</li>
+                <li>✅ No camera, photos, or location access</li>
+                <li>✅ No ads, no data selling</li>
+                <li>✅ You control Google Drive backup</li>
+                <li>✅ Analytics data is always anonymous</li>
+            </ul>
+        </div>
+
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
+            <p style="text-align: center;">&copy; 2026 SmartHorizon. All rights reserved.</p>
+            <p style="text-align: center;">
+                <a href="/legal/education-app/terms-of-service/">Terms of Service</a> |
+                <a href="/legal/education-app/changelog.html">Version History</a>
+            </p>
+        </footer>
     </div>
 
-    <div class="section">
-        <h2>8. Content Protection</h2>
-        <p>To help protect the educational content in the app from unauthorized copying and redistribution, Al-Taif detects and blocks screenshots, and restricts screen recording or screen sharing, throughout the app (not only on lesson-content screens), using standard operating system features (on iOS and Android).</p>
-        <ul>
-            <li>This detection happens entirely on your device</li>
-            <li>No additional personal data is collected, stored, or sent anywhere as part of this feature - it only controls what your device is allowed to capture on screen</li>
-            <li>On Android versions before 15, this also blocks legitimate screen sharing (for example, during a video call) while the app is open, since older Android has no way to distinguish a screen share from a screenshot. On Android 15+ and on iOS, the block is automatically lifted for the duration of a genuine screen share or recording session, and restored once it ends; see our <a href="/legal/education-app/terms-of-service/">Terms of Service</a> for details</li>
-        </ul>
-    </div>
+    <script>
+        (function() {
+            var STORAGE_KEY = 'altaif-legal-lang';
+            var docAr = document.getElementById('doc-ar');
+            var docEn = document.getElementById('doc-en');
+            var btnAr = document.getElementById('btn-ar');
+            var btnEn = document.getElementById('btn-en');
 
-    <div class="section">
-        <h2>9. Students and Minors</h2>
-        <p>Al-Taif is designed for Grade 11 and Grade 12 students, most of whom are teenagers. We've kept this in mind when designing what data the app collects:</p>
-        <ul>
-            <li>No name, photo, or other personal identifier is ever collected</li>
-            <li>All study data (progress, bookmarks, answers) stays on the student's own device unless they choose to enable Google Drive backup</li>
-            <li>The app shows no advertising and does not build behavioral or marketing profiles of any user, including students</li>
-            <li>Subscriptions are purchased through the Apple App Store or Google Play Store, which have their own account and parental-control safeguards - we recommend a parent or guardian be involved in any purchase</li>
-        </ul>
-        <p>If you are a parent or guardian and have questions about what the app collects about your child's use of it, please contact us at <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a>.</p>
-    </div>
+            function setLang(lang) {
+                var isAr = lang !== 'en';
+                docAr.style.display = isAr ? '' : 'none';
+                docEn.style.display = isAr ? 'none' : '';
+                btnAr.classList.toggle('active', isAr);
+                btnEn.classList.toggle('active', !isAr);
+                document.documentElement.lang = isAr ? 'ar' : 'en';
+                document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+                try { localStorage.setItem(STORAGE_KEY, isAr ? 'ar' : 'en'); } catch (e) {}
+            }
 
-    <div class="section">
-        <h2>10. Your Rights and Choices</h2>
+            btnAr.addEventListener('click', function() { setLang('ar'); });
+            btnEn.addEventListener('click', function() { setLang('en'); });
 
-        <h3>10.1 Data Access</h3>
-        <p>Since all data is stored locally on your device, you have direct access to your study data through the app interface at any time.</p>
-
-        <h3>10.2 Data Deletion</h3>
-        <ul>
-            <li><strong>Local data:</strong> Use the Settings screen to delete downloaded files or reset your progress, or uninstall the app to delete everything</li>
-            <li><strong>Google Drive backup:</strong> Turn off backup in Settings, or delete the backup file from your Google Drive directly</li>
-        </ul>
-
-        <h3>10.3 Opt-Out Options</h3>
-        <ul>
-            <li><strong>AI-assisted grading:</strong> Simply don't use this feature - compare your answers against the official model answer instead</li>
-            <li><strong>Google Drive backup:</strong> Simply don't enable this feature</li>
-            <li><strong>Notifications:</strong> Disable the daily study reminder in Settings, or in your device's notification settings</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>11. Where Your Data Is Stored</h2>
-        <p>We are based in Oman, and Al-Taif is built primarily for students studying the Omani curriculum. Your study data stays on your own device. If you use the optional third-party services described above:</p>
-        <ul>
-            <li><strong>RevenueCat:</strong> Subscription data may be processed in the United States</li>
-            <li><strong>Google Drive:</strong> Data is processed according to Google's own infrastructure, if you enable backup</li>
-            <li><strong>Firebase Analytics &amp; Performance:</strong> Data is processed according to Google's own infrastructure</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>12. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy from time to time to reflect:</p>
-        <ul>
-            <li>Changes to our app features</li>
-            <li>Changes to legal requirements</li>
-            <li>Changes to our data practices</li>
-        </ul>
-
-        <p><strong>How we notify you:</strong></p>
-        <ul>
-            <li>Update the "Last Updated" date at the top of this policy</li>
-            <li>Show an in-app notification for material changes</li>
-            <li>Require acceptance of the updated policy for significant changes</li>
-        </ul>
-
-        <p>You can view the complete <a href="/legal/education-app/changelog.html#privacy">version history</a> of this policy.</p>
-
-        <p><strong>Continued use of the app after changes constitutes acceptance of the updated policy.</strong></p>
-    </div>
-
-    <div class="section">
-        <h2>13. Contact Us</h2>
-        <p>If you have questions, concerns, or requests regarding this Privacy Policy or your data, please contact us:</p>
-        <ul>
-            <li><strong>Developer:</strong> SmartHorizon</li>
-            <li><strong>Email:</strong> <a href="mailto:info@smarthorizon.co">info@smarthorizon.co</a></li>
-            <li><strong>Website:</strong> <a href="https://smarthorizon.co" target="_blank">smarthorizon.co</a></li>
-            <li><strong>Location:</strong> Muscat, Sultanate of Oman</li>
-        </ul>
-        <p>We will respond to your inquiry within 30 days.</p>
-    </div>
-
-    <div class="section">
-        <h2>14. Additional Information</h2>
-
-        <h3>14.1 No Warranty</h3>
-        <p>While we strive to protect your privacy, no method of electronic storage or transmission is 100% secure. We cannot guarantee absolute security.</p>
-
-        <h3>14.2 Third-Party Links</h3>
-        <p>This Privacy Policy applies only to Al-Taif. If you click on links to third-party websites or services, those sites have their own privacy policies.</p>
-
-        <h3>14.3 Updates to Third-Party Services</h3>
-        <p>RevenueCat, Google (including Firebase), and our AI grading service partner may update their practices. We recommend reviewing their privacy policies periodically.</p>
-    </div>
-
-    <div class="important">
-        <strong>Summary - Your Privacy Matters:</strong>
-        <ul style="margin: 10px 0;">
-            <li>✅ Your study data stays on your device</li>
-            <li>✅ We don't know who you are</li>
-            <li>✅ No camera, photos, or location access</li>
-            <li>✅ No ads, no data selling</li>
-            <li>✅ You control Google Drive backup</li>
-            <li>✅ Analytics data is always anonymous</li>
-        </ul>
-    </div>
-
-    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px;">
-        <p style="text-align: center;">&copy; 2026 SmartHorizon. All rights reserved.</p>
-        <p style="text-align: center;">
-            <a href="/legal/education-app/terms-of-service/">Terms of Service</a> |
-            <a href="/legal/education-app/changelog.html">Version History</a>
-        </p>
-    </footer>
+            var stored = null;
+            try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+            setLang(stored === 'en' ? 'en' : 'ar');
+        })();
+    </script>
 </body>
 </html>
