@@ -170,7 +170,7 @@
             <li>✅ <strong>No user accounts required</strong> - all study data stored locally on your device</li>
             <li>✅ <strong>No personal information collected</strong> - we don't know who you are</li>
             <li>✅ <strong>No camera, photos, or location access</strong> - the app doesn't use any of these</li>
-            <li>✅ <strong>No analytics, performance-monitoring, or crash-reporting service is active</strong> in the app today</li>
+            <li>✅ <strong>Analytics data is always anonymous</strong> - never your name, email, or identity</li>
             <li>✅ <strong>Optional Google Drive backup</strong> - limited to a private app folder, you control it</li>
             <li>✅ <strong>No ads or data selling</strong> - app revenue comes only from subscriptions</li>
         </ul>
@@ -219,16 +219,15 @@
             <li>Downloaded lesson files (PDFs, videos) you've chosen to save for offline use</li>
         </ul>
 
-        <h3>2.2 AI-Assisted Grading (Planned Feature)</h3>
-        <p>Al-Taif has a built-in option to use an artificial intelligence (AI) service to help evaluate written and justification-style exam answers, as an alternative to comparing your answer against the official model answer yourself. <strong>This feature is not yet enabled in the app</strong> - selecting it currently falls back to comparing against the model answer, and no answer data is sent anywhere.</p>
-        <p><strong>Before we enable this feature:</strong></p>
+        <h3>2.2 AI-Assisted Grading (Optional Feature)</h3>
+        <p>Al-Taif includes an option to use an artificial intelligence (AI) service to help evaluate written and justification-style exam answers, as an alternative to comparing your answer against the official model answer yourself.</p>
+        <p><strong>If you use this feature:</strong></p>
         <ul>
-            <li>We will update this Privacy Policy first to confirm it is active</li>
-            <li>Once active, the question text, the official model answer, and the text of your written answer will be sent to a third-party AI service to generate feedback</li>
-            <li>No name, email, or other information that identifies you will be included in this data</li>
-            <li>The AI service will process this content only to generate grading feedback and will not use it to identify you personally</li>
+            <li>The question text, the official model answer, and the text of your written answer are sent to a third-party AI service to generate feedback</li>
+            <li>No name, email, or other information that identifies you is included in this data</li>
+            <li>The AI service processes this content only to generate grading feedback and does not use it to identify you personally</li>
         </ul>
-        <p><strong>Your control:</strong> This will always be a supplementary study aid, not your only way to check your answers - you can always compare your answer against the official model answer PDF instead.</p>
+        <p><strong>Your control:</strong> This is a supplementary study aid, not your only way to check your answers - you can always compare your answer against the official model answer PDF instead.</p>
 
         <h3>2.3 Subscription Information</h3>
         <p>We use RevenueCat to manage subscriptions. When you subscribe to a semester's content, RevenueCat collects:</p>
@@ -242,19 +241,19 @@
         <p><strong>Payment Information:</strong> We never see or store your payment details. All payments are processed by Apple (via App Store) or Google (via Play Store). Your credit card and billing information is handled entirely by them according to their privacy policies.</p>
         <p><strong>Purpose:</strong> To verify subscription status and provide access to the content you've purchased.</p>
 
-        <h3>2.4 Analytics and Performance Monitoring (Planned)</h3>
-        <p>We do not currently use any analytics, performance-monitoring, or crash-reporting service in Al-Taif - the app's analytics code exists in the app but is fully disabled in this version. We plan to enable <strong>Firebase Analytics</strong> and <strong>Firebase Performance Monitoring</strong> (both provided by Google) in a future update. Before either is switched on, we will update this Privacy Policy first and note the version in which it started.</p>
-        <p><strong>When Firebase Analytics is enabled, it will collect:</strong></p>
+        <h3>2.4 Analytics and Performance Monitoring</h3>
+        <p>Al-Taif uses <strong>Firebase Analytics</strong> and <strong>Firebase Performance Monitoring</strong> (both provided by Google) to understand how the app is used and to find and fix performance issues.</p>
+        <p><strong>Firebase Analytics collects:</strong></p>
         <ul>
             <li>App usage events - for example, which lessons, videos, or PDFs you open, questions you answer (and whether correctly), exams you complete and your score, bookmarks you add, downloads, and searches you perform</li>
             <li>Your selected grade level, as a general usage property (not tied to your identity)</li>
             <li>Standard device and app diagnostic data collected automatically by Firebase (device model, OS version, app version, country/region, and an anonymous installation identifier)</li>
         </ul>
-        <p><strong>When Firebase Performance Monitoring is enabled, it will collect:</strong></p>
+        <p><strong>Firebase Performance Monitoring collects:</strong></p>
         <ul>
             <li>Technical performance data such as app start time, screen rendering time, and network request duration - to help us find and fix slow or broken parts of the app</li>
         </ul>
-        <p><strong>Neither service will collect your name, email, or any other information that identifies you personally.</strong> Both are provided by Google - see the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase's data processing and security terms</a>.</p>
+        <p><strong>Neither service collects your name, email, or any other information that identifies you personally.</strong> Both are provided by Google - see the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase's data processing and security terms</a>.</p>
     </div>
 
     <div class="section">
@@ -273,8 +272,8 @@
                     <td>Stored locally on your device to track your learning and let you resume where you left off</td>
                 </tr>
                 <tr>
-                    <td><strong>Written Answer Text</strong> (AI grading - planned, not yet enabled)</td>
-                    <td>Once enabled, sent to a third-party AI service to generate grading feedback</td>
+                    <td><strong>Written Answer Text</strong> (only if you use AI-assisted grading)</td>
+                    <td>Sent to a third-party AI service to generate grading feedback</td>
                 </tr>
                 <tr>
                     <td><strong>Subscription Data</strong></td>
@@ -349,10 +348,16 @@
                     <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
                 </tr>
                 <tr>
-                    <td><strong>AI Grading Service</strong> (planned - not yet enabled)</td>
-                    <td>Generating feedback on written answers, once enabled</td>
+                    <td><strong>AI Grading Service</strong> (optional feature)</td>
+                    <td>Generating feedback on written answers</td>
                     <td>Question content, model answer, and your written answer text</td>
                     <td>Provided by our AI service partner; no personal identifiers are sent</td>
+                </tr>
+                <tr>
+                    <td><strong>Firebase Analytics &amp; Performance</strong></td>
+                    <td>Understanding app usage and finding performance issues</td>
+                    <td>Anonymous usage events, device/app diagnostics - see Section 2.4</td>
+                    <td><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></td>
                 </tr>
                 <tr>
                     <td><strong>Apple App Store</strong></td>
@@ -388,7 +393,7 @@
         <p>We take data security seriously:</p>
         <ul>
             <li><strong>Local Storage:</strong> All study data is stored locally on your device, protected by your device's security features (passcode, biometrics)</li>
-            <li><strong>Encryption:</strong> Communication with third-party services (RevenueCat, Google Drive, the AI grading service) uses HTTPS encryption</li>
+            <li><strong>Encryption:</strong> Communication with third-party services (RevenueCat, Google Drive, Firebase, the AI grading service) uses HTTPS encryption</li>
             <li><strong>No Central Database:</strong> We do not maintain a database of user information</li>
             <li><strong>Minimal Data Collection:</strong> We only collect what's necessary for the app to function</li>
         </ul>
@@ -454,7 +459,7 @@
 
         <h3>10.3 Opt-Out Options</h3>
         <ul>
-            <li><strong>AI-assisted grading:</strong> Not yet enabled in the app - when it is, you'll be able to simply not use it and compare your answers against the official model answer instead</li>
+            <li><strong>AI-assisted grading:</strong> Simply don't use this feature - compare your answers against the official model answer instead</li>
             <li><strong>Google Drive backup:</strong> Simply don't enable this feature</li>
             <li><strong>Notifications:</strong> Disable the daily study reminder in Settings, or in your device's notification settings</li>
         </ul>
@@ -466,6 +471,7 @@
         <ul>
             <li><strong>RevenueCat:</strong> Subscription data may be processed in the United States</li>
             <li><strong>Google Drive:</strong> Data is processed according to Google's own infrastructure, if you enable backup</li>
+            <li><strong>Firebase Analytics &amp; Performance:</strong> Data is processed according to Google's own infrastructure</li>
         </ul>
     </div>
 
@@ -512,7 +518,7 @@
         <p>This Privacy Policy applies only to Al-Taif. If you click on links to third-party websites or services, those sites have their own privacy policies.</p>
 
         <h3>14.3 Updates to Third-Party Services</h3>
-        <p>RevenueCat, Google, and our AI grading service partner may update their practices. We recommend reviewing their privacy policies periodically.</p>
+        <p>RevenueCat, Google (including Firebase), and our AI grading service partner may update their practices. We recommend reviewing their privacy policies periodically.</p>
     </div>
 
     <div class="important">
@@ -523,7 +529,7 @@
             <li>✅ No camera, photos, or location access</li>
             <li>✅ No ads, no data selling</li>
             <li>✅ You control Google Drive backup</li>
-            <li>✅ No analytics, performance monitoring, or crash reporting active today</li>
+            <li>✅ Analytics data is always anonymous</li>
         </ul>
     </div>
 
