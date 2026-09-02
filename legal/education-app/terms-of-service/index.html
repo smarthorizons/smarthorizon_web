@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Al-Taif</title>
+    <title>Terms of Service - Al-Taif</title>
     <style>
         body {
             margin: 0;
@@ -61,17 +61,21 @@
     </div>
     <div id="error" class="error" style="display:none;">
         <p>Failed to load</p>
-        <button onclick="loadPolicy()">Retry</button>
+        <button onclick="loadTerms()">Retry</button>
     </div>
     <script>
-        async function loadPolicy() {
+        // Root-relative paths (not "changelog.json" / "versions/...") since
+        // this page now lives one directory deeper (/terms-of-service/) than
+        // the flat file it replaced — a bare relative path would resolve
+        // against this directory instead of /legal/education-app/.
+        async function loadTerms() {
             try {
                 document.getElementById('loading').style.display = 'block';
                 document.getElementById('error').style.display = 'none';
 
-                const changelog = await fetch('changelog.json').then(r => r.json());
-                const version = changelog.privacy_policy.current_version;
-                const html = await fetch(`versions/privacy/${version}.html`).then(r => r.text());
+                const changelog = await fetch('/legal/education-app/changelog.json').then(r => r.json());
+                const version = changelog.terms_of_service.current_version;
+                const html = await fetch(`/legal/education-app/versions/terms/${version}.html`).then(r => r.text());
 
                 document.open();
                 document.write(html);
@@ -81,7 +85,7 @@
                 document.getElementById('error').style.display = 'block';
             }
         }
-        window.addEventListener('DOMContentLoaded', loadPolicy);
+        window.addEventListener('DOMContentLoaded', loadTerms);
     </script>
 </body>
 </html>
