@@ -8,6 +8,7 @@
         "date": "2026-09-01T10:00:00Z",
         "url": "https://smarthorizon.co/legal/education-app/versions/privacy/2026-09-01.html",
         "changes_summary": "Initial Privacy Policy",
+        "changes_summary_ar": "الإصدار الأولي من سياسة الخصوصية",
         "is_material_change": false,
         "requires_reacceptance": false
       }
@@ -22,6 +23,7 @@
         "date": "2026-09-01T10:00:00Z",
         "url": "https://smarthorizon.co/legal/education-app/versions/terms/2026-09-01.html",
         "changes_summary": "Initial Terms of Service",
+        "changes_summary_ar": "الإصدار الأولي من شروط الاستخدام",
         "is_material_change": false,
         "requires_reacceptance": false
       }
