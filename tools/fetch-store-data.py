@@ -83,6 +83,8 @@ def main():
         app["rating"] = round(r.get("averageUserRating") or 0, 2)
         app["rating_count"] = r.get("userRatingCount") or 0
         app["screenshots"] = len(shots)
+        app["last_updated"] = (r.get("currentVersionReleaseDate") or "")[:10]
+        app["version"] = r.get("version")
         print(f"{app['slug']}: {app['rating']} ({app['rating_count']} ratings), "
               f"{len(shots)} screenshots")
 

@@ -9,7 +9,7 @@
       "tagline_en": "Prayer times with Iqama — the times your mosque actually starts.",
       "tagline_ar": "مواقيت الصلاة مع وقت الإقامة — وقت بدء الجماعة فعلياً.",
       "summary_en": "Most prayer apps show the adhan and stop there. Prayer Timer shows Iqama times too, so you know when the congregation actually begins — alongside home and lock screen widgets, a Qibla compass, and support for more than 30 languages.",
-      "summary_ar": "معظم تطبيقات الصلاة تعرض وقت الأذان فقط. يعرض Prayer Timer وقت الإقامة أيضاً لتعرف متى تبدأ صلاة الجماعة — إلى جانب ويدجتات للشاشة الرئيسية وشاشة القفل، وبوصلة اتجاه القبلة، ودعم أكثر من ٣٠ لغة.",
+      "summary_ar": "معظم تطبيقات الصلاة تعرض وقت الأذان فقط. يعرض Prayer Timer وقت الإقامة أيضاً لتعرف متى تبدأ صلاة الجماعة — إلى جانب ويدجتات للشاشة الرئيسية وشاشة القفل، وبوصلة اتجاه القبلة، ودعم أكثر من 30 لغة.",
       "features_en": [
         "Iqama times, not just adhan times",
         "Home screen and lock screen widgets",
@@ -22,7 +22,7 @@
         "أوقات الإقامة، وليس الأذان فقط",
         "ويدجتات للشاشة الرئيسية وشاشة القفل",
         "بوصلة قبلة دقيقة",
-        "أكثر من ٣٠ لغة",
+        "أكثر من 30 لغة",
         "١٥ ثيماً للمظهر",
         "مجاني وبدون إعلانات"
       ],
@@ -37,7 +37,9 @@
       "screenshots": 8,
       "released": "2022-02-15",
       "accent": "#2B36A8",
-      "play_downloads": "10K+"
+      "play_downloads": "10K+",
+      "last_updated": "2026-02-21",
+      "version": "1.1.1"
     },
     {
       "slug": "rawdat-aleman",
@@ -74,7 +76,9 @@
       "screenshots": 10,
       "released": "2020-08-16",
       "accent": "#1F6F4A",
-      "play_downloads": "100K+"
+      "play_downloads": "100K+",
+      "last_updated": "2025-02-07",
+      "version": "1.2.2"
     },
     {
       "slug": "masbahat-alzikr",
@@ -111,7 +115,9 @@
       "screenshots": 9,
       "released": "2023-02-02",
       "accent": "#7A4BC4",
-      "play_downloads": "100K+"
+      "play_downloads": "100K+",
+      "last_updated": "2026-02-22",
+      "version": "1.1.2"
     },
     {
       "slug": "alquran-alaziz",
@@ -148,7 +154,9 @@
       "screenshots": 7,
       "released": "2023-03-25",
       "accent": "#0F766E",
-      "play_downloads": "5K+"
+      "play_downloads": "5K+",
+      "last_updated": "2023-03-25",
+      "version": "1.0.0"
     }
   ],
   "_play_data_fetched": "2026-09-08"

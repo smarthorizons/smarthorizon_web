@@ -616,3 +616,7 @@ h1, h2, h3, .section-head p, .cta p { text-wrap: balance; }
 /* Inline SVG star in the stat tile — matches the rating badges and keeps
    the "SVG icons, never emoji/glyphs" rule. */
 .stat__num svg { inline-size: .85em; block-size: .85em; color: var(--accent); vertical-align: -.06em; margin-inline-start: 2px; }
+
+/* Single column: the card is narrow and each line is a full phrase, so
+   two columns would wrap badly. */
+.feature-list--glance { grid-template-columns: 1fr; gap: 11px 26px; }

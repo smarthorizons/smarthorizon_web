@@ -250,7 +250,7 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      {L("&copy; 2026 Smart Horizon. All rights reserved.", "&copy; ٢٠٢٦ الأفق الذكي. جميع الحقوق محفوظة.", tag="span")}
+      {L("&copy; 2026 Smart Horizon. All rights reserved.", "&copy; 2026 الأفق الذكي. جميع الحقوق محفوظة.", tag="span")}
       {L("Mobile, web and SaaS engineering", "هندسة الجوال والويب والبرمجيات كخدمة", tag="span")}
     </div>
   </div>
@@ -363,6 +363,9 @@ def cta_block():
 def build_index():
     total_ratings = sum(a.get("rating_count") or 0 for a in APPS)
     installs = total_installs()
+    oldest = min(APPS, key=lambda a: a["released"])
+    oldest_year = oldest["released"][:4]
+    oldest_updated_year = (oldest.get("last_updated") or oldest["released"])[:4]
     installs_label = f"{installs // 1000:,}K+" if installs < 1_000_000 else f"{installs / 1_000_000:.1f}M+"
     best = max(APPS, key=lambda a: (a.get("rating_count") or 0))
 
@@ -481,7 +484,7 @@ def build_index():
       <span class="eyebrow">{L("About", "من نحن")}</span>
       {L("A small studio that ships", "استوديو صغير ينجز ويُطلق", tag="h2")}
       {L("Smart Horizon is a software studio. We started by building our own apps &mdash; the first went live in 2020 &mdash; and we have kept them running, updated and supported ever since.",
-         "الأفق الذكي استوديو برمجيات. بدأنا ببناء تطبيقاتنا الخاصة &mdash; صدر أولها عام ٢٠٢٠ &mdash; وواصلنا تشغيلها وتحديثها ودعمها منذ ذلك الحين.", tag="p")}
+         "الأفق الذكي استوديو برمجيات. بدأنا ببناء تطبيقاتنا الخاصة &mdash; صدر أولها عام 2020 &mdash; وواصلنا تشغيلها وتحديثها ودعمها منذ ذلك الحين.", tag="p")}
       {L("That shaped how we work for clients. We know what it costs to keep software alive after launch, so we build for the version that comes after the first one: readable code, sensible architecture, and interfaces that still make sense when the feature list doubles.",
          "وقد شكّل ذلك طريقة عملنا مع العملاء. نعرف كلفة إبقاء البرمجيات حية بعد الإطلاق، لذلك نبني للإصدار الذي يلي الأول: شيفرة مقروءة، وبنية منطقية، وواجهات تبقى مفهومة حتى لو تضاعفت قائمة المزايا.", tag="p")}
       {L("We work in Arabic and English, and we build for both properly &mdash; right-to-left layouts, Arabic typography and localisation treated as part of the design, not a translation pass at the end.",
@@ -490,12 +493,15 @@ def build_index():
     <div>
       <div class="card">
         {L("At a glance", "لمحة سريعة", tag="h3")}
-        <ul class="feature-list" style="grid-template-columns:1fr">
+        <ul class="feature-list feature-list--glance">
           <li>{ICON_CHECK}{L("Four apps live on the App Store and Google Play", "أربعة تطبيقات منشورة على App Store و Google Play")}</li>
-          <li>{ICON_CHECK}{L("Publishing our own apps since 2020", "ننشر تطبيقاتنا الخاصة منذ عام ٢٠٢٠")}</li>
+          <li>{ICON_CHECK}{L("More than " + f"{installs:,}" + " downloads to date", "أكثر من " + f"{installs:,}" + " تنزيل حتى اليوم")}</li>
+          <li>{ICON_CHECK}{L(f"Rated {best['rating']:.1f} out of 5 from {best['rating_count']:,} ratings", f"تقييم {best['rating']:.1f} من 5 بناءً على {best['rating_count']:,} تقييم")}</li>
+          <li>{ICON_CHECK}{L(f"Publishing our own apps since {oldest_year}", f"ننشر تطبيقاتنا الخاصة منذ عام {oldest_year}")}</li>
+          <li>{ICON_CHECK}{L(f"An app launched in {oldest_year} and still updated in {oldest_updated_year}", f"تطبيق أُطلق عام {oldest_year} وما زال يُحدَّث حتى عام {oldest_updated_year}")}</li>
           <li>{ICON_CHECK}{L("Design, mobile, web and backend under one roof", "التصميم والتطبيقات والويب والأنظمة الخلفية تحت سقف واحد")}</li>
-          <li>{ICON_CHECK}{L("Apps supported and updated long after launch", "تطبيقات مدعومة ومحدّثة بعد الإطلاق بوقت طويل")}</li>
           <li>{ICON_CHECK}{L("Arabic and English, RTL done properly", "العربية والإنجليزية، مع دعم صحيح للاتجاه من اليمين لليسار")}</li>
+          <li>{ICON_CHECK}{L("Versioned privacy policies and changelogs for every app", "سياسات خصوصية وسجلات إصدارات موثّقة لكل تطبيق")}</li>
         </ul>
       </div>
     </div>
