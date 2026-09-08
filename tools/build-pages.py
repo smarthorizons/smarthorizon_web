@@ -150,7 +150,7 @@ def head(title_en, title_ar, desc_en, desc_ar, path,
 <meta property="og:image:width" content="{ow}">
 <meta property="og:image:height" content="{oh}">
 <meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ar_OM">
+<meta property="og:locale:alternate" content="ar_AR">
 <meta name="twitter:card" content="{card}">
 <meta name="twitter:title" content="{title_en}">
 <meta name="twitter:description" content="{desc_en}">
@@ -171,15 +171,16 @@ def head(title_en, title_ar, desc_en, desc_ar, path,
 '''
 
 
-# Concentric-arc glyph echoing the mark in the supplied logo artwork.
-# Purely a stand-in: replace .brand's contents with the real logo file
-# once an un-watermarked version is available.
+# Aperture mark. A ring opening to the upper right with an orange dot
+# breaking the orbit -- an aperture, and a horizon seen through a lens.
+# Drawn inline so the header needs no image request; the same geometry is
+# generated as logo.svg / favicon.png / apple-touch-icon.png by
+# tools/make-brand-assets.py.
 BRAND_GLYPH = (
-    '<svg class="brand-glyph" viewBox="0 0 40 40" fill="none" aria-hidden="true">'
-    '<path d="M31 34a16 16 0 1 0-22-22" stroke="#D78630" stroke-width="3" stroke-linecap="round"/>'
-    '<path d="M27.5 29.5a10.5 10.5 0 1 0-15-15" stroke="#D78630" stroke-width="3" stroke-linecap="round"/>'
-    '<circle cx="20" cy="20" r="4.6" stroke="#4691B6" stroke-width="3"/>'
-    '<circle cx="7" cy="33" r="2.1" fill="#D78630"/>'
+    '<svg class="brand-glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true">'
+    '<path d="M44.31 16.24A20 20 0 1 1 19.69 16.24" stroke="#2E6E8E" stroke-width="6" stroke-linecap="round"/>'
+    '<path d="M37.35 26.05A8 8 0 1 1 26.65 26.05" stroke="#4691B6" stroke-width="5" stroke-linecap="round"/>'
+    '<circle cx="32" cy="12" r="5.5" fill="#D78630"/>'
     '</svg>'
 )
 
@@ -191,7 +192,7 @@ def header(active=""):
   <div class="wrap">
     <a class="brand" href="/" aria-label="Smart Horizon">
       {BRAND_GLYPH}
-      <span class="wordmark"><span class="w1">Smart</span> <span class="w2">Horizon</span></span>
+      <span class="wordmark"><span data-lang="en"><span class="w1">Smart</span> <span class="w2">Horizon</span></span><span lang="ar" data-lang="ar"><span class="w2">الأفق</span> <span class="w1">الذكي</span></span></span>
     </a>
     <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#33404F" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -221,7 +222,7 @@ def footer():
       <div>
         <span class="brand">
           {BRAND_GLYPH}
-          <span class="wordmark"><span class="w1">Smart</span> <span class="w2">Horizon</span></span>
+          <span class="wordmark"><span data-lang="en"><span class="w1">Smart</span> <span class="w2">Horizon</span></span><span lang="ar" data-lang="ar"><span class="w2">الأفق</span> <span class="w1">الذكي</span></span></span>
         </span>
         {L("We design and build mobile apps, websites and the systems behind them &mdash; and we ship our own apps to prove it.",
            "نصمم ونطوّر تطبيقات الجوال والمواقع والأنظمة التي تقف خلفها &mdash; وننشر تطبيقاتنا الخاصة كدليل على ذلك.", tag="p")}
@@ -249,8 +250,8 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      {L("&copy; 2026 Smart Horizon. All rights reserved.", "&copy; ٢٠٢٦ سمارت هورايزن. جميع الحقوق محفوظة.", tag="span")}
-      {L("Based in Oman", "مقرنا سلطنة عُمان", tag="span")}
+      {L("&copy; 2026 Smart Horizon. All rights reserved.", "&copy; ٢٠٢٦ الأفق الذكي. جميع الحقوق محفوظة.", tag="span")}
+      {L("Mobile, web and SaaS engineering", "هندسة الجوال والويب والبرمجيات كخدمة", tag="span")}
     </div>
   </div>
 </footer>
@@ -422,8 +423,7 @@ def build_index():
         "name": "Smart Horizon",
         "url": SITE + "/",
         "email": EMAIL,
-        "address": {"@type": "PostalAddress", "addressCountry": "OM"},
-        "description": "Software studio in Oman building mobile apps, websites and the systems behind them.",
+        "description": "Software studio building mobile apps, websites, SaaS platforms and the systems behind them.",
         "sameAs": ["https://apps.apple.com/developer/smart-horizon/id1527611187"],
     }, ensure_ascii=False, indent=2)
 
@@ -443,10 +443,10 @@ def build_index():
     hero_shots = HERO_ART
 
     html = head(
-        "Smart Horizon — App, web and software development in Oman",
-        "سمارت هورايزن — تطوير التطبيقات والمواقع والبرمجيات في عُمان",
-        "Smart Horizon is a software studio in Oman. We design and build mobile apps, websites, and the backends behind them — and publish our own apps on the App Store and Google Play.",
-        "سمارت هورايزن استوديو برمجيات في عُمان. نصمم ونطوّر تطبيقات الجوال والمواقع والأنظمة الخلفية — وننشر تطبيقاتنا الخاصة على App Store و Google Play.",
+        "Smart Horizon — Mobile app, web and SaaS development",
+        "الأفق الذكي — تطوير تطبيقات الجوال والويب والبرمجيات كخدمة",
+        "Smart Horizon is a software studio. We design and build mobile apps, websites, SaaS platforms and the backends behind them — and publish our own apps on the App Store and Google Play.",
+        "الأفق الذكي استوديو برمجيات. نصمم ونطوّر تطبيقات الجوال والمواقع ومنصات البرمجيات كخدمة والأنظمة الخلفية — وننشر تطبيقاتنا الخاصة على App Store و Google Play.",
         "/",
         extra=f'<script type="application/ld+json">\n{org_ld}\n</script>\n')
 
@@ -456,7 +456,7 @@ def build_index():
 <section class="hero">
   <div class="wrap hero__grid">
     <div data-reveal>
-      <span class="eyebrow">{L("Software studio &middot; Oman", "استوديو برمجيات &middot; عُمان")}</span>
+      <span class="eyebrow">{L("Software studio", "استوديو برمجيات")}</span>
       {L("We build software people keep using.",
          "نبني برمجيات يستمر الناس في استخدامها.", tag="h1")}
       {L("We build cross-platform mobile apps, web platforms and SaaS, and the backends behind them. We also publish our own apps &mdash; four of them, downloaded more than " + installs_label.replace("+", "") + " times. That is the same team, and the same standard, that your project gets.",
@@ -529,8 +529,8 @@ def build_index():
     <div>
       <span class="eyebrow">{L("About", "من نحن")}</span>
       {L("A small studio that ships", "استوديو صغير ينجز ويُطلق", tag="h2")}
-      {L("Smart Horizon is a software studio based in Oman. We started by building our own apps &mdash; the first went live in 2020 &mdash; and we have kept them running, updated and supported ever since.",
-         "سمارت هورايزن استوديو برمجيات مقره سلطنة عُمان. بدأنا ببناء تطبيقاتنا الخاصة &mdash; صدر أولها عام ٢٠٢٠ &mdash; وواصلنا تشغيلها وتحديثها ودعمها منذ ذلك الحين.", tag="p")}
+      {L("Smart Horizon is a software studio. We started by building our own apps &mdash; the first went live in 2020 &mdash; and we have kept them running, updated and supported ever since.",
+         "الأفق الذكي استوديو برمجيات. بدأنا ببناء تطبيقاتنا الخاصة &mdash; صدر أولها عام ٢٠٢٠ &mdash; وواصلنا تشغيلها وتحديثها ودعمها منذ ذلك الحين.", tag="p")}
       {L("That shaped how we work for clients. We know what it costs to keep software alive after launch, so we build for the version that comes after the first one: readable code, sensible architecture, and interfaces that still make sense when the feature list doubles.",
          "وقد شكّل ذلك طريقة عملنا مع العملاء. نعرف كلفة إبقاء البرمجيات حية بعد الإطلاق، لذلك نبني للإصدار الذي يلي الأول: شيفرة مقروءة، وبنية منطقية، وواجهات تبقى مفهومة حتى لو تضاعفت قائمة المزايا.", tag="p")}
       {L("We work in Arabic and English, and we build for both properly &mdash; right-to-left layouts, Arabic typography and localisation treated as part of the design, not a translation pass at the end.",
@@ -540,7 +540,7 @@ def build_index():
       <div class="card">
         {L("At a glance", "لمحة سريعة", tag="h3")}
         <ul class="feature-list" style="grid-template-columns:1fr">
-          <li>{ICON_CHECK}{L("Based in Oman", "مقرنا سلطنة عُمان")}</li>
+          <li>{ICON_CHECK}{L("Four apps live on the App Store and Google Play", "أربعة تطبيقات منشورة على App Store و Google Play")}</li>
           <li>{ICON_CHECK}{L("Publishing our own apps since 2020", "ننشر تطبيقاتنا الخاصة منذ عام ٢٠٢٠")}</li>
           <li>{ICON_CHECK}{L("Design, mobile, web and backend under one roof", "التصميم والتطبيقات والويب والأنظمة الخلفية تحت سقف واحد")}</li>
           <li>{ICON_CHECK}{L("Apps supported and updated long after launch", "تطبيقات مدعومة ومحدّثة بعد الإطلاق بوقت طويل")}</li>
@@ -571,9 +571,9 @@ def build_apps_index():
     cards = "\n".join(app_card(a) for a in APPS)
     html = head(
         "Our apps — Smart Horizon",
-        "تطبيقاتنا — سمارت هورايزن",
+        "تطبيقاتنا — الأفق الذكي",
         "The apps Smart Horizon builds, publishes and maintains on the App Store and Google Play.",
-        "التطبيقات التي تبنيها سمارت هورايزن وتنشرها وتصونها على App Store و Google Play.",
+        "التطبيقات التي تبنيها الأفق الذكي وتنشرها وتصونها على App Store و Google Play.",
         "/apps/")
     html += header()
     html += f'''<main id="main">
@@ -647,7 +647,7 @@ def build_app_page(app):
 
     html = head(
         f'{app["name_en"]} — Smart Horizon',
-        f'{app["name_ar"]} — سمارت هورايزن',
+        f'{app["name_ar"]} — الأفق الذكي',
         app["summary_en"][:180],
         app["summary_ar"][:180],
         f"/apps/{slug}/",
@@ -733,7 +733,7 @@ def build_app_page(app):
 # --------------------------------------------------------------------------
 
 def build_404():
-    html = head("Page not found — Smart Horizon", "الصفحة غير موجودة — سمارت هورايزن",
+    html = head("Page not found — Smart Horizon", "الصفحة غير موجودة — الأفق الذكي",
                 "That page does not exist.", "هذه الصفحة غير موجودة.", "/404.html")
     html += header()
     html += f'''<main id="main">

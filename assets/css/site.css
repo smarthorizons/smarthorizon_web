@@ -214,15 +214,28 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
 .site-header.is-stuck { box-shadow: var(--shadow-md); }
 .site-header .wrap { display: flex; align-items: center; gap: var(--space-md); min-height: 68px; }
 
-.brand { display: flex; align-items: center; gap: 10px; color: var(--color-foreground); font-weight: 800; font-size: 1.06rem; cursor: pointer; }
+.brand { display: flex; align-items: center; gap: 11px; color: var(--color-foreground); font-weight: 800; cursor: pointer; }
 .brand:hover { text-decoration: none; }
-.brand-glyph { inline-size: 32px; block-size: 32px; flex: none; transition: transform 400ms var(--ease-back); }
+.brand-glyph { inline-size: 38px; block-size: 38px; flex: none; transition: transform 400ms var(--ease-back); }
 .brand:hover .brand-glyph { transform: rotate(-12deg) scale(1.06); }
 
-.wordmark { font-weight: 800; letter-spacing: -.02em; white-space: nowrap; }
+/* Wordmark. "Smart" is blue and "Horizon" is orange in both scripts, so
+   the colours follow meaning rather than position — which reverses their
+   visual order under RTL, as it should. */
+.wordmark { font-weight: 800; letter-spacing: -.02em; white-space: nowrap; font-size: 1.42rem; line-height: 1; }
 .wordmark .w1 { color: var(--brand); }
 .wordmark .w2 { color: var(--accent); }
-[dir="rtl"] .wordmark { direction: ltr; unicode-bidi: isolate; }
+/* Latin wordmark stays LTR inside an Arabic page; the Arabic one must not. */
+[dir="rtl"] .wordmark [data-lang="en"] { direction: ltr; unicode-bidi: isolate; }
+[dir="rtl"] .wordmark { font-size: 1.5rem; }
+.site-footer .wordmark { font-size: 1.3rem; }
+[dir="rtl"] .site-footer .wordmark { font-size: 1.38rem; }
+
+@media (max-width: 420px) {
+  .wordmark { font-size: 1.2rem; }
+  [dir="rtl"] .wordmark { font-size: 1.28rem; }
+  .brand-glyph { inline-size: 34px; block-size: 34px; }
+}
 
 .nav { display: flex; align-items: center; gap: var(--space-xs); margin-inline-start: auto; }
 .nav a {
