@@ -51,6 +51,10 @@ ICON_PLAY = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
 ICON_STAR = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
              '<path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05L6.2 20.4l1.1-6.5-4.7-4.6 6.5-.95z"/></svg>')
 
+ICON_DOWNLOAD = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" '
+                 'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                 '<path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>')
+
 ICON_CHECK = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" '
               'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
               '<path d="M20 6L9 17l-5-5"/></svg>')
@@ -70,6 +74,30 @@ def img_size(rel_path, display_width):
     with Image.open(f) as im:
         w, h = im.size
     return f' width="{display_width}" height="{round(display_width * h / w)}"'
+
+
+def total_installs():
+    """Play publishes ranges ("100K+"), so summing the floors gives a
+    defensible lower bound -- never an inflated figure."""
+    mult = {"K": 1_000, "M": 1_000_000, "B": 1_000_000_000}
+    total = 0
+    for a in APPS:
+        v = (a.get("play_downloads") or "").rstrip("+")
+        if not v:
+            continue
+        total += int(float(v[:-1]) * mult[v[-1]]) if v[-1] in mult else int(v)
+    return total
+
+
+def downloads_badge(app):
+    """Google Play publishes an install range; Apple publishes nothing
+    comparable. Shown for every app, which matters most for the two whose
+    iOS rating counts are too low to display."""
+    n = app.get("play_downloads")
+    if not n:
+        return ""
+    return (f'<span class="rating">{ICON_DOWNLOAD}{n}'
+            f'{L("<span>installs</span>", "<span>تنزيل</span>")}</span>')
 
 
 def stores(app, small=False):
@@ -243,6 +271,57 @@ def write(path, html):
 # service + process content
 # --------------------------------------------------------------------------
 
+# Animated hero motif. Echoes the concentric arcs of the Smart Horizon mark:
+# a rising sun over a horizon, with radar-style pulses expanding outward.
+# Pure SVG + CSS -- no image file, no library, crisp at any size, and it
+# costs about 4KB. Every animation is transform/opacity only, and the whole
+# thing freezes under prefers-reduced-motion.
+HERO_ART = '''      <svg class="hero-motif" viewBox="0 0 420 420" role="img" aria-label="Smart Horizon">
+        <defs>
+          <linearGradient id="hm-sun" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6FB0CE"/>
+            <stop offset="1" stop-color="#2E6E8E"/>
+          </linearGradient>
+          <linearGradient id="hm-ray" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D78630"/>
+            <stop offset="1" stop-color="#4691B6"/>
+          </linearGradient>
+          <clipPath id="hm-above"><rect x="0" y="0" width="420" height="252"/></clipPath>
+        </defs>
+
+        <!-- expanding pulses -->
+        <g clip-path="url(#hm-above)" fill="none" stroke="url(#hm-ray)" stroke-width="2">
+          <circle class="hm-pulse hm-pulse--1" cx="210" cy="252" r="62"/>
+          <circle class="hm-pulse hm-pulse--2" cx="210" cy="252" r="62"/>
+          <circle class="hm-pulse hm-pulse--3" cx="210" cy="252" r="62"/>
+        </g>
+
+        <!-- fixed arcs, echoing the logo mark -->
+        <g clip-path="url(#hm-above)" fill="none" stroke-linecap="round">
+          <path class="hm-arc" d="M96 252a114 114 0 0 1 228 0" stroke="#D78630" stroke-width="3" opacity=".55"/>
+          <path class="hm-arc hm-arc--2" d="M126 252a84 84 0 0 1 168 0" stroke="#4691B6" stroke-width="3" opacity=".45"/>
+        </g>
+
+        <!-- the sun -->
+        <circle class="hm-sun" cx="210" cy="252" r="52" fill="url(#hm-sun)"/>
+        <circle class="hm-sun-ring" cx="210" cy="252" r="52" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
+
+        <!-- horizon -->
+        <g class="hm-horizon">
+          <line x1="34" y1="252" x2="386" y2="252" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+          <line class="hm-horizon-lit" x1="120" y1="252" x2="300" y2="252" stroke="#D78630" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- orbiting dot -->
+        <g class="hm-orbit"><circle cx="210" cy="118" r="7" fill="#D78630"/></g>
+
+        <!-- drifting motes -->
+        <circle class="hm-mote hm-mote--1" cx="92"  cy="168" r="4.5" fill="#4691B6" opacity=".65"/>
+        <circle class="hm-mote hm-mote--2" cx="330" cy="132" r="5.5" fill="#D78630" opacity=".55"/>
+        <circle class="hm-mote hm-mote--3" cx="352" cy="206" r="3.5" fill="#4691B6" opacity=".5"/>
+      </svg>'''
+
+
 def svg(paths, extra=""):
     return (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" '
             f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"{extra}>{paths}</svg>')
@@ -251,33 +330,27 @@ def svg(paths, extra=""):
 SERVICES = [
     {
         "icon": svg('<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/>'),
-        "en_t": "Mobile app development",
+        "en_t": "Mobile development",
         "ar_t": "تطوير تطبيقات الجوال",
-        "en_d": "Native and cross-platform apps for iOS and Android, from first sketch to a live listing on the App Store and Google Play. We have taken four of our own apps through that whole process.",
-        "ar_d": "تطبيقات أصلية ومتعددة المنصات لنظامي iOS و Android، من الفكرة الأولى حتى النشر على App Store و Google Play. لقد مررنا بأربعة من تطبيقاتنا عبر هذه الرحلة كاملة.",
-    },
-    {
-        "icon": svg('<circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5S9.4 5.3 12 2.5z"/>'),
-        "en_t": "Web development",
-        "ar_t": "تطوير المواقع",
-        "en_d": "Marketing sites, landing pages, web applications and e-commerce. Fast, accessible, and built to work properly in both Arabic and English, right-to-left included.",
-        "ar_d": "مواقع تعريفية وصفحات هبوط وتطبيقات ويب ومتاجر إلكترونية. سريعة وسهلة الوصول، ومبنية لتعمل بشكل صحيح بالعربية والإنجليزية، بما في ذلك الاتجاه من اليمين إلى اليسار.",
-    },
-    {
-        "icon": svg('<path d="M12 2.5l2.6 6.2 6.7.6-5.1 4.4 1.5 6.6L12 16.9 6.3 20.3l1.5-6.6L2.7 9.3l6.7-.6z"/>'),
-        "en_t": "UI/UX design & branding",
-        "ar_t": "تصميم الواجهات والهوية البصرية",
-        "en_d": "Product design, design systems, app icons and brand identity. Interfaces that make sense on the first try, and hold together as the product grows.",
-        "ar_d": "تصميم المنتجات وأنظمة التصميم وأيقونات التطبيقات والهوية البصرية. واجهات مفهومة من أول استخدام، وتبقى متماسكة مع نمو المنتج.",
+        "en_d": "Cross-platform iOS and Android apps with native integrations, background processing and offline-first architecture &mdash; so the app still works on a weak connection. Four of our own apps have been through this whole process, from first sketch to a live store listing.",
+        "ar_d": "تطبيقات iOS و Android متعددة المنصات مع تكاملات أصلية، ومعالجة في الخلفية، وبنية تعمل دون اتصال أولاً &mdash; ليواصل التطبيق عمله على شبكة ضعيفة. مررنا بأربعة من تطبيقاتنا عبر هذه الرحلة كاملة، من الفكرة الأولى حتى النشر في المتاجر.",
     },
     {
         "icon": svg('<ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>'),
-        "en_t": "Backend, APIs & cloud",
-        "ar_t": "الأنظمة الخلفية وواجهات البرمجة والسحابة",
-        "en_d": "Servers, APIs, databases, integrations and hosting. The parts nobody sees until they break &mdash; so we build them to not break.",
-        "ar_d": "خوادم وواجهات برمجة وقواعد بيانات وتكاملات واستضافة. الأجزاء التي لا يلاحظها أحد حتى تتعطل &mdash; لذلك نبنيها لكيلا تتعطل.",
+        "en_t": "Web & SaaS engineering",
+        "ar_t": "هندسة الويب والبرمجيات كخدمة",
+        "en_d": "Full-stack web applications and SaaS platforms: REST and GraphQL APIs, backend architecture, databases, and cloud deployment. Built to be handed over and maintained, not to be rewritten in a year.",
+        "ar_d": "تطبيقات ويب متكاملة ومنصات برمجيات كخدمة: واجهات REST و GraphQL، وبنية خلفية، وقواعد بيانات، ونشر سحابي. مبنية لتُسلَّم وتُصان، لا لتُعاد كتابتها بعد عام.",
+    },
+    {
+        "icon": svg('<path d="M12 2.5l2.6 6.2 6.7.6-5.1 4.4 1.5 6.6L12 16.9 6.3 20.3l1.5-6.6L2.7 9.3l6.7-.6z"/>'),
+        "en_t": "UI/UX, design systems & RTL",
+        "ar_t": "الواجهات وأنظمة التصميم ودعم العربية",
+        "en_d": "Product design, design systems, app icons and brand identity &mdash; plus the part most teams get wrong: proper bidirectional Arabic and RTL, state management design, and multi-platform monorepo architecture.",
+        "ar_d": "تصميم المنتجات وأنظمة التصميم وأيقونات التطبيقات والهوية البصرية &mdash; إضافة إلى ما تخطئ فيه معظم الفرق: دعم صحيح للعربية والاتجاه من اليمين إلى اليسار، وتصميم إدارة الحالة، وبنية أحادية المستودع متعددة المنصات.",
     },
 ]
+
 
 STEPS = [
     ("Discover", "الاستكشاف",
@@ -311,7 +384,7 @@ def app_card(app):
           </div>
           {L(app['tagline_en'], app['tagline_ar'], tag="p")}
           <div class="app-card__foot">
-            {rating_badge(app)}
+            <div class="app-card__metrics">{rating_badge(app)}{downloads_badge(app)}</div>
             <a class="btn btn--ghost" style="padding:9px 18px;font-size:.92rem" href="/apps/{app['slug']}/">{L("Details", "التفاصيل")}</a>
           </div>
         </div>
@@ -339,6 +412,8 @@ def cta_block():
 
 def build_index():
     total_ratings = sum(a.get("rating_count") or 0 for a in APPS)
+    installs = total_installs()
+    installs_label = f"{installs // 1000:,}K+" if installs < 1_000_000 else f"{installs / 1_000_000:.1f}M+"
     best = max(APPS, key=lambda a: (a.get("rating_count") or 0))
 
     org_ld = json.dumps({
@@ -365,10 +440,7 @@ def build_index():
 
     cards = "\n".join(app_card(a) for a in APPS)
 
-    hero_shots = "\n".join(
-        f'      <img class="shot" src="/assets/apps/{a["slug"]}/screenshot-1.webp" alt=""'
-        f'{img_size(f"/assets/apps/{a["slug"]}/screenshot-1.webp", 230)} loading="eager">'
-        for a in (APPS[1], APPS[0]))   # Rawdat Al-Eman + Prayer Timer
+    hero_shots = HERO_ART
 
     html = head(
         "Smart Horizon — App, web and software development in Oman",
@@ -387,12 +459,12 @@ def build_index():
       <span class="eyebrow">{L("Software studio &middot; Oman", "استوديو برمجيات &middot; عُمان")}</span>
       {L("We build software people keep using.",
          "نبني برمجيات يستمر الناس في استخدامها.", tag="h1")}
-      {L("Smart Horizon designs and builds mobile apps, websites and the systems behind them. We also publish our own apps &mdash; four of them, on the App Store and Google Play, with more than " + f"{total_ratings:,}" + " ratings between them. That is the same team, and the same standard, that your project gets.",
-         "تصمم سمارت هورايزن وتطوّر تطبيقات الجوال والمواقع والأنظمة التي تقف خلفها. كما ننشر تطبيقاتنا الخاصة &mdash; أربعة تطبيقات على App Store و Google Play، بأكثر من " + f"{total_ratings:,}" + " تقييم مجتمعة. وهو الفريق نفسه والمعيار نفسه الذي سيحصل عليه مشروعك.",
+      {L("We build cross-platform mobile apps, web platforms and SaaS, and the backends behind them. We also publish our own apps &mdash; four of them, downloaded more than " + installs_label.replace("+", "") + " times. That is the same team, and the same standard, that your project gets.",
+         "نبني تطبيقات جوال متعددة المنصات ومنصات ويب وبرمجيات كخدمة، والأنظمة الخلفية التي تقف خلفها. كما ننشر تطبيقاتنا الخاصة &mdash; أربعة تطبيقات جرى تنزيلها أكثر من " + installs_label.replace("+", "") + " مرة. وهو الفريق نفسه والمعيار نفسه الذي سيحصل عليه مشروعك.",
          tag="p", cls="lede")}
       <div class="btn-row">
-        <a class="btn btn--primary" href="#contact">{L("Start a project", "ابدأ مشروعاً")}</a>
-        <a class="btn btn--ghost" href="/apps/">{L("See our apps", "شاهد تطبيقاتنا")}</a>
+        <a class="btn btn--primary" href="#apps">{L("Explore our apps", "استعرض تطبيقاتنا")}</a>
+        <a class="btn btn--ghost" href="#contact">{L("Request a quote", "اطلب عرض سعر")}</a>
       </div>
     </div>
     <div class="hero__art" aria-hidden="true">
@@ -404,7 +476,7 @@ def build_index():
 <section class="section" style="padding-block:44px">
   <div class="wrap">
     <div class="stats" data-reveal-group>
-      <div class="stat"><span class="stat__num">4</span><span class="stat__label">{L("apps published", "تطبيقات منشورة")}</span></div>
+      <div class="stat"><span class="stat__num">{installs_label}</span><span class="stat__label">{L("downloads on Google Play", "تنزيل على Google Play")}</span></div>
       <div class="stat"><span class="stat__num">{total_ratings:,}</span><span class="stat__label">{L("App Store ratings", "تقييم على App Store")}</span></div>
       <div class="stat"><span class="stat__num">{best['rating']:.1f}{ICON_STAR}</span><span class="stat__label">{L("top-rated app", "أعلى تطبيق تقييماً")}</span></div>
       <div class="stat"><span class="stat__num">2020</span><span class="stat__label">{L("shipping since", "ننشر منذ")}</span></div>
@@ -420,7 +492,7 @@ def build_index():
       {L("We take on the whole thing &mdash; design, apps, web and the backend &mdash; or slot into the part you are missing.",
          "ننفّذ المشروع كاملاً &mdash; التصميم والتطبيقات والويب والأنظمة الخلفية &mdash; أو نكمل الجزء الناقص لديك فقط.", tag="p")}
     </div>
-    <div class="grid grid--4" data-reveal-group>
+    <div class="grid grid--3" data-reveal-group>
 {services}
     </div>
   </div>

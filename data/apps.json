@@ -36,7 +36,8 @@
       "rating_count": 3,
       "screenshots": 8,
       "released": "2022-02-15",
-      "accent": "#2B36A8"
+      "accent": "#2B36A8",
+      "play_downloads": "10K+"
     },
     {
       "slug": "rawdat-aleman",
@@ -72,7 +73,8 @@
       "rating_count": 2390,
       "screenshots": 10,
       "released": "2020-08-16",
-      "accent": "#1F6F4A"
+      "accent": "#1F6F4A",
+      "play_downloads": "100K+"
     },
     {
       "slug": "masbahat-alzikr",
@@ -108,7 +110,8 @@
       "rating_count": 145,
       "screenshots": 9,
       "released": "2023-02-02",
-      "accent": "#7A4BC4"
+      "accent": "#7A4BC4",
+      "play_downloads": "100K+"
     },
     {
       "slug": "alquran-alaziz",
@@ -144,7 +147,9 @@
       "rating_count": 2,
       "screenshots": 7,
       "released": "2023-03-25",
-      "accent": "#0F766E"
+      "accent": "#0F766E",
+      "play_downloads": "5K+"
     }
-  ]
+  ],
+  "_play_data_fetched": "2026-09-08"
 }

@@ -35,6 +35,12 @@ def fetch_json(url):
         return json.loads(r.read().decode("utf-8"))
 
 
+def fetch_text(url):
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=60) as r:
+        return r.read().decode("utf-8", "replace")
+
+
 def download(url, dest):
     req = urllib.request.Request(url, headers=UA)
     with urllib.request.urlopen(req, timeout=90) as r:
@@ -95,6 +101,22 @@ def main():
         for i, u in enumerate(shots, 1):
             download(resized(u, f"{SHOT_WIDTH}x0w.webp"), out / f"screenshot-{i}.webp")
         print(f"    icon + {len(shots)} screenshots saved")
+
+    # Google Play publishes an install range; Apple publishes nothing
+    # comparable, so downloads always come from Play.
+    print("\nGoogle Play install ranges:")
+    for app in catalog["apps"]:
+        try:
+            html = fetch_text("https://play.google.com/store/apps/details"
+                              f"?id={app['android_id']}&hl=en&gl=US")
+            m = re.search(r"([\d.,]+[KMB]?\+)\s+Downloads", re.sub(r"<[^>]+>", " ", html))
+            if m:
+                app["play_downloads"] = m.group(1)
+                print(f"  {app['slug']}: {m.group(1)}")
+            else:
+                print(f"  {app['slug']}: not found (keeping {app.get('play_downloads', '—')})")
+        except Exception as exc:
+            print(f"  {app['slug']}: lookup failed ({exc}) -- keeping existing value")
 
     missing = [a["slug"] for a in catalog["apps"] if a["slug"] not in seen]
     if missing:

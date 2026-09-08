@@ -80,15 +80,57 @@
     <div data-reveal>
       <span class="eyebrow"><span data-lang="en">Software studio &middot; Oman</span><span lang="ar" data-lang="ar">استوديو برمجيات &middot; عُمان</span></span>
       <h1 data-lang="en">We build software people keep using.</h1><h1 lang="ar" data-lang="ar">نبني برمجيات يستمر الناس في استخدامها.</h1>
-      <p data-lang="en" class="lede">Smart Horizon designs and builds mobile apps, websites and the systems behind them. We also publish our own apps &mdash; four of them, on the App Store and Google Play, with more than 2,540 ratings between them. That is the same team, and the same standard, that your project gets.</p><p lang="ar" data-lang="ar" class="lede">تصمم سمارت هورايزن وتطوّر تطبيقات الجوال والمواقع والأنظمة التي تقف خلفها. كما ننشر تطبيقاتنا الخاصة &mdash; أربعة تطبيقات على App Store و Google Play، بأكثر من 2,540 تقييم مجتمعة. وهو الفريق نفسه والمعيار نفسه الذي سيحصل عليه مشروعك.</p>
+      <p data-lang="en" class="lede">We build cross-platform mobile apps, web platforms and SaaS, and the backends behind them. We also publish our own apps &mdash; four of them, downloaded more than 215K times. That is the same team, and the same standard, that your project gets.</p><p lang="ar" data-lang="ar" class="lede">نبني تطبيقات جوال متعددة المنصات ومنصات ويب وبرمجيات كخدمة، والأنظمة الخلفية التي تقف خلفها. كما ننشر تطبيقاتنا الخاصة &mdash; أربعة تطبيقات جرى تنزيلها أكثر من 215K مرة. وهو الفريق نفسه والمعيار نفسه الذي سيحصل عليه مشروعك.</p>
       <div class="btn-row">
-        <a class="btn btn--primary" href="#contact"><span data-lang="en">Start a project</span><span lang="ar" data-lang="ar">ابدأ مشروعاً</span></a>
-        <a class="btn btn--ghost" href="/apps/"><span data-lang="en">See our apps</span><span lang="ar" data-lang="ar">شاهد تطبيقاتنا</span></a>
+        <a class="btn btn--primary" href="#apps"><span data-lang="en">Explore our apps</span><span lang="ar" data-lang="ar">استعرض تطبيقاتنا</span></a>
+        <a class="btn btn--ghost" href="#contact"><span data-lang="en">Request a quote</span><span lang="ar" data-lang="ar">اطلب عرض سعر</span></a>
       </div>
     </div>
     <div class="hero__art" aria-hidden="true">
-      <img class="shot" src="/assets/apps/rawdat-aleman/screenshot-1.webp" alt="" width="230" height="409" loading="eager">
-      <img class="shot" src="/assets/apps/prayer-timer/screenshot-1.webp" alt="" width="230" height="500" loading="eager">
+      <svg class="hero-motif" viewBox="0 0 420 420" role="img" aria-label="Smart Horizon">
+        <defs>
+          <linearGradient id="hm-sun" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#6FB0CE"/>
+            <stop offset="1" stop-color="#2E6E8E"/>
+          </linearGradient>
+          <linearGradient id="hm-ray" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#D78630"/>
+            <stop offset="1" stop-color="#4691B6"/>
+          </linearGradient>
+          <clipPath id="hm-above"><rect x="0" y="0" width="420" height="252"/></clipPath>
+        </defs>
+
+        <!-- expanding pulses -->
+        <g clip-path="url(#hm-above)" fill="none" stroke="url(#hm-ray)" stroke-width="2">
+          <circle class="hm-pulse hm-pulse--1" cx="210" cy="252" r="62"/>
+          <circle class="hm-pulse hm-pulse--2" cx="210" cy="252" r="62"/>
+          <circle class="hm-pulse hm-pulse--3" cx="210" cy="252" r="62"/>
+        </g>
+
+        <!-- fixed arcs, echoing the logo mark -->
+        <g clip-path="url(#hm-above)" fill="none" stroke-linecap="round">
+          <path class="hm-arc" d="M96 252a114 114 0 0 1 228 0" stroke="#D78630" stroke-width="3" opacity=".55"/>
+          <path class="hm-arc hm-arc--2" d="M126 252a84 84 0 0 1 168 0" stroke="#4691B6" stroke-width="3" opacity=".45"/>
+        </g>
+
+        <!-- the sun -->
+        <circle class="hm-sun" cx="210" cy="252" r="52" fill="url(#hm-sun)"/>
+        <circle class="hm-sun-ring" cx="210" cy="252" r="52" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
+
+        <!-- horizon -->
+        <g class="hm-horizon">
+          <line x1="34" y1="252" x2="386" y2="252" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+          <line class="hm-horizon-lit" x1="120" y1="252" x2="300" y2="252" stroke="#D78630" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- orbiting dot -->
+        <g class="hm-orbit"><circle cx="210" cy="118" r="7" fill="#D78630"/></g>
+
+        <!-- drifting motes -->
+        <circle class="hm-mote hm-mote--1" cx="92"  cy="168" r="4.5" fill="#4691B6" opacity=".65"/>
+        <circle class="hm-mote hm-mote--2" cx="330" cy="132" r="5.5" fill="#D78630" opacity=".55"/>
+        <circle class="hm-mote hm-mote--3" cx="352" cy="206" r="3.5" fill="#4691B6" opacity=".5"/>
+      </svg>
     </div>
   </div>
 </section>
@@ -96,7 +138,7 @@
 <section class="section" style="padding-block:44px">
   <div class="wrap">
     <div class="stats" data-reveal-group>
-      <div class="stat"><span class="stat__num">4</span><span class="stat__label"><span data-lang="en">apps published</span><span lang="ar" data-lang="ar">تطبيقات منشورة</span></span></div>
+      <div class="stat"><span class="stat__num">215K+</span><span class="stat__label"><span data-lang="en">downloads on Google Play</span><span lang="ar" data-lang="ar">تنزيل على Google Play</span></span></div>
       <div class="stat"><span class="stat__num">2,540</span><span class="stat__label"><span data-lang="en">App Store ratings</span><span lang="ar" data-lang="ar">تقييم على App Store</span></span></div>
       <div class="stat"><span class="stat__num">4.8<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05L6.2 20.4l1.1-6.5-4.7-4.6 6.5-.95z"/></svg></span><span class="stat__label"><span data-lang="en">top-rated app</span><span lang="ar" data-lang="ar">أعلى تطبيق تقييماً</span></span></div>
       <div class="stat"><span class="stat__num">2020</span><span class="stat__label"><span data-lang="en">shipping since</span><span lang="ar" data-lang="ar">ننشر منذ</span></span></div>
@@ -111,26 +153,21 @@
       <h2 data-lang="en">Services</h2><h2 lang="ar" data-lang="ar">خدماتنا</h2>
       <p data-lang="en">We take on the whole thing &mdash; design, apps, web and the backend &mdash; or slot into the part you are missing.</p><p lang="ar" data-lang="ar">ننفّذ المشروع كاملاً &mdash; التصميم والتطبيقات والويب والأنظمة الخلفية &mdash; أو نكمل الجزء الناقص لديك فقط.</p>
     </div>
-    <div class="grid grid--4" data-reveal-group>
+    <div class="grid grid--3" data-reveal-group>
       <article class="card card--link">
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
-        <h3 data-lang="en">Mobile app development</h3><h3 lang="ar" data-lang="ar">تطوير تطبيقات الجوال</h3>
-        <p data-lang="en">Native and cross-platform apps for iOS and Android, from first sketch to a live listing on the App Store and Google Play. We have taken four of our own apps through that whole process.</p><p lang="ar" data-lang="ar">تطبيقات أصلية ومتعددة المنصات لنظامي iOS و Android، من الفكرة الأولى حتى النشر على App Store و Google Play. لقد مررنا بأربعة من تطبيقاتنا عبر هذه الرحلة كاملة.</p>
-      </article>
-      <article class="card card--link">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5S9.4 5.3 12 2.5z"/></svg></div>
-        <h3 data-lang="en">Web development</h3><h3 lang="ar" data-lang="ar">تطوير المواقع</h3>
-        <p data-lang="en">Marketing sites, landing pages, web applications and e-commerce. Fast, accessible, and built to work properly in both Arabic and English, right-to-left included.</p><p lang="ar" data-lang="ar">مواقع تعريفية وصفحات هبوط وتطبيقات ويب ومتاجر إلكترونية. سريعة وسهلة الوصول، ومبنية لتعمل بشكل صحيح بالعربية والإنجليزية، بما في ذلك الاتجاه من اليمين إلى اليسار.</p>
-      </article>
-      <article class="card card--link">
-        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l2.6 6.2 6.7.6-5.1 4.4 1.5 6.6L12 16.9 6.3 20.3l1.5-6.6L2.7 9.3l6.7-.6z"/></svg></div>
-        <h3 data-lang="en">UI/UX design & branding</h3><h3 lang="ar" data-lang="ar">تصميم الواجهات والهوية البصرية</h3>
-        <p data-lang="en">Product design, design systems, app icons and brand identity. Interfaces that make sense on the first try, and hold together as the product grows.</p><p lang="ar" data-lang="ar">تصميم المنتجات وأنظمة التصميم وأيقونات التطبيقات والهوية البصرية. واجهات مفهومة من أول استخدام، وتبقى متماسكة مع نمو المنتج.</p>
+        <h3 data-lang="en">Mobile development</h3><h3 lang="ar" data-lang="ar">تطوير تطبيقات الجوال</h3>
+        <p data-lang="en">Cross-platform iOS and Android apps with native integrations, background processing and offline-first architecture &mdash; so the app still works on a weak connection. Four of our own apps have been through this whole process, from first sketch to a live store listing.</p><p lang="ar" data-lang="ar">تطبيقات iOS و Android متعددة المنصات مع تكاملات أصلية، ومعالجة في الخلفية، وبنية تعمل دون اتصال أولاً &mdash; ليواصل التطبيق عمله على شبكة ضعيفة. مررنا بأربعة من تطبيقاتنا عبر هذه الرحلة كاملة، من الفكرة الأولى حتى النشر في المتاجر.</p>
       </article>
       <article class="card card--link">
         <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
-        <h3 data-lang="en">Backend, APIs & cloud</h3><h3 lang="ar" data-lang="ar">الأنظمة الخلفية وواجهات البرمجة والسحابة</h3>
-        <p data-lang="en">Servers, APIs, databases, integrations and hosting. The parts nobody sees until they break &mdash; so we build them to not break.</p><p lang="ar" data-lang="ar">خوادم وواجهات برمجة وقواعد بيانات وتكاملات واستضافة. الأجزاء التي لا يلاحظها أحد حتى تتعطل &mdash; لذلك نبنيها لكيلا تتعطل.</p>
+        <h3 data-lang="en">Web & SaaS engineering</h3><h3 lang="ar" data-lang="ar">هندسة الويب والبرمجيات كخدمة</h3>
+        <p data-lang="en">Full-stack web applications and SaaS platforms: REST and GraphQL APIs, backend architecture, databases, and cloud deployment. Built to be handed over and maintained, not to be rewritten in a year.</p><p lang="ar" data-lang="ar">تطبيقات ويب متكاملة ومنصات برمجيات كخدمة: واجهات REST و GraphQL، وبنية خلفية، وقواعد بيانات، ونشر سحابي. مبنية لتُسلَّم وتُصان، لا لتُعاد كتابتها بعد عام.</p>
+      </article>
+      <article class="card card--link">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l2.6 6.2 6.7.6-5.1 4.4 1.5 6.6L12 16.9 6.3 20.3l1.5-6.6L2.7 9.3l6.7-.6z"/></svg></div>
+        <h3 data-lang="en">UI/UX, design systems & RTL</h3><h3 lang="ar" data-lang="ar">الواجهات وأنظمة التصميم ودعم العربية</h3>
+        <p data-lang="en">Product design, design systems, app icons and brand identity &mdash; plus the part most teams get wrong: proper bidirectional Arabic and RTL, state management design, and multi-platform monorepo architecture.</p><p lang="ar" data-lang="ar">تصميم المنتجات وأنظمة التصميم وأيقونات التطبيقات والهوية البصرية &mdash; إضافة إلى ما تخطئ فيه معظم الفرق: دعم صحيح للعربية والاتجاه من اليمين إلى اليسار، وتصميم إدارة الحالة، وبنية أحادية المستودع متعددة المنصات.</p>
       </article>
     </div>
   </div>
@@ -155,7 +192,7 @@
           </div>
           <p data-lang="en">Prayer times with Iqama — the times your mosque actually starts.</p><p lang="ar" data-lang="ar">مواقيت الصلاة مع وقت الإقامة — وقت بدء الجماعة فعلياً.</p>
           <div class="app-card__foot">
-            
+            <div class="app-card__metrics"><span class="rating"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>10K+<span data-lang="en"><span>installs</span></span><span lang="ar" data-lang="ar"><span>تنزيل</span></span></span></div>
             <a class="btn btn--ghost" style="padding:9px 18px;font-size:.92rem" href="/apps/prayer-timer/"><span data-lang="en">Details</span><span lang="ar" data-lang="ar">التفاصيل</span></a>
           </div>
         </div>
@@ -171,7 +208,7 @@
           </div>
           <p data-lang="en">A complete collection of authentic daily adhkar.</p><p lang="ar" data-lang="ar">مجموعة متكاملة من الأذكار والأدعية المأثورة.</p>
           <div class="app-card__foot">
-            <span class="rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05L6.2 20.4l1.1-6.5-4.7-4.6 6.5-.95z"/></svg>4.8<span data-lang="en"><span>(2,390 ratings)</span></span><span lang="ar" data-lang="ar"><span>(2,390 تقييم)</span></span></span>
+            <div class="app-card__metrics"><span class="rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05L6.2 20.4l1.1-6.5-4.7-4.6 6.5-.95z"/></svg>4.8<span data-lang="en"><span>(2,390 ratings)</span></span><span lang="ar" data-lang="ar"><span>(2,390 تقييم)</span></span></span><span class="rating"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>100K+<span data-lang="en"><span>installs</span></span><span lang="ar" data-lang="ar"><span>تنزيل</span></span></span></div>
             <a class="btn btn--ghost" style="padding:9px 18px;font-size:.92rem" href="/apps/rawdat-aleman/"><span data-lang="en">Details</span><span lang="ar" data-lang="ar">التفاصيل</span></a>
           </div>
         </div>
@@ -187,7 +224,7 @@
           </div>
           <p data-lang="en">A digital tasbih that counts for you — no tapping required.</p><p lang="ar" data-lang="ar">مسبحة إلكترونية تعدّ عنك — دون لمس الشاشة.</p>
           <div class="app-card__foot">
-            <span class="rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05L6.2 20.4l1.1-6.5-4.7-4.6 6.5-.95z"/></svg>4.0<span data-lang="en"><span>(145 ratings)</span></span><span lang="ar" data-lang="ar"><span>(145 تقييم)</span></span></span>
+            <div class="app-card__metrics"><span class="rating"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.6 1.1 6.5-5.8-3.05L6.2 20.4l1.1-6.5-4.7-4.6 6.5-.95z"/></svg>4.0<span data-lang="en"><span>(145 ratings)</span></span><span lang="ar" data-lang="ar"><span>(145 تقييم)</span></span></span><span class="rating"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>100K+<span data-lang="en"><span>installs</span></span><span lang="ar" data-lang="ar"><span>تنزيل</span></span></span></div>
             <a class="btn btn--ghost" style="padding:9px 18px;font-size:.92rem" href="/apps/masbahat-alzikr/"><span data-lang="en">Details</span><span lang="ar" data-lang="ar">التفاصيل</span></a>
           </div>
         </div>
@@ -203,7 +240,7 @@
           </div>
           <p data-lang="en">The Madinah Mushaf, cleanly presented.</p><p lang="ar" data-lang="ar">مصحف المدينة النبوية بتصميم واضح.</p>
           <div class="app-card__foot">
-            
+            <div class="app-card__metrics"><span class="rating"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>5K+<span data-lang="en"><span>installs</span></span><span lang="ar" data-lang="ar"><span>تنزيل</span></span></span></div>
             <a class="btn btn--ghost" style="padding:9px 18px;font-size:.92rem" href="/apps/alquran-alaziz/"><span data-lang="en">Details</span><span lang="ar" data-lang="ar">التفاصيل</span></a>
           </div>
         </div>
