@@ -1,7 +1,9 @@
 /* Smart Horizon — site behaviour
    1. Language switching (EN / AR + RTL), persisted
    2. Mobile navigation
-   3. GA4, loaded only after explicit consent
+   3. Scroll reveal (IntersectionObserver)
+   4. Sticky header elevation
+   5. GA4, loaded only after explicit consent
    No dependencies, no build step. */
 
 (function () {
@@ -90,7 +92,89 @@
   }
 
   /* ---------------------------------------------------------------
-     3. Analytics (GA4) — consent-gated
+     3. Scroll reveal
+
+     CSS holds the hidden state behind the .js class (set by an inline
+     script in <head>); this only adds .is-visible when an element
+     enters the viewport. Timings and easings come from the
+     ui-ux-pro-max motion presets: Scroll Reveal (standard tier,
+     ~500ms, power2.out, trigger at "top 85%") and Stagger List
+     (standard tier, ~400ms, back.out(1.4), 60ms apart).
+
+     Elements reveal once and stay revealed — re-animating on every
+     scroll direction change is the anti-pattern the preset warns about.
+  ---------------------------------------------------------------- */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function revealAll() {
+    document.querySelectorAll('[data-reveal], [data-reveal-group], .hero__art')
+      .forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  function setupReveal() {
+    // Reduced motion, or no IntersectionObserver: show the final state now.
+    if (reduced.matches || !('IntersectionObserver' in window)) {
+      revealAll();
+      return;
+    }
+
+    var targets = document.querySelectorAll('[data-reveal], [data-reveal-group], .hero__art');
+    if (!targets.length) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);   // reveal once
+      });
+    }, {
+      // Equivalent to ScrollTrigger start: "top 85%".
+      rootMargin: '0px 0px -15% 0px',
+      threshold: 0
+    });
+
+    targets.forEach(function (el) { io.observe(el); });
+
+    // Safety net: if anything goes wrong, never leave content hidden.
+    window.setTimeout(revealAll, 3000);
+  }
+
+  setupReveal();
+
+  // If the visitor turns reduced motion on mid-session, drop straight to
+  // the final state.
+  if (reduced.addEventListener) {
+    reduced.addEventListener('change', function (e) { if (e.matches) revealAll(); });
+  }
+
+  /* ---------------------------------------------------------------
+     4. Sticky header elevation
+  ---------------------------------------------------------------- */
+  var header = document.querySelector('.site-header');
+  var ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      if (header) header.classList.toggle('is-stuck', window.scrollY > 8);
+
+      // The reveal trigger line sits at 85% of the viewport. Anything still
+      // inside the bottom 15% once the page is scrolled as far as it goes
+      // could never cross that line, so reveal whatever is left.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        revealAll();
+      }
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------------------------------------------------------------
+     5. Analytics (GA4) — consent-gated
      GA4 sets cookies, so under GDPR it must not run until the visitor
      agrees. Nothing is loaded unless consent === 'granted'.
      Replace SH_GA_ID below with the real G-XXXXXXXXXX measurement ID.

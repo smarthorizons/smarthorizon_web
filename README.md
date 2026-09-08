@@ -93,6 +93,32 @@ These need a decision or a file from you before the site is finished:
    found under the Smart Horizon developer account, so they are not in
    `data/apps.json`. Add them once they ship.
 
+## Design system
+
+The visual system comes from the `ui-ux-pro-max` skill
+(`nextlevelbuilder/ui-ux-pro-max-skill`), captured in
+`design-system/smart-horizon/MASTER.md` — pattern, style, palette,
+spacing scale, and motion presets, plus a section recording where the
+implementation deliberately departs from the generated output.
+
+Regenerate it with:
+
+```bash
+python3 "$CLAUDE_PLUGIN_ROOT/.claude/skills/ui-ux-pro-max/scripts/search.py" \
+  "b2b service agency light clean professional" --design-system \
+  --variance 4 --motion 6 --density 4 -p "Smart Horizon" --output-dir "$(pwd)"
+```
+
+Note that `--persist` will not overwrite an existing `MASTER.md` without
+`--force`. Read it before regenerating — it holds decisions the generator
+does not know about.
+
+### Motion
+
+Scroll reveals are IntersectionObserver + CSS, no animation library.
+Content is visible without JavaScript and under `prefers-reduced-motion`;
+both render identically to the animated version once settled.
+
 ## Brand
 
 | Token | Value | Use |

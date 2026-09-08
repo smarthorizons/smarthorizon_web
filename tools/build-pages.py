@@ -135,6 +135,7 @@ def head(title_en, title_ar, desc_en, desc_ar, path,
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300..800&display=swap">
 <link rel="stylesheet" href="/assets/css/site.css">
+<script>document.documentElement.classList.add("js");</script>
 <script>window.SH_GA_ID = "{GA_ID}";</script>
 {extra}</head>
 <body>
@@ -318,7 +319,7 @@ def app_card(app):
 
 
 def cta_block():
-    return f'''    <div class="cta">
+    return f'''    <div class="cta" data-reveal>
       {L("Have something you want built?", "لديك مشروع تريد بناءه؟", tag="h2")}
       {L("Tell us what you are trying to make. We will tell you honestly whether we are the right people to build it, roughly what it takes, and how long it would run.",
          "أخبرنا بما تريد بناءه. سنخبرك بصراحة ما إذا كنا الجهة المناسبة لتنفيذه، وما الذي يتطلبه تقريباً، وكم سيستغرق.", tag="p")}
@@ -327,7 +328,7 @@ def cta_block():
         <a class="btn btn--ghost" href="/apps/">{L("See our work", "شاهد أعمالنا")}</a>
       </div>
       <p style="margin-block-start:20px;margin-block-end:0;font-size:.96rem">
-        <a href="mailto:{EMAIL}" style="color:#fff;text-decoration:underline;display:inline-block;padding-block:4px">{EMAIL}</a>
+        <a class="cta__email" href="mailto:{EMAIL}">{EMAIL}</a>
       </p>
     </div>'''
 
@@ -382,7 +383,7 @@ def build_index():
 
 <section class="hero">
   <div class="wrap hero__grid">
-    <div>
+    <div data-reveal>
       <span class="eyebrow">{L("Software studio &middot; Oman", "استوديو برمجيات &middot; عُمان")}</span>
       {L("We build software people keep using.",
          "نبني برمجيات يستمر الناس في استخدامها.", tag="h1")}
@@ -402,10 +403,10 @@ def build_index():
 
 <section class="section" style="padding-block:44px">
   <div class="wrap">
-    <div class="stats">
+    <div class="stats" data-reveal-group>
       <div class="stat"><span class="stat__num">4</span><span class="stat__label">{L("apps published", "تطبيقات منشورة")}</span></div>
       <div class="stat"><span class="stat__num">{total_ratings:,}</span><span class="stat__label">{L("App Store ratings", "تقييم على App Store")}</span></div>
-      <div class="stat"><span class="stat__num">{best['rating']:.1f}★</span><span class="stat__label">{L("top-rated app", "أعلى تطبيق تقييماً")}</span></div>
+      <div class="stat"><span class="stat__num">{best['rating']:.1f}{ICON_STAR}</span><span class="stat__label">{L("top-rated app", "أعلى تطبيق تقييماً")}</span></div>
       <div class="stat"><span class="stat__num">2020</span><span class="stat__label">{L("shipping since", "ننشر منذ")}</span></div>
     </div>
   </div>
@@ -413,13 +414,13 @@ def build_index():
 
 <section class="section section--alt" id="services">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">{L("What we do", "ما نقوم به")}</span>
       {L("Services", "خدماتنا", tag="h2")}
       {L("We take on the whole thing &mdash; design, apps, web and the backend &mdash; or slot into the part you are missing.",
          "ننفّذ المشروع كاملاً &mdash; التصميم والتطبيقات والويب والأنظمة الخلفية &mdash; أو نكمل الجزء الناقص لديك فقط.", tag="p")}
     </div>
-    <div class="grid grid--4">
+    <div class="grid grid--4" data-reveal-group>
 {services}
     </div>
   </div>
@@ -427,13 +428,13 @@ def build_index():
 
 <section class="section" id="apps">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">{L("Our own products", "منتجاتنا الخاصة")}</span>
       {L("Apps we built and publish ourselves", "تطبيقات بنيناها وننشرها بأنفسنا", tag="h2")}
       {L("Not a portfolio of screenshots &mdash; these are live products we maintain, support and answer for.",
          "ليست مجرد لقطات في معرض أعمال &mdash; بل منتجات حية نصونها وندعمها ونتحمّل مسؤوليتها.", tag="p")}
     </div>
-    <div class="grid grid--4">
+    <div class="grid grid--4" data-reveal-group>
 {cards}
     </div>
   </div>
@@ -441,18 +442,18 @@ def build_index():
 
 <section class="section section--alt" id="process">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">{L("How we work", "كيف نعمل")}</span>
       {L("From first conversation to a live release", "من أول محادثة إلى إطلاق حقيقي", tag="h2")}
     </div>
-    <div class="grid grid--4 steps">
+    <div class="grid grid--4 steps" data-reveal-group>
 {steps}
     </div>
   </div>
 </section>
 
 <section class="section" id="about">
-  <div class="wrap grid grid--2" style="gap:44px;align-items:start">
+  <div class="wrap grid grid--2" style="gap:44px;align-items:start" data-reveal-group>
     <div>
       <span class="eyebrow">{L("About", "من نحن")}</span>
       {L("A small studio that ships", "استوديو صغير ينجز ويُطلق", tag="h2")}
@@ -507,13 +508,13 @@ def build_apps_index():
 <section class="section">
   <div class="wrap">
     <p class="breadcrumb"><a href="/">{L("Home", "الرئيسية")}</a> / {L("Apps", "التطبيقات")}</p>
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">{L("Our own products", "منتجاتنا الخاصة")}</span>
       {L("Apps we build and publish", "تطبيقات نبنيها وننشرها", tag="h2")}
       {L("Every one of these is live on the App Store and Google Play, maintained by the same team that takes on client work.",
          "كل تطبيق من هذه التطبيقات منشور على App Store و Google Play، ويصونه الفريق نفسه الذي ينفّذ مشاريع العملاء.", tag="p")}
     </div>
-    <div class="grid grid--4">
+    <div class="grid grid--4" data-reveal-group>
 {cards}
     </div>
   </div>
@@ -587,7 +588,7 @@ def build_app_page(app):
 <section class="app-hero">
   <div class="wrap">
     <p class="breadcrumb"><a href="/">{L("Home", "الرئيسية")}</a> / <a href="/apps/">{L("Apps", "التطبيقات")}</a> / {L(app['name_en'], app['name_ar'])}</p>
-    <div class="app-hero__grid">
+    <div class="app-hero__grid" data-reveal>
       <img class="app-icon" src="/assets/apps/{slug}/icon.png" alt="" width="104" height="104">
       <div>
         <span class="app-card__cat">{L(app['category_en'], app['category_ar'])}</span>
@@ -606,7 +607,7 @@ def build_app_page(app):
 
 <section class="section">
   <div class="wrap">
-    <div class="grid grid--2" style="gap:44px;align-items:start">
+    <div class="grid grid--2" style="gap:44px;align-items:start" data-reveal-group>
       <div>
         {L("About the app", "عن التطبيق", tag="h2")}
         {L(app['summary_en'], app['summary_ar'], tag="p")}
@@ -625,7 +626,7 @@ def build_app_page(app):
   <div class="wrap">
     {L("Screenshots", "لقطات الشاشة", tag="h2")}
     {L("Scroll sideways to see more.", "مرّر جانبياً لرؤية المزيد.", tag="p")}
-    <div class="shots">
+    <div class="shots" data-reveal>
 {shots}
     </div>
   </div>
@@ -633,7 +634,7 @@ def build_app_page(app):
 
 <section class="section">
   <div class="wrap">
-    <div class="card center">
+    <div class="card center" data-reveal>
       {L("Get the app", "احصل على التطبيق", tag="h3")}
       <div style="display:flex;justify-content:center;margin-block:18px">
 {stores(app)}
