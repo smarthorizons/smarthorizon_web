@@ -212,29 +212,29 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
   transition: box-shadow var(--dur-ui) var(--ease-out-1);
 }
 .site-header.is-stuck { box-shadow: var(--shadow-md); }
-.site-header .wrap { display: flex; align-items: center; gap: var(--space-md); min-height: 78px; }
+.site-header .wrap { display: flex; align-items: center; gap: var(--space-md); min-height: 84px; }
 
 .brand { display: flex; align-items: center; gap: 12px; color: var(--color-foreground); font-weight: 800; cursor: pointer; }
 .brand:hover { text-decoration: none; }
-.brand-glyph { inline-size: 48px; block-size: 48px; flex: none; transition: transform 400ms var(--ease-back); }
+.brand-glyph { inline-size: 53px; block-size: 53px; flex: none; transition: transform 400ms var(--ease-back); }
 .brand:hover .brand-glyph { transform: rotate(-12deg) scale(1.06); }
 
 /* Wordmark. "Smart" is blue and "Horizon" is orange in both scripts, so
    the colours follow meaning rather than position — which reverses their
    visual order under RTL, as it should. */
-.wordmark { font-weight: 800; letter-spacing: -.02em; white-space: nowrap; font-size: 1.84rem; line-height: 1; }
+.wordmark { font-weight: 800; letter-spacing: -.02em; white-space: nowrap; font-size: 2rem; line-height: 1; }
 .wordmark .w1 { color: var(--brand); }
 .wordmark .w2 { color: var(--accent); }
 /* Latin wordmark stays LTR inside an Arabic page; the Arabic one must not. */
 [dir="rtl"] .wordmark [data-lang="en"] { direction: ltr; unicode-bidi: isolate; }
 [dir="rtl"] .wordmark { font-size: 1.72rem; }
-.site-footer .wordmark { font-size: 1.62rem; }
+.site-footer .wordmark { font-size: 1.74rem; }
 [dir="rtl"] .site-footer .wordmark { font-size: 1.54rem; }
 
 @media (max-width: 480px) {
-  .wordmark { font-size: 1.44rem; }
+  .wordmark { font-size: 1.54rem; }
   [dir="rtl"] .wordmark { font-size: 1.38rem; }
-  .brand-glyph { inline-size: 40px; block-size: 40px; }
+  .brand-glyph { inline-size: 43px; block-size: 43px; }
   .site-header .wrap { min-height: 70px; }
 }
 
