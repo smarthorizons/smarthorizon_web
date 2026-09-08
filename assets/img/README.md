@@ -30,3 +30,26 @@ Refresh them any time with:
 
 These are your own store assets, re-downloaded from Apple's CDN rather
 than hotlinked, so the site does not depend on Apple's servers staying up.
+
+## Hero photograph
+
+`hero.webp` (2000px) and `hero-1200.webp` (1200px, served below 700px
+viewport width) are crops of:
+
+- **Clouds above ocean, drone view** — Wikimedia Commons, originally from
+  Unsplash.
+- **Licence: CC0 1.0 (public domain dedication).** No attribution is
+  required and commercial use is permitted. Nothing needs to appear on
+  the page.
+- Source: <https://commons.wikimedia.org/wiki/File:Clouds_above_ocean_drone_view_(Unsplash).jpg>
+
+It was chosen because it is a literal horizon at sunrise — the company
+name — in the two brand colours. It is cropped to 16:7 rather than the
+hero's own aspect ratio so the parallax layer has vertical headroom to
+travel without exposing an edge.
+
+The image is dark (mean luminance ~98/255), so the hero lays a white
+scrim over it and sets the copy in the heading colour. Both were tuned by
+sampling composited pixels; see the hero block in `site.css`. **If you
+swap this photograph, re-check that contrast** — a lighter or busier
+image will change it.

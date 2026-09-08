@@ -2,8 +2,9 @@
    1. Language switching (EN / AR + RTL), persisted
    2. Mobile navigation
    3. Scroll reveal (IntersectionObserver)
-   4. Sticky header elevation
-   5. GA4, loaded only after explicit consent
+   4. Hero parallax
+   5. Sticky header elevation
+   6. GA4, loaded only after explicit consent
    No dependencies, no build step. */
 
 (function () {
@@ -148,7 +149,37 @@
   }
 
   /* ---------------------------------------------------------------
-     4. Sticky header elevation
+     4. Hero parallax
+
+     The background layer is taller than the hero and translates at a
+     fraction of scroll speed. Transform only, so it stays on the
+     compositor, and rAF-throttled so it runs once per frame at most.
+
+     Skipped entirely under prefers-reduced-motion — the design guidance
+     singles parallax out as a motion-sickness trigger, so it must be
+     opt-out, not merely reducible.
+  ---------------------------------------------------------------- */
+  var heroBg = document.querySelector('[data-parallax]');
+  var hero = heroBg && heroBg.closest('.hero');
+  var parallaxOn = heroBg && !reduced.matches;
+
+  function parallax() {
+    if (!parallaxOn) return;
+    var h = hero.offsetHeight;
+    // Only while the hero is still on screen.
+    var y = Math.min(window.scrollY, h);
+    heroBg.style.transform = 'translate3d(0,' + (y * 0.28).toFixed(1) + 'px,0)';
+  }
+
+  if (reduced.addEventListener) {
+    reduced.addEventListener('change', function (e) {
+      parallaxOn = !e.matches && !!heroBg;
+      if (e.matches && heroBg) heroBg.style.transform = '';
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     5. Sticky header elevation
   ---------------------------------------------------------------- */
   var header = document.querySelector('.site-header');
   var ticking = false;
@@ -165,6 +196,7 @@
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
         revealAll();
       }
+      parallax();
       ticking = false;
     });
   }
@@ -174,7 +206,7 @@
   onScroll();
 
   /* ---------------------------------------------------------------
-     5. Analytics (GA4) — consent-gated
+     6. Analytics (GA4) — consent-gated
      GA4 sets cookies, so under GDPR it must not run until the visitor
      agrees. Nothing is loaded unless consent === 'granted'.
      Replace SH_GA_ID below with the real G-XXXXXXXXXX measurement ID.

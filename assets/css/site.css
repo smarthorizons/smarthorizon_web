@@ -301,20 +301,59 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 13px; }
 .center .btn-row { justify-content: center; }
 
-/* ---------- hero ---------- */
+/* ---------- hero ----------
+   Full-bleed photograph with a parallax layer behind the copy. The photo
+   is a horizon at sunrise: the company name, in the two brand colours.
+
+   The image is dark enough (mean luminance ~98/255) that dark text over
+   it would fail contrast, so a white scrim sits between the two. It is
+   strongest on the copy side and fades across, which keeps the page
+   reading as light rather than turning this into a dark hero. */
 .hero {
-  position: relative; overflow: hidden;
-  padding-block: clamp(var(--space-3xl), 9vw, 116px);
-  background:
-    radial-gradient(1100px 520px at 78% -12%, var(--brand-tint) 0%, transparent 62%),
-    linear-gradient(180deg, var(--brand-tint-2) 0%, var(--color-background) 68%);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+  min-block-size: clamp(460px, 62vh, 660px);
+  padding-block: clamp(var(--space-3xl), 8vw, 96px);
   border-block-end: 1px solid var(--color-border);
+  background: var(--color-surface);
 }
-.hero__grid {
-  display: grid; grid-template-columns: 1.08fr .92fr;
-  gap: clamp(var(--space-xl), 5vw, 68px); align-items: center;
+
+/* Taller than the section so it can travel without exposing an edge. */
+.hero__bg {
+  position: absolute;
+  inset-block: -14%;
+  inset-inline: 0;
+  z-index: 0;
+  will-change: transform;
 }
-.hero p.lede { font-size: clamp(1.01rem, 2.4vw, 1.16rem); color: var(--color-muted-foreground); max-width: 34em; }
+.hero__bg picture, .hero__bg img { inline-size: 100%; block-size: 100%; display: block; }
+.hero__bg img { object-fit: cover; object-position: 50% 55%; }
+
+/* The scrim. Direction flips under RTL so it always sits under the copy. */
+.hero::after {
+  content: "";
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  /* Stops tuned by sampling composited pixels behind the copy: at the
+     previous ramp the widest lede line fell to 4.05:1, under the 4.5
+     needed for body text. */
+  background: linear-gradient(var(--scrim-angle, 90deg),
+    rgba(255,255,255,.97) 0%,
+    rgba(255,255,255,.95) 44%,
+    rgba(255,255,255,.80) 60%,
+    rgba(255,255,255,.34) 80%,
+    rgba(255,255,255,.06) 100%);
+}
+[dir="rtl"] .hero { --scrim-angle: 270deg; }
+
+.hero__inner { position: relative; z-index: 2; }
+.hero__copy { max-inline-size: 35em; }
+/* Over imagery the lede takes the heading colour rather than the body
+   grey. Even with the scrim, the darkest cloud behind the widest line
+   left body grey at 4.15:1; this lifts it to about 7:1. */
+.hero p.lede { font-size: clamp(1.01rem, 2.4vw, 1.16rem); color: var(--color-foreground); max-width: 34em; }
 
 .eyebrow {
   display: inline-block; font-size: .82rem; font-weight: 700; letter-spacing: .07em;
@@ -324,114 +363,24 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
 }
 [dir="rtl"] .eyebrow { letter-spacing: 0; text-transform: none; }
 
-/* Hero motif. Width comes from the grid column; height follows from
-   aspect-ratio. Do NOT use margin-inline:auto — it cancels the grid item's
-   stretch and the box would resolve to 0x0. */
-.hero__art {
-  position: relative;
-  inline-size: 100%; max-inline-size: 470px;
-  justify-self: center;
-  aspect-ratio: 1 / 1;
-}
-.hero__art::before {
-  content: "";
-  position: absolute; inset: 6% 4% 12%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 55%, rgba(70,145,182,.20), rgba(215,134,48,.12) 55%, transparent 72%);
-  filter: blur(30px);
-}
-.hero-motif { position: relative; inline-size: 100%; block-size: 100%; overflow: visible; }
-
-/* ---- motion ----------------------------------------------------------
-   Every animation below is transform/opacity only, so each one stays on
-   the compositor. Nothing animates width, height or a filter. */
-
-/* radar pulses rising off the horizon */
-@keyframes hm-pulse {
-  0%   { transform: scale(.42); opacity: 0; }
-  12%  { opacity: .62; }
-  100% { transform: scale(1.75); opacity: 0; }
-}
-.hm-pulse { transform-origin: 210px 252px; animation: hm-pulse 5.5s var(--ease-out-1) infinite; }
-.hm-pulse--2 { animation-delay: 1.83s; }
-.hm-pulse--3 { animation-delay: 3.66s; }
-
-/* the sun breathes very slightly */
-@keyframes hm-breathe {
-  0%, 100% { transform: scale(1); }
-  50%      { transform: scale(1.045); }
-}
-.hm-sun, .hm-sun-ring { transform-origin: 210px 252px; animation: hm-breathe 6s ease-in-out infinite; }
-
-/* the lit stretch of horizon glows in and out with it */
-@keyframes hm-glow { 0%, 100% { opacity: .35; } 50% { opacity: .9; } }
-.hm-horizon-lit { animation: hm-glow 6s ease-in-out infinite; }
-
-/* one dot circles the composition */
-@keyframes hm-orbit { to { transform: rotate(360deg); } }
-.hm-orbit { transform-origin: 210px 252px; animation: hm-orbit 18s linear infinite; }
-
-/* motes drift */
-@keyframes hm-float {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50%      { transform: translate3d(0, -13px, 0); }
-}
-.hm-mote--1 { animation: hm-float 7s   ease-in-out infinite; }
-.hm-mote--2 { animation: hm-float 8.5s ease-in-out infinite .7s; }
-.hm-mote--3 { animation: hm-float 6.2s ease-in-out infinite 1.4s; }
-
-/* Entrance: the motif assembles once, on load.
-   This uses a TRANSITION on opacity only — never a second animation.
-   Stacking a filled entrance animation on top of an infinite ambient one
-   leaves the element stuck at its starting opacity, because both compete
-   for the same property. So opacity is transitioned (nothing ambient
-   touches it) and transform is left entirely to the ambient animations. */
-.js .hero__art .hm-sun,
-.js .hero__art .hm-sun-ring,
-.js .hero__art .hm-arc,
-.js .hero__art .hm-orbit,
-.js .hero__art .hm-mote,
-.js .hero__art .hm-pulse {
-  opacity: 0;
-  transition: opacity .65s var(--ease-out-2);
-}
-.js .hero__art.is-visible .hm-sun      { opacity: 1;   transition-delay: .10s; }
-.js .hero__art.is-visible .hm-sun-ring { opacity: .55; transition-delay: .18s; }
-.js .hero__art.is-visible .hm-arc      { opacity: .55; transition-delay: .30s; }
-.js .hero__art.is-visible .hm-arc--2   { opacity: .45; transition-delay: .42s; }
-.js .hero__art.is-visible .hm-orbit    { opacity: 1;   transition-delay: .55s; }
-.js .hero__art.is-visible .hm-mote--1  { opacity: .65; transition-delay: .60s; }
-.js .hero__art.is-visible .hm-mote--2  { opacity: .55; transition-delay: .70s; }
-.js .hero__art.is-visible .hm-mote--3  { opacity: .50; transition-delay: .80s; }
-/* The pulses fade themselves in their keyframes; the entrance only needs
-   to stop suppressing them. */
-.js .hero__art.is-visible .hm-pulse    { opacity: 1;   transition-delay: .90s; }
-
-/* The skill's rule: reduced motion renders the final readable state and
-   stops every loop — including the ambient ones. */
-@media (prefers-reduced-motion: reduce) {
-  .hm-pulse { opacity: 0 !important; }
-  .hm-sun, .hm-sun-ring, .hm-horizon-lit, .hm-orbit, .hm-mote,
-  .js .hero__art.is-visible .hm-sun, .js .hero__art.is-visible .hm-sun-ring,
-  .js .hero__art.is-visible .hm-arc, .js .hero__art.is-visible .hm-orbit,
-  .js .hero__art.is-visible .hm-mote--1, .js .hero__art.is-visible .hm-mote--2,
-  .js .hero__art.is-visible .hm-mote--3 {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
+/* Narrow screens: the copy spans the full width, so the scrim becomes a
+   vertical wash rather than a horizontal one. */
+@media (max-width: 760px) {
+  .hero::after {
+    background: linear-gradient(180deg,
+      rgba(255,255,255,.95) 0%,
+      rgba(255,255,255,.90) 55%,
+      rgba(255,255,255,.66) 100%);
   }
-  .js .hero__art .hm-sun, .js .hero__art .hm-sun-ring, .js .hero__art .hm-arc,
-  .js .hero__art .hm-orbit, .js .hero__art .hm-mote { opacity: 1 !important; }
-  .hm-horizon-lit { opacity: .9 !important; }
+  .hero { min-block-size: 0; }
 }
 
-@media (max-width: 900px) {
-  .hero__grid { grid-template-columns: 1fr; }
-  .hero__art { max-inline-size: 340px; margin-block-start: 12px; }
+/* Parallax is the one effect the design guidance flags for motion
+   sickness, so it is opt-out by default: no transform is ever applied
+   when the visitor asks for reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg { transform: none !important; will-change: auto; }
 }
-/* The motif is a compact square, so it stays on small screens — unlike the
-   tall app screenshots it replaced, which had to be hidden here. */
-@media (max-width: 520px) { .hero__art { max-inline-size: 260px; } }
 
 /* ---------- stats strip ---------- */
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); }

@@ -272,57 +272,6 @@ def write(path, html):
 # service + process content
 # --------------------------------------------------------------------------
 
-# Animated hero motif. Echoes the concentric arcs of the Smart Horizon mark:
-# a rising sun over a horizon, with radar-style pulses expanding outward.
-# Pure SVG + CSS -- no image file, no library, crisp at any size, and it
-# costs about 4KB. Every animation is transform/opacity only, and the whole
-# thing freezes under prefers-reduced-motion.
-HERO_ART = '''      <svg class="hero-motif" viewBox="0 0 420 420" role="img" aria-label="Smart Horizon">
-        <defs>
-          <linearGradient id="hm-sun" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#6FB0CE"/>
-            <stop offset="1" stop-color="#2E6E8E"/>
-          </linearGradient>
-          <linearGradient id="hm-ray" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#D78630"/>
-            <stop offset="1" stop-color="#4691B6"/>
-          </linearGradient>
-          <clipPath id="hm-above"><rect x="0" y="0" width="420" height="252"/></clipPath>
-        </defs>
-
-        <!-- expanding pulses -->
-        <g clip-path="url(#hm-above)" fill="none" stroke="url(#hm-ray)" stroke-width="2">
-          <circle class="hm-pulse hm-pulse--1" cx="210" cy="252" r="62"/>
-          <circle class="hm-pulse hm-pulse--2" cx="210" cy="252" r="62"/>
-          <circle class="hm-pulse hm-pulse--3" cx="210" cy="252" r="62"/>
-        </g>
-
-        <!-- fixed arcs, echoing the logo mark -->
-        <g clip-path="url(#hm-above)" fill="none" stroke-linecap="round">
-          <path class="hm-arc" d="M96 252a114 114 0 0 1 228 0" stroke="#D78630" stroke-width="3" opacity=".55"/>
-          <path class="hm-arc hm-arc--2" d="M126 252a84 84 0 0 1 168 0" stroke="#4691B6" stroke-width="3" opacity=".45"/>
-        </g>
-
-        <!-- the sun -->
-        <circle class="hm-sun" cx="210" cy="252" r="52" fill="url(#hm-sun)"/>
-        <circle class="hm-sun-ring" cx="210" cy="252" r="52" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>
-
-        <!-- horizon -->
-        <g class="hm-horizon">
-          <line x1="34" y1="252" x2="386" y2="252" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
-          <line class="hm-horizon-lit" x1="120" y1="252" x2="300" y2="252" stroke="#D78630" stroke-width="3" stroke-linecap="round"/>
-        </g>
-
-        <!-- orbiting dot -->
-        <g class="hm-orbit"><circle cx="210" cy="118" r="7" fill="#D78630"/></g>
-
-        <!-- drifting motes -->
-        <circle class="hm-mote hm-mote--1" cx="92"  cy="168" r="4.5" fill="#4691B6" opacity=".65"/>
-        <circle class="hm-mote hm-mote--2" cx="330" cy="132" r="5.5" fill="#D78630" opacity=".55"/>
-        <circle class="hm-mote hm-mote--3" cx="352" cy="206" r="3.5" fill="#4691B6" opacity=".5"/>
-      </svg>'''
-
-
 def svg(paths, extra=""):
     return (f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" '
             f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"{extra}>{paths}</svg>')
@@ -440,7 +389,6 @@ def build_index():
 
     cards = "\n".join(app_card(a) for a in APPS)
 
-    hero_shots = HERO_ART
 
     html = head(
         "Smart Horizon — Mobile app, web and SaaS development",
@@ -454,21 +402,24 @@ def build_index():
     html += f'''<main id="main">
 
 <section class="hero">
-  <div class="wrap hero__grid">
-    <div data-reveal>
-      <span class="eyebrow">{L("Software studio", "استوديو برمجيات")}</span>
-      {L("We build software people keep using.",
-         "نبني برمجيات يستمر الناس في استخدامها.", tag="h1")}
-      {L("We build cross-platform mobile apps, web platforms and SaaS, and the backends behind them. We also publish our own apps &mdash; four of them, downloaded more than " + installs_label.replace("+", "") + " times. That is the same team, and the same standard, that your project gets.",
-         "نبني تطبيقات جوال متعددة المنصات ومنصات ويب وبرمجيات كخدمة، والأنظمة الخلفية التي تقف خلفها. كما ننشر تطبيقاتنا الخاصة &mdash; أربعة تطبيقات جرى تنزيلها أكثر من " + installs_label.replace("+", "") + " مرة. وهو الفريق نفسه والمعيار نفسه الذي سيحصل عليه مشروعك.",
+  <div class="hero__bg" data-parallax aria-hidden="true">
+    <picture>
+      <source media="(max-width: 700px)" srcset="/assets/img/hero-1200.webp">
+      <img src="/assets/img/hero.webp" alt="" width="2000" height="875" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  <div class="wrap hero__inner">
+    <div class="hero__copy" data-reveal>
+      <span class="eyebrow">{L("Software engineering studio", "استوديو هندسة برمجيات")}</span>
+      {L("Software engineering for mobile, web and SaaS.",
+         "هندسة برمجيات للجوال والويب والبرمجيات كخدمة.", tag="h1")}
+      {L("Smart Horizon designs, builds and maintains production software: native and cross-platform applications, web platforms, and the APIs and cloud infrastructure behind them. Our own four applications have been downloaded more than " + f"{installs:,}" + " times, and are held to the same standard as the work we deliver for clients.",
+         "تصمم الأفق الذكي وتبني وتصون برمجيات إنتاجية: تطبيقات أصلية ومتعددة المنصات، ومنصات ويب، وواجهات البرمجة والبنية السحابية التي تقف خلفها. جرى تنزيل تطبيقاتنا الأربعة أكثر من " + f"{installs:,}" + " مرة، وتخضع للمعيار نفسه الذي نطبقه على ما ننفذه لعملائنا.",
          tag="p", cls="lede")}
       <div class="btn-row">
         <a class="btn btn--primary" href="#apps">{L("Explore our apps", "استعرض تطبيقاتنا")}</a>
         <a class="btn btn--ghost" href="#contact">{L("Request a quote", "اطلب عرض سعر")}</a>
       </div>
-    </div>
-    <div class="hero__art" aria-hidden="true">
-{hero_shots}
     </div>
   </div>
 </section>
