@@ -178,9 +178,9 @@ def head(title_en, title_ar, desc_en, desc_ar, path,
 # tools/make-brand-assets.py.
 BRAND_GLYPH = (
     '<svg class="brand-glyph" viewBox="0 0 64 64" fill="none" aria-hidden="true">'
-    '<path d="M44.31 16.24A20 20 0 1 1 19.69 16.24" stroke="#2E6E8E" stroke-width="6" stroke-linecap="round"/>'
-    '<path d="M37.35 26.05A8 8 0 1 1 26.65 26.05" stroke="#4691B6" stroke-width="5" stroke-linecap="round"/>'
-    '<circle cx="32" cy="12" r="5.5" fill="#D78630"/>'
+    '<g transform="translate(32,32) scale(1.24) translate(-32,-30.75)">'
+    '<path d="M44.31 16.24A20 20 0 1 1 19.69 16.24" stroke="#2E6E8E" stroke-width="6" stroke-linecap="round"/><path d="M37.35 26.05A8 8 0 1 1 26.65 26.05" stroke="#4691B6" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="12" r="5.5" fill="#D78630"/>'
+    '</g>'
     '</svg>'
 )
 
