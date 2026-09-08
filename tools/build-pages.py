@@ -467,16 +467,12 @@ def build_index():
       <div class="card">
         {L("At a glance", "لمحة سريعة", tag="h3")}
         <ul class="feature-list" style="grid-template-columns:1fr">
-          <li>{ICON_CHECK}{L("Based in Oman, working with clients [locally and abroad &mdash; confirm]", "مقرنا سلطنة عُمان، ونعمل مع عملاء [محلياً وخارجياً &mdash; يُرجى التأكيد]")}</li>
+          <li>{ICON_CHECK}{L("Based in Oman", "مقرنا سلطنة عُمان")}</li>
           <li>{ICON_CHECK}{L("Publishing our own apps since 2020", "ننشر تطبيقاتنا الخاصة منذ عام ٢٠٢٠")}</li>
-          <li>{ICON_CHECK}{L("A team of [N] designers and engineers", "فريق من [N] مصمماً ومهندساً")}</li>
-          <li>{ICON_CHECK}{L("[N]+ client projects delivered", "أكثر من [N] مشروعاً منجزاً للعملاء")}</li>
+          <li>{ICON_CHECK}{L("Design, mobile, web and backend under one roof", "التصميم والتطبيقات والويب والأنظمة الخلفية تحت سقف واحد")}</li>
+          <li>{ICON_CHECK}{L("Apps supported and updated long after launch", "تطبيقات مدعومة ومحدّثة بعد الإطلاق بوقت طويل")}</li>
           <li>{ICON_CHECK}{L("Arabic and English, RTL done properly", "العربية والإنجليزية، مع دعم صحيح للاتجاه من اليمين لليسار")}</li>
         </ul>
-        <div class="notice" style="margin-block-start:18px">
-          {L("<strong>To fill in:</strong> replace the <code>[N]</code> placeholders above with real numbers, or delete those lines. Nothing here should go live unverified.",
-             "<strong>للتعبئة:</strong> استبدل العناصر <code>[N]</code> أعلاه بأرقام حقيقية أو احذف تلك الأسطر. لا ينبغي نشر أي منها دون تحقق.", tag="p")}
-        </div>
       </div>
     </div>
   </div>

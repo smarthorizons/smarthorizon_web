@@ -84,15 +84,11 @@ These need a decision or a file from you before the site is finished:
    privacy policy needs a section covering site analytics before this
    goes live**, since the current policies describe app analytics only.
 
-3. **`[N]` placeholders in the About section.** Team size and client
-   project count are unverified. Fill them in or delete those lines —
-   see the highlighted note on the rendered page.
-
-4. **Contact address.** The site uses `info@smarthorizon.co`. The legal
+3. **Contact address.** The site uses `info@smarthorizon.co`. The legal
    pages use `admin@smarthorizon.co` and `altaif.support@smarthorizon.co`.
    Confirm `info@` is monitored.
 
-5. **Two apps are missing.** `legal/alarm-app/` and
+4. **Two apps are missing.** `legal/alarm-app/` and
    `legal/education-app/` (الطيف) have policies but no store listing
    found under the Smart Horizon developer account, so they are not in
    `data/apps.json`. Add them once they ship.
