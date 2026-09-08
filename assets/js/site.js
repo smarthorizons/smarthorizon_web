@@ -168,7 +168,11 @@
     var h = hero.offsetHeight;
     // Only while the hero is still on screen.
     var y = Math.min(window.scrollY, h);
-    heroBg.style.transform = 'translate3d(0,' + (y * 0.28).toFixed(1) + 'px,0)';
+    // 0.5 means the image tracks at half the page's scroll speed, which
+    // reads clearly. Translating downward can never expose the layer's
+    // edges: the top only moves further above the hero as you scroll, and
+    // the bottom already sits a headroom's distance below it.
+    heroBg.style.transform = 'translate3d(0,' + (y * 0.5).toFixed(1) + 'px,0)';
   }
 
   if (reduced.addEventListener) {

@@ -33,8 +33,8 @@ than hotlinked, so the site does not depend on Apple's servers staying up.
 
 ## Hero photograph
 
-`hero.webp` (2000px) and `hero-1200.webp` (1200px, served below 700px
-viewport width) are crops of:
+`hero.webp` (2000x1125, 108KB) and `hero-1200.webp` (1200x675, 36KB,
+served below 700px viewport width) are crops of:
 
 - **Clouds above ocean, drone view** — Wikimedia Commons, originally from
   Unsplash.
@@ -44,9 +44,10 @@ viewport width) are crops of:
 - Source: <https://commons.wikimedia.org/wiki/File:Clouds_above_ocean_drone_view_(Unsplash).jpg>
 
 It was chosen because it is a literal horizon at sunrise — the company
-name — in the two brand colours. It is cropped to 16:7 rather than the
-hero's own aspect ratio so the parallax layer has vertical headroom to
-travel without exposing an edge.
+name — in the two brand colours. It is cropped to 16:9 rather than the
+hero's own aspect ratio: the parallax layer is 136% of the hero's height,
+so the image needs the extra vertical pixels to stay sharp and to travel
+without exposing an edge.
 
 The image is dark (mean luminance ~98/255), so the hero lays a white
 scrim over it and sets the copy in the heading colour. Both were tuned by

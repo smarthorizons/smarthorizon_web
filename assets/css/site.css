@@ -314,6 +314,12 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
   isolation: isolate;
   overflow: hidden;
   display: grid;
+  /* An implicit `auto` column sizes to its content, so .wrap collapsed to
+     the width of the copy and its auto margins then centred that narrow
+     box — pushing the hero text inward, out of line with the header.
+     minmax(0,1fr) makes the column fill, so .wrap's own max-width and auto
+     margins land it on exactly the same gutter as the header. */
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   min-block-size: clamp(460px, 62vh, 660px);
   padding-block: clamp(var(--space-3xl), 8vw, 96px);
@@ -324,7 +330,7 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
 /* Taller than the section so it can travel without exposing an edge. */
 .hero__bg {
   position: absolute;
-  inset-block: -14%;
+  inset-block: -18%;
   inset-inline: 0;
   z-index: 0;
   will-change: transform;
@@ -348,7 +354,13 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
 }
 [dir="rtl"] .hero { --scrim-angle: 270deg; }
 
-.hero__inner { position: relative; z-index: 2; }
+/* inline-size:100% is load bearing. As a grid item, .wrap's own
+   margin-inline:auto suppresses stretch — an item with auto margins
+   shrink-to-fits and the margins then centre it, which is what pushed the
+   hero copy off the header's gutter. Giving it a width restores the
+   normal max-width + auto-margin centring, so it lands on exactly the
+   same left edge as the header. */
+.hero__inner { position: relative; z-index: 2; inline-size: 100%; }
 .hero__copy { max-inline-size: 35em; }
 /* Over imagery the lede takes the heading colour rather than the body
    grey. Even with the scrim, the darkest cloud behind the widest line
