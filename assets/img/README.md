@@ -50,7 +50,15 @@ so the image needs the extra vertical pixels to stay sharp and to travel
 without exposing an edge.
 
 The image is dark (mean luminance ~98/255), so the hero lays a white
-scrim over it and sets the copy in the heading colour. Both were tuned by
-sampling composited pixels; see the hero block in `site.css`. **If you
-swap this photograph, re-check that contrast** — a lighter or busier
-image will change it.
+veil over it and sets the copy in the heading colour.
+
+The veil is deliberately a veil and not a panel: the photograph stays
+visible across the full width, softened where the copy sits and clearing
+progressively toward the far side. It runs .72 to .02 alpha across the
+hero, flipping direction under RTL so it is always beneath the text, and
+becomes a top-to-bottom wash below 760px where the copy spans the width.
+
+Both were tuned by sampling composited pixels rather than by eye. **If
+you swap this photograph, re-check the contrast** — a darker or busier
+image will change it. Against the darkest 1% of the current image the
+weakest point of the veil still gives about 7:1.

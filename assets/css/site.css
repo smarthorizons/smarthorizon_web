@@ -345,17 +345,18 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
   /* Stops tuned by sampling composited pixels behind the copy: at the
      previous ramp the widest lede line fell to 4.05:1, under the 4.5
      needed for body text. */
-  /* Held near-opaque across the whole copy column (which runs to about
-     50% of the viewport), so the photograph does not glare through the
-     text, then dropped quickly so the image still carries the right-hand
-     half. Stops verified by sampling composited pixels beside the
-     glyphs. */
+  /* A veil, not a panel. The photograph stays visible across the whole
+     width; it is only softened where the copy sits, then clears
+     progressively toward the far side. Direction flips under RTL, so the
+     veil is always under the text. Alpha values are constrained by
+     contrast, verified against composited pixels. */
   background: linear-gradient(var(--scrim-angle, 90deg),
-    rgba(255,255,255,.995) 0%,
-    rgba(255,255,255,.985) 50%,
-    rgba(255,255,255,.90) 64%,
-    rgba(255,255,255,.46) 82%,
-    rgba(255,255,255,.06) 100%);
+    rgba(255,255,255,.72) 0%,
+    rgba(255,255,255,.66) 28%,
+    rgba(255,255,255,.52) 50%,
+    rgba(255,255,255,.32) 72%,
+    rgba(255,255,255,.12) 88%,
+    rgba(255,255,255,.02) 100%);
 }
 [dir="rtl"] .hero { --scrim-angle: 270deg; }
 
@@ -383,11 +384,14 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
 /* Narrow screens: the copy spans the full width, so the scrim becomes a
    vertical wash rather than a horizontal one. */
 @media (max-width: 760px) {
+  /* The copy spans the full width here, so the veil runs top-to-bottom
+     instead of across. It stays heavier than the desktop ramp because
+     every line sits over the image rather than only the first half. */
   .hero::after {
     background: linear-gradient(180deg,
-      rgba(255,255,255,.95) 0%,
-      rgba(255,255,255,.90) 55%,
-      rgba(255,255,255,.66) 100%);
+      rgba(255,255,255,.82) 0%,
+      rgba(255,255,255,.74) 55%,
+      rgba(255,255,255,.62) 100%);
   }
   .hero { min-block-size: 0; }
 }
