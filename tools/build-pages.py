@@ -501,7 +501,6 @@ def build_index():
           <li>{ICON_CHECK}{L(f"An app launched in {oldest_year} and still updated in {oldest_updated_year}", f"تطبيق أُطلق عام {oldest_year} وما زال يُحدَّث حتى عام {oldest_updated_year}")}</li>
           <li>{ICON_CHECK}{L("Design, mobile, web and backend under one roof", "التصميم والتطبيقات والويب والأنظمة الخلفية تحت سقف واحد")}</li>
           <li>{ICON_CHECK}{L("Arabic and English, RTL done properly", "العربية والإنجليزية، مع دعم صحيح للاتجاه من اليمين لليسار")}</li>
-          <li>{ICON_CHECK}{L("Versioned privacy policies and changelogs for every app", "سياسات خصوصية وسجلات إصدارات موثّقة لكل تطبيق")}</li>
         </ul>
       </div>
     </div>
