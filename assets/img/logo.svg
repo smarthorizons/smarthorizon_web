@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Smart Horizon">
+  <title>Smart Horizon</title>
+  <rect width="40" height="40" rx="9" fill="#fff"/>
+  <path d="M31 34a16 16 0 1 0-22-22" stroke="#D78630" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <path d="M27.5 29.5a10.5 10.5 0 1 0-15-15" stroke="#D78630" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <circle cx="20" cy="20" r="4.6" stroke="#4691B6" stroke-width="3" fill="none"/>
+  <circle cx="7" cy="33" r="2.1" fill="#D78630"/>
+</svg>

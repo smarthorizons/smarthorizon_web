@@ -1,0 +1,150 @@
+{
+  "_comment": "Source of truth for the app catalog. Regenerate store fields with tools/fetch-store-data.py, then rebuild pages with tools/build-pages.py.",
+  "_store_data_fetched": "2026-09-08",
+  "apps": [
+    {
+      "slug": "prayer-timer",
+      "name_en": "Prayer Timer",
+      "name_ar": "Prayer Timer",
+      "tagline_en": "Prayer times with Iqama — the times your mosque actually starts.",
+      "tagline_ar": "مواقيت الصلاة مع وقت الإقامة — وقت بدء الجماعة فعلياً.",
+      "summary_en": "Most prayer apps show the adhan and stop there. Prayer Timer shows Iqama times too, so you know when the congregation actually begins — alongside home and lock screen widgets, a Qibla compass, and support for more than 30 languages.",
+      "summary_ar": "معظم تطبيقات الصلاة تعرض وقت الأذان فقط. يعرض Prayer Timer وقت الإقامة أيضاً لتعرف متى تبدأ صلاة الجماعة — إلى جانب ويدجتات للشاشة الرئيسية وشاشة القفل، وبوصلة اتجاه القبلة، ودعم أكثر من ٣٠ لغة.",
+      "features_en": [
+        "Iqama times, not just adhan times",
+        "Home screen and lock screen widgets",
+        "Accurate Qibla compass",
+        "More than 30 languages",
+        "15 themes",
+        "Free, with no ads"
+      ],
+      "features_ar": [
+        "أوقات الإقامة، وليس الأذان فقط",
+        "ويدجتات للشاشة الرئيسية وشاشة القفل",
+        "بوصلة قبلة دقيقة",
+        "أكثر من ٣٠ لغة",
+        "١٥ ثيماً للمظهر",
+        "مجاني وبدون إعلانات"
+      ],
+      "category_en": "Reference",
+      "category_ar": "مراجع",
+      "ios_id": "1602405321",
+      "android_id": "co.smarthorizon.salawat",
+      "legal_slug": "prayer-timer",
+      "has_terms": false,
+      "rating": 4.67,
+      "rating_count": 3,
+      "screenshots": 8,
+      "released": "2022-02-15",
+      "accent": "#2B36A8"
+    },
+    {
+      "slug": "rawdat-aleman",
+      "name_en": "Rawdat Al-Eman",
+      "name_ar": "روضة الإيمان في ذكر الرحمن",
+      "tagline_en": "A complete collection of authentic daily adhkar.",
+      "tagline_ar": "مجموعة متكاملة من الأذكار والأدعية المأثورة.",
+      "summary_en": "Morning and evening adhkar, supplications for prayer, travel, sleep and waking, the adhkar of Ramadan and Taraweeh, and the 99 Names of Allah — organised into clear chapters, with audio for selected adhkar and an adjustable reading size.",
+      "summary_ar": "أذكار الصباح والمساء، وأدعية الصلاة والسفر والنوم والاستيقاظ، وأذكار رمضان والتراويح، وأسماء الله الحسنى — مرتبة في أبواب واضحة، مع صوتيات لبعض الأذكار وإمكانية تعديل حجم الخط.",
+      "features_en": [
+        "Morning and evening adhkar",
+        "Adhkar for prayer, travel, home and the mosque",
+        "Ramadan, Taraweeh and Witr supplications",
+        "The 99 Names of Allah",
+        "Audio for selected adhkar",
+        "Built-in Mushaf and adjustable font size"
+      ],
+      "features_ar": [
+        "أذكار الصباح والمساء",
+        "أذكار الصلاة والسفر والمنزل والمسجد",
+        "أدعية رمضان والتراويح والوتر",
+        "أسماء الله الحسنى",
+        "صوتيات لبعض الأذكار",
+        "مصحف مدمج وتحكم في حجم الخط"
+      ],
+      "category_en": "Education",
+      "category_ar": "تعليم",
+      "ios_id": "1527611185",
+      "android_id": "co.smarthorizon.rawdataleman",
+      "legal_slug": "rawdat-aleman",
+      "has_terms": false,
+      "rating": 4.75,
+      "rating_count": 2390,
+      "screenshots": 10,
+      "released": "2020-08-16",
+      "accent": "#1F6F4A"
+    },
+    {
+      "slug": "masbahat-alzikr",
+      "name_en": "Masbahat Al-Zikr",
+      "name_ar": "مسبحة الذكر - تسبيح و استغفار",
+      "tagline_en": "A digital tasbih that counts for you — no tapping required.",
+      "tagline_ar": "مسبحة إلكترونية تعدّ عنك — دون لمس الشاشة.",
+      "summary_en": "An ad-free electronic tasbih with automatic counting, so you can make dhikr without touching the screen. Keeps detailed statistics of what you recited and when, lets you add and reorder your own adhkar, and backs everything up to the cloud.",
+      "summary_ar": "سبحة إلكترونية بدون إعلانات مع عدّ تلقائي يتيح لك التسبيح دون لمس الشاشة. يحفظ إحصائيات تفصيلية لما سبّحت به ومتى، ويسمح بإضافة أذكارك الخاصة وترتيبها، مع نسخ احتياطي سحابي.",
+      "features_en": [
+        "Automatic counting without touching the screen",
+        "Detailed statistics per dhikr, with date and time",
+        "Add, edit and reorder your own adhkar",
+        "Cloud backup across devices",
+        "Built-in Quran",
+        "No ads"
+      ],
+      "features_ar": [
+        "العد التلقائي دون لمس الشاشة",
+        "إحصائيات تفصيلية لكل ذكر مع التاريخ والوقت",
+        "إضافة أذكارك الخاصة وتعديلها وترتيبها",
+        "نسخ احتياطي سحابي بين الأجهزة",
+        "القرآن الكريم مدمج",
+        "بدون إعلانات"
+      ],
+      "category_en": "Utilities",
+      "category_ar": "أدوات",
+      "ios_id": "6444079183",
+      "android_id": "co.smarthorizon.masbahatalzikr",
+      "legal_slug": "masbahat-alzikr",
+      "has_terms": false,
+      "rating": 4.01,
+      "rating_count": 145,
+      "screenshots": 9,
+      "released": "2023-02-02",
+      "accent": "#7A4BC4"
+    },
+    {
+      "slug": "alquran-alaziz",
+      "name_en": "Al Quran Al Aziz",
+      "name_ar": "القرآن العزيز",
+      "tagline_en": "The Madinah Mushaf, cleanly presented.",
+      "tagline_ar": "مصحف المدينة النبوية بتصميم واضح.",
+      "summary_en": "The complete Holy Quran following the Madinah Mushaf, Hafs ʿan ʿAsim, King Fahd Complex edition. Navigate by surah, juz, hizb or page number, enlarge the text in landscape, switch to night mode, and pick up exactly where you left off.",
+      "summary_ar": "القرآن الكريم كاملاً حسب مصحف المدينة النبوية برواية حفص عن عاصم، طبعة مجمع الملك فهد. تنقّل بين السور والأجزاء والأحزاب والصفحات، وكبّر الخط في الوضع الأفقي، وانتقل إلى الوضع الليلي، وعد إلى آخر موضع توقفت عنده.",
+      "features_en": [
+        "Madinah Mushaf, Hafs ʿan ʿAsim",
+        "Navigate by surah, juz, hizb or page",
+        "Enlarge the text in landscape",
+        "Night mode and multiple colour themes",
+        "Bookmark your last reading position",
+        "Share Mushaf pages"
+      ],
+      "features_ar": [
+        "مصحف المدينة برواية حفص عن عاصم",
+        "التنقل بين السور والأجزاء والأحزاب والصفحات",
+        "تكبير الخط في الوضع الأفقي",
+        "الوضع الليلي وألوان متعددة",
+        "علامة عند آخر موضع قراءة",
+        "مشاركة صفحات المصحف"
+      ],
+      "category_en": "Books",
+      "category_ar": "كتب",
+      "ios_id": "6446409610",
+      "android_id": "co.smarthorizon.quran",
+      "legal_slug": "alquran-alaziz",
+      "has_terms": false,
+      "rating": 5,
+      "rating_count": 2,
+      "screenshots": 7,
+      "released": "2023-03-25",
+      "accent": "#0F766E"
+    }
+  ]
+}
