@@ -345,11 +345,16 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
   /* Stops tuned by sampling composited pixels behind the copy: at the
      previous ramp the widest lede line fell to 4.05:1, under the 4.5
      needed for body text. */
+  /* Held near-opaque across the whole copy column (which runs to about
+     50% of the viewport), so the photograph does not glare through the
+     text, then dropped quickly so the image still carries the right-hand
+     half. Stops verified by sampling composited pixels beside the
+     glyphs. */
   background: linear-gradient(var(--scrim-angle, 90deg),
-    rgba(255,255,255,.97) 0%,
-    rgba(255,255,255,.95) 44%,
-    rgba(255,255,255,.80) 60%,
-    rgba(255,255,255,.34) 80%,
+    rgba(255,255,255,.995) 0%,
+    rgba(255,255,255,.985) 50%,
+    rgba(255,255,255,.90) 64%,
+    rgba(255,255,255,.46) 82%,
     rgba(255,255,255,.06) 100%);
 }
 [dir="rtl"] .hero { --scrim-angle: 270deg; }
