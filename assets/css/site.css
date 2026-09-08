@@ -222,17 +222,17 @@ html[lang="ar"] [data-lang="en"] { display: none !important; }
 /* Wordmark. "Smart" is blue and "Horizon" is orange in both scripts, so
    the colours follow meaning rather than position — which reverses their
    visual order under RTL, as it should. */
-.wordmark { font-weight: 800; letter-spacing: -.02em; white-space: nowrap; font-size: 1.68rem; line-height: 1; }
+.wordmark { font-weight: 800; letter-spacing: -.02em; white-space: nowrap; font-size: 1.84rem; line-height: 1; }
 .wordmark .w1 { color: var(--brand); }
 .wordmark .w2 { color: var(--accent); }
 /* Latin wordmark stays LTR inside an Arabic page; the Arabic one must not. */
 [dir="rtl"] .wordmark [data-lang="en"] { direction: ltr; unicode-bidi: isolate; }
 [dir="rtl"] .wordmark { font-size: 1.72rem; }
-.site-footer .wordmark { font-size: 1.5rem; }
+.site-footer .wordmark { font-size: 1.62rem; }
 [dir="rtl"] .site-footer .wordmark { font-size: 1.54rem; }
 
 @media (max-width: 480px) {
-  .wordmark { font-size: 1.34rem; }
+  .wordmark { font-size: 1.44rem; }
   [dir="rtl"] .wordmark { font-size: 1.38rem; }
   .brand-glyph { inline-size: 40px; block-size: 40px; }
   .site-header .wrap { min-height: 70px; }
