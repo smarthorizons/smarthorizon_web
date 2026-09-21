@@ -7,8 +7,8 @@
         "version": "2026-09-21",
         "date": "2026-09-21T10:00:00Z",
         "url": "https://smarthorizon.co/legal/education-app/versions/privacy/2026-09-21.html",
-        "changes_summary": "Clarified what is sent for AI grading (an image of the handwritten answer, processed automatically when an exam is submitted), what Contact Us includes (attachments and device info), what the optional Google Drive backup contains, and added Firebase Crashlytics, Cloudflare and Resend to the services list.",
-        "changes_summary_ar": "توضيح ما يُرسَل للتصحيح بالذكاء الاصطناعي (صورة الإجابة المكتوبة بخط اليد، وتُعالَج تلقائيًا عند تسليم الامتحان)، وما يتضمنه «تواصل معنا» (المرفقات ومعلومات الجهاز)، وما يشمله النسخ الاحتياطي الاختياري عبر Google Drive، وإضافة Firebase Crashlytics وCloudflare وResend إلى قائمة الخدمات.",
+        "changes_summary": "Clarified what is sent for AI grading (an image of the handwritten answer, sent only after the student explicitly agrees when submitting an exam), what Contact Us includes (attachments and device info), what the optional Google Drive backup contains, and added Firebase Crashlytics to the services list.",
+        "changes_summary_ar": "توضيح ما يُرسَل للتصحيح بالذكاء الاصطناعي (صورة الإجابة المكتوبة بخط اليد، وتُرسَل فقط بعد موافقة الطالب الصريحة عند تسليم الامتحان)، وما يتضمنه «تواصل معنا» (المرفقات ومعلومات الجهاز)، وما يشمله النسخ الاحتياطي الاختياري عبر Google Drive، وإضافة Firebase Crashlytics إلى قائمة الخدمات.",
         "is_material_change": true,
         "requires_reacceptance": false
       },
