@@ -1,8 +1,17 @@
 {
   "privacy_policy": {
-    "current_version": "2026-09-01",
+    "current_version": "2026-09-21",
     "current_url": "https://www.smarthorizon.co/legal/education-app/privacy-policy/",
     "versions": [
+      {
+        "version": "2026-09-21",
+        "date": "2026-09-21T10:00:00Z",
+        "url": "https://smarthorizon.co/legal/education-app/versions/privacy/2026-09-21.html",
+        "changes_summary": "Clarified what is sent for AI grading (an image of the handwritten answer, processed automatically when an exam is submitted), what Contact Us includes (attachments and device info), what the optional Google Drive backup contains, and added Firebase Crashlytics, Cloudflare and Resend to the services list.",
+        "changes_summary_ar": "توضيح ما يُرسَل للتصحيح بالذكاء الاصطناعي (صورة الإجابة المكتوبة بخط اليد، وتُعالَج تلقائيًا عند تسليم الامتحان)، وما يتضمنه «تواصل معنا» (المرفقات ومعلومات الجهاز)، وما يشمله النسخ الاحتياطي الاختياري عبر Google Drive، وإضافة Firebase Crashlytics وCloudflare وResend إلى قائمة الخدمات.",
+        "is_material_change": true,
+        "requires_reacceptance": false
+      },
       {
         "version": "2026-09-01",
         "date": "2026-09-01T10:00:00Z",
@@ -14,7 +23,7 @@
       }
     ]
   },
-  "terms_of_service": { 
+  "terms_of_service": {
     "current_version": "2026-09-01",
     "current_url": "https://www.smarthorizon.co/legal/education-app/terms-of-service/",
     "versions": [

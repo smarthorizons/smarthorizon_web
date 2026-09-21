@@ -1,8 +1,8 @@
 {
   "privacy_policy": {
-    "version": "2026-09-01",
-    "date": "2026-09-01T10:00:00Z",
-    "hash": "sha256:initial",
+    "version": "2026-09-21",
+    "date": "2026-09-21T10:00:00Z",
+    "hash": "sha256:updated",
     "requires_reacceptance": false
   },
   "terms_of_service": {
