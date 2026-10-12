@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete your Dietify account - Dietify</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var theme = new URLSearchParams(location.search).get('theme');
+  if (theme === 'dark' || theme === 'light') document.documentElement.setAttribute('data-theme', theme);
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!theme) return;
+    document.querySelectorAll('a[href^="/legal/dietify/"]').forEach(function (a) {
+      a.href = a.getAttribute('href') + (a.getAttribute('href').indexOf('?') < 0 ? '?' : '&') + 'theme=' + theme;
+    });
+  });
+})();
+</script>
+<style>
+:root{--bg:#F4F6F1;--surface:#FFFFFF;--surface-2:#F0F4EA;--line:#E3E8DC;--ink:#17211A;--ink-2:#4E5A50;--ink-3:#646E62;--brand:#237A3B;--accent-soft:#EAF5DA;
+--shadow:0 1px 2px rgba(23,33,26,.04),0 8px 24px rgba(23,33,26,.07);color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E130F;--surface:#171E18;--surface-2:#1D261E;--line:#263027;--ink:#EEF3EA;--ink-2:#B7C0B3;--ink-3:#8F998C;--brand:#8CC63F;--accent-soft:#22331A;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E130F;--surface:#171E18;--surface-2:#1D261E;--line:#263027;--ink:#EEF3EA;--ink-2:#B7C0B3;--ink-3:#8F998C;--brand:#8CC63F;--accent-soft:#22331A;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+main{max-width:720px;margin:0 auto;padding:8px 20px 40px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-.02em;margin:16px 0 0}
+h2{font-size:17px;line-height:23px;font-weight:700;margin:14px 0 0}
+h3{font-size:15px;line-height:21px;font-weight:700;margin:6px 0 0}
+p,li{font-size:15px;line-height:24px;font-weight:500;color:var(--ink-2);margin:0}
+ul{margin:0;padding-inline-start:22px;display:flex;flex-direction:column;gap:4px}
+li ul{margin-top:4px}
+strong{color:var(--ink);font-weight:700}
+a{color:var(--brand);text-decoration:none;font-weight:600}
+code{font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:6px}
+.version{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:12px 14px;display:flex;flex-direction:column;gap:2px;font-size:12px;line-height:16px;font-weight:600}
+.glance{background:var(--accent-soft);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.glance-title{font-size:13px;line-height:18px;font-weight:700;color:var(--ink)}
+.glance p,.glance li{font-size:14px;line-height:21px;color:var(--ink)}
+.table{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:start;vertical-align:top;padding:10px 14px;font-size:13px;line-height:19px;border-top:1px solid var(--line)}
+th{background:var(--surface-2);font-weight:700;border-top:0}
+td{color:var(--ink-2);font-weight:500}
+td:first-child{color:var(--ink);font-weight:600}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;line-height:20px;color:var(--ink-3);display:flex;flex-direction:column;gap:4px}
+.entry{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.entry-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:700}
+.badge{font-size:11px;line-height:16px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--brand)}
+</style>
+</head>
+<body>
+<main>
+<h1>Delete your Dietify account</h1>
+<div class="version"><span>Updated 12 October 2026</span></div>
+<p>Dietify is made by Smart Horizon. You can delete your Dietify account and its data at any time, with or without the app.</p>
+<h2 id="in-the-app">In the app</h2>
+<p>Open Dietify › Profile and settings › Privacy › <strong>Delete account</strong> and confirm. Your account and its data are deleted from our servers and from your phone straight away.</p>
+<h2 id="without-the-app">Without the app</h2>
+<p>Email <a href="mailto:dietify.support@smarthorizon.co">dietify.support@smarthorizon.co</a> from the email address on your Dietify account and ask us to delete it. We delete the account within 30 days and reply when it is done.</p>
+<p>Accounts without an email address (every install starts with an anonymous account) can only be deleted in the app, because we cannot tell who they belong to. An anonymous account that is not used for 90 days is deleted automatically, unless it has an active Premium subscription.</p>
+<h2 id="what-is-deleted">What is deleted</h2>
+<p>Your account, your diet profile, your recipes with their notes and pictures, saved ingredient values, grocery list, meal plan, food log, cooked history, tweak conversations, uploaded files, notification tokens and settings.</p>
+<h2 id="what-is-kept">What is kept</h2>
+<ul><li>Usage records (the time, type, outcome and cost of each request, with no recipe content) are kept without your user ID, for our accounts.</li><li>Apple or Google keep their own records of your purchases.</li><li>Emails you sent to our support inbox, for as long as we need them to help you.</li></ul>
+<h2 id="your-subscription">Your subscription</h2>
+<p>Deleting your account does <strong>not</strong> cancel an App Store or Google Play subscription. Cancel it in your store settings.</p>
+<h2 id="delete-some-data-and-keep-your-account">Delete some data and keep your account</h2>
+<p>In the app you can delete recipes, logged meals, list items and saved ingredient values. For anything else, email us. Our <a href="/legal/dietify/privacy-policy/">Privacy Policy</a> explains all your choices.</p>
+<footer>
+<span>Dietify by Smart Horizon · <a href="mailto:dietify.support@smarthorizon.co">dietify.support@smarthorizon.co</a></span>
+<span><a href="/legal/dietify/privacy-policy/">Privacy Policy</a> · <a href="/legal/dietify/terms-of-service/">Terms of Use</a> · <a href="/legal/dietify/changelog.html">Version history</a></span>
+</footer>
+</main>
+</body>
+</html>
