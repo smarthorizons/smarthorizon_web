@@ -2,6 +2,14 @@
   "privacy_policy": {
     "versions": [
       {
+        "version": "2026-10-13",
+        "date": "2026-10-13T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-13.html",
+        "changes_summary": "Adds Sign in with Apple and Sign in with Google.",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      },
+      {
         "version": "2026-10-12",
         "date": "2026-10-12T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-12.html",
@@ -10,7 +18,7 @@
         "requires_reacceptance": false
       }
     ],
-    "current_version": "2026-10-12",
+    "current_version": "2026-10-13",
     "current_url": "https://www.smarthorizon.co/legal/dietify/privacy-policy/"
   },
   "terms_of_service": {

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Dietify</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var theme = new URLSearchParams(location.search).get('theme');
+  if (theme === 'dark' || theme === 'light') document.documentElement.setAttribute('data-theme', theme);
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!theme) return;
+    document.querySelectorAll('a[href^="/legal/dietify/"]').forEach(function (a) {
+      a.href = a.getAttribute('href') + (a.getAttribute('href').indexOf('?') < 0 ? '?' : '&') + 'theme=' + theme;
+    });
+  });
+})();
+</script>
+<style>
+:root{--bg:#F4F6F1;--surface:#FFFFFF;--surface-2:#F0F4EA;--line:#E3E8DC;--ink:#17211A;--ink-2:#4E5A50;--ink-3:#646E62;--brand:#237A3B;--accent-soft:#EAF5DA;
+--shadow:0 1px 2px rgba(23,33,26,.04),0 8px 24px rgba(23,33,26,.07);color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E130F;--surface:#171E18;--surface-2:#1D261E;--line:#263027;--ink:#EEF3EA;--ink-2:#B7C0B3;--ink-3:#8F998C;--brand:#8CC63F;--accent-soft:#22331A;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E130F;--surface:#171E18;--surface-2:#1D261E;--line:#263027;--ink:#EEF3EA;--ink-2:#B7C0B3;--ink-3:#8F998C;--brand:#8CC63F;--accent-soft:#22331A;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+main{max-width:720px;margin:0 auto;padding:8px 20px 40px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-.02em;margin:16px 0 0}
+h2{font-size:17px;line-height:23px;font-weight:700;margin:14px 0 0}
+h3{font-size:15px;line-height:21px;font-weight:700;margin:6px 0 0}
+p,li{font-size:15px;line-height:24px;font-weight:500;color:var(--ink-2);margin:0}
+ul{margin:0;padding-inline-start:22px;display:flex;flex-direction:column;gap:4px}
+li ul{margin-top:4px}
+strong{color:var(--ink);font-weight:700}
+a{color:var(--brand);text-decoration:none;font-weight:600}
+code{font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:6px}
+.version{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:12px 14px;display:flex;flex-direction:column;gap:2px;font-size:12px;line-height:16px;font-weight:600}
+.glance{background:var(--accent-soft);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.glance-title{font-size:13px;line-height:18px;font-weight:700;color:var(--ink)}
+.glance p,.glance li{font-size:14px;line-height:21px;color:var(--ink)}
+.table{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:start;vertical-align:top;padding:10px 14px;font-size:13px;line-height:19px;border-top:1px solid var(--line)}
+th{background:var(--surface-2);font-weight:700;border-top:0}
+td{color:var(--ink-2);font-weight:500}
+td:first-child{color:var(--ink);font-weight:600}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;line-height:20px;color:var(--ink-3);display:flex;flex-direction:column;gap:4px}
+.entry{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.entry-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:700}
+.badge{font-size:11px;line-height:16px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--brand)}
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy</h1>
+<div class="version"><span>Version 13 October 2026 · in effect from that day</span><a href="/legal/dietify/changelog.html">Version history</a></div>
+<div class="glance"><p class="glance-title">At a glance</p><ul><li>No ads, and we never sell your data.</li><li>Your diet and allergies are used only to adapt your recipes, and only with your consent.</li><li>On the Free plan your recipes, lists, plan and food log stay on your phone. Premium also keeps them in your account so they sync.</li><li>Usage statistics are off unless you turn them on.</li><li>You can export or delete everything yourself, in Settings.</li></ul></div>
+<h2 id="1-who-we-are">1. Who we are</h2>
+<p>Dietify is made by Smart Horizon in the Sultanate of Oman ("we", "us"). We decide how your personal data in Dietify is used and we are responsible for it.</p>
+<p>Questions about this policy or your data: <a href="mailto:dietify.support@smarthorizon.co">dietify.support@smarthorizon.co</a></p>
+<h2 id="2-what-dietify-does">2. What Dietify does</h2>
+<p>Dietify adapts recipes to your diet and allergies. You give it a photo, a link to a recipe or a social video, a video file, your voice or typed text. It gives back a version that fits your diet, with the swaps it made, nutrition estimates, a grocery list, a weekly planner and a food log.</p>
+<p>Dietify is for adults. You must be 18 or older to use it.</p>
+<h2 id="3-the-data-we-process">3. The data we process</h2>
+<h3 id="your-diet-profile">Your diet profile</h3>
+<ul><li>What it holds: the diets you pick, your allergens, foods you avoid, a calorie limit per serving and how much lighter a low-calorie recipe should be.</li><li>This is <strong>health data</strong>. We use it only with your explicit consent, which Dietify asks for during setup, and only to adapt recipes for you.</li><li>It is kept in your account on our servers, on every plan, because the AI needs it to adapt your recipes. It stays until you change it or delete your account.</li></ul>
+<h3 id="what-you-send-us-to-adapt">What you send us to adapt</h3>
+<ul><li>Photos, videos, voice recordings, typed or pasted text, and links to recipe websites or to posts on Instagram, TikTok or YouTube.</li><li>We read the recipe from it. For a link, our server fetches the web page, or the post's text, and if needed its video or audio. The recipe is then adapted by AI and checked again by our own safety rules, which are not AI.</li><li>Files you upload are deleted from our servers within 24 hours. The one exception is a photo that becomes the picture of a Premium recipe; it is kept as long as that recipe.</li><li>Videos and audio fetched from a link are deleted as soon as your recipe is ready, and always within about an hour.</li><li>The content of each request, including the link you sent and the names of uploaded files, is removed from our records 24 hours after the request ends. What stays is a usage record without content (see below).</li></ul>
+<h3 id="recipe-pictures">Recipe pictures</h3>
+<ul><li>A recipe from a social video can use the post's cover image as its picture. We store a copy so the recipe can show it.</li><li>A recipe without a picture can get one made by AI from its title and a few ingredient names.</li><li>Pictures are stored at web addresses that are not listed anywhere; someone who has an exact address could open that picture. They are deleted with the recipe from our servers: after about 24 hours on the Free plan, and when you delete the recipe on Premium.</li></ul>
+<h3 id="your-recipes-and-lists">Your recipes and lists</h3>
+<ul><li><strong>Free plan:</strong> your adapted recipe is kept on our servers for about 24 hours so the app can collect it, then deleted. Your recipe box, notes, grocery list, meal plan, food log, cooked history and saved ingredient values stay <strong>only on your phone</strong>. When you adapt a recipe, the app sends your saved ingredient values with it so the nutrition uses them; they are deleted with the request's content.</li><li><strong>Premium:</strong> the same items are also kept in your account so they sync between your devices: recipes (with your notes and categories), saved ingredient values, grocery list, meal plan, food log and cooked history. Your tweak conversations are kept too.</li></ul>
+<h3 id="your-account">Your account</h3>
+<ul><li>Every install starts with an anonymous account with a random ID. No name or email is needed.</li><li>You can add an email to keep your recipes across devices. You sign in with a one-time code we email you, sent from <code>noreply@smarthorizon.co</code>. There is no password.</li><li>Instead of an email you can use <strong>Sign in with Apple</strong> (on iPhone) or <strong>Sign in with Google</strong>. Apple gives us an ID for your Apple account and your email address, or a private relay address if you choose Hide My Email; we don't ask Apple for your name. Google gives us an ID for your Google account, your email address, your name and a link to your profile picture. Our sign-in service keeps these with your account; the app shows only your email.</li><li>With Apple, we also keep a token from Apple so that we can withdraw Dietify's access to your Apple account when you delete your Dietify account.</li></ul>
+<h3 id="purchases">Purchases</h3>
+<ul><li>Apple or Google handle payment. We never see your card or payment details.</li><li>RevenueCat, which manages subscriptions for us, receives your Dietify user ID and your purchase history from the store.</li><li>We keep your plan, its status, the product, the store, the end date, whether it renews and whether it is a trial.</li></ul>
+<h3 id="notifications">Notifications</h3>
+<ul><li>If you allow notifications, we store your device's push token with its platform, language and time-zone offset, so a notification arrives in your language at a sensible time.</li><li>Dietify sends a notification when a recipe is ready, couldn't be made or needs you to confirm the diet, and 48 hours before a free trial ends. Notifications never name your dish or your diet.</li></ul>
+<h3 id="support-messages">Support messages</h3>
+<ul><li>When you write to us from the app, we receive the topic, your email, your name if you give it, your message, up to 3 screenshots, the recipe if you report one, and device details (app version, operating system, language, display and text size, phone model).</li><li>It is delivered to our support inbox by email. Screenshots are deleted from our servers once it is sent. We keep a short record without your message or email (topic, number of attachments, time) until you delete your account, and the email itself for as long as we need it to help you.</li></ul>
+<h3 id="crash-reports-and-usage-statistics">Crash reports and usage statistics</h3>
+<ul><li><strong>Crash reports</strong> (Firebase Crashlytics) contain the device model, operating system, app version, where the app failed and the names of the last screens and actions. They never contain recipes, diets, allergies or health data. They are always on in the released app, so we can keep it stable.</li><li><strong>Usage statistics</strong> (Firebase Analytics) are collected only if you turn on <strong>Share anonymous usage stats</strong> in Settings › Privacy. They are off until you do. They record events such as "recipe adapted" or "tab opened", with counts and yes/no details, never recipe text, diet or allergy names. Firebase also works out a rough location (country or region) from your phone's IP address for these statistics; we never get your precise location. The advertising ID is not collected and advertising features are off.</li><li><strong>Usage records</strong> keep the time, type, outcome and processing cost of each request, for quotas, fair use and our own costs. They hold no recipe content. When you delete your account they are kept without your user ID, for our accounts.</li></ul>
+<h3 id="apple-health-and-health-connect-premium-optional">Apple Health and Health Connect (Premium, optional)</h3>
+<ul><li>If you allow it, marking a meal "I ate this" writes it to Apple Health or Health Connect: meal type, recipe title, calories, protein, carbohydrates, fat, fibre, sugar and sodium.</li><li>Dietify <strong>never reads</strong> data from these apps. This data is never used for advertising or shared with anyone else.</li></ul>
+<h3 id="only-on-your-phone">Only on your phone</h3>
+<ul><li>Home Screen widgets show your plan, grocery list, food log and recipe pictures from data already on your phone. Nothing extra is sent.</li><li>Read-aloud in Cook mode uses your phone's own voice.</li><li>Sharing a recipe or a list makes a PDF or text on your phone, and you choose where it goes.</li></ul>
+<h2 id="4-why-we-use-it">4. Why we use it</h2>
+<div class="table"><table><thead><tr><th>Purpose</th><th>Data</th><th>Legal basis (EU and UK)</th></tr></thead><tbody><tr><td>Adapt recipes, show swaps and nutrition, run the safety check</td><td>What you send, your diet profile</td><td>Contract. For diet and allergy data: your explicit consent</td></tr><tr><td>Keep your account, sign-in and Premium sync</td><td>Account, recipes and lists, email, Apple or Google sign-in details</td><td>Contract</td></tr><tr><td>Subscriptions</td><td>User ID, purchase history</td><td>Contract; legal duties such as tax</td></tr><tr><td>Quotas, fair use, preventing abuse, our costs</td><td>Usage records</td><td>Our legitimate interests</td></tr><tr><td>Crash reports</td><td>Technical data</td><td>Our legitimate interest in a stable app</td></tr><tr><td>Usage statistics</td><td>Events without health data</td><td>Your consent, which you can withdraw in Settings</td></tr><tr><td>Notifications</td><td>Push token, language, time-zone offset</td><td>Your consent, given in your phone's settings</td></tr><tr><td>Support</td><td>Your message and device details</td><td>Our legitimate interest in answering you</td></tr><tr><td>Apple Health and Health Connect</td><td>Meals you log</td><td>Your consent, given in your phone's settings</td></tr></tbody></table></div>
+<h2 id="5-who-processes-data-for-us">5. Who processes data for us</h2>
+<div class="table"><table><thead><tr><th>Service</th><th>What it does for us</th><th>Data it receives</th></tr></thead><tbody><tr><td>Supabase (servers in Frankfurt, Germany)</td><td>Database, file storage, sign-in and server code</td><td>All account and cloud data</td></tr><tr><td>Google Gemini API (paid service)</td><td>AI that reads and adapts recipes, estimates missing nutrition values and makes dish pictures</td><td>The content of that request with your diet profile, or ingredient names, or a recipe title. No user ID. Under Google's terms for the paid service it is not used to train their models</td></tr><tr><td>Google Firebase</td><td>Crash reports, usage statistics (if you allow them) and push notifications</td><td>Technical data, events, push token</td></tr><tr><td>Google Workspace</td><td>Sends sign-in codes</td><td>Your email address</td></tr><tr><td>Resend</td><td>Delivers support messages to our inbox</td><td>Your support message</td></tr><tr><td>RevenueCat</td><td>Subscription status</td><td>Your user ID and purchase history</td></tr><tr><td>Apify, and a backup service through RapidAPI</td><td>Fetch public Instagram and TikTok posts you share</td><td>The link you shared</td></tr><tr><td>YouTube and TikTok</td><td>Provide the title and description of a public video</td><td>The video's link or ID</td></tr><tr><td>Recipe websites</td><td>Our server opens the page you shared</td><td>Nothing about you; your IP address is not passed on</td></tr><tr><td>Open Food Facts</td><td>Product nutrition for barcodes you scan</td><td>The barcode number only, sent from our server</td></tr><tr><td>Google Fonts</td><td>Fonts for PDFs in Arabic, Japanese, Korean, Chinese, Thai, Russian and Ukrainian, downloaded once</td><td>Your phone's IP address, as with any download</td></tr><tr><td>Cloudflare</td><td>The download page linked from shared recipes and lists</td><td>The IP address of whoever opens it</td></tr></tbody></table></div>
+<p>If you use Sign in with Apple or Sign in with Google, Apple or Google confirms who you are under its own privacy policy, and learns that you use Dietify.</p>
+<p>We do not sell personal data, and we do not use it for advertising. Dietify has no ads.</p>
+<h2 id="6-international-transfers">6. International transfers</h2>
+<p>Smart Horizon is in Oman, our servers are in Germany, and some of the services above are in the United States. Where data leaves the EU or the UK, we rely on the safeguards these providers offer, such as the European Commission's Standard Contractual Clauses.</p>
+<h2 id="7-how-long-we-keep-data">7. How long we keep data</h2>
+<ul><li><strong>Uploaded files:</strong> within 24 hours, except the photo of a Premium recipe, which stays as long as the recipe.</li><li><strong>Fetched videos and audio:</strong> as soon as your recipe is ready, at most about an hour.</li><li><strong>Free results on our servers:</strong> about 24 hours. The copy on your phone stays until you delete it.</li><li><strong>Content of a request, including its link:</strong> 24 hours after it ends.</li><li><strong>Anonymous accounts:</strong> deleted after 90 days without use, unless they have an active Premium subscription.</li><li><strong>Apple sign-in token:</strong> until you delete your account; we then withdraw it at Apple.</li><li><strong>Premium data, your account and diet profile:</strong> while your account exists. If Premium ends, your cloud recipes become read-only and you can still export them; nothing is deleted because Premium ended.</li><li><strong>Usage records:</strong> kept for our accounts; without your user ID once you delete your account.</li></ul>
+<h2 id="8-your-rights-and-choices">8. Your rights and choices</h2>
+<ul><li><strong>Export everything:</strong> Settings › Privacy › Export my data gives you a JSON file and a PDF.</li><li><strong>Delete your account:</strong> Settings › Privacy › Delete account removes your account, recipes, lists, uploads, pictures and settings from our servers and from your phone. Usage records are kept without your user ID. Without the app, email <a href="mailto:dietify.support@smarthorizon.co">dietify.support@smarthorizon.co</a> from the email on your account and we delete it within 30 days; see <a href="/legal/dietify/delete-account/">Delete your account</a>.</li><li><strong>Usage statistics:</strong> turn them on or off at any time in Settings › Privacy.</li><li><strong>Notifications and Health:</strong> turn them off in your phone's settings.</li><li><strong>Your diet data:</strong> you can change your diet profile at any time. If you withdraw your consent to using it, we can no longer adapt recipes, so you would delete your account instead.</li><li><strong>Other requests:</strong> email <a href="mailto:dietify.support@smarthorizon.co">dietify.support@smarthorizon.co</a> to ask for a copy of your data, to correct it, or to restrict or object to how we use it.</li><li>You can complain to your data protection authority.</li></ul>
+<p>Deleting your account does <strong>not</strong> cancel an App Store or Google Play subscription. Cancel it in your store settings.</p>
+<h2 id="9-children">9. Children</h2>
+<p>Dietify is for adults (18 and over). We do not knowingly process children's data. If you think a child is using Dietify, tell us and we will delete the account.</p>
+<h2 id="10-security">10. Security</h2>
+<ul><li>Data is encrypted in transit.</li><li>Each account can reach only its own data on our servers.</li><li>Server keys never ship in the app, and access to production systems is limited to the people who run Dietify.</li></ul>
+<h2 id="11-changes-to-this-policy">11. Changes to this policy</h2>
+<p>When we change this policy, we publish a new dated version and keep the earlier ones under Version history. We will tell you in the app about important changes.</p>
+<h2 id="12-contact">12. Contact</h2>
+<p>Smart Horizon · <a href="mailto:dietify.support@smarthorizon.co">dietify.support@smarthorizon.co</a></p>
+<footer>
+<span>Dietify by Smart Horizon · <a href="mailto:dietify.support@smarthorizon.co">dietify.support@smarthorizon.co</a></span>
+<span><a href="/legal/dietify/privacy-policy/">Privacy Policy</a> · <a href="/legal/dietify/terms-of-service/">Terms of Use</a> · <a href="/legal/dietify/changelog.html">Version history</a></span>
+</footer>
+</main>
+</body>
+</html>
