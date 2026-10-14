@@ -2,6 +2,14 @@
   "privacy_policy": {
     "versions": [
       {
+        "version": "2026-10-14",
+        "date": "2026-10-14T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-14.html",
+        "changes_summary": "Adds read aloud in Cook mode (Premium), spoken by Google Gemini.",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      },
+      {
         "version": "2026-10-13",
         "date": "2026-10-13T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-13.html",
@@ -18,7 +26,7 @@
         "requires_reacceptance": false
       }
     ],
-    "current_version": "2026-10-13",
+    "current_version": "2026-10-14",
     "current_url": "https://www.smarthorizon.co/legal/dietify/privacy-policy/"
   },
   "terms_of_service": {
