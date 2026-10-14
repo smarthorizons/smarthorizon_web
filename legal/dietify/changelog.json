@@ -32,6 +32,14 @@
   "terms_of_service": {
     "versions": [
       {
+        "version": "2026-10-14",
+        "date": "2026-10-14T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/dietify/versions/terms/2026-10-14.html",
+        "changes_summary": "Free now includes 3 adaptations in total (was 3 every 7 days). Premium fair use now starts at about 100 adaptations a month (was about 300).",
+        "is_material_change": true,
+        "requires_reacceptance": false
+      },
+      {
         "version": "2026-10-12",
         "date": "2026-10-12T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/terms/2026-10-12.html",
@@ -40,7 +48,7 @@
         "requires_reacceptance": false
       }
     ],
-    "current_version": "2026-10-12",
+    "current_version": "2026-10-14",
     "current_url": "https://www.smarthorizon.co/legal/dietify/terms-of-service/"
   }
 }
