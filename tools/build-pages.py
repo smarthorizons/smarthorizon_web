@@ -42,6 +42,18 @@ def play_url(app):
     return f"https://play.google.com/store/apps/details?id={app['android_id']}"
 
 
+def legal_url(app, kind):
+    """Path of an app's legal page. Older apps use flat .html files under
+    /legal/<slug>/; an app can point elsewhere with "legal_urls" in
+    data/apps.json (Dietify's pages are folders, e.g. /privacy-policy/)."""
+    defaults = {
+        "privacy": f"/legal/{app['legal_slug']}/privacy-policy.html",
+        "terms": f"/legal/{app['legal_slug']}/terms-of-service.html",
+        "changelog": f"/legal/{app['legal_slug']}/changelog.html",
+    }
+    return (app.get("legal_urls") or {}).get(kind) or defaults.get(kind)
+
+
 ICON_APPLE = ('<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">'
               '<path d="M17.05 12.54c-.02-2.2 1.8-3.26 1.88-3.31-1.02-1.5-2.62-1.7-3.18-1.72-1.35-.14-2.64.8-3.33.8-.69 0-1.75-.78-2.87-.76-1.48.02-2.84.86-3.6 2.18-1.53 2.66-.39 6.6 1.1 8.76.73 1.06 1.6 2.25 2.74 2.2 1.1-.04 1.51-.71 2.84-.71 1.32 0 1.7.71 2.86.69 1.18-.02 1.93-1.07 2.65-2.14.84-1.23 1.18-2.42 1.2-2.48-.03-.01-2.29-.88-2.31-3.5zM14.9 5.9c.6-.74 1.01-1.75.9-2.77-.87.04-1.93.58-2.56 1.31-.56.65-1.05 1.69-.92 2.68.97.08 1.96-.49 2.58-1.22z"/></svg>')
 
@@ -101,6 +113,13 @@ def downloads_badge(app):
 
 
 def stores(app, small=False):
+    # Not in the stores yet (no "released" date in data/apps.json): no links
+    # that would lead to a missing store page.
+    if not app.get("released"):
+        return f'''<div class="stores">
+            <span class="store-badge">{ICON_APPLE}<span>{L("<small>Coming soon to the</small>App Store", "<small>قريبًا على</small>App Store")}</span></span>
+            <span class="store-badge">{ICON_PLAY}<span>{L("<small>Coming soon to</small>Google Play", "<small>قريبًا على</small>Google Play")}</span></span>
+          </div>'''
     return f'''<div class="stores">
             <a class="store-badge" href="{ios_url(app)}" rel="noopener">{ICON_APPLE}<span>{L("<small>Download on the</small>App Store", "<small>حمّل من</small>App Store")}</span></a>
             <a class="store-badge" href="{play_url(app)}" rel="noopener">{ICON_PLAY}<span>{L("<small>Get it on</small>Google Play", "<small>احصل عليه من</small>Google Play")}</span></a>
@@ -214,7 +233,7 @@ def footer():
         f'        <li><a href="/apps/{a["slug"]}/">{L(a["name_en"], a["name_ar"])}</a></li>'
         for a in APPS)
     legal_links = "\n".join(
-        f'        <li><a href="/legal/{a["legal_slug"]}/privacy-policy.html">{L(a["name_en"], a["name_ar"])}</a></li>'
+        f'        <li><a href="{legal_url(a, "privacy")}">{L(a["name_en"], a["name_ar"])}</a></li>'
         for a in APPS)
     return f'''<footer class="site-footer">
   <div class="wrap">
@@ -363,7 +382,8 @@ def cta_block():
 def build_index():
     total_ratings = sum(a.get("rating_count") or 0 for a in APPS)
     installs = total_installs()
-    oldest = min(APPS, key=lambda a: a["released"])
+    # An app that is not in the stores yet has no release date.
+    oldest = min((a for a in APPS if a.get("released")), key=lambda a: a["released"])
     oldest_year = oldest["released"][:4]
     oldest_updated_year = (oldest.get("last_updated") or oldest["released"])[:4]
     installs_label = f"{installs // 1000:,}K+" if installs < 1_000_000 else f"{installs / 1_000_000:.1f}M+"
@@ -539,8 +559,12 @@ def build_apps_index():
     <div class="section-head" data-reveal>
       <span class="eyebrow">{L("Our own products", "منتجاتنا الخاصة")}</span>
       {L("Apps we build and publish", "تطبيقات نبنيها وننشرها", tag="h2")}
-      {L("Every one of these is live on the App Store and Google Play, maintained by the same team that takes on client work.",
-         "كل تطبيق من هذه التطبيقات منشور على App Store و Google Play، ويصونه الفريق نفسه الذي ينفّذ مشاريع العملاء.", tag="p")}
+      {L("Every one of these is live on the App Store and Google Play, maintained by the same team that takes on client work."
+         if all(a.get("released") for a in APPS) else
+         "Built, published and maintained by the same team that takes on client work.",
+         "كل تطبيق من هذه التطبيقات منشور على App Store و Google Play، ويصونه الفريق نفسه الذي ينفّذ مشاريع العملاء."
+         if all(a.get("released") for a in APPS) else
+         "نبنيها وننشرها ويصونها الفريق نفسه الذي ينفّذ مشاريع العملاء.", tag="p")}
     </div>
     <div class="grid grid--4" data-reveal-group>
 {cards}
@@ -563,11 +587,161 @@ def build_apps_index():
 # app detail pages
 # --------------------------------------------------------------------------
 
+# Optional blocks for an app page. Each renders only when the app defines
+# the matching field in data/apps.json, so apps without them are unchanged:
+#   about_more_en/_ar   extra paragraphs under "About the app"
+#   steps               {title_en, title_ar, items: [{en_t, ar_t, en_d, ar_d}]}
+#   highlights          {title_en, title_ar, items: [...same...], note_en, note_ar}
+#   plans               {title_en, title_ar, intro_en, intro_ar, note_en, note_ar,
+#                        items: [{en_t, ar_t, en_d, ar_d, features_en, features_ar}]}
+#   support             {email, intro_en/_ar, in_app_en/_ar, emergency_en/_ar,
+#                        account_note_en/_ar, faq: [{en_q, ar_q, en_a, ar_a}]}
+#                       -> a section with id="support" (/apps/<slug>/#support)
+#   legal_urls          {privacy, terms, changelog, delete_account}
+#   store_name          the name in the stores, if it differs (JSON-LD)
+#   description_en/_ar  meta description (default: summary cut at 180)
+#   screenshot_alts_en  alt text per screenshot (default: "<name> screenshot N")
+
+def note_p(en, ar):
+    return L(en, ar, tag="p").replace(
+        "<p ", '<p style="margin-block:24px 0;color:var(--color-muted-foreground);font-size:.95rem" ')
+
+
+def steps_section(app):
+    s = app.get("steps")
+    if not s:
+        return ""
+    items = "\n".join(f'''      <div class="step">
+        {L(i['en_t'], i['ar_t'], tag="h3")}
+        {L(i['en_d'], i['ar_d'], tag="p")}
+      </div>''' for i in s["items"])
+    return f'''
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      {L(s['title_en'], s['title_ar'], tag="h2")}
+    </div>
+    <div class="grid grid--3 steps" data-reveal-group>
+{items}
+    </div>
+  </div>
+</section>
+'''
+
+
+def highlights_section(app):
+    h = app.get("highlights")
+    if not h:
+        return ""
+    cards = "\n".join(f'''      <article class="card">
+        {L(i['en_t'], i['ar_t'], tag="h3")}
+        {L(i['en_d'], i['ar_d'], tag="p")}
+      </article>''' for i in h["items"])
+    note = f"\n    {note_p(h['note_en'], h['note_ar'])}" if h.get("note_en") else ""
+    return f'''
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      {L(h['title_en'], h['title_ar'], tag="h2")}
+    </div>
+    <div class="grid grid--2" data-reveal-group>
+{cards}
+    </div>{note}
+  </div>
+</section>
+'''
+
+
+def plans_section(app):
+    p = app.get("plans")
+    if not p:
+        return ""
+    def plan(i):
+        feats = "\n".join(f'          <li>{ICON_CHECK}{L(en, ar)}</li>'
+                          for en, ar in zip(i["features_en"], i["features_ar"]))
+        return f'''      <article class="card">
+        {L(i['en_t'], i['ar_t'], tag="h3")}
+        {L(i['en_d'], i['ar_d'], tag="p")}
+        <ul class="feature-list feature-list--glance" style="margin-block:18px 0">
+{feats}
+        </ul>
+      </article>'''
+    intro = f"\n      {L(p['intro_en'], p['intro_ar'], tag='p')}" if p.get("intro_en") else ""
+    note = f"\n    {note_p(p['note_en'], p['note_ar'])}" if p.get("note_en") else ""
+    cards = "\n".join(plan(i) for i in p["items"])
+    return f'''
+<section class="section">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      {L(p['title_en'], p['title_ar'], tag="h2")}{intro}
+    </div>
+    <div class="grid grid--2" data-reveal-group>
+{cards}
+    </div>{note}
+  </div>
+</section>
+'''
+
+
+def support_section(app):
+    s = app.get("support")
+    if not s:
+        return ""
+    email = s["email"]
+    links = [(legal_url(app, "privacy"), "Privacy policy", "سياسة الخصوصية")]
+    if app.get("has_terms"):
+        links.append((legal_url(app, "terms"), "Terms of use", "شروط الاستخدام"))
+    if legal_url(app, "delete_account"):
+        links.append((legal_url(app, "delete_account"), "Delete your account", "حذف حسابك"))
+    links.append((legal_url(app, "changelog"), "Version history", "سجل الإصدارات"))
+    link_items = "\n".join(f'          <li><a href="{href}">{L(en, ar)}</a></li>'
+                           for href, en, ar in links)
+    faq = "\n".join(f'''      <article class="card">
+        {L(q['en_q'], q['ar_q'], tag="h4")}
+        {L(q['en_a'], q['ar_a'], tag="p")}
+      </article>''' for q in s.get("faq", []))
+    faq_block = f'''
+    <h3 style="margin-block:48px 20px">{L("Common questions", "أسئلة شائعة")}</h3>
+    <div class="grid grid--2" data-reveal-group>
+{faq}
+    </div>''' if faq else ""
+    return f'''
+<section class="section section--alt" id="support">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">{L("Support", "الدعم")}</span>
+      {L("Help and support", "المساعدة والدعم", tag="h2")}
+      {L(s['intro_en'], s['intro_ar'], tag="p")}
+    </div>
+    <div class="grid grid--2" style="align-items:start" data-reveal-group>
+      <article class="card">
+        {L("Contact us", "تواصل معنا", tag="h3")}
+        {L(s['in_app_en'], s['in_app_ar'], tag="p")}
+        <div class="btn-row" style="margin-block:20px 6px">
+          <a class="btn btn--primary" href="mailto:{email}">{L("Email support", "راسل الدعم")}</a>
+        </div>
+        <p><a class="cta__email" href="mailto:{email}">{email}</a></p>
+        {note_p(s['emergency_en'], s['emergency_ar']).replace("margin-block:24px 0", "margin-block:16px 0")}
+      </article>
+      <article class="card">
+        {L("Your account and privacy", "حسابك وخصوصيتك", tag="h3")}
+        <ul class="legal-links" style="list-style:none;padding:0;margin-block:12px 16px">
+{link_items}
+        </ul>
+        {L(s['account_note_en'], s['account_note_ar'], tag="p")}
+      </article>
+    </div>{faq_block}
+  </div>
+</section>
+'''
+
+
 def build_app_page(app):
     slug = app["slug"]
+    alts = app.get("screenshot_alts_en") or []
     shots = "\n".join(
         f'      <img src="/assets/apps/{slug}/screenshot-{i}.webp" '
-        f'alt="{app["name_en"]} screenshot {i}"'
+        f'alt="{alts[i - 1] if i <= len(alts) else app["name_en"] + " screenshot " + str(i)}"'
         f'{img_size(f"/assets/apps/{slug}/screenshot-{i}.webp", 250)} loading="lazy">'
         for i in range(1, app["screenshots"] + 1))
 
@@ -579,7 +753,7 @@ def build_app_page(app):
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": app["name_en"],
-        "alternateName": app["name_ar"],
+        "alternateName": app.get("store_name") or app["name_ar"],
         "operatingSystem": "iOS, Android",
         "applicationCategory": "MobileApplication",
         "url": f"{SITE}/apps/{slug}/",
@@ -595,17 +769,27 @@ def build_app_page(app):
             "ratingCount": app["rating_count"],
         }
 
-    legal = f'/legal/{app["legal_slug"]}/privacy-policy.html'
-    legal_links = f'<a href="{legal}">{L("Privacy policy", "سياسة الخصوصية")}</a>'
+    legal_links = f'<a href="{legal_url(app, "privacy")}">{L("Privacy policy", "سياسة الخصوصية")}</a>'
     if app.get("has_terms"):
-        legal_links += f' &nbsp;&middot;&nbsp; <a href="/legal/{app["legal_slug"]}/terms-of-service.html">{L("Terms of service", "شروط الاستخدام")}</a>'
-    legal_links += f' &nbsp;&middot;&nbsp; <a href="/legal/{app["legal_slug"]}/changelog.html">{L("Version history", "سجل الإصدارات")}</a>'
+        legal_links += f' &nbsp;&middot;&nbsp; <a href="{legal_url(app, "terms")}">{L("Terms of use", "شروط الاستخدام")}</a>'
+    if legal_url(app, "delete_account"):
+        legal_links += f' &nbsp;&middot;&nbsp; <a href="{legal_url(app, "delete_account")}">{L("Delete your account", "حذف حسابك")}</a>'
+    legal_links += f' &nbsp;&middot;&nbsp; <a href="{legal_url(app, "changelog")}">{L("Version history", "سجل الإصدارات")}</a>'
+
+    about_more = "".join(
+        f"\n        {L(en, ar, tag='p')}"
+        for en, ar in zip(app.get("about_more_en", []), app.get("about_more_ar", [])))
+
+    support = app.get("support")
+    hero_support = (f'''
+        <p class="legal-links" style="margin-block-start:14px"><a href="#support">{L("Help and support", "المساعدة والدعم")}</a> &nbsp;&middot;&nbsp; <a href="mailto:{support['email']}">{support['email']}</a></p>'''
+                    if support else "")
 
     html = head(
         f'{app["name_en"]} — Smart Horizon',
         f'{app["name_ar"]} — الأفق الذكي',
-        app["summary_en"][:180],
-        app["summary_ar"][:180],
+        app.get("description_en") or app["summary_en"][:180],
+        app.get("description_ar") or app["summary_ar"][:180],
         f"/apps/{slug}/",
         og_image=f"/assets/apps/{slug}/icon.png", og_size=(512, 512),
         extra=f'<script type="application/ld+json">\n{json.dumps(ld, ensure_ascii=False, indent=2)}\n</script>\n')
@@ -627,7 +811,7 @@ def build_app_page(app):
         </div>
         <div style="margin-block-start:18px">
 {stores(app)}
-        </div>
+        </div>{hero_support}
       </div>
     </div>
   </div>
@@ -638,7 +822,7 @@ def build_app_page(app):
     <div class="grid grid--2" style="gap:44px;align-items:start" data-reveal-group>
       <div>
         {L("About the app", "عن التطبيق", tag="h2")}
-        {L(app['summary_en'], app['summary_ar'], tag="p")}
+        {L(app['summary_en'], app['summary_ar'], tag="p")}{about_more}
       </div>
       <div>
         {L("Features", "المزايا", tag="h2")}
@@ -659,7 +843,7 @@ def build_app_page(app):
     </div>
   </div>
 </section>
-
+{steps_section(app)}{highlights_section(app)}{plans_section(app)}{support_section(app)}
 <section class="section">
   <div class="wrap">
     <div class="card center" data-reveal>
@@ -713,7 +897,7 @@ def build_404():
 
 def build_sitemap():
     urls = ["/", "/apps/"] + [f"/apps/{a['slug']}/" for a in APPS]
-    urls += [f"/legal/{a['legal_slug']}/privacy-policy.html" for a in APPS]
+    urls += [legal_url(a, "privacy") for a in APPS]
     body = "\n".join(
         f'  <url>\n    <loc>{SITE}{u}</loc>\n'
         f'    <changefreq>{"monthly" if u.startswith("/legal") else "weekly"}</changefreq>\n'

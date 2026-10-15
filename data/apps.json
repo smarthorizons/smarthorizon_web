@@ -157,6 +157,209 @@
       "play_downloads": "5K+",
       "last_updated": "2023-03-25",
       "version": "1.0.0"
+    },
+    {
+      "slug": "dietify",
+      "name_en": "Dietify",
+      "name_ar": "Dietify",
+      "store_name": "Dietify AI",
+      "tagline_en": "Make any recipe fit your diet.",
+      "tagline_ar": "اجعل أي وصفة تناسب نظامك الغذائي.",
+      "description_en": "Dietify turns any recipe into a version that fits your diet. Add it from a photo, a link, a video, your voice or text, and see every swap and why.",
+      "description_ar": "يحوّل Dietify أي وصفة إلى نسخة تناسب نظامك الغذائي. أضفها من صورة أو رابط أو فيديو أو بصوتك أو نصًا، وشاهد كل استبدال وسببه.",
+      "summary_en": "Love a recipe that doesn't fit your diet? Dietify turns any recipe into a version made for you. Snap a cookbook page, paste a link, or just say it out loud. Dietify swaps the ingredients that don't fit, keeps what makes the dish delicious, and shows you every change next to the original.",
+      "summary_ar": "هل وجدت وصفة شهية لكنها لا تناسب نظامك الغذائي؟ يحوّل Dietify أي وصفة إلى نسخة مصممة لك. صوّر صفحة من كتاب الطبخ، أو الصق رابطًا، أو قل الوصفة بصوتك. يستبدل Dietify المكونات التي لا تناسبك، ويحافظ على ما يجعل الطبق لذيذًا، ويعرض لك كل تغيير بجانب الوصفة الأصلية.",
+      "about_more_en": [
+        "Recipes come out in your language, whatever language the original was in: Dietify speaks 28 languages. Every recipe stays in My recipes, with categories, your own notes and how often you've cooked it.",
+        "In the App Store and Google Play, look for Dietify AI."
+      ],
+      "about_more_ar": [
+        "تصلك الوصفات بلغة التطبيق أيًّا كانت لغة الوصفة الأصلية، إذ يتحدث Dietify بـ 28 لغة. وتبقى كل وصفة في «وصفاتي» مع التصنيفات وملاحظاتك الخاصة وعدد مرات طبخها.",
+        "ابحث عنه في App Store و Google Play باسم Dietify AI."
+      ],
+      "features_en": [
+        "Add recipes from photos, links, videos, your voice or text",
+        "14 diets, from keto and vegan to low-FODMAP",
+        "Every swap shown with its reason, next to the original",
+        "Nutrition per serving from public food databases",
+        "15 allergens and a safety check on every recipe",
+        "Cook mode, one step at a time",
+        "Smart grocery list, sorted by aisle",
+        "28 languages, and no ads"
+      ],
+      "features_ar": [
+        "أضف الوصفات من الصور والروابط والفيديو وبصوتك أو نصًا",
+        "14 نظامًا غذائيًا، من الكيتو والنباتي إلى منخفض الفودماب",
+        "كل استبدال موضّح مع سببه بجانب الوصفة الأصلية",
+        "قيم غذائية لكل حصة من قواعد بيانات غذائية عامة",
+        "15 مسببًا للحساسية وفحص أمان لكل وصفة",
+        "وضع الطبخ، خطوة واحدة في كل مرة",
+        "قائمة تسوّق ذكية مرتبة حسب أقسام المتجر",
+        "28 لغة، وبلا إعلانات"
+      ],
+      "steps": {
+        "title_en": "How it works",
+        "title_ar": "كيف يعمل",
+        "items": [
+          {
+            "en_t": "Add a recipe your way",
+            "ar_t": "أضف الوصفة بطريقتك",
+            "en_d": "Photos of up to 4 cookbook pages, a link from Instagram, TikTok, YouTube or any recipe website, a cooking video saved on your phone, your voice, or typed text.",
+            "ar_d": "صور حتى 4 صفحات من كتاب الطبخ، أو رابط من Instagram أو TikTok أو YouTube أو أي موقع وصفات، أو فيديو طبخ محفوظ على هاتفك، أو بصوتك، أو نص مكتوب."
+          },
+          {
+            "en_t": "Set your diet once",
+            "ar_t": "اختر نظامك الغذائي مرة واحدة",
+            "en_d": "Keto, low-carb, vegan, vegetarian, gluten-free, dairy-free, Mediterranean, paleo, high-protein, low-calorie, pescatarian, diabetic-friendly, low-FODMAP or low-sodium. Add your allergens and a calorie limit per serving.",
+            "ar_d": "كيتو، منخفض الكربوهيدرات، نباتي صرف (فيجن)، نباتي، خالٍ من الغلوتين، خالٍ من الألبان، متوسطي، باليو، عالي البروتين، منخفض السعرات، نباتي مع الأسماك، مناسب لمرضى السكري، منخفض الفودماب أو منخفض الصوديوم. وأضف مسببات الحساسية لديك وحدًّا للسعرات لكل حصة."
+          },
+          {
+            "en_t": "Get your version",
+            "ar_t": "احصل على نسختك",
+            "en_d": "Every ingredient swap is marked with the reason, and the original is one tap away. Then cook it step by step or add it to your grocery list.",
+            "ar_d": "كل استبدال في المكونات موضّح مع سببه، والوصفة الأصلية على بُعد لمسة واحدة. ثم اطبخها خطوة بخطوة أو أضفها إلى قائمة التسوّق."
+          }
+        ]
+      },
+      "highlights": {
+        "title_en": "Nutrition and allergies",
+        "title_ar": "القيم الغذائية والحساسية",
+        "items": [
+          {
+            "en_t": "Nutrition you can check",
+            "ar_t": "قيم غذائية يمكنك التحقق منها",
+            "en_d": "Calories, protein, carbs, fat and net carbs per serving, calculated from public food databases (USDA, Ciqual, CoFID, CNF). Estimates are always marked ≈, and you can fix any value yourself or scan a barcode.",
+            "ar_d": "السعرات الحرارية والبروتين والكربوهيدرات والدهون والكربوهيدرات الصافية لكل حصة، محسوبة من قواعد بيانات غذائية عامة (USDA و Ciqual و CoFID و CNF). القيم التقديرية مميزة دائمًا بالعلامة ≈، ويمكنك تعديل أي قيمة بنفسك أو مسح الباركود."
+          },
+          {
+            "en_t": "Allergies taken seriously",
+            "ar_t": "نأخذ الحساسية الغذائية بجدية",
+            "en_d": "Choose your allergens from 15, including gluten, milk, eggs, peanuts, tree nuts, soy, sesame, fish and shellfish. A rule-based safety check re-checks every adapted recipe, and every recipe shows a “Contains:” list of its allergens.",
+            "ar_d": "اختر مسببات الحساسية لديك من بين 15، منها الغلوتين والحليب والبيض والفول السوداني والمكسرات والصويا والسمسم والسمك والقشريات. يعيد فحص أمان قائم على قواعد ثابتة التحقق من كل وصفة معدّلة، وتعرض كل وصفة قائمة «يحتوي على» بمسببات الحساسية فيها."
+          }
+        ],
+        "note_en": "Dietify adapts recipes for your diet. It is a helpful tool, not medical advice, and it can't promise a recipe is safe for you. Always check labels, especially for allergies. Dietify is for adults 18 and over.",
+        "note_ar": "يكيّف Dietify الوصفات لتناسب نظامك الغذائي. إنه أداة مساعدة وليس استشارة طبية، ولا يستطيع أن يعدك بأن الوصفة آمنة لك. تحقق دائمًا من الملصقات، خاصة إذا كانت لديك حساسية. Dietify مخصص للبالغين من عمر 18 عامًا فأكثر."
+      },
+      "plans": {
+        "title_en": "Free and Premium",
+        "title_ar": "مجاني و Premium",
+        "intro_en": "Start free, with no account and no payment. No ads, ever.",
+        "intro_ar": "ابدأ مجانًا دون حساب ودون دفع. بلا إعلانات إطلاقًا.",
+        "items": [
+          {
+            "en_t": "Free",
+            "ar_t": "مجاني",
+            "en_d": "Try Dietify at no cost.",
+            "ar_d": "جرّب Dietify دون أي تكلفة.",
+            "features_en": [
+              "3 recipe adaptations in total",
+              "The low-calorie or vegan diet, and 1 allergen",
+              "One try of tweak chat",
+              "Cook mode, grocery list and food log",
+              "Your recipes saved on your phone"
+            ],
+            "features_ar": [
+              "3 تكييفات للوصفات إجمالًا",
+              "النظام منخفض السعرات أو النباتي الصرف، ومسبب حساسية واحد",
+              "محاولة واحدة للتعديل بالدردشة",
+              "وضع الطبخ وقائمة التسوّق وسجل الطعام",
+              "وصفاتك محفوظة على هاتفك"
+            ]
+          },
+          {
+            "en_t": "Premium",
+            "ar_t": "Premium",
+            "en_d": "A monthly or yearly subscription. The yearly plan starts with a 7-day free trial for eligible people.",
+            "ar_d": "اشتراك شهري أو سنوي. تبدأ الخطة السنوية بتجربة مجانية لمدة 7 أيام للمستخدمين المؤهلين.",
+            "features_en": [
+              "Unlimited adaptations, within fair use",
+              "Every diet, and diets combined",
+              "All your allergens",
+              "Tweak chat, and read aloud in Cook mode",
+              "Weekly meal planner with “Fill my week”",
+              "Apple Health or Health Connect sync, and your recipes on all your devices"
+            ],
+            "features_ar": [
+              "تكييفات غير محدودة ضمن الاستخدام العادل",
+              "كل الأنظمة الغذائية مع إمكانية الجمع بينها",
+              "كل مسببات الحساسية لديك",
+              "التعديل بالدردشة، والقراءة بصوت عالٍ في وضع الطبخ",
+              "مخطط وجبات أسبوعي مع «املأ أسبوعي»",
+              "المزامنة مع Apple Health أو Health Connect، ووصفاتك على كل أجهزتك"
+            ]
+          }
+        ],
+        "note_en": "Prices are shown in the App Store or Google Play before you buy and can differ by country. A subscription renews automatically until you cancel it in your store settings; cancel at least 24 hours before the end of a period or free trial to avoid the next charge.",
+        "note_ar": "تظهر الأسعار في App Store أو Google Play قبل الشراء، وقد تختلف من بلد لآخر. يتجدد الاشتراك تلقائيًا حتى تلغيه من إعدادات المتجر؛ ألغِه قبل 24 ساعة على الأقل من نهاية الفترة أو التجربة المجانية لتجنّب الخصم التالي."
+      },
+      "support": {
+        "email": "dietify.support@smarthorizon.co",
+        "intro_en": "A question, a recipe that came out wrong, or a problem with Premium? Write to us. We read every message and reply by email.",
+        "intro_ar": "لديك سؤال، أو خرجت وصفة على غير ما توقعت، أو واجهت مشكلة في Premium؟ راسلنا. نقرأ كل رسالة ونرد عليك بالبريد الإلكتروني.",
+        "in_app_en": "In the app: Profile &amp; settings › Contact support. To report one recipe, open its ⋯ menu › Report a problem.",
+        "in_app_ar": "داخل التطبيق: الملف الشخصي والإعدادات › تواصل مع الدعم. وللإبلاغ عن وصفة بعينها، افتح قائمة ⋯ فيها › الإبلاغ عن مشكلة.",
+        "emergency_en": "Allergic reaction or feeling unwell? Call your local emergency number. We can't give medical help.",
+        "emergency_ar": "رد فعل تحسسي أو تشعر بتوعك؟ اتصل برقم الطوارئ المحلي. لا يمكننا تقديم مساعدة طبية.",
+        "account_note_en": "Delete your account in the app: Profile &amp; settings › Privacy › Delete account. Without the app, follow the steps on the Delete your account page. Deleting your account doesn't cancel a subscription.",
+        "account_note_ar": "احذف حسابك من داخل التطبيق: الملف الشخصي والإعدادات › الخصوصية › حذف الحساب. ودون التطبيق، اتبع الخطوات في صفحة «حذف حسابك». حذف الحساب لا يلغي الاشتراك.",
+        "faq": [
+          {
+            "en_q": "How do I cancel Premium?",
+            "ar_q": "كيف ألغي Premium؟",
+            "en_a": "In your App Store or Google Play subscriptions. In the app, Profile &amp; settings › Plan › Manage subscription takes you there. Cancel at least 24 hours before the period or free trial ends to avoid the next charge.",
+            "ar_a": "من اشتراكاتك في App Store أو Google Play. وداخل التطبيق يوصلك إليها: الملف الشخصي والإعدادات › الخطة › إدارة الاشتراك. ألغِ قبل 24 ساعة على الأقل من نهاية الفترة أو التجربة المجانية لتجنّب الخصم التالي."
+          },
+          {
+            "en_q": "I have Premium, but the app shows Free",
+            "ar_q": "اشتركت في Premium لكن التطبيق يعرض الخطة المجانية",
+            "en_a": "Open Profile &amp; settings › Plan › Restore purchases, using the same App Store or Google Play account you paid with. On a new phone, sign in to your Dietify account to get your recipes back.",
+            "ar_a": "افتح الملف الشخصي والإعدادات › الخطة › استعادة المشتريات، باستخدام حساب App Store أو Google Play نفسه الذي دفعت به. وعلى هاتف جديد، سجّل الدخول إلى حسابك في Dietify لتستعيد وصفاتك."
+          },
+          {
+            "en_q": "A link or video didn't work",
+            "ar_q": "لم ينجح رابط أو فيديو",
+            "en_a": "Some posts are private or can't be read. If a video link can't be read, Dietify asks you for the video file instead. You can also add the recipe from screenshots or typed text. Tell us which link failed and we'll look into it.",
+            "ar_a": "بعض المنشورات خاصة أو لا يمكن قراءتها. إذا تعذّرت قراءة رابط فيديو، يطلب منك Dietify ملف الفيديو بدلًا منه. ويمكنك أيضًا إضافة الوصفة من لقطات الشاشة أو نص مكتوب. أخبرنا بالرابط الذي لم ينجح وسنتحقق منه."
+          },
+          {
+            "en_q": "A recipe came out wrong",
+            "ar_q": "خرجت وصفة على غير ما يرام",
+            "en_a": "Open the recipe's ⋯ menu › Report a problem, or tweak it by chat, for example “less sweet”. Always check the “Contains:” list and the labels, especially for allergies.",
+            "ar_a": "افتح قائمة ⋯ في الوصفة › الإبلاغ عن مشكلة، أو عدّلها بالدردشة، مثل «أقل حلاوة». وتحقق دائمًا من قائمة «يحتوي على» ومن الملصقات، خاصة إذا كانت لديك حساسية."
+          }
+        ]
+      },
+      "category_en": "Food &amp; Drink",
+      "category_ar": "الطعام والشراب",
+      "ios_id": "6819508508",
+      "android_id": "co.smarthorizon.dietrecipes",
+      "legal_slug": "dietify",
+      "legal_urls": {
+        "privacy": "/legal/dietify/privacy-policy/",
+        "terms": "/legal/dietify/terms-of-service/",
+        "delete_account": "/legal/dietify/delete-account/",
+        "changelog": "/legal/dietify/changelog.html"
+      },
+      "has_terms": true,
+      "rating": 0,
+      "rating_count": 0,
+      "screenshots": 9,
+      "screenshot_alts_en": [
+        "Make any recipe fit your diet: a creamy garlic fettuccine adapted to low-carb, with calories and net carbs per serving",
+        "Saw it in a video? Share it to Dietify from your phone's share sheet",
+        "Snap it, paste it, or say it: add a recipe from cookbook pages, a link, a video, your voice or text",
+        "See every swap, and why: your version right next to the original",
+        "Nutrition you can check: values per serving from public food databases",
+        "Allergies, taken seriously: 15 allergens and a safety check on every recipe",
+        "Cook hands-free: Cook mode shows one step at a time and reads it aloud",
+        "One smart grocery list: items merged from your recipes and sorted by aisle",
+        "Any recipe, in your language: Dietify speaks 28 languages"
+      ],
+      "released": null,
+      "accent": "#237A3B",
+      "last_updated": null,
+      "version": null
     }
   ],
   "_play_data_fetched": "2026-09-08"
