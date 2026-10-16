@@ -5,7 +5,7 @@
         "version": "2026-10-16",
         "date": "2026-10-16T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-16.html",
-        "changes_summary": "Corrections from a review against the app: Gemini sees your account's random ID in links to your files, read-aloud isn't on your phone, uploads can stay up to 48 hours, phone backups include Dietify's data but not your sign-in key, and JPEG photos lose their location before upload. Usage statistics are now on by default (turn them off in Settings › Privacy) and include the plan you buy and its price; RevenueCat reports renewals to them. Performance data (start time, screen drawing, server response times) comes with them.",
+        "changes_summary": "Corrections from a review against the app: Gemini sees your account's random ID in links to your files, read-aloud isn't on your phone, uploads can stay up to 48 hours, phone backups include Dietify's data but not your sign-in key, and JPEG photos lose their location before upload. Usage statistics are now on by default (turn them off in Settings › Privacy) and include the plan you buy and its price. Performance data (start time, screen drawing, server response times) comes with them.",
         "is_material_change": false,
         "requires_reacceptance": false
       },
