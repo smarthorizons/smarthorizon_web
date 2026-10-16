@@ -5,31 +5,7 @@
         "version": "2026-10-16",
         "date": "2026-10-16T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-16.html",
-        "changes_summary": "Corrections from a review against the app: Gemini sees your account's random ID in links to your files, read-aloud isn't on your phone, uploads can stay up to 48 hours, phone backups include Dietify's data but not your sign-in key, and JPEG photos lose their location before upload. Usage statistics are now on by default (turn them off in Settings › Privacy) and include the plan you buy and its price. Performance data (start time, screen drawing, server response times; on iPhone it can include your account's random ID) comes with them.",
-        "is_material_change": false,
-        "requires_reacceptance": false
-      },
-      {
-        "version": "2026-10-14",
-        "date": "2026-10-14T10:00:00Z",
-        "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-14.html",
-        "changes_summary": "Adds read aloud in Cook mode (Premium), spoken by Google Gemini.",
-        "is_material_change": false,
-        "requires_reacceptance": false
-      },
-      {
-        "version": "2026-10-13",
-        "date": "2026-10-13T10:00:00Z",
-        "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-13.html",
-        "changes_summary": "Adds Sign in with Apple and Sign in with Google.",
-        "is_material_change": false,
-        "requires_reacceptance": false
-      },
-      {
-        "version": "2026-10-12",
-        "date": "2026-10-12T10:00:00Z",
-        "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-12.html",
-        "changes_summary": "First published version.",
+        "changes_summary": "First version.",
         "is_material_change": false,
         "requires_reacceptance": false
       }
@@ -43,23 +19,7 @@
         "version": "2026-10-16",
         "date": "2026-10-16T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/terms/2026-10-16.html",
-        "changes_summary": "Clearer about payments. Buying, cancelling and refunds are handled by the App Store or Google Play, not by us, and Premium turns on only when your store confirms the purchase (Restore purchases fixes most problems). Also: sign in with Apple or Google, and the daily limits on a few features.",
-        "is_material_change": false,
-        "requires_reacceptance": false
-      },
-      {
-        "version": "2026-10-14",
-        "date": "2026-10-14T10:00:00Z",
-        "url": "https://www.smarthorizon.co/legal/dietify/versions/terms/2026-10-14.html",
-        "changes_summary": "Free now includes 3 adaptations in total (was 3 every 7 days). Premium fair use now starts at about 100 adaptations a month (was about 300).",
-        "is_material_change": true,
-        "requires_reacceptance": false
-      },
-      {
-        "version": "2026-10-12",
-        "date": "2026-10-12T10:00:00Z",
-        "url": "https://www.smarthorizon.co/legal/dietify/versions/terms/2026-10-12.html",
-        "changes_summary": "First published version.",
+        "changes_summary": "First version.",
         "is_material_change": false,
         "requires_reacceptance": false
       }
