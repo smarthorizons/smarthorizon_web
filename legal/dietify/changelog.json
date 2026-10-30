@@ -2,6 +2,14 @@
   "privacy_policy": {
     "versions": [
       {
+        "version": "2026-10-30",
+        "date": "2026-10-30T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-30.html",
+        "changes_summary": "Says exactly what Dietify sends to Google's Gemini AI, that the app asks before it sends anything, and how to withdraw that permission. Adds that every service that processes data for us must protect it at least as well as this policy does.",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      },
+      {
         "version": "2026-10-17",
         "date": "2026-10-17T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-17.html",
@@ -10,7 +18,7 @@
         "requires_reacceptance": false
       }
     ],
-    "current_version": "2026-10-17",
+    "current_version": "2026-10-30",
     "current_url": "https://www.smarthorizon.co/legal/dietify/privacy-policy/"
   },
   "terms_of_service": {
