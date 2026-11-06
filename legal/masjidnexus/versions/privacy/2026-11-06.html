@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - MasjidNexus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var theme = new URLSearchParams(location.search).get('theme');
+  if (theme === 'dark' || theme === 'light') document.documentElement.setAttribute('data-theme', theme);
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!theme) return;
+    document.querySelectorAll('a[href^="/legal/masjidnexus/"]').forEach(function (a) {
+      a.href = a.getAttribute('href') + (a.getAttribute('href').indexOf('?') < 0 ? '?' : '&') + 'theme=' + theme;
+    });
+  });
+})();
+</script>
+<style>
+:root{--bg:#ECEFF4;--surface:#FFFFFF;--surface-2:#F4F6F9;--line:#E6E9EE;--ink:#1A2230;--ink-2:#4A5462;--ink-3:#6B7480;--brand:#185FA5;--accent-soft:#E0ECF7;
+--shadow:0 1px 2px rgba(26,34,48,.04),0 8px 24px rgba(26,34,48,.07);color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0D1521;--surface:#141B26;--surface-2:#1E2733;--line:#232B38;--ink:#F2F4F7;--ink-2:#AEB6C2;--ink-3:#97A1AD;--brand:#6CA8E0;--accent-soft:#142639;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D1521;--surface:#141B26;--surface-2:#1E2733;--line:#232B38;--ink:#F2F4F7;--ink-2:#AEB6C2;--ink-3:#97A1AD;--brand:#6CA8E0;--accent-soft:#142639;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
+main{max-width:720px;margin:0 auto;padding:8px 20px 40px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:26px;line-height:34px;font-weight:700;margin:16px 0 0}
+h2{font-size:17px;line-height:25px;font-weight:700;margin:14px 0 0}
+h3{font-size:15px;line-height:23px;font-weight:700;margin:6px 0 0}
+p,li{font-size:15px;line-height:25px;font-weight:500;color:var(--ink-2);margin:0}
+ul{margin:0;padding-inline-start:22px;display:flex;flex-direction:column;gap:4px}
+li ul{margin-top:4px}
+strong{color:var(--ink);font-weight:700}
+a{color:var(--brand);text-decoration:none;font-weight:600}
+code{font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:6px}
+.version{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:12px 14px;display:flex;flex-direction:column;gap:4px;font-size:13px;line-height:20px;color:var(--ink-2)}
+.glance{background:var(--accent-soft);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.glance-title{font-size:13px;line-height:18px;font-weight:700;color:var(--ink)}
+.glance p,.glance li{font-size:14px;line-height:22px;color:var(--ink)}
+.table{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:start;vertical-align:top;padding:10px 14px;font-size:13px;line-height:20px;border-top:1px solid var(--line)}
+th{background:var(--surface-2);font-weight:700;border-top:0}
+td{color:var(--ink-2);font-weight:500}
+td:first-child{color:var(--ink);font-weight:600}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;line-height:20px;color:var(--ink-3);display:flex;flex-direction:column;gap:6px}
+.entry{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.entry-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:700}
+.badge{font-size:11px;line-height:16px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy</h1>
+<div class="version"><span>Version 6 November 2026 · in effect from that day</span><a href="/legal/masjidnexus/changelog.html">Version history</a></div>
+<div class="glance"><p class="glance-title">At a glance</p><ul><li>The app needs no account. We don't ask for your name, email address or phone number to use it.</li><li>There are no ads, and we never sell your data.</li><li>Your location is used only when you tap "Near me", and it isn't stored.</li><li>The app gives your phone a random ID, so that a masjid can see how many followers it has. It isn't linked to you.</li><li>Anonymous usage statistics and crash reports help us improve the app. You can turn them off in Settings.</li></ul></div>
+<p>This policy explains what data we handle when you use the MasjidNexus congregation app on your phone, and the choices you have. The app's <a href="/legal/masjidnexus/terms-of-service/">Terms of Use</a> are separate. If you manage a masjid in the admin portal, or use our website, see our main <a href="https://masjidnexus.com/en/privacy/">Privacy Policy</a>.</p>
+<h2 id="1-who-we-are">1. Who we are</h2>
+<p>The MasjidNexus congregation app is provided by <strong>Moosa Salim</strong>, an individual developer in Oman ("we", "us"). We decide how personal data in the app is used and we're responsible for it. For questions or requests about your data, email <strong>support@masjidnexus.com</strong>.</p>
+<h2 id="2-what-the-app-does">2. What the app does</h2>
+<p>The app shows the adhan and iqama times, announcements, activities, lectures and other details of the masjids you follow, and can alert you to them. Each masjid publishes its own information using our admin portal.</p>
+<h2 id="3-the-data-we-process">3. The data we process</h2>
+<h3 id="a-random-id-for-your-phone">A random ID for your phone</h3>
+<p>The first time it opens, the app creates a random ID for your phone. It isn't linked to you, or to your phone's hardware.</p>
+<h3 id="the-masjids-you-follow">The masjids you follow</h3>
+<p>We store which masjids that random ID follows, so that a masjid can see how many followers it has. A masjid sees only the number, never who follows it.</p>
+<h3 id="notifications">Notifications</h3>
+<p>If you turn notifications on, your phone subscribes to topics for your masjid in Google's Firebase Cloud Messaging, which on iPhone delivers them through Apple's push service. A topic looks like "this masjid's announcements, in Arabic". We don't keep a notification token for your phone.</p>
+<h3 id="location-near-me">Location ("Near me")</h3>
+<p>Only when you use "Near me" and allow it, your phone's location is sent to our server to find masjids nearby. It's used for that search and isn't stored. The app works without it: you can also search for a masjid or browse by place.</p>
+<h3 id="on-your-phone-only">On your phone only</h3>
+<p>Your followed masjids, language, prayer-alert settings and display choices stay in the app on your phone. So does what your widgets and prayer alerts need in order to work.</p>
+<h3 id="usage-statistics-and-crash-reports">Usage statistics and crash reports</h3>
+<p>To find problems and improve the app, it uses Google's Google Analytics for Firebase, Firebase Crashlytics and Firebase Performance Monitoring:</p>
+<ul><li><strong>Usage statistics:</strong> which kinds of screen are opened (such as "a masjid's page", never which masjid or item), when the app is opened, installed or updated and for how long; the app version, device model, operating system, language and screen size; and an approximate location (country and city) worked out from the IP address.</li><li><strong>Crash and error reports:</strong> what went wrong and where in the app's code, with the app version, device model, operating system and the device's state at the time, such as free memory.</li><li><strong>Performance data:</strong> how long the app takes to start and to show its screens, with the device's network type and mobile carrier, and its country, worked out from the IP address.</li></ul>
+<p>We don't add your name, email address, the masjids you follow or any advertising ID to any of this, and we never use it for advertising. It's on unless you turn off "Usage statistics" in the app's Settings.</p>
+<h3 id="support-messages">Support messages</h3>
+<p>If you contact support from the app, we receive your email address, your message, any screenshots you attach, and the app version, your phone's system and version, the app's language and your main masjid, so that we can help. It reaches us by email and isn't stored in our database.</p>
+<p>To stop the support form being misused, we keep a code made from your network (IP) address with a secret key that changes every day, for about a day. The code can't be turned back into the address.</p>
+<h3 id="information-published-by-masjids">Information published by masjids</h3>
+<p>A masjid's page can show details its admins chose to publish, such as a phone number or the names of its imam and speakers. Each masjid is responsible for what it publishes. Questions about it should go to that masjid.</p>
+<h2 id="4-why-we-use-it">4. Why we use it</h2>
+<p>Where data-protection laws apply, such as Oman's Personal Data Protection Law, the EU GDPR or the UK GDPR, we rely on:</p>
+<ul><li><strong>providing the app you asked for,</strong> to show and keep track of the masjids you follow, and to answer your support messages;</li><li><strong>consent,</strong> for notifications and location, which you can withdraw in the app or in your phone's settings;</li><li><strong>legitimate interests,</strong> to keep the app secure, prevent abuse, and find problems and improve it with usage statistics and crash reports, in ways you would reasonably expect;</li><li><strong>legal obligation,</strong> where the law requires us to keep or share something.</li></ul>
+<h2 id="5-who-processes-data-for-us">5. Who processes data for us</h2>
+<p>These providers process data on our behalf, only to provide their service. We may also share data when the law requires it, or to protect the rights and safety of our users or ourselves.</p>
+<div class="table"><table><thead><tr><th>Provider</th><th>For</th><th>What it receives</th></tr></thead><tbody><tr><td>Supabase</td><td>database and server functions (servers in Singapore)</td><td>the random ID and the masjids it follows; your location during a "Near me" search</td></tr><tr><td>Google (Firebase Cloud Messaging) and Apple (push service)</td><td>notifications</td><td>the topics your phone subscribes to</td></tr><tr><td>Google (Google Analytics for Firebase, Crashlytics and Performance Monitoring)</td><td>usage statistics, crash reports and performance data</td><td>what's described above</td></tr><tr><td>Resend</td><td>delivering support messages to us</td><td>your support message and what comes with it</td></tr><tr><td>Google (Workspace)</td><td>our support mailbox</td><td>your support message and what comes with it</td></tr><tr><td>Cloudflare</td><td>hosting our website, including masjid follow links and the form to report content</td><td>your requests to the website, as any web host</td></tr></tbody></table></div>
+<p>The app can also open things run by others, such as a masjid's donation page or social media, your maps app for directions, or the app stores. What they do with your data is covered by their own policies.</p>
+<h2 id="6-international-transfers">6. International transfers</h2>
+<p>Our providers process data in several countries, including Singapore (our database), the United States and the United Kingdom. Where the law requires it, we rely on the safeguards these providers offer for international transfers.</p>
+<h2 id="7-how-long-we-keep-data">7. How long we keep data</h2>
+<ul><li><strong>Follow records:</strong> deleted when you unfollow or clear the app's data, or after 90 days without the app being opened.</li><li><strong>Location:</strong> not kept.</li><li><strong>Support messages:</strong> in our support mailbox for as long as we need them to help you and keep a record of what was said. Ask us if you'd like yours deleted.</li><li><strong>Spam-protection codes:</strong> about a day.</li><li><strong>Usage statistics:</strong> 14 months. <strong>Crash reports:</strong> 90 days. <strong>Performance data:</strong> up to 60 days (30 days for data linked to an IP address).</li></ul>
+<h2 id="8-your-rights-and-choices">8. Your rights and choices</h2>
+<p>In the app or on your phone, at any time, you can:</p>
+<ul><li>turn off usage statistics and crash reports, in Settings;</li><li>turn notifications off, for one masjid or all of them;</li><li>withdraw the location permission;</li><li>unfollow a masjid, or clear all the app's data in Settings. Uninstalling the app removes what's on your phone, and the follow records are deleted after 90 days.</li></ul>
+<p>Depending on where you live, you can also ask to see, correct, export or delete your personal data, to object to or limit how we use it, and to withdraw your consent. Email <a href="mailto:support@masjidnexus.com">support@masjidnexus.com</a> and we'll answer within 30 days. Because the app has no accounts, we usually can't tell which records are yours from a name or email address, so the choices above are the quickest way. If you're not satisfied, you can complain to your data-protection authority.</p>
+<h2 id="9-children">9. Children</h2>
+<p>The app can be used by anyone. It has no accounts and doesn't ask for anyone's name, email address or age. The support form asks for an email address, so children should ask a parent or guardian to contact us for them.</p>
+<h2 id="10-security">10. Security</h2>
+<p>All connections are encrypted, and our service keys stay on our servers. No system is perfectly secure, but we work to protect your data, and we'll tell you and the authorities about a serious breach where the law requires it and we're able to reach you.</p>
+<h2 id="11-changes-to-this-policy">11. Changes to this policy</h2>
+<p>If we change this policy, we'll publish the new version here with its date. The app has no accounts, so we can't contact you directly about a change. If it's significant, we'll say so in the store listing or in the app.</p>
+<h2 id="12-contact">12. Contact</h2>
+<p>Moosa Salim, Oman. Email: <a href="mailto:support@masjidnexus.com">support@masjidnexus.com</a></p>
+<footer>
+<span>MasjidNexus · <a href="mailto:support@masjidnexus.com">support@masjidnexus.com</a></span>
+<span><a href="/legal/masjidnexus/privacy-policy/">Privacy Policy</a> · <a href="/legal/masjidnexus/terms-of-service/">Terms of Use</a> · <a href="/legal/masjidnexus/changelog.html">Version history</a></span>
+</footer>
+</main>
+</body>
+</html>

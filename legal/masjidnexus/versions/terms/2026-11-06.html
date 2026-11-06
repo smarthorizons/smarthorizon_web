@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use - MasjidNexus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+(function () {
+  var theme = new URLSearchParams(location.search).get('theme');
+  if (theme === 'dark' || theme === 'light') document.documentElement.setAttribute('data-theme', theme);
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!theme) return;
+    document.querySelectorAll('a[href^="/legal/masjidnexus/"]').forEach(function (a) {
+      a.href = a.getAttribute('href') + (a.getAttribute('href').indexOf('?') < 0 ? '?' : '&') + 'theme=' + theme;
+    });
+  });
+})();
+</script>
+<style>
+:root{--bg:#ECEFF4;--surface:#FFFFFF;--surface-2:#F4F6F9;--line:#E6E9EE;--ink:#1A2230;--ink-2:#4A5462;--ink-3:#6B7480;--brand:#185FA5;--accent-soft:#E0ECF7;
+--shadow:0 1px 2px rgba(26,34,48,.04),0 8px 24px rgba(26,34,48,.07);color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0D1521;--surface:#141B26;--surface-2:#1E2733;--line:#232B38;--ink:#F2F4F7;--ink-2:#AEB6C2;--ink-3:#97A1AD;--brand:#6CA8E0;--accent-soft:#142639;--shadow:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D1521;--surface:#141B26;--surface-2:#1E2733;--line:#232B38;--ink:#F2F4F7;--ink-2:#AEB6C2;--ink-3:#97A1AD;--brand:#6CA8E0;--accent-soft:#142639;--shadow:none;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
+main{max-width:720px;margin:0 auto;padding:8px 20px 40px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:26px;line-height:34px;font-weight:700;margin:16px 0 0}
+h2{font-size:17px;line-height:25px;font-weight:700;margin:14px 0 0}
+h3{font-size:15px;line-height:23px;font-weight:700;margin:6px 0 0}
+p,li{font-size:15px;line-height:25px;font-weight:500;color:var(--ink-2);margin:0}
+ul{margin:0;padding-inline-start:22px;display:flex;flex-direction:column;gap:4px}
+li ul{margin-top:4px}
+strong{color:var(--ink);font-weight:700}
+a{color:var(--brand);text-decoration:none;font-weight:600}
+code{font-size:13px;background:var(--surface-2);padding:1px 6px;border-radius:6px}
+.version{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:12px 14px;display:flex;flex-direction:column;gap:4px;font-size:13px;line-height:20px;color:var(--ink-2)}
+.glance{background:var(--accent-soft);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.glance-title{font-size:13px;line-height:18px;font-weight:700;color:var(--ink)}
+.glance p,.glance li{font-size:14px;line-height:22px;color:var(--ink)}
+.table{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:start;vertical-align:top;padding:10px 14px;font-size:13px;line-height:20px;border-top:1px solid var(--line)}
+th{background:var(--surface-2);font-weight:700;border-top:0}
+td{color:var(--ink-2);font-weight:500}
+td:first-child{color:var(--ink);font-weight:600}
+footer{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;line-height:20px;color:var(--ink-3);display:flex;flex-direction:column;gap:6px}
+.entry{background:var(--surface);border-radius:16px;box-shadow:var(--shadow);padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.entry-head{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:700}
+.badge{font-size:11px;line-height:16px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+</style>
+</head>
+<body>
+<main>
+<h1>Terms of Use</h1>
+<div class="version"><span>Version 6 November 2026 · in effect from that day</span><a href="/legal/masjidnexus/changelog.html">Version history</a></div>
+<div class="glance"><p class="glance-title">At a glance</p><ul><li>The app is free and needs no account.</li><li>Prayer times and everything else about a masjid come from that masjid, and it's responsible for them. If something matters, check with the masjid.</li><li>Don't rely on a notification alone for a prayer: we can't promise every one arrives.</li><li>Donations go directly to the masjid. We don't receive or handle them.</li><li>You can report content that's illegal or breaks these terms, in the app's Settings.</li></ul></div>
+<p>These terms cover the MasjidNexus congregation app on your phone. How the app handles your data is explained in its <a href="/legal/masjidnexus/privacy-policy/">Privacy Policy</a>. If you manage a masjid in the admin portal, or use our TV app, our main <a href="https://masjidnexus.com/en/terms/">Terms of Service</a> apply to that.</p>
+<h2 id="1-these-terms">1. These terms</h2>
+<p>These terms are an agreement between you and <strong>Moosa Salim</strong>, an individual developer in Oman ("we", "us"), for the use of the MasjidNexus congregation app ("the app"). By using the app, you agree to them. If you don't agree, please don't use it.</p>
+<h2 id="2-what-the-app-does">2. What the app does</h2>
+<p>The app shows the adhan and iqama times, announcements, activities, lectures and other details of the masjids you follow, and can alert you to them. It's free to use. We provide the app; each masjid publishes its own information using our admin portal.</p>
+<h2 id="3-prayer-times-and-dates">3. Prayer times and dates</h2>
+<p>Prayer times are calculated from the method and settings each masjid chooses, and iqama times are the ones its admins set. The results depend on those settings and on the masjid's location. Hijri dates are calculated too, so they can differ by a day from the local moon sighting.</p>
+<p>Each masjid is responsible for checking its times and dates, and we're not responsible for prayers, fasts or other acts of worship based on them. If you're unsure, follow your masjid or a local scholar.</p>
+<h2 id="4-content-from-masjids">4. Content from masjids</h2>
+<ul><li>Everything a masjid's admins add (its details, times, announcements, activities, lectures, images, texts, links and donation pages) is published by that masjid, under its sole responsibility. We don't write, check, approve or endorse it, and it doesn't represent our views.</li><li>We don't monitor content. If we remove something, that doesn't mean we've checked or approved anything else.</li><li>Quran, hadith and other Islamic texts built into MasjidNexus come from third-party sources. We work to show them accurately, but we can't guarantee them.</li></ul>
+<h2 id="5-notifications-and-alerts">5. Notifications and alerts</h2>
+<p>Notifications and prayer alerts depend on your phone, its settings, its battery saving and your connection, and on the masjid's admins. We work to make them reliable, but we can't guarantee that every one arrives, or arrives on time. Don't rely on them alone for a prayer or anything else important.</p>
+<h2 id="6-donations-and-links">6. Donations and links</h2>
+<ul><li>A masjid can show a link to its own donation page, and links to its website and social media. Donations go directly to the masjid through the service it chooses: we don't receive, hold or process them, and we take no share.</li><li>The masjid is responsible for where its links go, and for receipts, refunds and how donations are used. Questions about a donation should go to the masjid.</li></ul>
+<h2 id="7-reporting-content">7. Reporting content</h2>
+<ul><li>If you believe something in the app is illegal or breaks these terms, choose "Report illegal content" in the app's Settings, or email <a href="mailto:support@masjidnexus.com">support@masjidnexus.com</a>. Tell us the masjid, what the content is and where it appears, and which law or rule it breaks.</li><li>We act only on reports of content that's illegal or breaks our terms. We don't handle disagreements about a masjid's views, times, speakers or how it's run: please raise those with the masjid itself. You can also stop seeing a masjid's content by unfollowing it.</li><li>We may hide or remove reported content, and suspend the masjid, straight away and without notice. We may share information with the authorities when the law requires it.</li></ul>
+<h2 id="8-acceptable-use">8. Acceptable use</h2>
+<p>Don't use the app to break the law, or to interfere with the service or other people's data, for example by trying to get around its security, overloading it, or copying, reverse-engineering or reselling it. Don't collect data from the app with automated tools, including for AI, or reuse its masjid and timetable data elsewhere, without our written permission. Use the support form only for real questions.</p>
+<h2 id="9-the-app-itself">9. The app itself</h2>
+<p>The app, its design, and the MasjidNexus name and logo belong to us or are licensed to us. We give you a personal, non-exclusive, non-transferable licence to use the app on devices you own or control, for free, for as long as you follow these terms. If you send us ideas or feedback, we may use them freely.</p>
+<h2 id="10-other-services">10. Other services</h2>
+<p>The app works with services run by others, such as the app stores, your phone's notification services and maps, and the pages masjids link to. Their own terms apply to those services, and we're not responsible for them.</p>
+<h2 id="11-availability-and-changes">11. Availability and changes</h2>
+<p>We work to keep the app running, and it keeps showing the times it has when your connection drops. But we can't promise that it will always be available or free of errors, and we may need to pause it for maintenance. We improve the app over time and may change or remove features, or stop offering it.</p>
+<h2 id="12-our-liability">12. Our liability</h2>
+<p>The app is provided "as is" and "as available", without warranties of any kind. As far as the law allows, we're not liable for any loss or damage of any kind, whether direct, indirect or consequential, arising from the app or its use. This includes:</p>
+<ul><li>content added by masjids, and how it appears in the app;</li><li>the prayer times, dates and texts shown;</li><li>notifications or alerts that are late or don't arrive;</li><li>the app being unavailable, and devices failing.</li></ul>
+<p>If, despite this, we're found liable, our total liability for all claims together is limited to US$100.</p>
+<p>Nothing in these terms limits liability that can't be limited by law, or your rights as a consumer where they apply.</p>
+<h2 id="13-ending">13. Ending</h2>
+<p>You can stop using the app at any time by uninstalling it. We may stop you using it if you break these terms. Sections 3, 4, 6, 12 and 15 still apply afterwards.</p>
+<h2 id="14-changes-to-these-terms">14. Changes to these terms</h2>
+<p>We may update these terms. Each version is dated and kept unchanged, and the newest is always here. The app has no accounts, so we can't contact you directly about a change. If you keep using the app after a change takes effect, the updated terms apply.</p>
+<h2 id="15-law-and-disputes">15. Law and disputes</h2>
+<ul><li>These terms are governed by the laws of the Sultanate of Oman.</li><li>Please contact us first at <a href="mailto:support@masjidnexus.com">support@masjidnexus.com</a>, so we can try to solve the problem together.</li><li>Otherwise, the courts of Oman have jurisdiction over any dispute arising from these terms. If you're a consumer living in the European Union or the United Kingdom, you also keep the protection of your local law and can bring a claim in your local courts.</li></ul>
+<h2 id="16-apple-app-store">16. Apple App Store</h2>
+<p>If you downloaded the app from the App Store:</p>
+<ul><li>These terms are between you and us, not Apple. Apple isn't responsible for the app or its content.</li><li>Your licence is to use the app on Apple devices you own or control, as the App Store's usage rules allow.</li><li>Apple has no duty to provide maintenance or support for the app.</li><li>If the app fails to meet a warranty that applies, you may tell Apple, and Apple may refund any price you paid for it. As far as the law allows, Apple has no other warranty duty for the app.</li><li>Apple isn't responsible for claims about the app, including product liability, failing to meet a legal or regulatory requirement, consumer protection or privacy claims, or claims that the app infringes someone's rights.</li><li>You confirm that you aren't in a country under a United States government embargo and aren't on a United States list of prohibited or restricted parties.</li><li>Apple and its subsidiaries can enforce these terms against you as third-party beneficiaries.</li></ul>
+<h2 id="17-general">17. General</h2>
+<ul><li>We may transfer these terms to a company that takes over MasjidNexus. You can't transfer them without our consent.</li><li>If a part of these terms is found invalid, the rest still applies. If we don't enforce a term straight away, we can still enforce it later.</li><li>These terms are written in English. If a translation differs, the English version applies.</li></ul>
+<h2 id="18-contact">18. Contact</h2>
+<p>Moosa Salim, Oman. Email: <a href="mailto:support@masjidnexus.com">support@masjidnexus.com</a></p>
+<footer>
+<span>MasjidNexus · <a href="mailto:support@masjidnexus.com">support@masjidnexus.com</a></span>
+<span><a href="/legal/masjidnexus/privacy-policy/">Privacy Policy</a> · <a href="/legal/masjidnexus/terms-of-service/">Terms of Use</a> · <a href="/legal/masjidnexus/changelog.html">Version history</a></span>
+</footer>
+</main>
+</body>
+</html>

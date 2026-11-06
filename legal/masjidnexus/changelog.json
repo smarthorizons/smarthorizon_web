@@ -1,0 +1,32 @@
+{
+  "privacy_policy": {
+    "versions": [
+      {
+        "version": "2026-11-06",
+        "date": "2026-11-06T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/masjidnexus/versions/privacy/2026-11-06.html",
+        "changes_summary": "First version.",
+        "changes_summary_ar": "الإصدار الأول.",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      }
+    ],
+    "current_version": "2026-11-06",
+    "current_url": "https://www.smarthorizon.co/legal/masjidnexus/privacy-policy/"
+  },
+  "terms_of_service": {
+    "versions": [
+      {
+        "version": "2026-11-06",
+        "date": "2026-11-06T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/masjidnexus/versions/terms/2026-11-06.html",
+        "changes_summary": "First version.",
+        "changes_summary_ar": "الإصدار الأول.",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      }
+    ],
+    "current_version": "2026-11-06",
+    "current_url": "https://www.smarthorizon.co/legal/masjidnexus/terms-of-service/"
+  }
+}
