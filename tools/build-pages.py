@@ -21,7 +21,7 @@ APPS = DATA["apps"]
 
 SITE = "https://www.smarthorizon.co"
 EMAIL = "info@smarthorizon.co"
-GA_ID = "G-XXXXXXXXXX"   # <-- replace with the real GA4 measurement ID
+GA_ID = "G-E90Z9J25N2"   # GA4 property "SmartHorizon Website" (stream smarthorizon.co)
 
 # --------------------------------------------------------------------------
 # small helpers
