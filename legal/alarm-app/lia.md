@@ -1,8 +1,8 @@
 # Legitimate Interest Assessment (LIA)
 
 **Controller:** Smart Horizon
-**Application Type:** Alarm Mobile Application (No user accounts)  
-**Date:** 2026-01-24  
+**Application:** AlarmSpark, alarm mobile application (no user accounts)  
+**Date:** 2026-11-20 (previous: 2026-01-24)  
 **Review Cycle:** Upon material change to data processing
 
 ---
@@ -13,11 +13,12 @@
 
 The legitimate interest pursued is to ensure the reliability, stability, security, and continuous improvement of the mobile application.
 
-Analytics and diagnostic data are processed to:
+Analytics, diagnostic and performance data (Firebase Analytics, Crashlytics and Performance Monitoring) and subscription events reported by RevenueCat are processed to:
 - Detect and fix crashes and technical errors
-- Monitor application performance and stability
+- Monitor application performance and stability, including whether alarms appear on time
 - Identify feature malfunctions
 - Improve user experience based on aggregated usage patterns
+- Understand subscription conversion and revenue
 
 These purposes are necessary for operating and maintaining a functional mobile application and align with reasonable user expectations.
 
@@ -34,10 +35,12 @@ https://gdpr-info.eu/art-6-gdpr/
 Yes.
 
 The stated purposes cannot be reasonably achieved without collecting limited analytics and diagnostic data, such as:
-- Application version and device type
-- Operating system version
-- Anonymous event counts
-- Approximate location at country or regional level only
+- Application version, device type and operating system version
+- Feature events and screen names, without free text (no alarm labels, typed text, photos, barcode values, locations or health values)
+- General properties: app language, Pro status, number of alarms as a range, theme and clock format
+- Crash reports, error reports and performance timings
+- Subscription events with price and currency (via RevenueCat)
+- Country or region derived by Google from the IP address only
 
 No alternative method would provide equivalent insight into application stability and performance without processing such data.
 
@@ -56,8 +59,9 @@ https://gdpr-info.eu/recitals/no-39/
 The impact on user privacy is assessed as low, based on the following factors:
 
 #### Nature of the data
-- No names, email addresses, or account identifiers
-- No precise location data
+- No names, email addresses, or account identifiers; only a random app-installation identifier
+- No precise location data (approximate location is used only for weather and is never sent to analytics)
+- No health data (Apple Health / Health Connect data stays on the device)
 - No profiling or behavioral advertising
 - No combination with third-party identity data
 
@@ -80,9 +84,10 @@ https://gdpr-info.eu/recitals/no-47/
 The following safeguards are implemented:
 - Data minimization (only essential analytics collected)
 - Pseudonymization and aggregation
-- Limited data retention
+- Limited data retention (Crashlytics about 90 days; Analytics events no longer than 14 months)
 - Transparency via the Privacy Policy
-- User right to object through in-app settings
+- User right to object through an in-app switch (Settings → Privacy → "Share anonymous usage data"): turning it off immediately stops analytics, crash reporting and performance monitoring, deletes unsent crash reports, resets the analytics identifier, and stops RevenueCat linking purchases to Analytics; restoring a backup never re-enables it
+- Nothing is sent from development builds
 - No sale or sharing of data for advertising purposes
 
 **GDPR References:**  
@@ -104,6 +109,6 @@ The processing is lawful, proportionate, and defensible.
 ## 6. Review
 
 This assessment will be reviewed if:
-- New categories of data are introduced
+- New categories of data are introduced (reviewed 2026-11-20 for Crashlytics, Performance Monitoring, RevenueCat purchase events and the in-app switch)
 - Analytics providers or purposes change
 - Applicable regulatory guidance materially changes

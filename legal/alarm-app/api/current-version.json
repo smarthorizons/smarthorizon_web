@@ -1,14 +1,14 @@
 {
   "privacy_policy": {
-    "version": "2025-01-23",
-    "date": "2025-01-23T10:00:00Z",
-    "hash": "sha256:initial",
+    "version": "2026-11-20",
+    "date": "2026-11-20T10:00:00Z",
+    "hash": "sha256:cc7b46811e9502b716590af23a0baf90a94e1e2fa135f6c9cd128a3ae087a243",
     "requires_reacceptance": false
   },
   "terms_of_service": {
-    "version": "2025-01-23",
-    "date": "2025-01-23T10:00:00Z",
-    "hash": "sha256:initial",
+    "version": "2026-11-20",
+    "date": "2026-11-20T10:00:00Z",
+    "hash": "sha256:df9ba12d0007b1cbfbf9d6fee743823f954cc5a902f86e7268f117c1e5c20eea",
     "requires_reacceptance": false
   }
 }
