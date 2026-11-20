@@ -7,15 +7,7 @@
         "version": "2026-11-20",
         "date": "2026-11-20T10:00:00Z",
         "url": "https://smarthorizon.co/legal/alarm-app/versions/privacy/2026-11-20.html",
-        "changes_summary": "Rewritten for AlarmSpark: Apple Health and Health Connect (sleep sessions, on device only); weather from Open-Meteo using approximate location; sleep sound downloads from Cloudflare; backups are files you save where you choose (no Google sign-in); photo, barcode and motion missions processed on device; Firebase Crashlytics and Performance Monitoring added; the in-app \"Share anonymous usage data\" switch; RevenueCat reporting purchases to Google Analytics; legal bases, retention periods and Oman's Personal Data Protection Law; removed features that no longer exist.",
-        "is_material_change": true,
-        "requires_reacceptance": false
-      },
-      {
-        "version": "2025-01-23",
-        "date": "2025-01-23T10:00:00Z",
-        "url": "https://smarthorizon.co/legal/alarm-app/versions/privacy/2025-01-23.html",
-        "changes_summary": "Initial Privacy Policy",
+        "changes_summary": "Initial Privacy Policy for AlarmSpark",
         "is_material_change": false,
         "requires_reacceptance": false
       }
@@ -29,15 +21,7 @@
         "version": "2026-11-20",
         "date": "2026-11-20T10:00:00Z",
         "url": "https://smarthorizon.co/legal/alarm-app/versions/terms/2026-11-20.html",
-        "changes_summary": "Rewritten for AlarmSpark: current features, watch apps and shortcuts; corrected what is Free and what is Pro; payments are processed only by Apple or Google (RevenueCat manages subscription status); weather from Open-Meteo; backups are files you save; updated cancellation steps; reliability disclaimer covers permissions and watch connection; translations may be provided, English prevails.",
-        "is_material_change": true,
-        "requires_reacceptance": false
-      },
-      {
-        "version": "2025-01-23",
-        "date": "2025-01-23T10:00:00Z",
-        "url": "https://smarthorizon.co/legal/alarm-app/versions/terms/2025-01-23.html",
-        "changes_summary": "Initial Terms of Service",
+        "changes_summary": "Initial Terms of Service for AlarmSpark",
         "is_material_change": false,
         "requires_reacceptance": false
       }
