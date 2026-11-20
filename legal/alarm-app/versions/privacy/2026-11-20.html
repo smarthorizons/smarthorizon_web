@@ -213,7 +213,7 @@
         <strong>Privacy at a Glance:</strong>
         <ul style="margin: 10px 0;">
             <li>✅ <strong>No accounts</strong> - your alarms, history and settings stay on your device</li>
-            <li>✅ <strong>We don't know who you are</strong> - no name, email or phone number</li>
+            <li>✅ <strong>We don't know who you are</strong> - no name, email or phone number, unless you choose to contact us</li>
             <li>✅ <strong>Photos and barcodes for missions</strong> are checked on your device and never uploaded</li>
             <li>✅ <strong>Health data stays on your device</strong> - never sent to us, sold, or used for ads or analytics</li>
             <li>✅ <strong>Location only for the optional weather</strong> in the morning briefing - approximate, and never stored by us</li>
@@ -239,12 +239,12 @@
         <h2>2. Information the App Handles</h2>
 
         <div class="important">
-            <strong>Key Point:</strong> AlarmSpark has no user accounts. Everything you create in the app is stored on your device. We receive only anonymous usage data and crash reports (which you can turn off), and subscription records needed to unlock Pro.
+            <strong>Key Point:</strong> AlarmSpark has no user accounts. Everything you create in the app is stored on your device. We receive only anonymous usage data and crash reports (which you can turn off), subscription records needed to unlock Pro, and any message you choose to send us.
         </div>
 
         <h3>2.1 What We Never Collect</h3>
         <ul>
-            <li>❌ Name, email address or phone number</li>
+            <li>❌ Name, email address or phone number (unless you send us a message, see 2.10)</li>
             <li>❌ User accounts or passwords</li>
             <li>❌ Contacts, messages or social media profiles</li>
             <li>❌ Precise location</li>
@@ -330,6 +330,16 @@
         <p><strong>Payment Information:</strong> Payments are processed only by Apple (App Store) or Google (Google Play). We and RevenueCat never see your card or billing details.</p>
         <p><strong>Purchase analytics:</strong> While "Share anonymous usage data" is on, RevenueCat also reports subscription events (purchases, trials, renewals and cancellations, with price and currency) to our Google Analytics, linked to the app's analytics identifier rather than to you. Turning the switch off removes that link.</p>
         <p><strong>Purpose:</strong> To unlock Pro, restore purchases, and understand subscription revenue.</p>
+
+        <h3>2.10 Contacting Us (Optional)</h3>
+        <p>If you use <strong>Settings → Contact us</strong>, the app sends us:</p>
+        <ul>
+            <li>The message type, your message, and the name and email address you enter</li>
+            <li>Any screenshots you choose to attach</li>
+            <li>App version, platform, operating system version, device model and app language, to help us understand the problem</li>
+        </ul>
+        <p>The message passes through our Cloudflare relay and is delivered by Mailjet as an email to our support inbox (Google Workspace). No identifier for your device or installation is included. If you email us directly instead, we receive what you put in that email.</p>
+        <p><strong>Purpose:</strong> To answer you and fix what you report.</p>
     </div>
 
     <div class="section">
@@ -354,6 +364,10 @@
                 <tr>
                     <td><strong>Location, camera, motion and health access</strong></td>
                     <td>Your permission, given through your device's prompt; you can withdraw it at any time in your device settings. This data is processed on your device (location is only passed to the weather service)</td>
+                </tr>
+                <tr>
+                    <td><strong>Messages you send us</strong></td>
+                    <td>Your request - needed to answer you (GDPR Art. 6(1)(b)), and our legitimate interest in fixing reported problems (GDPR Art. 6(1)(f))</td>
                 </tr>
                 <tr>
                     <td><strong>Legal requests</strong></td>
@@ -398,6 +412,10 @@
                 <tr>
                     <td><strong>Subscription data</strong></td>
                     <td>To unlock and restore Pro, and to understand subscription revenue</td>
+                </tr>
+                <tr>
+                    <td><strong>Messages you send us</strong></td>
+                    <td>To reply to you and fix the problems or ideas you report</td>
                 </tr>
             </tbody>
         </table>
@@ -460,9 +478,21 @@
                 </tr>
                 <tr>
                     <td><strong>Cloudflare</strong></td>
-                    <td>Sleep sound downloads</td>
-                    <td>IP address and request details in standard server logs</td>
+                    <td>Sleep sound downloads; relaying contact form messages</td>
+                    <td>IP address and request details in standard server logs; contact messages pass through without being stored</td>
                     <td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare Privacy</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Mailjet</strong> (Sinch)</td>
+                    <td>Delivering contact form messages to us by email</td>
+                    <td>Your message, name, email address, any screenshots, and app and device info</td>
+                    <td><a href="https://www.mailjet.com/privacy-policy/" target="_blank">Mailjet Privacy</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Google Workspace</strong></td>
+                    <td>Our support inbox</td>
+                    <td>Messages you send us and our replies</td>
+                    <td><a href="https://policies.google.com/privacy" target="_blank">Google Privacy</a></td>
                 </tr>
                 <tr>
                     <td><strong>Apple App Store</strong></td>
@@ -491,7 +521,7 @@
             </tbody>
         </table>
 
-        <p><strong>Processor Role:</strong> Google (Firebase) and RevenueCat process data on our behalf, only for the purposes described here.</p>
+        <p><strong>Processor Role:</strong> Google (Firebase and Workspace), RevenueCat, Mailjet and Cloudflare process data on our behalf, only for the purposes described here.</p>
 
         <h3>6.2 No Data Selling</h3>
         <p><strong>We do not sell, rent, or trade your data with anyone.</strong></p>
@@ -509,7 +539,7 @@
         <h2>7. Data Security</h2>
         <ul>
             <li><strong>On your device:</strong> Your data is protected by your device's security (passcode, Face ID, fingerprint)</li>
-            <li><strong>In transit:</strong> Connections to Firebase, RevenueCat, Open-Meteo and Cloudflare use HTTPS encryption</li>
+            <li><strong>In transit:</strong> Connections to Firebase, RevenueCat, Open-Meteo, Cloudflare and Mailjet use HTTPS encryption</li>
             <li><strong>No central database:</strong> We do not run a database of user information</li>
             <li><strong>Minimal data:</strong> We only collect what is described in this policy</li>
         </ul>
@@ -536,6 +566,7 @@
             <li><strong>Crash reports:</strong> Kept by Crashlytics for about 90 days</li>
             <li><strong>Analytics events:</strong> Kept for no longer than 14 months, then deleted. Aggregated reports that cannot identify anyone may be kept longer</li>
             <li><strong>Subscription records:</strong> Kept by RevenueCat for as long as needed to provide your subscription and meet legal and tax obligations, under <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's policy</a></li>
+            <li><strong>Messages you send us:</strong> Kept in our support inbox for up to 2 years after the conversation ends, then deleted. Mailjet keeps delivery records under <a href="https://www.mailjet.com/privacy-policy/" target="_blank">its own policy</a>. Ask us to delete your messages at any time</li>
             <li><strong>Weather and download requests:</strong> Open-Meteo and Cloudflare keep standard request logs under their own policies</li>
             <li><strong>Resetting:</strong> Turning off "Share anonymous usage data" resets the analytics identifier, so earlier data can no longer be connected to your installation</li>
         </ul>
@@ -545,7 +576,7 @@
         <h2>9. Children's Privacy</h2>
         <p>AlarmSpark is suitable for all ages but is not directed at children under 13, and we do not knowingly collect personal information from children.</p>
         <ul>
-            <li>The app has no accounts and does not ask for names, emails or photos to be uploaded</li>
+            <li>The app has no accounts and asks for a name or email only if someone chooses to send us a message</li>
             <li>Everything created in the app stays on the device</li>
             <li>Parents can turn off "Share anonymous usage data" in Settings → Privacy</li>
         </ul>
@@ -598,6 +629,8 @@
             <li><strong>Firebase (Google):</strong> Google's data centers worldwide</li>
             <li><strong>RevenueCat:</strong> The United States</li>
             <li><strong>Open-Meteo and Cloudflare:</strong> Their own infrastructure, which may be in several regions</li>
+            <li><strong>Mailjet:</strong> The European Union</li>
+            <li><strong>Google Workspace:</strong> Google's data centers worldwide</li>
         </ul>
         <p>Where required, these transfers rely on the providers' safeguards, such as the European Commission's Standard Contractual Clauses.</p>
     </div>
