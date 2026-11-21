@@ -2,13 +2,13 @@
   "privacy_policy": {
     "version": "2026-11-20",
     "date": "2026-11-20T10:00:00Z",
-    "hash": "sha256:526977d529e4747be456394f89c6f3eaadb67a6befae2491e21ed1a46f6d068c",
+    "hash": "sha256:091b5d12a5e7318bed51cc263a6a393d5bfadbc7fdb4feea946b6233249143a8",
     "requires_reacceptance": false
   },
   "terms_of_service": {
     "version": "2026-11-20",
     "date": "2026-11-20T10:00:00Z",
-    "hash": "sha256:7fdb6461680357a14ef00030bed5b77ffa13800cefcdf1ba5758b5ec08948fca",
+    "hash": "sha256:4444529bfcfd458a6cbab18b7c1b616f9f5099a4ae5517f1baaa7afe6fb2dac8",
     "requires_reacceptance": false
   }
 }
