@@ -86,7 +86,7 @@ The following safeguards are implemented:
 - Pseudonymization and aggregation
 - Limited data retention (Crashlytics about 90 days; Analytics events no longer than 14 months)
 - Transparency via the Privacy Policy
-- User right to object through an in-app switch (Settings → Privacy → "Share anonymous usage data"): turning it off immediately stops analytics, crash reporting and performance monitoring, deletes unsent crash reports, resets the analytics identifier, and stops RevenueCat linking purchases to Analytics; restoring a backup never re-enables it
+- User right to object through an in-app switch (Settings → Privacy & terms → "Share anonymous usage data"): turning it off immediately stops analytics, crash reporting and performance monitoring, deletes unsent crash reports, resets the analytics identifier, and stops RevenueCat linking purchases to Analytics; restoring a backup never re-enables it
 - Nothing is sent from development builds
 - No sale or sharing of data for advertising purposes
 
