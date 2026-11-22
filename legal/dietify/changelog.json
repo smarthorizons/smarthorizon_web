@@ -2,6 +2,14 @@
   "privacy_policy": {
     "versions": [
       {
+        "version": "2026-11-22",
+        "date": "2026-11-22T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-11-22.html",
+        "changes_summary": "The app is now called SanoFork. Nothing else changes.",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      },
+      {
         "version": "2026-10-30",
         "date": "2026-10-30T10:00:00Z",
         "url": "https://www.smarthorizon.co/legal/dietify/versions/privacy/2026-10-30.html",
@@ -18,11 +26,19 @@
         "requires_reacceptance": false
       }
     ],
-    "current_version": "2026-10-30",
+    "current_version": "2026-11-22",
     "current_url": "https://www.smarthorizon.co/legal/dietify/privacy-policy/"
   },
   "terms_of_service": {
     "versions": [
+      {
+        "version": "2026-11-22",
+        "date": "2026-11-22T10:00:00Z",
+        "url": "https://www.smarthorizon.co/legal/dietify/versions/terms/2026-11-22.html",
+        "changes_summary": "The app is now called SanoFork. Nothing else changes.",
+        "is_material_change": false,
+        "requires_reacceptance": false
+      },
       {
         "version": "2026-10-16",
         "date": "2026-10-16T10:00:00Z",
@@ -32,7 +48,7 @@
         "requires_reacceptance": false
       }
     ],
-    "current_version": "2026-10-16",
+    "current_version": "2026-11-22",
     "current_url": "https://www.smarthorizon.co/legal/dietify/terms-of-service/"
   }
 }
