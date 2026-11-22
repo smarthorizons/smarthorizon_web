@@ -1,7 +1,7 @@
 # Legitimate Interest Assessment (LIA)
 
 **Controller:** Smart Horizon
-**Application:** AlarmSpark, alarm mobile application (no user accounts)  
+**Application:** OkiSpark, alarm mobile application (no user accounts)  
 **Date:** 2026-11-20 (previous: 2026-01-24)  
 **Review Cycle:** Upon material change to data processing
 
